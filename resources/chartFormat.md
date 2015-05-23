@@ -1,4 +1,4 @@
-# ChartFormat
+# ChartFormat (Not in this Release)
 Provides access to the Office Art formatting for chart elements.
 
 

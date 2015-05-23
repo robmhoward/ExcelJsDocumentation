@@ -1919,6 +1919,690 @@ Example: A Range can consist of one of more cells. In cases where the individual
   "color" : null,
 ```
 
+
+## Chart
+
+[Chart](resources/chart.md) represents a chart object on a worksheet. 
+
+Following are the methods supported for this resource:
+
+| Task                               | Description                                | 
+|:------------------------------------|:-------------------------------------------|
+| [Add-Chart](#add-chart)     | Inserts a chart directly onto the grid.  |
+| [Get-Chart](#get-chart)   | Gets a chart by name. |
+| [Delete-Chart](#delete-chart)     | Deletes a chart directly on the grid.  |
+| [Move-Chart](#move-chart)   | Moves a chart on the grid. |
+| [Resize-Chart](#resize-chart)     | Resizes a chart on the grid. |
+| [Set-Chart-SourceData](#set-chart-sourcedata)   | Sets the sourceData and seriesBy of a Chart.|
+| [Rename-Chart](#rename-chart)     | Rename a chart.  |
+| [Format-Chart](#format-chart)   | Format a chart.|
+| [Get-Chart-Title](#get-chart-title)   | Get the title of a chart. |
+| [Set-Chart-Title](#set-chart-title)   | Set the title of a chart, including `text`, `position` and `overlay`. |
+| [Delete-Chart-Title](#delete-chart-title)   | Delete the title from a chart. |
+| [Format-Chart-Title](#format-chart-title)   | Format the Chart Title. |
+| [Set-Chart-Legend](#set-chart-legend)   | Hide/Show Chart Legent and set position. |
+| [Set-Chart-DataLabels](#set-chart-datalabels)   | Set display content and position of DataLabels. |
+| [Set-Chart-Axis](#set-chart-axis)   | Set the `maximum`, `minimum`, `majorunit`,`minorunit` and `visible`of an axis. |
+| [Hide-Chart-Axis](#hide-chart-axis)   | Hide an axis.|
+| [Set-Chart-AxisTitle](#get-chart-axistitle)   | Change the Axis Title text and visibility. |
+| [Add-Chart-Gridlines](#add-chart-gridlines)   | Show Gridlines on an Axis |
+| [Delete-Chart-Gridlines](#delete-chart-gridlines)   | Hide the specified Gridlines|
+| [Format-Chart-Series](#format-chart-range)   | Change the Fill Color of a series |
+
+
+
+ 
+
+### Add-Chart
+
+Inserts a chart directly onto the grid.
+
+#### Syntax
+
+```js
+
+charts.add(chartType, sourceData, seriesBy);
+
+```
+
+#### Parameters
+
+| Parameter         | Value    |Description|
+|:-----------------|:--------|:----------|
+| `type` | String | A String value that represents the type of a chart.  |
+| `sourceData`  | String | Sets an address or name of the Range object as the data source.|
+| `seriesBy` | String | Sets the way columns or rows are used as data series on the chart. Can be `auto`, `Rows` or `Columns`.|
+
+
+#### Returns
+
+[Chart](resources/chart.md) object. 
+
+#### Examples
+
+##### Add a chart of `chartType` "ColumnClustered" on worksheet "Charts" with `sourceData` from Range "A1:B4" and `seriresBy` is set to be "auto".
+
+var sheetName = "Charts";
+var sourceData = sheetName + "!" + "A1:B4";
+
+var ctx = new Excel.ExcelClientContext();
+var chart = ctx.workbook.worksheets.getItem(sheetName).charts.add("ColumnClustered", sourceData, "auto");
+ctx.executeAsync().then(function () {
+		logComment("New Chart Added");
+});
+
+[Back](#chart)
+
+### Get-Chart
+
+Gets a chart by name.
+
+#### Syntax
+
+```js
+
+chart.deleteObject();
+
+```
+
+#### Parameters
+None.
+
+#### Returns
+
+[Chart](resources/chart.md) object. 
+
+#### Examples
+
+##### Get the Chart named "Chart1"
+
+var ctx = new Excel.ExcelClientContext();
+var chart = ctx.workbook.worksheets.getItem("Charts").charts.getItem("Chart1");	
+
+ctx.load(chart);
+ctx.executeAsync().then(function () {
+		logComment("Chart1 Loaded");
+});
+
+
+[Back](#chart)
+
+### Delete-Chart
+
+Deletes a chart directly on the grid.
+
+#### Syntax
+
+```js
+
+chart.deleteObject();
+
+```
+
+#### Parameters
+None.
+
+#### Returns
+
+Nothing.
+
+#### Examples
+
+##### Delete the Chart named "Chart1"
+
+var ctx = new Excel.ExcelClientContext();
+var chart = ctx.workbook.worksheets.getItem("Charts").charts.getItem("Chart1");	
+
+chart.deleteObject();
+ctx.executeAsync().then(function () {
+		logComment"Chart Deleted");
+});
+
+
+[Back](#chart)
+
+### Move-Chart
+
+Moves a chart on the grid.
+
+#### Syntax
+
+```js
+
+chart.top = 100;
+chart.left = 100;
+
+```
+
+#### Parameters
+None.
+
+#### Returns
+
+[Chart](resources/chart.md) object. 
+
+#### Examples
+
+##### Move Chart1 to 100 points to the top and left.
+
+var ctx = new Excel.ExcelClientContext();
+var chart = ctx.workbook.worksheets.getItem("Charts").charts.getItem("Chart1");
+	
+chart.top = 100;
+chart.left = 100;
+ctx.executeAsync().then(function () {
+		logComment("Chart Moved");
+});
+
+[Back](#chart)
+
+### Resize-Chart
+
+Resizes a chart on the grid.
+
+#### Syntax
+
+```js
+
+chart.height = 200;
+chart.weight = 200;
+
+```
+
+#### Parameters
+None.
+
+#### Returns
+
+[Chart](resources/chart.md) object. 
+
+#### Examples
+
+##### Resize Chart1 to 200 points in both height and weight.
+
+var ctx = new Excel.ExcelClientContext();
+var chart = ctx.workbook.worksheets.getItem("Charts").charts.getItem("Chart1");	
+
+chart.height =200;
+chart.width =200;
+ctx.executeAsync().then(function () {
+		logComment("Chart Resized");
+});
+
+[Back](#chart)
+
+### Set-Chart-SourceData
+
+Sets the sourceData and seriesBy of a Chart.
+
+#### Syntax
+
+```js
+
+chart.SetData(sourceData, seriesBy);
+
+```
+
+#### Parameters
+| Parameter         | Value    |Description|
+|:-----------------|:--------|:----------|
+| `sourceData`  | String|  Sets an address or name of the Range object as the data source.|
+| `seriesBy`  | String |  Sets the way columns or rows are used as data series on the chart. Can be one of the following `Rows`, `Columns` or `Auto`.|
+
+#### Returns
+
+[Chart](resources/chart.md) object. 
+
+#### Examples
+
+##### Set the `sourceData` to be "A1:B4" and `seriesBy` to be "Columns"
+
+var ctx = new Excel.ExcelClientContext();
+var chart = ctx.workbook.worksheets.getItem("Charts").charts.getItem("Chart1");	
+var sourceData = "A1:B4";
+
+chart.SetData(sourceData, "Columns");
+ctx.executeAsync().then();
+[Back](#chart)
+
+
+### Rename-Chart
+
+Rename a chart.
+
+#### Syntax
+
+```js
+
+chart.name="NewChartName";
+
+```
+
+#### Parameters
+None.
+
+#### Returns
+
+[Chart](resources/chart.md) object. 
+
+#### Examples
+
+##### Rename "Chart1" to "NewChartName"
+
+var ctx = new Excel.ExcelClientContext();
+var chart = ctx.workbook.worksheets.getItem("Charts").charts.getItem("Chart1");
+	
+chart.name="NewChartName";
+ctx.executeAsync().then(function () {
+		logComment("Chart Renamed");
+});
+[Back](#chart)
+
+### Format-Chart
+
+Format a chart.
+
+#### Syntax
+
+```js
+
+chart.fillFormat.SetSolidColor(color);
+
+```
+
+#### Parameters
+| Property         | Type    |Description|
+|:-----------------|:--------|:----------|
+|color| String | HTML color code representing the color of the interior/background. |
+
+#### Returns
+Nothing.
+
+#### Examples
+
+##### Set "Chart1" background to be red.
+
+var ctx = new Excel.ExcelClientContext();
+var chart = ctx.workbook.worksheets.getItem("Charts").charts.getItem("Chart1");	
+
+chart.fillFormat.SetSolidColor("#FF0000");
+
+ctx.executeAsync().then(function () {
+		logComment("Chart Color Changed ");
+});
+[Back](#chart)
+
+
+### Get-Chart-Title
+
+Get the title of a chart.
+
+#### Syntax
+
+```js
+
+chart.title.text;
+
+```
+
+#### Parameters
+None. 
+
+#### Returns
+[ChartTitle](resources/chartTitle.md) object. 
+
+#### Examples
+
+##### Get the `text` of Chart Title from Chart1
+
+var ctx = new Excel.ExcelClientContext();
+var chart = ctx.workbook.worksheets.getItem("Charts").charts.getItem("Chart1");	
+
+ctx.load(chart);
+ctx.executeAsync().then(function () {
+		logComment(chart.title.text);
+});
+[Back](#chart)
+
+
+### Set-Chart-Title
+
+Set the title of a chart, including `text`, `position` and `overlay`.
+
+#### Syntax
+
+```js
+
+chart.title.text= "My Chart"; 
+chart.title.position = "top";
+chart.title.overlay=true;
+
+```
+
+#### Parameters
+None. 
+
+#### Returns
+[ChartTitle](resources/chartTitle.md) object. 
+
+#### Examples
+
+##### Set the `text` of Chart Title to "My Chart" and Make it show on top of the chart without overlaying.
+
+var ctx = new Excel.ExcelClientContext();
+var chart = ctx.workbook.worksheets.getItem("Charts").charts.getItem("Chart1");	
+
+chart.title.text= "My Chart"; 
+chart.title.position = "top";
+chart.title.overlay=true;
+
+ctx.executeAsync().then(function () {
+		logComment("Char Title Changed");
+});
+[Back](#chart)
+
+### Delete-Chart-Title
+
+Delete the title from a chart.
+
+#### Syntax
+
+```js
+
+chart.title.visible = false; 
+
+```
+
+#### Parameters
+None. 
+
+#### Returns
+None.
+
+#### Examples
+
+##### Hide the title of Chart1
+
+var ctx = new Excel.ExcelClientContext();
+var chart = ctx.workbook.worksheets.getItem("Charts").charts.getItem("Chart1");	
+
+chart.title.visible = false; 
+ctx.executeAsync().then(function () {
+		logComment("Title Hidden");
+});
+[Back](#chart)
+
+### Format-Chart-Title
+
+Formats the title from a chart.
+
+#### Syntax
+
+```js
+
+chart.title.font.bold = true; 
+chart.title.font.color = "#FF0000";
+
+```
+
+#### Parameters
+None. 
+
+#### Returns
+None.
+
+#### Examples
+
+##### Make the title of Chart1 to be bold and red
+var ctx = new Excel.ExcelClientContext();
+var chart = ctx.workbook.worksheets.getItem("Charts").charts.getItem("Chart1");	
+
+chart.title.font.bold = true; 
+chart.title.font.color = "#FF0000";
+
+ctx.executeAsync().then(function () {
+		logComment("Title Format Updated");
+});
+[Back](#chart)
+
+### Set-Chart-Legend
+
+ Hide/Show Chart Legent and set position. 
+
+#### Syntax
+
+```js
+
+chart.legend.visible = true;
+chart.legend.position = "top"; 
+
+```
+
+#### Parameters
+
+| Property         | Type    |Description| 
+|:-----------------|:--------|:----------|
+| `visible` | Boolean |A boolean value the represents the visibility of a ChartLegend object. If visible is set to be ture, the legend will be visible on the chart. |  
+| `position` | String |Returns or sets a Legend Position value that represents the position of the legend on the chart, including `Top`,`Bottom`,`Cornor`,`Left`,`Right`,'Custom','Invalid'| 
+| `overlay` | Boolean |True if the legend with be overlapping with the chart. | 
+
+#### Returns
+None.
+
+#### Examples
+
+##### Show Legend of Chart1 and make it on top of the chart.
+var ctx = new Excel.ExcelClientContext();
+var chart = ctx.workbook.worksheets.getItem("Charts").charts.getItem("Chart1");	
+
+chart.legend.visible = true;
+chart.legend.position = "top"; 
+ctx.executeAsync().then(function () {
+		logComment("Legend Shown ");
+});
+[Back](#chart)
+
+### Set-Chart-DataLabels
+
+Set display content and position of DataLabels.
+
+#### Syntax
+
+```js
+
+chart.datalabels.visible = true;
+chart.datalabels.position = "top";
+chart.datalabels.ShowSeriesName = true;
+
+```
+
+#### Parameters
+| Property         | Type    |Description|Notes |
+|:-----------------|:--------|:----------|:-----|
+|`position`          |String|Returns or sets a XlDataLabelPosition value that represents the position of the data label.  |
+|`separator`         |String|Sets or returns a Variant representing the separator used for the data labels on a chart. |
+|`showBubbleSize`          |Boolean|True to show the bubble size for the data labels on a chart. False to hide.|
+|`showCategoryName`          |Boolean|True to display the category name for the data labels on a chart. False to hide. |
+|`showLegendKey`          |Boolean|True if the data label legend key is visible.  |
+|`showPercentage`          |Boolean|True to display the percentage value for the data labels on a chart. False to hide.  |
+|`showSeriesName`          |Boolean|Returns or sets a Boolean corresponding to a specified chart's data label values display behavior. True displays the values. False to hide.  |
+|`ShowValue`          |Boolean|Returns or sets a Boolean corresponding to a specified chart's data label values display behavior. True displays the values. False to hide.|
+
+#### Returns
+None.
+
+#### Examples
+
+##### Make Series Name shown in Datalabels and set the `position` of datalabels to be "top";
+var ctx = new Excel.ExcelClientContext();
+var chart = ctx.workbook.worksheets.getItem("Charts").charts.getItem("Chart1");	
+
+chart.datalabels.visible = true;
+chart.datalabels.position = "top";
+chart.datalabels.ShowSeriesName = true;
+
+ctx.executeAsync().then(function () {
+		logComment("Datalabels Shown");
+});
+[Back](#chart)
+
+
+### Set-Chart-Axis
+
+ Set the  `maximum` ,  `minimum` ,  `majorunit` , `minorunit`  and  `visible` of an axis. 
+
+#### Syntax
+
+```js
+
+chart.axes.valueaxis.maximum = 5;
+chart.axes.valueaxis.minimum = 0;
+chart.axes.valueaxis.majorunit = 1;
+chart.axes.valueaxis.minorunit = 0.2;
+chart.axes.categoryaxis.visible = false;
+
+```
+
+#### Parameters
+| Parameter         | Value    |Description|
+|:-----------------|:--------|:----------|
+| `minimum` | Object |Returns or sets the minimum value on the value axis. Auto if left empty.  | 
+| `maximum` | Object |Returns or sets the maximum value on the value axis. Auto if left empty. | 
+| `majorunit` | Object |Returns or sets the interval between two major tick marks. Auto if left empty.  | 
+| `minorunit` | Object |eturns or sets the interval between two minor tick marks.  Auto if left empty. | 
+| `visible` | Boolean |True if the Axis is displayed. Read/write Boolean. | 
+
+#### Returns
+None.
+
+#### Examples
+
+#####  Set the  `maximum`,  `minimum` ,  `majorunit` , `minorunit`  and  `visible` of valueaxis. 
+ 
+var ctx = new Excel.ExcelClientContext();
+var chart = ctx.workbook.worksheets.getItem("Charts").charts.getItem("Chart1");	
+
+chart.axes.valueaxis.maximum = 5;
+chart.axes.valueaxis.minimum = 0;
+chart.axes.valueaxis.majorunit = 1;
+chart.axes.valueaxis.minorunit = 0.2;
+chart.axes.categoryaxis.visible = false;
+
+
+ctx.executeAsync().then(function () {
+		logComment("Axis Settings Changed");
+});
+[Back](#chart)
+
+
+### Set-Chart-AxisTitle
+
+ Change the Axis Title text and visibility. 
+
+#### Syntax
+
+```js
+
+chart.axes.valueaxis.title.text = "Catagory";
+
+```
+
+#### Parameters
+| Property         | Type    |Description| 
+|:-----------------|:--------|:----------|
+| `text` | String |A String value that represents the title of a Axis. | 
+| `visible` | Boolean |A boolean that specifies the visibility of an Axis Title. True if the axis or chart has a visible title.  |
+
+#### Returns
+None.
+
+#### Examples
+
+##### Add Catagory as the title for the catagory Axis
+
+var ctx = new Excel.ExcelClientContext();
+var chart = ctx.workbook.worksheets.getItem("Charts").charts.getItem("Chart1");	
+
+chart.axes.valueaxis.title.text = "Catagory";
+
+ctx.executeAsync().then(function () {
+		logComment("Axis Title Added ");
+});
+[Back](#chart)
+
+### Add-Chart-Gridlines
+
+Show Gridlines on an Axis. 
+
+#### Syntax
+
+```js
+
+chart.axes.valueaxis.majorgridlines.visible = true;
+
+```
+
+#### Parameters
+| Property         | Type    |Description| 
+|:-----------------|:--------|:----------|
+|visible| Boolean | True if the axis has gridlines. |
+
+#### Returns
+None.
+
+#### Examples
+
+##### Show Major Gridlines on ValueAxis of Chart1
+
+var ctx = new Excel.ExcelClientContext();
+var chart = ctx.workbook.worksheets.getItem("Charts").charts.getItem("Chart1");	
+
+chart.axes.valueaxis.majorgridlines.visible = true;
+
+ctx.executeAsync().then(function () {
+		logComment("Axis Title Added ");
+});
+[Back](#chart)
+
+### Format-Chart-Series
+
+Change the Fill Color of a series.
+
+#### Syntax
+
+```js
+
+chart.series.GetItemAt(1).fillFormat.SetSolidColor("#FF0000");
+
+```
+
+#### Parameters
+| Property         | Type    |Description|
+|:-----------------|:--------|:----------|
+|color| String | HTML color code representing the color of the interior/background. |
+
+#### Returns
+None.
+
+#### Examples
+
+##### Change the fill color of Series1 to be red
+
+var ctx = new Excel.ExcelClientContext();
+var chart = ctx.workbook.worksheets.getItem("Charts").charts.getItem("Chart1");	
+
+chart.series.GetItemAt(1).fillFormat.SetSolidColor("#FF0000");
+
+ctx.executeAsync().then(function () {
+		logComment("Series Fill Color Changed ");
+});
+[Back](#chart)
+
+
+
+
+
+
 ### Blank Input and Output
 
 Blank values in update requests are treated as instruction to clear or reset the respective property. Blank value is represented by two double-quotes with no space in between. `""`

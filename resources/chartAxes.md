@@ -1,5 +1,5 @@
-# Axis
-Represents the collection in a Chart including categoryAxis, valueAxis and seriesAxis.
+# Axes
+Represents the axes collection in a Chart including categoryAxis, valueAxis and seriesAxis.
 
 
 ## JSON representation
@@ -22,7 +22,7 @@ JSON representation of a Range resource.
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-
+|None||||
 
 
 ## Relationships
@@ -30,7 +30,7 @@ The Chart resource has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `categoryAxis`          |[ChartAxis](chartAxis.md) Object | Represents the category usually horizontal axis in a chart. | 
+| `categoryAxis` |[ChartAxis](chartAxis.md) Object | Represents the category axis in a chart. | 
 | `valueAxis` | [ChartAxis](chartAxis.md) Object   | Represents the value axis in a chart.  | |
 | `seriesAxis` | [ChartAxis](chartAxis.md) Object   |Represents the series axis in a 3D chart. | |
      
