@@ -37,13 +37,13 @@ JSON representation of a Range resource.
 |`cellCount`       | Number          |Number of cells in the range|Range.Count|
 |`columnIndex`     | Number          |Returns the number of the first column in the first area in the specified range. This is adjusted to be zero indexed. Read-only|Range.Column|
 |`rowIndex`        | Number          |Returns the number of the first row of the first area in the range. This is adjusted to be zero indexed. Read-only|Range.Row|
-|`rowcount`        | Number          |Returns the total number of columns in the Range selected. Read-only |Range.Column|
-|`columnCount`    | Number           |Returns the number of the first row of the first area in the range. This is adjusted to be zero indexed. Read-only|Range.Row|
+|`rowCount`        | Number          |Returns the total number of rows in the Range selected. Read-only |Range.Column|
+|`columnCount`    | Number           |Returns the total number of columns in the Range selected. Read-only |Range.Row|
 |`values`          |Array [][]]|Unformatted values of the specified range|Range.Value2|
 |`text`            |Array [][]|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel client will not affect the value returned by the API. |Range.Text|
 |`numberFormat`    |Array [][]|Value that represents the format code for the object|Range.NumberFormat
-|`formula`         |Array [][]|Represents the object's formula in A1 style notation|Range.formula|
-|`formulaLocal`    |Array [][]|Formula for the object, in the language of the user in A1 style notation|Range.FormulaLocal|
+|`formulas`         |Array [][]|Represents the object's formula in A1 style notation|Range.formula|
+|`formulasLocal`    |Array [][]|Formula for the object, in the language of the user in A1 style notation|Range.FormulaLocal|
 |`address`         |String         |Returns a String value that represents the range reference in A1 Style. **Address value will contain the Sheet reference (e.g., `Sheet1!A1:B4`)**|Range.Address|
 |`addressLocal`    |String         |Returns the range reference for the specified range in the language of the user in A1 Style. **Address value will contain the Sheet reference (e.g., `Sheet1!A1:B4`)**|Range.AddresLocal|
 
