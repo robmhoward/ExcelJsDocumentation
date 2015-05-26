@@ -31,8 +31,8 @@ JSON representation of a Range resource.
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`position`          |String|Returns or sets a XlDataLabelPosition value that represents the position of the data label.  |DataLabel.Position|
-|`separator`         |String|Sets or returns a Variant representing the separator used for the data labels on a chart. |DataLabel.separator|
+|`position`          |String|Returns or sets a DataLabelPosition value that represents the position of the data label.  |DataLabel.Position|
+|`separator`         |String|Sets or returns a String representing the separator used for the data labels on a chart. |DataLabel.separator|
 |`showBubbleSize`          |Boolean|True to show the bubble size for the data labels on a chart. False to hide.|DataLabel.showBubbleSize|
 |`showCategoryName`          |Boolean|True to display the category name for the data labels on a chart. False to hide. |DataLabel.showCategoryName|
 |`showLegendKey`          |Boolean|True if the data label legend key is visible.  |DataLabel.showLegendKey|
@@ -52,7 +52,7 @@ The ChartDataLabels resource has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `fillFormat`          |[ChartFillFormat](chartFillFormat.md) Object | Represents the fill format of an object, which includes background formating information. 
+| `fillFormat`          |[ChartFillFormat](chartFillFormat.md) Object | Represents the fill format of an object, which includes interior/background formating information. 
 | `lineFormat`          |[ChartLineFormat](chartLineFormat.md) Object | Represents line and arrowhead formatting.
 | `font`          |[ChartFont](chartFont.md) Object | Represents the font attributes (font name, font size, color, and so on) for an object. 
 

@@ -29,8 +29,9 @@ The ChartSeries resource has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `points`          |[ChartPoints](chartPoints.md) Object | Represents the Points in a series in a chart.
-| `fillFormat`          |[ChartFillFormat](chartFillFormat.md) Object | Represents the fill format of an object, which includes background formating information. 
+| `points`          |[ChartPoints](chartPoints.md) Object | Represents Points in a series in a chart.
+| `fillFormat`          |[ChartFillFormat](chartFillFormat.md) Object | Represents the fill format of an object, which includes interior/background formating information. 
+
 
 
 ## Methods

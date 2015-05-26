@@ -19,7 +19,7 @@ JSON representation of a Range resource.
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|color| String | HTML color code representing the color of the border line|Chart.ChartFormat.LineForma.Color's representation in HTML color code.|
+|color| String | HTML color code representing the color of lines in the chart. |Chart.ChartFormat.LineFormat.Color's representation in HTML color code.|
 
 ## Relationships
 The Chart resource has the following relationships defined:

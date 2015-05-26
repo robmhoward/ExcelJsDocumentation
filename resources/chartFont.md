@@ -11,7 +11,7 @@ JSON representation of a Font resource.
 {
   "name" : "Ariel", 
   "size" : 14,
-  "color" : "FF0000",
+  "color" : "#FF0000",
   "italic" : false,
   "bold" : false,
   "underline" : false 
