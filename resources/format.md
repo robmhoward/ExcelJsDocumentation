@@ -33,7 +33,6 @@ JSON representation of a Format resource.
 
 
 ## Relationships
-## Properties
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 |`borders`         |[Border](border.md) collection|Collection of border objects that apply to the overall Range selected|Range.Borders|
