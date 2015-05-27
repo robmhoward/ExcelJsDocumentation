@@ -13,7 +13,6 @@ JSON representation of a ChartTile resource.
 {
   "text" : "Revenue By Quarter",
   "visible": true,
-  "position" : "Top",
   "overlay" : false,
 
   "fillFormat" :    {"@odata.type": "ChartFillFormat"},
@@ -29,7 +28,6 @@ JSON representation of a ChartTile resource.
 |:-----------------|:--------|:----------|:-----|
 | `text` | String |A String value that represents the title text of a chart. When a title text is set, the display property will be automaticlly set to top and the chart title will be displayed on top of the chart without overlapping. | Chart.ChartTitle |
 | `visible` | Boolean |A boolean value the represents the visibility of a chart title object. If visible is set to be ture, the chart title will be visible on the chart. |  |
-| `position | String | A constant that specifies the postition of chart title, including `Top` and `Invalid`. | Chart.ChartTitle.Position |
 | `overlay` | Boolean |True if the title overlays the chart. | Chart.ChartTitle.Position |
 
 

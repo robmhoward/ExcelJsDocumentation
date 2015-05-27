@@ -16,7 +16,6 @@ JSON representation of a Range resource.
   "maximum" : 100,
   "majorUnit": 5,
   "majorUnit": 1,
-  "visible": true,
 
   "title" :    {"@odata.type": "ChartAxisTitle"} ,
   "majorGridlines" : {"@odata.type": "ChartGridlines"} ,
@@ -34,7 +33,6 @@ JSON representation of a Range resource.
 | `maximum` | Object |Returns or sets the maximum value on the value axis. Auto if left empty. | Axis.MaximumScale|
 | `majorunit` | Object |Returns or sets the interval between two major tick marks. Auto if left empty.  | Axis.majorunit|
 | `minorunit` | Object | Returns or sets the interval between two minor tick marks. Auto if left empty. | Axis.minorunit|
-| `visible` | Boolean |True if the Axis is displayed. | msoElementPrimaryCategoryAxisShow |
 
 
 ## Relationships
