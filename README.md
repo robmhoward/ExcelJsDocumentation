@@ -1785,7 +1785,7 @@ Following are the methods supported for this resource:
 | [Format-Chart-Title](#format-chart-title)   | Format the Chart Title. |
 | [Set-Chart-Legend](#set-chart-legend)   | Hide/Show Chart Legent and set position. |
 | [Set-Chart-DataLabels](#set-chart-datalabels)   | Set display content and position of DataLabels. |
-| [Set-Chart-Axis](#set-chart-axis)   | Set the `maximum`, `minimum`, `majorunit`,`minorunit` and `visible`of an axis. |
+| [Set-Chart-Axis](#set-chart-axis)   | Set the `maximum`, `minimum`, `majorunit` and `minorunit` of an axis. |
 | [Set-Chart-AxisTitle](#set-chart-axistitle)   | Change the Axis Title text and visibility. |
 | [Add-Chart-Gridlines](#add-chart-gridlines)   | Show Gridlines on an Axis |
 | [Format-Chart-Series](#format-chart-series)   | Change the Fill Color of a series |
@@ -2231,7 +2231,7 @@ ctx.executeAsync().then(function () {
 
 ### Set-Chart-Axis
 
- Set the  `maximum` ,  `minimum` ,  `majorunit` , `minorunit`  and  `visible` of an axis. 
+ Set the  `maximum` ,  `minimum` ,  `majorunit` , `minorunit` of an axis. 
 
 #### Syntax
 
@@ -2240,7 +2240,6 @@ chartObject.axes.valueaxis.maximum = 5;
 chartObject.axes.valueaxis.minimum = 0;
 chartObject.axes.valueaxis.majorunit = 1;
 chartObject.axes.valueaxis.minorunit = 0.2;
-chartObject.axes.categoryaxis.visible = false;
 ```
 
 #### Properties
@@ -2250,14 +2249,13 @@ chartObject.axes.categoryaxis.visible = false;
 | `maximum` | Object |Returns or sets the maximum value on the value axis. Auto if left empty. | 
 | `majorunit` | Object |Returns or sets the interval between two major tick marks. Auto if left empty.  | 
 | `minorunit` | Object |eturns or sets the interval between two minor tick marks.  Auto if left empty. | 
-| `visible` | Boolean |True if the Axis is displayed. Read/write Boolean. | 
 
 #### Returns
 None.
 
 #### Examples
 
-#####  Set the  `maximum`,  `minimum` ,  `majorunit` , `minorunit`  and  `visible` of valueaxis. 
+#####  Set the  `maximum`,  `minimum` ,  `majorunit` , `minorunit` of valueaxis. 
 ```js
 var ctx = new Excel.ExcelClientContext();
 var chart = ctx.workbook.worksheets.getItem("Charts").charts.getItem("Chart1");	
@@ -2266,8 +2264,6 @@ chart.axes.valueaxis.maximum = 5;
 chart.axes.valueaxis.minimum = 0;
 chart.axes.valueaxis.majorunit = 1;
 chart.axes.valueaxis.minorunit = 0.2;
-chart.axes.valueaxis.visible = true;
-
 
 ctx.executeAsync().then(function () {
 		logComment("Axis Settings Changed");
