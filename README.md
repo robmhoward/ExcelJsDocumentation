@@ -1785,7 +1785,7 @@ Following are the methods supported for this resource:
 | [Format-Chart-Title](#format-chart-title)   | Format the Chart Title. |
 | [Set-Chart-Legend](#set-chart-legend)   | Hide/Show Chart Legent and set position. |
 | [Set-Chart-DataLabels](#set-chart-datalabels)   | Set display content and position of DataLabels. |
-| [Set-Chart-Axis](#set-chart-axis)   | Set the `maximum`, `minimum`, `majorunit`,`minorunit` and `visible`of an axis. |
+| [Set-Chart-Axis](#set-chart-axis)   | Set the `maximum`, `minimum`, `majorunit` and `minorunit` of an axis. |
 | [Set-Chart-AxisTitle](#set-chart-axistitle)   | Change the Axis Title text and visibility. |
 | [Add-Chart-Gridlines](#add-chart-gridlines)   | Show Gridlines on an Axis |
 | [Format-Chart-Series](#format-chart-series)   | Change the Fill Color of a series |
@@ -1908,8 +1908,14 @@ chartObject.height = 200;
 chartObject.weight = 200;
 ```
 
-#### Parameters
-None.
+#### Properties
+| Property         | Value    |Description|
+|:-----------------|:--------|:----------|
+| `name`  | String|A String value that represents the name of a Chart object                              |
+| `height`|  Double |Returns or sets a Double value that represents the height, in points, of the object |
+| `width` |  Double |Returns or sets a Double value that represents the width, in points, of the object. | 
+| `top` |  Double |Returns or sets a Double value that represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).|
+| `left` |  Double |Returns or sets a Double value that represents the distance, in points, from the left edge of the object to the left edge of column A (on a worksheet) or the left edge of the chart area (on a chart). | 
 
 #### Returns
 
@@ -2025,11 +2031,10 @@ None.
 var ctx = new Excel.ExcelClientContext();
 var chart = ctx.workbook.worksheets.getItem("Charts").charts.getItem("Chart1");	
 
-ctx.load(chart);
-var title = chart.title.text;
-
+var title = chart.title;
+ctx.load(title);
 ctx.executeAsync().then(function () {
-		logComment(title);
+		logComment(title.text);
 });
 ```
 [Back](#chart)
@@ -2043,13 +2048,14 @@ Set the title of a chart, including `text`, `position` and `overlay`.
 
 ```js
 chartObject.title.text= "My Chart"; 
-chartObject.title.position = "top";
 chartObject.title.overlay=true;
-
 ```
 
-#### Parameters
-None. 
+#### Properties
+| Property         | Type    |Description| 
+|:-----------------|:--------|:----------|
+| `text` | String |A String value that represents the title text of a chart. When a title text is set, the display property will be automaticlly set to top and the chart title will be displayed on top of the chart without overlapping. |  
+| `overlay` | Boolean |True if the title overlays the chart. | 
 
 #### Returns
 [ChartTitle](resources/chartTitle.md) object. 
@@ -2062,7 +2068,6 @@ var ctx = new Excel.ExcelClientContext();
 var chart = ctx.workbook.worksheets.getItem("Charts").charts.getItem("Chart1");	
 
 chart.title.text= "My Chart"; 
-chart.title.position = "top";
 chart.title.overlay=true;
 
 ctx.executeAsync().then(function () {
@@ -2112,8 +2117,15 @@ chartObject.title.font.bold = true;
 chartObject.title.font.color = "#FF0000";
 ```
 
-#### Parameters
-None. 
+#### Properties
+| Property         | Type    |Description|
+|:-----------------|:--------|:----------|
+|`name`|String|Font name (e.g., "Calibri")|
+|`size`|Double|Size of the font (e.g., 11)|
+|`color`|String|HTML color code representation of the text color. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). e.g., `#FF0000` represents Red. ('255' red, '0' green, and '0' blue) |
+|`italic`|Boolean|Represents the bold status of italic. true if the font style is italic|
+|`bold`|Boolean|Represents the bold status of font. true if the font is bold. |
+|`underline`|Boolean|Type of underline applied to the font. Can be one of the following constants. Possible Values: `None`, `Single`, `Double`, `SingleAccounting`, `DoubleAccounting`|
 
 #### Returns
 None.
@@ -2146,8 +2158,13 @@ chartObject.legend.visible = true;
 chartObject.legend.position = "top"; 
 ```
 
-#### Parameters
-None.
+#### Properties
+| Property         | Type    |Description| 
+|:-----------------|:--------|:----------|
+| `visible` | Boolean |A boolean value the represents the visibility of a ChartLegend object. If visible is set to be ture, the legend will be visible on the chart. |  
+| `position` | String |Returns or sets a Legend Position value that represents the position of the legend on the chart, including `Top`,`Bottom`,`Cornor`,`Left`,`Right`,'Custom','Invalid'| 
+| `overlay` | Boolean |True if the legend with be overlapping with the chart. | 
+
 
 #### Returns
 None.
@@ -2179,8 +2196,17 @@ chartObject.datalabels.position = "top";
 chartObject.datalabels.ShowSeriesName = true;
 ```
 
-#### Parameters
-None.
+#### Properties
+| Property         | Type    |Description|
+|:-----------------|:--------|:----------|
+|`position`          |String|Returns or sets a XlDataLabelPosition value that represents the position of the data label.  |
+|`separator`         |String|Sets or returns a Variant representing the separator used for the data labels on a chart. |
+|`showBubbleSize`          |Boolean|True to show the bubble size for the data labels on a chart. False to hide.|
+|`showCategoryName`          |Boolean|True to display the category name for the data labels on a chart. False to hide. |
+|`showLegendKey`          |Boolean|True if the data label legend key is visible.  |
+|`showPercentage`          |Boolean|True to display the percentage value for the data labels on a chart. False to hide.  |
+|`showSeriesName`          |Boolean|Returns or sets a Boolean corresponding to a specified chart's data label values display behavior. True displays the values. False to hide.  |
+|`ShowValue`          |Boolean|Returns or sets a Boolean corresponding to a specified chart's data label values display behavior. True displays the values. False to hide.|
 
 #### Returns
 None.
@@ -2205,7 +2231,7 @@ ctx.executeAsync().then(function () {
 
 ### Set-Chart-Axis
 
- Set the  `maximum` ,  `minimum` ,  `majorunit` , `minorunit`  and  `visible` of an axis. 
+ Set the  `maximum` ,  `minimum` ,  `majorunit` , `minorunit` of an axis. 
 
 #### Syntax
 
@@ -2214,18 +2240,22 @@ chartObject.axes.valueaxis.maximum = 5;
 chartObject.axes.valueaxis.minimum = 0;
 chartObject.axes.valueaxis.majorunit = 1;
 chartObject.axes.valueaxis.minorunit = 0.2;
-chartObject.axes.categoryaxis.visible = false;
 ```
 
-#### Parameters
-None.
+#### Properties
+| Property         | Value    |Description|
+|:-----------------|:--------|:----------|
+| `minimum` | Object |Returns or sets the minimum value on the value axis. Auto if left empty.  | 
+| `maximum` | Object |Returns or sets the maximum value on the value axis. Auto if left empty. | 
+| `majorunit` | Object |Returns or sets the interval between two major tick marks. Auto if left empty.  | 
+| `minorunit` | Object |eturns or sets the interval between two minor tick marks.  Auto if left empty. | 
 
 #### Returns
 None.
 
 #### Examples
 
-#####  Set the  `maximum`,  `minimum` ,  `majorunit` , `minorunit`  and  `visible` of valueaxis. 
+#####  Set the  `maximum`,  `minimum` ,  `majorunit` , `minorunit` of valueaxis. 
 ```js
 var ctx = new Excel.ExcelClientContext();
 var chart = ctx.workbook.worksheets.getItem("Charts").charts.getItem("Chart1");	
@@ -2234,8 +2264,6 @@ chart.axes.valueaxis.maximum = 5;
 chart.axes.valueaxis.minimum = 0;
 chart.axes.valueaxis.majorunit = 1;
 chart.axes.valueaxis.minorunit = 0.2;
-chart.axes.valueaxis.visible = true;
-
 
 ctx.executeAsync().then(function () {
 		logComment("Axis Settings Changed");
@@ -2256,8 +2284,13 @@ chartObject.axes.valueaxis.title.text = "Catagory";
 
 ```
 
-#### Parameters
-None.
+#### Properties
+
+| Property         | Type    |Description| 
+|:-----------------|:--------|:----------|
+| `text` | String |A String value that represents the title of a Axis. | 
+| `visible` | Boolean |A boolean that specifies the visibility of an Axis Title. True if the axis or chart has a visible title.  |
+
 
 #### Returns
 None.

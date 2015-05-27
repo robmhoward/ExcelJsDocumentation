@@ -1,7 +1,6 @@
 # Chart
 Represents a chart object in a workbook.
 
-
 ## JSON representation
 
 JSON representation of a Chart resource.
