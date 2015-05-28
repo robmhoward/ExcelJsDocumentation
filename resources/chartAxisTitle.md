@@ -1,26 +1,6 @@
 # AxisTitle
 Represents the title of a specified axis.
 
-
-## JSON representation
-
-JSON representation of a Range resource.
-<!-- { "blockType": "resource", "@odata.type": "ChartAxisTitle", 
-		"optionalProperties": [ "fillFormat", "lineFormat", "font" ]
-	 } 
--->
-```json
-{
-  "text" : "Date",
-  "visible" : true,
-
-  "fillFormat" :    {"@odata.type": "ChartFillFormat"},
-  "lineformat" :    {"@odata.type": "ChartLineFormat"},
-  "font" :    {"@odata.type": "ChartFont"}
-
-}
-```
-
 ## Properties
 
 | Property         | Type    |Description|Notes |

@@ -1,27 +1,6 @@
 # ChartTitle
 Represents a chart title object of a chart. A ChartTitle object specifies the text, visibility, position and formating of the chart title.
 
-
-## JSON representation
-
-JSON representation of a ChartTile resource.
-<!-- { "blockType": "resource", "@odata.type": "ChartTitle", 
-	"optionalProperties": [ "fillFormat", "lineFormat", "font" ]
-	 } 
--->
-```json
-{
-  "text" : "Revenue By Quarter",
-  "visible": true,
-  "overlay" : false,
-
-  "fillFormat" :    {"@odata.type": "ChartFillFormat"},
-  "lineformat" :    {"@odata.type": "ChartLineFormat"},
-  "font" :    {"@odata.type": "ChartFont"}
-
-}
-```
-
 ## Properties
 
 | Property         | Type    |Description|Notes |

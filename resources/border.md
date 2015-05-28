@@ -1,23 +1,7 @@
-﻿# Border
+﻿
+# Border
 
 Represents the border of an object. 
-
-## JSON representation
-
-JSON representation of a Border resource.
-
-
-<!-- { "blockType": "resource", "@odata.type": "Border"
-	 } 
--->
-```json
-{
-  "sideIndex" : "String", 
-  "lineStyle" : "Style",
-  "weight" : "String",
-  "color" : "String" 
-}
-```
 
 ## Properties
 | Property         | Type    |Description|Notes |

@@ -1,22 +1,6 @@
 # Gridlines
 Represents major or minor gridlines on a chart axis.
 
-
-## JSON representation
-
-JSON representation of a Range resource.
-<!-- { "blockType": "resource", "@odata.type": "ChartGridlines", 
-	"optionalProperties": "lineFormat"
-	 } 
-	 
--->
-```json
-{
-  "visible" : true
-
-}
-```
-
 ## Properties
 
 | Property         | Type    |Description|Notes |

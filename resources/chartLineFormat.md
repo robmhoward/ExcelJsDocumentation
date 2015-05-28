@@ -1,20 +1,6 @@
 # ChartLineFormat
 Provides access to the Office Art formatting for chart line elements.
 
-
-## JSON representation
-
-JSON representation of a Range resource.
-<!-- { "blockType": "resource", "@odata.type": "ChartLineFormat"
-	 } 
--->
-```json
-{
-  "color" : "#FF0000"
-
-}
-```
-
 ## Properties
 
 | Property         | Type    |Description|Notes |

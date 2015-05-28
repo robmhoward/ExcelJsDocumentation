@@ -1,30 +1,6 @@
 # Axix
 Represents a single axis in a chart.
 
-
-## JSON representation
-
-JSON representation of a Range resource.
-<!-- { "blockType": "resource", "@odata.type": "ChartAxis", 
-	"optionalProperties": ["title", "majorGridlines", "minorGridlines", "font"]
-	 } 
--->
-```json
-{
-  
-  "minimum" : 0,
-  "maximum" : 100,
-  "majorUnit": 5,
-  "majorUnit": 1,
-
-  "title" :    {"@odata.type": "ChartAxisTitle"} ,
-  "majorGridlines" : {"@odata.type": "ChartGridlines"} ,
-  "minorGridlines"  : { "@odata.type" : "ChartGridlines" },
-  "font" :    {"@odata.type": "ChartFont"}
-
-}
-```
-
 ## Properties
 
 | Property         | Type    |Description|Notes |

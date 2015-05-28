@@ -2,26 +2,6 @@
 
 Format object represents format settings of a Range. This includes Font, Background, Borders, Alignment, Style, etc. 
 
-## JSON representation
-
-JSON representation of a Format resource.
-
-<!-- { "blockType": "resource", "@odata.type": "Format", 
-	"optionalProperties": ["borders"]
-	 } 
--->
-```json
-{
-  "font" : {"@odata.type": "Font"} ,
-  "background" : {"@odata.type": "Background"},
-  "horizontalAlignment" : "String",
-  "verticalAlignment" : "String",
-  "wrapText" : false,
-  "borders" : [{ "@odata.type": "Border" }]
-}
-```
-
-
 ## Properties
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
@@ -33,6 +13,7 @@ JSON representation of a Format resource.
 
 
 ## Relationships
+## Properties
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 |`borders`         |[Border](border.md) collection|Collection of border objects that apply to the overall Range selected|Range.Borders|

@@ -1,33 +1,6 @@
 # Chart
 Represents a chart object in a workbook.
 
-## JSON representation
-
-JSON representation of a Chart resource.
-
-<!-- { "blockType": "resource", "@odata.type": "Chart","optionalProperties": ["title","series","axes", "dataLabels", "legend",  "fillFormat", "lineFormat", "font" ]
-} 
--->
-```json
-{
-  "name": "Chart1",
-  "height" : 99,
-  "width" : 99,
-  "top" : 99,
-  "left" : 99,
-
-  "title" :     {"@odata.type": "ChartTitle"} ,
-  "series" : {"@odata.type": "ChartSeries"} ,
-  "axes" :     {"@odata.type": "ChartAxes"} ,
-  "dataLabels"  : { "@odata.type" : "ChartDataLabels" },
-  "legend" :    {"@odata.type": "ChartLegend"},
-  "fillFormat" :    {"@odata.type": "ChartFillFormat"},
-  "lineformat" :    {"@odata.type": "ChartLineFormat"},
-  "font" :    {"@odata.type": "ChartFont"}
-
-  }
-```
-
 ## Properties
 
 | Property         | Type    |Description|Notes |

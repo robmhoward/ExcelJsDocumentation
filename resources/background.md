@@ -2,19 +2,6 @@
 
 Represents the interior of an object, which includes background formating information. 
 
-
-## JSON representation
-
-JSON representation of a Background resource.
-
-<!-- { "blockType": "resource", "@odata.type": "Background" } -->
-```json
-{
-  "color" : "String"
-}
-```
-
-
 ## Properties
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|

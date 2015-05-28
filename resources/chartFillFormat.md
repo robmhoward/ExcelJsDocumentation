@@ -1,24 +1,9 @@
 # ChartFillFormat
 Represents the interior of an object, which includes background formating information. 
 
-
-## JSON representation
-
-JSON representation of a Background resource.
-
-<!-- { "blockType": "resource", "@odata.type": "ChartFillFormat" } -->
-```json
-{
-
-}
-```
-
-
 ## Properties
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-
-
 
 ## Programming notes about `color` property: 
 
@@ -29,9 +14,6 @@ Of the 6 Hex values, first two characters represent the values 0 through 255 for
 When `color` value is updated, the input value needs to follow the appropriate formatting as mentioned above. The Alpha characters of the hex color code can be lower or upper case. 
 
 Alternatively,  `#` sign followed by 3 character color code (e.g., #F00) could be used to set the color. Note that the return color values are always coded as `#` followed by 6 character color code. 
-
-
-
 
 ## Relationships
 None

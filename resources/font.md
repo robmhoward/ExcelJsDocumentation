@@ -2,26 +2,6 @@
 
 This object represents the font attributes (font name, font size, color, and so on) for an object. 
 
-## JSON representation
-
-JSON representation of a Font resource.
-
-<!-- { "blockType": "resource", "@odata.type": "Font" } -->
-```json
-{
-  "name" : "Name", 
-  "size" : 99,
-  "color" : "String",
-  "italic" : false,
-  "bold" : false,
-  "strikethrough" : false,
-  "subscript" : false,
-  "superscript" : false,
-  "underline" : "String"  
-}
-```
-
-
 ## Properties
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|

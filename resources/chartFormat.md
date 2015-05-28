@@ -1,24 +1,6 @@
 # ChartFormat (Not in this Release)
 Provides access to the Office Art formatting for chart elements.
 
-
-## JSON representation
-
-JSON representation of a ChartFormat resource.
-<!-- { "blockType": "resource", "@odata.type": "ChartFormat", 
-	"optionalProperties": ["fill", "line", "font"]
-	 } 
--->
-```json
-{
-
-  "fill" :  {"@odata.type": "Fill"} ,
-  "line" :  {"@odata.type": "Line"},
-  "font" :  {"@odata.type": "Font"}
-
-}
-```
-
 ## Properties
 
 | Property         | Type    |Description|Notes |

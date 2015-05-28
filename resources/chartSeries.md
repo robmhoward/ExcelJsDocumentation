@@ -1,23 +1,6 @@
 # Series
 Represents a series in a chart.
 
-
-## JSON representation
-
-JSON representation of a Range resource.
-<!-- { "blockType": "resource", "@odata.type": "ChartSeries", 
-	"optionalProperties": ["points", "fillFormat"]
-	 } 
--->
-```json
-{
-  "name" : "Series1",
-
-  "points" :    {"@odata.type": "ChartPoints"},
-  "fillFormat" :    {"@odata.type": "ChartFillFormat"}
-}
-```
-
 ## Properties
 
 | Property         | Type    |Description|Notes |

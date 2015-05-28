@@ -1,32 +1,6 @@
 # DataLabels
 Represents the data label on a chart point or trendline.
 
-
-## JSON representation
-
-JSON representation of a Range resource.
-<!-- { "blockType": "resource", "@odata.type": "ChartDataLabels", 
-	"optionalProperties": [ "fillFormat", "lineFormat", "font" ]
-	 } 
--->
-```json
-{
-  "position" : "InsideEnd",
-  "separator" : ",",
-  "showBubbleSize" : false,
-  "showCategoryName" : false,
-  "showLegendKey" : false,
-  "showPercentage" :false ,
-  "showSeriesName" : true,
-  "ShowValue" : true,
-
-  "fillFormat" :    {"@odata.type": "ChartFillFormat"},
-  "lineformat" :    {"@odata.type": "ChartLineFormat"},
-  "font" :    {"@odata.type": "ChartFont"}
-
-}
-```
-
 ## Properties
 
 | Property         | Type    |Description|Notes |

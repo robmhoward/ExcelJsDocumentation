@@ -2,18 +2,7 @@
 
 Represents the Excel application which is managing the workbook. 
 
-## JSON representation 
 
-JSON representation of a Workbook resource
-
-<!-- { "blockType": "resource", "@odata.type": "Application"]
-	 } 
--->
-```json
-{
-  "calculationMode":  "String"
-}
-```
 
 ## Properties
 

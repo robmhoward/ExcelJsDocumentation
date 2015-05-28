@@ -1,21 +1,6 @@
 # Points
 Represents a single point in a series in a chart.
 
-
-## JSON representation
-
-JSON representation of a Range resource.
-<!-- { "blockType": "resource", "@odata.type": "ChartSPoints", 
-	"optionalProperties": "fillFormat"
-	 } 
--->
-```json
-{
-
-  "fillFormat" :    {"@odata.type": "ChartFillFormat"}
-}
-```
-
 ## Properties
 
 | Property         | Type    |Description|Notes |

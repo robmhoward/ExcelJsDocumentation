@@ -1,21 +1,6 @@
 # DataTable
 Represents a chart data table.
 
-
-## JSON representation
-
-JSON representation of a Range resource.
-<!-- { "blockType": "resource", "@odata.type": "DataTable", 
-	"optionalProperties": ["format"]
-	 } 
--->
-```json
-{
-  "visible" : true,
-  "showLegendKey" : true
-}
-```
-
 ## Properties
 
 | Property         | Type    |Description|Notes |

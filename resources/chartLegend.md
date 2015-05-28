@@ -1,26 +1,6 @@
+
 # Legend
 Represents the legend in a chart. Each chart can have only one legend.
-
-
-## JSON representation
-
-JSON representation of a Range resource.
-<!-- { "blockType": "resource", "@odata.type": "ChartLegend", 
-	"optionalProperties":  [ "fillFormat", "lineFormat", "font" ]
-	 } 
--->
-```json
-{
-  "visible": true,
-  "position" : "Top",
-  "overlay" : false,
-
-  "fillFormat" :    {"@odata.type": "ChartFillFormat"},
-  "lineformat" :    {"@odata.type": "ChartLineFormat"},
-  "font" :    {"@odata.type": "ChartFont"}
-
-}
-```
 
 ## Properties
 
