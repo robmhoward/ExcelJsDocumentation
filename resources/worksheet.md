@@ -15,6 +15,7 @@ The Worksheet resource has the following relationships defined:
 | Relationship     | Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|         
 |[charts](#list-charts) | [Chart](chart.md) collection |Collection of charts in the worksheet|Worksheet.ChartObject  |       
+|[tables](#list-tables) | [Table](table.md) collection |Collection of Tables in the worksheet|Worksheet.ListObjects  |       
 
 ## Methods
 
