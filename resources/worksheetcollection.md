@@ -10,9 +10,6 @@ A collection of all the Workbook objects that are part of the workbook.
 
 ## Relationships
 
-| Relationship     | Type    |Description|Notes  |
-|:-----------------|:--------|:----------|:------|         
-
 None
 
 ## Methods
@@ -21,14 +18,14 @@ The Worksheet resource has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(name: string)](#add)| [Worksheet](worksheet.md)              |Creates a new workbook. The new workbook becomes the active workbook. ||
-|[getItem(name: string)](#getitem)| [Worksheet](worksheet.md)      |Retrieve a workbook object using its name||
-|[getItemAt(index: number)](#getitemat)| [Worksheet](worksheet.md)     |Retrieve a workbook based on its position in the items[] array.||
+|[add(name: string)](#addname-string)| [Worksheet](worksheet.md)              |Creates a new workbook. The new workbook becomes the active workbook. ||
+|[getItem(name: string)](#getitemname-string)| [Worksheet](worksheet.md)      |Retrieve a workbook object using its name||
+|[getItemAt(index: number)](#getitematindex-number)| [Worksheet](worksheet.md)     |Retrieve a workbook based on its position in the items[] array.||
 
 
 ## API Specification 
 
-### Get Worksheets Collection
+### Get Worksheet Collection
 
 Get properties of the worksheet collection. 
 
@@ -111,7 +108,7 @@ ctx.executeAsync().then(function () {
 ```
 [Back](#methods)
 
-### getItem(index: string)
+### getItem(name: string)
 
 Get Worksheet object properties based on name.
 
@@ -155,7 +152,7 @@ worksheetsCollection.getItemAt(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index or position in the items[]. 
+ `index`| Number | Required. Index or position in the items[]. Zero indexed.
 
 #### Returns
 
