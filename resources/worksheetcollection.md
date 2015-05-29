@@ -1,12 +1,12 @@
 # Worksheet Collection
-A collection of all the Workbook objects that are part of the workbook. 
+A collection of all the worksheet objects that are part of the workbook. 
 
 ## [Properties](#get-worksheet-collection)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 |`count`| Number   | Number of objects in the collection.|Worksheets.count|
-|`items`| Object[] | A collection of all the Workbook objects that are part of the workbook|[Worksheets.item] |
+|`items`| Object[] | A collection of all the worksheet objects that are part of the workbook|[Worksheets.item] |
 
 ## Relationships
 
@@ -14,13 +14,13 @@ None
 
 ## Methods
 
-The Worksheet resource has the following methods defined:
+The Worksheet collection resource has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(name: string)](#addname-string)| [Worksheet](worksheet.md)              |Creates a new workbook. The new workbook becomes the active workbook. ||
-|[getItem(name: string)](#getitemname-string)| [Worksheet](worksheet.md)      |Retrieve a workbook object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [Worksheet](worksheet.md)     |Retrieve a workbook based on its position in the items[] array.||
+|[add(name: string)](#addname-string)| [Worksheet](worksheet.md)              |Creates a new worksheet. The new worksheet becomes the active workbook. ||
+|[getItem(name: string)](#getitemname-string)| [Worksheet](worksheet.md)      |Retrieve a worksheet object using its name||
+|[getItemAt(index: number)](#getitematindex-number)| [Worksheet](worksheet.md)     |Retrieve a worksheet based on its position in the items[] array.||
 
 
 ## API Specification 
@@ -39,7 +39,7 @@ context.workbook.worksheets;
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 |`count`| Number   | Number of objects in the collection.|Worksheets.count|
-|`items`| Object[] | A collection of all the Workbook objects that are part of the workbook|[Worksheets.item] |
+|`items`| Object[] | A collection of all the worksheet objects that are part of the workbook|[Worksheets.item] |
 
 
 #### Returns

@@ -140,7 +140,7 @@ Parameter       | Type  | Description
 [Range](resources/range.md) object.
 
 
-** Note: the grid properties of the Range (values, numberFormat, formula) contains `null` since the Range in question is unbounded. **
+**Note: the grid properties of the Range (values, numberFormat, formula) contains `null` since the Range in question is unbounded.**
 
 #### Examples
 ```js

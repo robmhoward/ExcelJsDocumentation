@@ -110,7 +110,7 @@ ctx.executeAsync().then(function() {
 ### List Names
 
 Get Names collection that contains each of the Name objects contained in the Workbook. Each item contains the following properties. 
-** Note: This API currently supports only the Workbook scoped items. **
+**Note: This API currently supports only the Workbook scoped items.**
 #### Syntax
 ```js
 context.workbook.tables;

@@ -131,7 +131,7 @@ None
 #### Returns
 
 [Range](range.md) object.
-** Note: the grid properties of the Range (values, numberFormat, formula) contains `null` since the Range in question is unbounded. **
+**Note: the grid properties of the Range (values, numberFormat, formula) contains `null` since the Range in question is unbounded.**
 #### Examples
 
 ```js
@@ -163,7 +163,7 @@ None
 #### Returns
 
 [Range](range.md) object.
-** Note: the grid properties of the Range (values, numberFormat, formula) contains `null` since the Range in question is unbounded. **
+**Note: the grid properties of the Range (values, numberFormat, formula) contains `null` since the Range in question is unbounded.**
 #### Examples
 
 ```js
@@ -420,7 +420,6 @@ Where, property is one of the following Range's Format properties that can be se
 
 [Range Background](background.md)
 
-
 | Property         | Type    |Description|
 |:-----------------|:--------|:----------| 
 |`color`|String|HTML color code representation of the Background color. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). e.g., `#FF0000` represents Red. ('255' red, '0' green, and '0' blue) |
@@ -458,7 +457,7 @@ Property       | Type   | Description
 `color`| String | HTML color code representing the color of the border line|Border.Color's representation in HTML color code.
 
 
-** sideIndex values: **
+**sideIndex values:**
 
 `sideIndex` values | Type  | Description
 --------------- | ------ | ------------

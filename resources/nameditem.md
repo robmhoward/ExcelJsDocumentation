@@ -29,7 +29,7 @@ The Worksheet resource has the following methods defined:
 
 Returns the Range object that is associated with the name. `null` if the name is not of the type `Range`. 
 
-** Note: This API currently supports only the Workbook scoped items. **
+**Note: This API currently supports only the Workbook scoped items.**
 
 #### Syntax
 ```js
