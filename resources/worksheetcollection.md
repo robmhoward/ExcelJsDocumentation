@@ -31,7 +31,7 @@ Get properties of the worksheet collection.
 
 #### Syntax
 ```js
-context.workbook.worksheets;
+context.workbook.worksheets.property;
 ```
 
 #### Properties
@@ -45,9 +45,6 @@ context.workbook.worksheets;
 #### Returns
 
 [Worksheet](worksheet.md) collection. 
-
-#### Examples
-
 
 #### Examples
 

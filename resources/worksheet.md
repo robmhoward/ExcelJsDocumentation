@@ -3,10 +3,10 @@ The Worksheet object is a member of the Worksheets collection. The Worksheets co
 
 ## [Properties](#get-worksheet)
 
-| Property         | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-|`index`|  Number |The zero-based index of the worksheet within the workbook|Worksheet.Index|
-|`name`| String|The user-visible name of the worksheet|Worksheet.Name |
+| Property       | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|`index`| Number |The zero-based index of the worksheet within the workbook|Worksheet.Index|
+|`name` | String |The user-visible name of the worksheet|Worksheet.Name    |
 
 
 ## Relationships
@@ -162,8 +162,13 @@ Get a Range object that represents a single cell or a range of cells.
 #### Syntax
 
 ```js
-worksheetObject.getRange(rangeAddress);
+worksheetObject.getRange(address);
 ```
+#### Parameters
+
+Parameter       | Type  | Description
+--------------- | ------ | ------------
+ `address`| String | Required. Address of the Range. 
 
 #### Returns
 

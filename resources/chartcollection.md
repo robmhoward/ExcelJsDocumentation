@@ -49,8 +49,6 @@ context.workbook.charts;
 #### Examples
 
 
-#### Examples
-
 ```js
 var ctx = new Excel.ExcelClientContext();
 var charts = ctx.workbook.charts;

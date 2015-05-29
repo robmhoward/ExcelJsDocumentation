@@ -31,7 +31,7 @@ Get properties of the tablecolumn collection.
 
 #### Syntax
 ```js
-context.workbook.tablecolumns;
+context.workbook.tablecolumns.property;
 ```
 
 #### Properties
@@ -45,9 +45,6 @@ context.workbook.tablecolumns;
 #### Returns
 
 [tablecolumn](tablecolumn.md) collection. 
-
-#### Examples
-
 
 #### Examples
 

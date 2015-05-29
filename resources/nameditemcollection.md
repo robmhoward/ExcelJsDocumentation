@@ -30,7 +30,7 @@ Get properties of the nameditem collection.
 
 #### Syntax
 ```js
-context.workbook.names;
+context.workbook.names.property;
 ```
 
 #### Properties

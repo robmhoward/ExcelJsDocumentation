@@ -31,7 +31,7 @@ Get properties of the tablerow collection.
 
 #### Syntax
 ```js
-context.workbook.tablerows;
+context.workbook.tablerows.property;
 ```
 
 #### Properties
@@ -45,9 +45,6 @@ context.workbook.tablerows;
 #### Returns
 
 [tablerow](tablerow.md) collection. 
-
-#### Examples
-
 
 #### Examples
 

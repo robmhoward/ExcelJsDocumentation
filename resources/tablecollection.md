@@ -6,8 +6,8 @@ A collection of all the table objects that are part of the workbook.
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|tables.count|
-|`items`| Object[] | A collection of all the table objects that are part of the workbook|ListObjects |
+|`count`| Number   | Number of objects in the collection.|ListObjects.count|
+|`items`| Object[] | A collection of all the table objects that are part of the workbook|[ListObjects.item] |
 
 ## Relationships
 
@@ -32,7 +32,7 @@ Get properties of the table collection.
 
 #### Syntax
 ```js
-context.workbook.tables;
+context.workbook.tables.property;
 ```
 
 #### Properties
@@ -46,9 +46,6 @@ context.workbook.tables;
 #### Returns
 
 [table](table.md) collection. 
-
-#### Examples
-
 
 #### Examples
 
