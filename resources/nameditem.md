@@ -25,8 +25,6 @@ The Worksheet resource has the following methods defined:
 
 ## API Specification 
 
-
-
 ### getRange()
 
 Returns the Range object that is associated with the name. `null` if the name is not of the type `Range`. 
@@ -57,7 +55,7 @@ ctx.executeAsync().then(function () {
 ```
 [Back](#methods)
 
-### Get-Named-Item
+### Get Named Item
 
 Get a Named object. 
 

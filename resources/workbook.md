@@ -83,7 +83,7 @@ ctx.executeAsync().then(function () {
 [Back](#workbook)
 
 
-### Get-Application
+### Get Application
 
 Get properties of workbook's application object. 
 
@@ -107,7 +107,7 @@ ctx.executeAsync().then(function() {
 ```
 [Back](#relationships)
 
-### List-Names
+### List Names
 
 Get Names collection that contains each of the Name objects contained in the Workbook. Each item contains the following properties. 
 ** Note: This API currently supports only the Workbook scoped items. **
@@ -136,7 +136,7 @@ ctx.executeAsync().then(function () {
 ```
 [Back](#relationships)
 
-### List-Tables
+### List Tables
 
 Get Table collection contained in workbook. Each item contains the following properties. 
 
@@ -174,7 +174,7 @@ ctx.executeAsync().then(function () {
 ```
 [Back](#relationships)
 
-### List-Worksheets
+### List Worksheets
 
 The Worksheet collection contains each of the worksheets defined as part of the workbook. Note: This does not contain chart sheets.
 

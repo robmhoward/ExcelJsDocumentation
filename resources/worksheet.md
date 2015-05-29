@@ -1,7 +1,7 @@
 # Worksheet
 The Worksheet object is a member of the Worksheets collection. The Worksheets collection contains all the Worksheet objects in a workbook.
 
-## Properties
+## [Properties](#get-worksheet)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
@@ -227,8 +227,84 @@ ctx.executeAsync().then(function () {
 ```
 [Back](#methods)
 
+### Get Worksheets
 
-### List-Charts 
+Get Worksheet object properties based on name.
+
+#### Syntax
+```js
+worksheetsCollection.getItem(name);
+```
+
+#### Parameters
+
+Parameter       | Type  | Description
+--------------- | ------ | ------------
+ `name`| String | Required. Worksheet name. 
+
+#### Returns
+
+[Worksheet](../resources/worksheet.md) object.
+
+#### Examples
+
+```js
+var ctx = new Excel.ExcelClientContext();
+var worksheets = ctx.workbook.worksheets;
+ctx.load(worksheets);
+ctx.executeAsync().then(function () {
+	for (var i = 0; i < worksheets.items.length; i++)
+	{
+		Console.log(worksheets.items[i].name);
+		Console.log(worksheets.items[i].index);
+	}
+});
+```
+
+##### Getting the number of worksheets
+
+```js
+var ctx = new Excel.ExcelClientContext();
+var worksheets = ctx.workbook.worksheets;
+ctx.load(tables);
+ctx.executeAsync().then(function () {
+	Console.log("Worksheets: Count= " + worksheets.count);
+});
+
+```
+[Back](#properties)
+
+### Get-Used-Range
+
+Get the used-range of a worksheet. 
+
+#### Syntax
+```js
+worksheetObject.getUsedRange();
+```
+#### Parameters
+
+None
+
+#### Returns
+
+[Range](../resources/r.md) object.
+
+
+#### Examples
+
+```js
+var ctx = new Excel.ExcelClientContext();
+var wSheetName = 'Sheet1';
+var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
+var usedRange = worksheet.getUsedRange();
+ctx.load(usedRange);
+ctx.executeAsync().then(function () {
+		Console.log(usedRange.address);
+});
+```
+
+### List Charts 
 
 Get Charts collection that contains each of the chart objects contained in the worksheet. Each item contains the following properties. 
 

@@ -210,7 +210,7 @@ ctx.executeAsync().then(function () {
 [Back](#methods)
 
 
-### Get-Table
+### Get Table
 
 Get Table object properties based on name. 
 
@@ -265,7 +265,7 @@ ctx.executeAsync().then(function () {
 ```
 [Back](#properties)
 
-### List-Table-Columns 
+### List Table Columns 
 Get a list of columns of a Table.   
 
 #### Syntax
@@ -294,7 +294,7 @@ ctx.executeAsync().then(function () {
 ```
 [Back](#relationships)
 
-### List-Table-Rows 
+### List Table Rows 
 
 Get a list of Rows of a Table.   
 

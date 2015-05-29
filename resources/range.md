@@ -267,7 +267,7 @@ ctx.executeAsync().then();
 [Back](#methods) 
 
 
-### Get-Range
+### Get Range
 
 Get a Range object that represents a single cell or a range of cells. 
 
@@ -342,7 +342,7 @@ range.clear();
 ctx.executeAsync().then();
 ```
 
-### Get-Range-Format 
+### Get Range Format 
 
 Get Range's format and styling details such as font, border, background information. This information is obtained by navigating to the font, background or borders property. 
 
@@ -384,7 +384,7 @@ ctx.executeAsync().then(function() {
 ```
 [Back](#relationships)
 
-### Set-Range-Format 
+### Set Range Format 
 
 Set relevant format objects to update the Range Font, Background, alignment, and Wrap settings.
 
@@ -439,7 +439,7 @@ ctx.executeAsync().then();
 ```
 
 [Back](#relationships)
-### Set-Range-Border 
+### Set Range Border 
 
 Sets border to a range and sets the Color, LineStyle, and Weight properties for the new border.
 
@@ -488,7 +488,7 @@ ctx.executeAsync().then();
 ```
 [Back](#relationships)
 
-### Get-Range-Worksheet
+### Get Range Worksheet
 
 Get Worksheet object of the current Range.
 
