@@ -1,5 +1,5 @@
-# chart Collection
-A collection of all the chart objects that are part of the workbook. 
+# Chart Collection
+A collection of all the chart objects on a worksheet. 
 
 ## [Properties](#get-chart-collection)
 
@@ -18,7 +18,7 @@ The chart resource has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(name: string)](#addname-string)| [chart](chart.md)              |Creates a new chart. The new chart becomes the active workbook. ||
+|[add(type: string, sourceData: any, seriesBy: string)](#addtype-string-sourceData-any-seriesBy-string)| [chart](chart.md)              |Creates a new chart. The new chart becomes the active workbook. ||
 |[getItem(name: string)](#getitemname-string)| [chart](chart.md)      |Retrieve a chart object using its name||
 |[getItemAt(index: number)](#getitematindex-number)| [chart](chart.md)     |Retrieve a chart based on its position in the items[] array.||
 
@@ -27,11 +27,11 @@ The chart resource has the following methods defined:
 
 ### Get chart Collection
 
-Get properties of the chart collection. 
+Get the chart collection. 
 
 #### Syntax
 ```js
-context.workbook.charts;
+context.workbook.worksheets.getItem("Sheet1").charts;
 ```
 
 #### Properties
@@ -51,7 +51,7 @@ context.workbook.charts;
 
 ```js
 var ctx = new Excel.ExcelClientContext();
-var charts = ctx.workbook.charts;
+var charts = ctx.workbook.worksheets.getItem("Sheet1").charts;
 ctx.load(charts);
 ctx.executeAsync().then(function () {
 	for (var i = 0; i < charts.items.length; i++)
@@ -66,8 +66,8 @@ ctx.executeAsync().then(function () {
 
 ```js
 var ctx = new Excel.ExcelClientContext();
-var charts = ctx.workbook.charts;
-ctx.load(tables);
+var charts = ctx.workbook.worksheets.getItem("Sheet1").charts;
+ctx.load(charts);
 ctx.executeAsync().then(function () {
 	Console.log("charts: Count= " + charts.count);
 });
@@ -75,33 +75,37 @@ ctx.executeAsync().then(function () {
 ```
 [Back](#properties)
 
-### add(name: string)
+### add(type: string, sourceData: any, seriesBy: string)
 
 Add a new chart to the workbook. The chart will be added at the end of existing charts.
 
 #### Syntax
 ```js
-chartsCollection.add(name);
+chartsCollection.add(type, sourceData, seriesBy);
 ```
 
 #### Parameters
 
-Parameter       | Type   | Description
---------------- | ------ | ------------
-`name`  | String| Optional. String value representing the name of the sheet to be added. If not specified, Excel determines the name of the new chart being added. 
+| Parameter         | Value    |Description|
+|:-----------------|:--------|:----------|
+| `type` | String | A String value that represents the type of a chart.  |
+| `sourceData`  | String | A String that represents an address or name of the Range object as the data source.|
+| `seriesBy` | String |  A String that represents the way columns or rows are used as data series on the chart. Can be `auto`, `Rows` or `Columns`.|
 
 #### Returns
 [chart](../resources/chart.md) object.
 
 #### Examples
 
+##### Add a chart of `chartType` "ColumnClustered" on worksheet "Charts" with `sourceData` from Range "A1:B4" and `seriresBy` is set to be "auto".
+
 ```js
-var wSheetName = 'Sample Name';
+var sheetName = "Sheet1";
+var sourceData = sheetName + "!" + "A1:B4";
 var ctx = new Excel.ExcelClientContext();
-var chart = ctx.workbook.charts.add(wSheetName);
-ctx.load(chart);
+var chart = ctx.workbook.worksheets.getItem(sheetName).charts.add("ColumnClustered", sourceData, "auto");
 ctx.executeAsync().then(function () {
-	Console.log(chart.name);
+		logComment("New Chart Added");
 });
 ```
 [Back](#methods)
@@ -128,8 +132,8 @@ Parameter       | Type  | Description
 #### Examples
 ```js
 var ctx = new Excel.ExcelClientContext();
-var wSheetName = 'Sheet1';
-var chart = ctx.workbook.charts.getItem(wSheetName);
+var chartname = 'Chart1';
+var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem(chartname);
 ctx.executeAsync().then(function () {
 		Console.log(chart.index);
 });
@@ -159,8 +163,8 @@ Parameter       | Type  | Description
 #### Examples
 ```js
 var ctx = new Excel.ExcelClientContext();
-var lastPosition = ctx.workbook.charts.count - 1;
-var chart = ctx.workbook.charts.getItemAt(lastPosition);
+var lastPosition = ctx.workbook.worksheets.getItem("Sheet1").charts.count - 1;
+var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItemAt(lastPosition);
 ctx.executeAsync().then(function () {
 		Console.log(chart.name);
 });
