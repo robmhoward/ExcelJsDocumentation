@@ -356,10 +356,10 @@ Where, property is one of the following Range properties that can be set.
 
 |Property          | Type          | Description                                           |
 |----------------- | -------------- | ----------------------------------------------------- |
-|`values`		   | Array [][] (string) or (number)    | Unformatted value of the specified range.	 		        |
-|`numberFormat`    | Array [][] (String) | Typethat represents the format code for the object. |
-|`formula`         | Array [][] (String) | Represents the object's formula notation.             |
-|`formulaLocal`    | Array [][] (String) | Formula for the object, in the language of the user.  |
+|`values`		   | Array[][] of strings or numbers    | Unformatted value of the specified range.	 		        |
+|`numberFormat`    | Array[][] of String | Typethat represents the format code for the object. |
+|`formula`         | Array[][] of String | Represents the object's formula notation.             |
+|`formulaLocal`    | Array[][] of String | Formula for the object, in the language of the user.  |
 
 #### Returns
 
