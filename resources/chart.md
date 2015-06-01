@@ -40,7 +40,7 @@ Deletes a chart directly on the grid.
 #### Syntax
 
 ```js
-chart.delete();
+chartObject.delete();
 ```
 
 #### Parameters

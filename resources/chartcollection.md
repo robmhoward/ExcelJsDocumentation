@@ -25,13 +25,13 @@ The chart has the following methods defined:
 
 ## API Specification 
 
-### Get chart Collection
+### Get Chart Collection
 
 Get the chart collection. 
 
 #### Syntax
 ```js
-context.workbook.worksheets.getItem("Sheet1").charts;
+worksheetObject.charts;
 ```
 
 #### Properties
