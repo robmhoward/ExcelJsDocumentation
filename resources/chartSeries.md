@@ -1,11 +1,11 @@
 # Series
 Represents a series in a chart.
 
-## Properties
+## [Properties](#set-chart-series)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`name`          |String|A String value that represents a Series object |Series.Name|
+|`name`          |String|A String value that represents a Series object ||
 
 ## Relationships
 The ChartSeries resource has the following relationships defined:
@@ -13,11 +13,42 @@ The ChartSeries resource has the following relationships defined:
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 | `points`          |[ChartPoints](chartPoints.md) Object | Represents Points in a series in a chart.
-| `fillFormat`          |[ChartFillFormat](chartFillFormat.md) Object | Represents the fill format of an object, which includes interior/background formating information. 
-
-
+| `format`          |[ChartSeriesFormat](chartSeriesFormat.md) Object |  Represents the format of chart series, which includes fill(interior/background) and line formatting.
 
 ## Methods
+None.
 
-The complete list of methods for this resource is available in
-the [API](../README.md) topic.
+## API Specification
+### Set Chart Series
+Set properties of ChartSeries.
+
+#### Syntax
+
+```js
+chartObject.series.getItemAt(0);
+```
+
+#### Properties
+
+| Property         | Type    |Description|
+|:-----------------|:--------|:----------|
+|`name`          |String|A String value that represents a Series object |
+
+#### Returns
+[ChartSeries](resources/chartSeries.md) object. 
+
+#### Examples
+
+##### Rename the 1st series of Chart1 to "New Series Name"
+
+```js
+var ctx = new Excel.ExcelClientContext();
+var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
+
+chart.series.getItemAt(0).name = "New Series Name";
+
+ctx.executeAsync().then(function () {
+		logComment("Series1 Renamed");
+});
+```
+[Back](#properties)
