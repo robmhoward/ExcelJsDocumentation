@@ -48,14 +48,14 @@ ctx.executeAsync().then(function () {
 ```
 [Back](#methods)
 
-### Set Line
+### Set Line Format
 
 Update a chart line formatting.
 
 #### Syntax
 Use chart major gridlines on value axis as an example.
 ```js
-GridlinesObject.format.line.color = "#FF0000";
+gridlinesObject.format.line.color = "#FF0000";
 
 ```
 

@@ -6,7 +6,7 @@ A collection of all the tablerow objects that are part of the table.
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 |`count`| Number   | Number of objects in the collection.|tablerows.count|
-|`items`| Object[] | A collection of all the tablerow objects that are part of the table|[tablerows.item] |
+|`items`| [Table Row](tablerow.md) Array | A collection of all the tablerow objects that are part of the table|[tablerows.item] |
 
 ## Relationships
 

@@ -7,7 +7,7 @@ A collection of all the table objects that are part of the workbook.
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 |`count`| Number   | Number of objects in the collection.|ListObjects.count|
-|`items`| Object[] | A collection of all the table objects that are part of the workbook|[ListObjects.item] |
+|`items`| [Table](table.md) Array | A collection of all the table objects that are part of the workbook|[ListObjects.item] |
 
 ## Relationships
 

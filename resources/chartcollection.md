@@ -18,9 +18,9 @@ The chart has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(type: string, sourceData: any, seriesBy: string)](#addtype-string-sourceData-any-seriesBy-string)| [chart](chart.md)              |Creates a new chart. The new chart becomes the active workbook. ||
-|[getItem(name: string)](#getitemname-string)| [chart](chart.md)      |Retrieve a chart object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [chart](chart.md)     |Retrieve a chart based on its position in the items[] array.||
+|[add(type: string, sourceData: any, seriesBy: string)](#addtype-string-sourceData-any-seriesBy-string)| [Chart](chart.md) Object              |Creates a new chart. The new chart becomes the active workbook. ||
+|[getItem(name: string)](#getitemname-string)| [Chart](chart.md) Object     |Retrieve a chart object using its name||
+|[getItemAt(index: number)](#getitematindex-number)| [Chart](chart.md) Object    |Retrieve a chart based on its position in the items[] array.||
 
 
 ## API Specification 

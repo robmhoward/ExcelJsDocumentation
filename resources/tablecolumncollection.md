@@ -6,7 +6,7 @@ A collection of all the tablecolumn objects that are part of the table.
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 |`count`| Number   | Number of objects in the collection.|tablecolumns.count|
-|`items`| Object[] | A collection of all the tablecolumn objects that are part of the table|[tablecolumns.item] |
+|`items`| [Table Column](tablecolumn.md) Array | A collection of all the tablecolumn objects that are part of the table|[tablecolumns.item] |
 
 ## Relationships
 

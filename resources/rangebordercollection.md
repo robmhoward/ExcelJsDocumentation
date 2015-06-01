@@ -8,7 +8,7 @@ Represents the border objects that make up Range border.
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 |`count`| Number   | Number of objects in the collection.|range.borders.count|
-|`items`| Object[] | A collection of all the border objects that are part of the workbook|ListObjects |
+|`items`| [Range Border](rangeborder.md) Array | A collection of all the border objects that are part of the workbook|ListObjects |
 
 ## Relationships
 
