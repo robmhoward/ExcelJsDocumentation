@@ -35,7 +35,7 @@ chartObject.series.getItemAt(0);
 |`name`          |String|A String value that represents a Series object |
 
 #### Returns
-[ChartSeries](resources/chartSeries.md) object. 
+[ChartSeries](chartSeries.md) object. 
 
 #### Examples
 

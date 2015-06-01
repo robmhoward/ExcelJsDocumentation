@@ -38,7 +38,7 @@ chartObject.title;
 
 #### Returns
 
-[ChartTitle](resources/chartTitle.md) object. 
+[ChartTitle](chartTitle.md) object. 
 
 #### Examples
 
@@ -77,7 +77,7 @@ chartObject.title.overlay=true;
 
 #### Returns
 
-[ChartTitle](resources/chartTitle.md) object. 
+[ChartTitle](chartTitle.md) object. 
 
 
 #### Examples

@@ -39,7 +39,7 @@ chartObject.legend;
 
 #### Returns
 
-[ChartLegend](resources/chartLegend.md) object. 
+[ChartLegend](chartLegend.md) object. 
 
 #### Examples
 
@@ -77,7 +77,7 @@ chartObject.legend.overlay = true;
 | `overlay` | Boolean |True if the legend with be overlapping with the chart. | 
 
 #### Returns
-[ChartLegend](resources/chartLegend.md) object. 
+[ChartLegend](chartLegend.md) object. 
 
 
 #### Examples

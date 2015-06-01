@@ -55,7 +55,7 @@ Where, axisTypeObject could be one of the following:
 
 #### Returns
 
-[ChartAxis](resources/chartAxis.md) object. 
+[ChartAxis](chartAxis.md) object. 
 
 #### Examples
 
@@ -96,7 +96,7 @@ chartObject.axes.valueaxis.minorunit = 0.2;
 | `minorunit` | Object |eturns or sets the interval between two minor tick marks.  Auto if left empty. | 
 
 #### Returns
-[ChartAxis](resources/chartAxis.md) object. 
+[ChartAxis](chartAxis.md) object. 
 
 #### Examples
 

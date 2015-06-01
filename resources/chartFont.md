@@ -49,7 +49,7 @@ chartObject.title.format.font.underline = false;
 
 #### Returns
 
-[ChartFont](resources/chartFont.md) object. 
+[ChartFont](chartFont.md) object. 
 
 #### Examples
 

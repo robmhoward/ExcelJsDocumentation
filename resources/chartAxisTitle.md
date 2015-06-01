@@ -39,7 +39,7 @@ chartObject.axes.valueaxis.title;
 
 #### Returns
 
-[ChartAxisTitle](resources/chartAxisTitle.md) object. 
+[ChartAxisTitle](chartAxisTitle.md) object. 
 
 #### Examples
 
@@ -76,7 +76,7 @@ chartObject.axes.valueaxis.title.visible = true;
 
 #### Returns
 
-[ChartAxisTitle](resources/chartAxisTitle.md) object. 
+[ChartAxisTitle](chartAxisTitle.md) object. 
 
 
 #### Examples

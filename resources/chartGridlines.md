@@ -36,7 +36,7 @@ chartObject.axes.valueaxis.majorGridlines;
 
 #### Returns
 
-[ChartGridlines](resources/chartGridlines.md) object. 
+[ChartGridlines](chartGridlines.md) object. 
 
 #### Examples
 
@@ -70,7 +70,7 @@ chartObject.axes.valueaxis.majorgridlines.visible = true;
 |visible| Boolean | True if the axis has gridlines. |
 
 #### Returns
-[ChartGridlines](resources/chartGridlines.md) object. 
+[ChartGridlines](chartGridlines.md) object. 
 
 #### Examples
 

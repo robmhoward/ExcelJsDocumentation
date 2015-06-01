@@ -87,7 +87,7 @@ chartObject.setData(sourceData, seriesBy);
 
 #### Returns
 
-[Chart](resources/chart.md) object. 
+[Chart](chart.md) object. 
 
 #### Examples
 
@@ -102,7 +102,7 @@ ctx.executeAsync().then();
 ```
 [Back](#methods)
 
-### Get-Chart
+### Get Chart
 
 Gets a chart object by name.
 
@@ -116,7 +116,7 @@ None.
 
 #### Returns
 
-[Chart](resources/chart.md) object. 
+[Chart](chart.md) object. 
 
 #### Examples
 
@@ -133,7 +133,7 @@ ctx.executeAsync().then(function () {
 
 [Back](#properties)
 
-### Set-Chart
+### Set Chart
 
 Update a chart including renaming, positioning and resizing.
 
@@ -158,7 +158,7 @@ chartObject.weight = 200;
 
 #### Returns
 
-[Chart](resources/chart.md) object. 
+[Chart](chart.md) object. 
 
 #### Examples
 
