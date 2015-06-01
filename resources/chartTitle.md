@@ -14,7 +14,7 @@ The ChartTitle resource has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `format`          |[ChartTitleFormat](chartTitleFormat.md) Object | Represents the format of a chart title, which includes fill(interior/background) and font formatting.
+| `format`          |[ChartTitleFormat](chartTitlerangeformat.md) Object | Represents the format of a chart title, which includes fill(interior/background) and font formatting.
      
 ## Methods
 None.

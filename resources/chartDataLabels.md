@@ -20,7 +20,7 @@ The ChartDataLabels resource has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `format`          |[ChartDataLabelsFormat](chartDataLabelsFormat.md) Object | Represents the format of chart datalabels, which includes fill(interior/background) and font formatting.
+| `format`          |[ChartDataLabelsFormat](chartDataLabelsrangeformat.md) Object | Represents the format of chart datalabels, which includes fill(interior/background) and font formatting.
 
 ## Methods
 None.

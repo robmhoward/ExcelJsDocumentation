@@ -19,7 +19,7 @@ The Chart resource has the following relationships defined:
 | `title`          |[ChartAxisTitle](chartAxisTitle.md) Object | Represents the title of a specified axis. | Axis.AxisTitle
 | `majorGridlines` | [ChartGridlines](chartGridlines.md) Object   | Returns a Gridlines object that represents the major gridlines for the specified axis.   | Axis.MajorGridlines|
 | `minorGridlines` | [ChartGridlines](chartGridlines.md) Object   | Returns a Gridlines object that represents the minor gridlines for the specified axis.  | Axis.MinorGridlines|
-| `format`          |[ChartAxisFormat](chartAxisFormat.md) Object | Represents the format of a chart object, which includes line/border and font formatting.
+| `format`          |[ChartAxisFormat](chartAxisrangeformat.md) Object | Represents the format of a chart object, which includes line/border and font formatting.
 
 ## Methods
 None.

@@ -1,11 +1,11 @@
-# Background
+# Range Fill
 
-Represents the interior of an object, which includes background formating information. 
+Represents the interior of an object, which includes fill formating information. 
 
 ## Properties
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`color`|String|HTML color code representation of the background color. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). e.g., `#FF0000` represents Red. ('255' red, '0' green, and '0' blue) |Conversion from Range.Interior.Color value to html color string|
+|`color`|String|HTML color code representation of the fill color. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). e.g., `#FF0000` represents Red. ('255' red, '0' green, and '0' blue) |Conversion from Range.Interior.Color value to html color string|
 
 ## Programming notes about `color` property: 
 
@@ -24,8 +24,5 @@ Alternatively,  `#` sign followed by 3 character color code (e.g., #F00) could b
 None
 
 ## Methods
-
-The complete list of methods for this resource is available in
-the [API](../README.md) topic.
-
+None
 

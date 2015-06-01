@@ -12,7 +12,7 @@ The ChartGridlines resource has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `format`          |[ChartGridlinesFormat](chartGridlinesFormat.md) Object | Represents the format of chart gridlines.
+| `format`          |[ChartGridlinesFormat](chartGridlinesrangeformat.md) Object | Represents the format of chart gridlines.
           
 
 ## Methods

@@ -13,7 +13,7 @@ The ChartAxisTitle resource has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `format`          |[ChartAxisTitleFormat](chartAxisTitleFormat.md) Object | Represents the format of a chart axis title font formatting.
+| `format`          |[ChartAxisTitleFormat](chartAxisTitlerangeformat.md) Object | Represents the format of a chart axis title font formatting.
 
 ## Methods
 None.

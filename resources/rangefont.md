@@ -1,4 +1,4 @@
-﻿# Font
+﻿# Range Font
 
 This object represents the font attributes (font name, font size, color, and so on) for an object. 
 
@@ -20,5 +20,4 @@ None
 
 ## Methods
 
-The complete list of methods for this resource is available in
-the [API](../README.md) topic.
+None
