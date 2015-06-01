@@ -10,7 +10,7 @@ The Workbook resource has the following relationships defined:
 
 | Relationship    | Type    |Description|Notes |
 |:----------------|:--------|:----------|:-----|
-| [application](#get-application)    | [Application](application.md)| Returns an object that represents epresents the Excel application which is managing the workbook. |
+| application  | [Application](application.md)| Returns an object that represents epresents the Excel application which is managing the workbook. |
 | names       | [NamedItem collection](nameditemCollection.md)| Collection of Named Ranges associated with the workbook  |Workbook.Names      |
 | tables       | [Table collection](tableCollection.md)        | Collection of Tables associated with the workbook        |Workbook.ListObjects|
 | worksheets   | [Worksheet collection](worksheetCollection.md)| Collection of Worksheets associated with the workbook    |Workbook.Worksheets |
@@ -79,29 +79,4 @@ ctx.executeAsync().then(function () {
 		Console.log(selectedRange.address);
 });
 ```
-[Back](#workbook)
-
-
-### Get Application
-
-Get properties of workbook's application object. 
-
-```js
-context.workbook.application;
-```
-#### Returns
-
-[Application](application.md) object.
-
-#### Examples
-
-```js
-var ctx = new Excel.ExcelClientContext();
-var application = ctx.workbook.application;
-ctx.load(application);
-ctx.executeAsync().then(function() {
-	Console.log(application.calculationMode);
-});
-
-```
-[Back](#relationships)
+[Back](#methods)
