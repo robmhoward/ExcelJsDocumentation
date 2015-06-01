@@ -1,11 +1,11 @@
-# Chart Points Format
+# Chart Point Format
 Provides access to the Office Art formatting for chart Points.
 
 ## Properties
 None.
 
 ## Relationships
-The ChartPointsFormat resource has the following relationships defined:
+The Chart Point Format has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|

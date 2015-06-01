@@ -18,7 +18,7 @@ Range represents a cell, a row, a column, a selection of cells containing one or
 |`values`          |Array[][]|Unformatted values of the specified range|Range.Value2|
 
 ## Relationships
-Range resource has the following relationships defined:
+Range has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
@@ -363,7 +363,7 @@ Where, property is one of the following Range properties that can be set.
 
 #### Returns
 
-[Range](../resources/range.md) object.
+[Range](range.md) object.
 
 #### Example
 The example below sets number-format, values and formulas on a grid that contains 2x3 grid.

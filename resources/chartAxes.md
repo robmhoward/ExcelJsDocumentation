@@ -7,7 +7,7 @@ None.
 
 
 ## Relationships
-The Chart resource has the following relationships defined:
+The Chart has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
@@ -17,6 +17,4 @@ The Chart resource has the following relationships defined:
      
 
 ## Methods
-
-The complete list of methods for this resource is available in
-the [API](../README.md) topic.
+None

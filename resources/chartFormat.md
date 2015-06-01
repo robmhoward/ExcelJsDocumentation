@@ -5,7 +5,7 @@ Provides access to the Office Art formatting for chart elements.
 None.
 
 ## Relationships
-The Chart Format resource has the following relationships defined:
+The Chart Format has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|

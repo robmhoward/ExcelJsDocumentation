@@ -8,7 +8,7 @@ Represents major or minor gridlines on a chart axis.
 |visible| Boolean | True if the axis has gridlines. ||
 
 ## Relationships
-The ChartGridlines resource has the following relationships defined:
+The ChartGridlines has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|

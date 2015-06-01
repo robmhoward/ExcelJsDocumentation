@@ -11,7 +11,7 @@ Represents the legend in a chart. Each chart can have only one legend.
 
 
 ## Relationships
-The Chart Legend resource has the following relationships defined:
+The Chart Legend has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|

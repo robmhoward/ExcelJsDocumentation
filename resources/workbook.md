@@ -6,7 +6,7 @@ Workbook is the top level object which contains related workbook objects such as
 None
 
 ## Relationships
-The Workbook resource has the following relationships defined:
+The Workbook has the following relationships defined:
 
 | Relationship    | Type    |Description|Notes |
 |:----------------|:--------|:----------|:-----|

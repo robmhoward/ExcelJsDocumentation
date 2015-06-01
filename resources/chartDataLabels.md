@@ -16,7 +16,7 @@ Represents the data label on a chart point or trendline.
 
 
 ## Relationships
-The ChartDataLabels resource has the following relationships defined:
+The ChartDataLabels has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|

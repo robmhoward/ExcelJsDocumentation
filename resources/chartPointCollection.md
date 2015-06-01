@@ -1,12 +1,12 @@
-# Chart Points Collection
-A collection of all the ChartPoints objects of a chart. 
+# Chart Point Collection
+A collection of all the ChartPoint objects of a chart. 
 
-## [Properties](#get-chartpoints-collection)
+## [Properties](#get-chartpoint-collection)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 |`count`| Number   | Number of objects in the collection.||
-|`items`| [Chart Points](chartPoints.md) Array | A collection of all the chart objects that are part of the workbook| |
+|`items`| [Chart Point](chartPoint.md) Array | A collection of all the chart objects that are part of the workbook| |
 
 ## Relationships
 
@@ -18,18 +18,18 @@ The chart has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[getItemAt(index: number)](#getitematindex-number)| [chartPoints](chartPoints.md)     |Retrieve a ChartPoints Object based on its position in the items[] array.||
+|[getItemAt(index: number)](#getitematindex-number)| [ChartPoint](chartPoint.md)     |Retrieve a ChartPoint Object based on its position in the items[] array.||
 
 
 ## API Specification 
 
-### Get ChartPoints Collection
+### Get ChartPoint Collection
 
-Get the ChartPoints collection. 
+Get the ChartPoint Collection. 
 
 #### Syntax
 ```js
-context.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").points;	
+chartObject.points;	
 ```
 
 #### Properties
@@ -41,7 +41,7 @@ context.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").points;
 
 #### Returns
 
-[ChartPoints](chartPoints.md) collection. 
+[ChartPoint](chartPoint.md) collection. 
 
 #### Examples
 
@@ -71,7 +71,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get chartPoints object properties based on its position in the items[] array. 
+Get chartPoint object properties based on its position in the items[] array. 
 
 #### Syntax
 ```js
@@ -86,7 +86,7 @@ Parameter       | Type  | Description
 
 #### Returns
 
-[chartPoints](../resources/chartPoints.md) object.
+[ChartPoint](chartPoint.md) object.
 
 #### Examples
 

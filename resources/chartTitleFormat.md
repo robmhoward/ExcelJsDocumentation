@@ -5,7 +5,7 @@ Provides access to the Office Art formatting for chart title.
 None.
 
 ## Relationships
-The Chart Title Format resource has the following relationships defined:
+The Chart Title Format has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|

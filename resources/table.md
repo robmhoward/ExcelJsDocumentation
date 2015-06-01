@@ -12,7 +12,7 @@ Represents collection of organized cells designed to make management of the data
 | `tableStyle` | String | Constant that represents the Table style. Possible values include: `Light1` thru `Light21`, `Medium1` thru `Medium28`, `StyleDark1` thru `StyleDark11`|ListObject.TableStyle|
 
 ## Relationships
-The Table resource has the following relationships defined:
+The Table has the following relationships defined:
 
 | relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|

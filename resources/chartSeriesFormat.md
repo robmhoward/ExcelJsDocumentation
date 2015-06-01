@@ -5,7 +5,7 @@ Provides access to the Office Art formatting for chart Series.
 None.
 
 ## Relationships
-The ChartSeriesFormat resource has the following relationships defined:
+The ChartSeriesFormat has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|

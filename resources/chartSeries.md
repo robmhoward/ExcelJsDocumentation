@@ -8,11 +8,11 @@ Represents a series in a chart.
 |`name`          |String|A String value that represents a Series object ||
 
 ## Relationships
-The ChartSeries resource has the following relationships defined:
+The ChartSeries has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `points`          |[ChartPoints Collection](chartPointsCollection.md) | Represents Points in a series in a chart.
+| `points`          |[ChartPoint Collection](chartPointsCollection.md) | Represents Points in a series in a chart.
 | `format`          |[ChartSeriesFormat](chartSeriesFormat.md) Object |  Represents the format of chart series, which includes fill(interior/background) and line formatting.
 
 ## Methods

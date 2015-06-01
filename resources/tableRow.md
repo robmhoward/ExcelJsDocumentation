@@ -12,7 +12,7 @@ Represents a row in a table. The TableRow object is a member of the TableRows co
 
 
 ## Relationships
-The TableRow resource has the following relationships defined:
+The TableRow has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
@@ -20,5 +20,4 @@ The TableRow resource has the following relationships defined:
 
 ## Methods
 
-The complete list of methods for this resource is available in
-the [API](../README.md) topic.
+None

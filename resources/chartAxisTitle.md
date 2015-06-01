@@ -9,7 +9,7 @@ Represents the title of a specified axis.
 | `visible` | Boolean |A boolean that specifies the visibility of an Axis Title. True if the axis or chart has a visible title.  | 
 
 ## Relationships
-The ChartAxisTitle resource has the following relationships defined:
+The ChartAxisTitle has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|

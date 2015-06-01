@@ -5,7 +5,7 @@ Provides access to the Office Art formatting for chart Axis.
 None.
 
 ## Relationships
-The Chart Axis Format resource has the following relationships defined:
+The Chart Axis Format has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|

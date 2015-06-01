@@ -10,7 +10,7 @@ Represents a chart title object of a chart. A ChartTitle object specifies the te
 | `overlay` | Boolean |True if the title overlays the chart. | Chart.ChartTitle.Position |
 
 ## Relationships
-The ChartTitle resource has the following relationships defined:
+The ChartTitle has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|

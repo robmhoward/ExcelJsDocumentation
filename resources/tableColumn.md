@@ -15,7 +15,7 @@ Represents a Column in a table. The TableColumn object is a member of the TableC
 
 
 ## Relationships
-The TableColumn resource has the following relationships defined:
+The TableColumn has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
@@ -24,5 +24,4 @@ The TableColumn resource has the following relationships defined:
 
 ## Methods
 
-The complete list of methods for this resource is available in
-the [API](../README.md) topic.
+None

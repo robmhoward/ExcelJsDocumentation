@@ -5,7 +5,7 @@ Provides access to the Office Art formatting for chart axis title.
 None.
 
 ## Relationships
-The ChartAxisTitleFormat resource has the following relationships defined:
+The ChartAxisTitleFormat has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|

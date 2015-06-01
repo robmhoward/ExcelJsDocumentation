@@ -90,7 +90,7 @@ Parameter       | Type  | Description
 
 #### Returns
 
-[chartSeries](../resources/chartSeries.md) object.
+[chartSeries](chartSeries.md) object.
 
 #### Examples
 

@@ -12,7 +12,7 @@ Represents a single axis in a chart.
 
 
 ## Relationships
-The Chart resource has the following relationships defined:
+The Chart has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|

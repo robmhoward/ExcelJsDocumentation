@@ -8,7 +8,7 @@ None.
 
 
 ## Relationships
-The Chart Legend Format resource has the following relationships defined:
+The Chart Legend Format has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|

@@ -10,7 +10,7 @@ The Worksheet object is a member of the Worksheets collection. The Worksheets co
 
 
 ## Relationships
-The Worksheet resource has the following relationships defined:
+The Worksheet has the following relationships defined:
 
 | Relationship     | Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|         
