@@ -15,7 +15,7 @@ The Chart Legend resource has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `format`          |[ChartLegendFormat](chartLegendrangeformat.md) Object | Represents the format of a chart legend, which includes fill(interior/background) and font formatting.
+| `format`          |[ChartLegendFormat](chartLegendFormat.md) Object | Represents the format of a chart legend, which includes fill(interior/background) and font formatting.
      
 
 ## Methods

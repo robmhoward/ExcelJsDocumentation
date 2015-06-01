@@ -9,7 +9,7 @@ The ChartPoints resource has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `format`          |[ChartPointsFormat](chartPointsrangeformat.md) Object | Represents the format of chart points, which includes fill(interior/background) and line formatting.
+| `format`          |[ChartPointsFormat](chartPointsFormat.md) Object | Represents the format of chart points, which includes fill(interior/background) and line formatting.
 
 ## Methods
 None.

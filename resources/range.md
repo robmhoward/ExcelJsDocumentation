@@ -22,7 +22,7 @@ Range resource has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|format        |[Format](rangeformat.md) Object  |Format object contains Range's Font, fill, Borders, Alignment, Style, etc. settings ||
+|format        |[Format](Format.md) Object  |Format object contains Range's Font, fill, Borders, Alignment, Style, etc. settings ||
 |[worksheet](#get-range-worksheet) |[Worksheet](worksheet.md) Object  |The worksheet containing the current range. ||
 
 

@@ -5,8 +5,8 @@ Format object represents format settings of a Range. This includes Font, fill, B
 ## [Properties](#get-range-format)
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`font`            |[Font](rangefont.md) Object                |Returns the Font object defined on the overall Range selected|Range.Font|
-|`fill`      |[fill](rangefill.md) Object    |Returns the fill object defined on the overall Range selected|Range.Interior|
+|`font`            |[Font](Font.md) Object                |Returns the Font object defined on the overall Range selected|Range.Font|
+|`fill`      |[Fill](rangefill.md) Object    |Returns the fill object defined on the overall Range selected|Range.Interior|
 |`horizontalAlignment`    | String  |Represents the horizontal alignment for the specified object. The value of this property can be to one of the following constants: `General`, `Fill`, `CenterAcrossSelection`, `Center`, `Distributed`, `Justify`, `Left`, `Right`. `null` indicates that the entire range doesn't have uniform horizontal alignment.|Range.HorizontalAlignment|
 |`verticalAlignment`    | String  |Represents the vertical alignment for the specified object. The value of this property can be to one of the following constants: `Bottom`, `Center`, `Distributed`, `Justify`, `Top`. `null` indicates that the entire range doesn't have uniform vertical alignment.|Range.VerticalAlignment|
 |`wrapText`    | Boolean  |Indicates if Excel wraps the text in the object. `null` indicates that the entire range doesn't have uniform wrap setting|Range.WrapText|
@@ -61,7 +61,7 @@ ctx.executeAsync().then(function() {
 	Console.log(range.format.borders.getItem('InsideHorizontal').lineStyle;	
 });
 ```
-[Back](#relationships)
+[Back](#properties)
 
 ### Set Range Format 
 
@@ -75,7 +75,7 @@ Where, property is one of the following Range's Format properties that can be se
 
 #### Properties
 
-[Range Format](rangeformat.md)
+[Range Format](Format.md)
 
 | Property         | Type    |Description|
 |:-----------------|:--------|:----------| 
@@ -83,7 +83,7 @@ Where, property is one of the following Range's Format properties that can be se
 |`verticalAlignment`    | String  |Optional. Represents the vertical alignment for the specified object. The value of this property can be to one of the following constants: `Bottom`, `Center`, `Distributed`, `Justify`, `Top`. `null` indicates that the entire range doesn't have uniform vertical alignment.|Range.VerticalAlignment|
 |`wrapText`    | Boolean  |Optional. Indicates if Excel wraps the text in the object. `null` indicates that the entire range doesn't have uniform wrap setting|Range.WrapText|    
 
-[Range Font](rangefont.md)
+[Range Font](Font.md)
 
 | Property         | Type    |Description| 
 |:-----------------|:--------|:----------|
@@ -116,7 +116,8 @@ range.format.fill.color = '0000FF';
 ctx.executeAsync().then();
 ```
 
-[Back](#relationships)
+[Back](#properties)
+
 ### Set Range Border 
 
 Sets border to a range and sets the Color, LineStyle, and Weight properties for the new border.
@@ -164,30 +165,4 @@ range.format.borders('EdgeRight').lineStyle = 'Continuous';
 range.format.borders('EdgeTop').lineStyle = 'Continuous';
 ctx.executeAsync().then();
 ```
-[Back](#relationships)
-
-### Get Range Worksheet
-
-Get Worksheet object of the current Range.
-
-#### Syntax
-```js
-rangeObject.worksheet;
-```
-#### Returns
-
-[Worksheet](worksheet.md) object.
-
-#### Examples
-```js
-var ctx = new Excel.ExcelClientContext();
-var names = ctx.workbook.names;
-var namedItem = names.getItem('MyRange');
-range = namedItem.range;
-var rangeWorksheet = range.worksheet;
-load(rangeWorksheet)
-ctx.executeAsync().then(function () {
-		Console.log(rangeWorksheet.name);
-});
-```
-[Back](#relationships)
+[Back](#properties)
