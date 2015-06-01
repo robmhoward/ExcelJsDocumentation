@@ -1,4 +1,4 @@
-# Axis
+# Chart Axis
 Represents a single axis in a chart.
 
 ## [Properties](#get-chart-axis)

@@ -1,4 +1,4 @@
-# ChartPointsFormat
+# Chart Points Format
 Provides access to the Office Art formatting for chart Points.
 
 ## Properties

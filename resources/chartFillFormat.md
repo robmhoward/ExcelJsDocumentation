@@ -1,4 +1,4 @@
-# ChartFillFormat
+# Chart Fill Format
 Represents the interior/background of an object.
 
 ## Properties

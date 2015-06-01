@@ -1,4 +1,4 @@
-# ChartTitleFormat
+# Chart Title Format
 Provides access to the Office Art formatting for chart title.
 
 ## Properties

@@ -1,4 +1,4 @@
-# Legend
+# Chart Legend
 Represents the legend in a chart. Each chart can have only one legend.
 
 ## [Properties](#get-chart-legend)

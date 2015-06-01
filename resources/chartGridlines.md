@@ -1,4 +1,4 @@
-# Gridlines
+# Chart Gridlines
 Represents major or minor gridlines on a chart axis.
 
 ## [Properties](#get-chart-gridlines)

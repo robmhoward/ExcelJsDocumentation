@@ -1,4 +1,4 @@
-# Axes
+# Chart Axes
 Represents the axes collection in a Chart including categoryAxis, valueAxis and seriesAxis.
 
 

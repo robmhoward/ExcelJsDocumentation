@@ -1,4 +1,4 @@
-# ChartLineFormat
+# Chart Line Format
 Provides access to the Office Art formatting for chart line elements.
 
 ## [Properties](#set-line)

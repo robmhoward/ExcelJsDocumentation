@@ -1,4 +1,4 @@
-# ChartSeriesFormat
+# Chart Series Format
 Provides access to the Office Art formatting for chart Series.
 
 ## Properties

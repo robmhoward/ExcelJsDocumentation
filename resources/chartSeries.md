@@ -1,4 +1,4 @@
-# Series
+# Chart Series
 Represents a series in a chart.
 
 ## [Properties](#set-chart-series)

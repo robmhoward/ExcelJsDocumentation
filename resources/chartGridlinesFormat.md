@@ -1,4 +1,4 @@
-# ChartGridlinesFormat
+# Chart Gridlines Format
 Provides access to the Office Art formatting for chart Gridlines.
 
 ## Properties

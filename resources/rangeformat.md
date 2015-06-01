@@ -5,8 +5,8 @@ Format object represents format settings of a Range. This includes Font, fill, B
 ## [Properties](#get-range-format)
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`font`            |[Font](rangefont.md) Object                |Returns the Font object defined on the overall Range selected|Range.Font|
-|`fill`      |[Fill](rangefill.md) Object    |Returns the fill object defined on the overall Range selected|Range.Interior|
+|`font`            |[Range Font](rangefont.md) Object                |Returns the Font object defined on the overall Range selected|Range.Font|
+|`fill`      |[Range Fill](rangefill.md) Object    |Returns the fill object defined on the overall Range selected|Range.Interior|
 |`horizontalAlignment`    | String  |Represents the horizontal alignment for the specified object. The value of this property can be to one of the following constants: `General`, `Fill`, `CenterAcrossSelection`, `Center`, `Distributed`, `Justify`, `Left`, `Right`. `null` indicates that the entire range doesn't have uniform horizontal alignment.|Range.HorizontalAlignment|
 |`verticalAlignment`    | String  |Represents the vertical alignment for the specified object. The value of this property can be to one of the following constants: `Bottom`, `Center`, `Distributed`, `Justify`, `Top`. `null` indicates that the entire range doesn't have uniform vertical alignment.|Range.VerticalAlignment|
 |`wrapText`    | Boolean  |Indicates if Excel wraps the text in the object. `null` indicates that the entire range doesn't have uniform wrap setting|Range.WrapText|
@@ -15,7 +15,7 @@ Format object represents format settings of a Range. This includes Font, fill, B
 ## Relationships
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`borders`         |[Border collection](rangebordercollection.md)|Collection of border objects that apply to the overall Range selected|Range.Borders|
+|`borders`         |[Range Border collection](rangebordercollection.md)|Collection of border objects that apply to the overall Range selected|Range.Borders|
 
 ## Methods
 

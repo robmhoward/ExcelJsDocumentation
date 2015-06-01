@@ -1,4 +1,4 @@
-# Points
+# Chart Points
 Represents a point of a series in a chart.
 
 ## Properties

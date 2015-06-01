@@ -1,4 +1,4 @@
-# ChartAxisFormat
+# Chart Axis Format
 Provides access to the Office Art formatting for chart Axis.
 
 ## Properties

@@ -1,4 +1,4 @@
-# Font
+# Chart Font
 
 This object represents the font attributes (font name, font size, color, and so on) for an object. 
 

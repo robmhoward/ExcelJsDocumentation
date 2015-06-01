@@ -1,4 +1,4 @@
-# ChartLegendFormat
+# Chart Legend Format
 Provides access to the Office Art formatting for chart Legend.
 
 ## Properties

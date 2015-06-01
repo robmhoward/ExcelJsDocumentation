@@ -1,4 +1,4 @@
-# ChartAxisTitleFormat
+# Chart Axis Title Format
 Provides access to the Office Art formatting for chart axis title.
 
 ## Properties

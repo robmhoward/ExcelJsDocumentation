@@ -1,4 +1,4 @@
-# ChartTitle
+# Chart Title
 Represents a chart title object of a chart. A ChartTitle object specifies the text, visibility and formating of the chart title.
 
 ## [Properties](#get-chart-title)
