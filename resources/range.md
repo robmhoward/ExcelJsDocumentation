@@ -43,6 +43,38 @@ The Worksheet has the following methods defined:
 
 ## API Specification 
 
+
+### clear(applyTo: string)
+
+Clear Range values, format, fill, border, etc.
+
+#### Syntax
+
+```js
+rangeObject.clear(applyTo);
+```
+
+##### Parameters
+
+Parameter       | Type   | Description
+--------------- | ------ | ------------
+`applyTo` | String | Optional. `All`, `Format`, `Content`. If this option is not provided then the content and format of the range will be cleared. 
+
+#### Returns
+
+Nothing
+
+#### Examples
+Below example clears format and contents of the range. 
+
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "D:F";
+var ctx = new Excel.ExcelClientContext();
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+range.clear();
+ctx.executeAsync().then();
+```
 [Back](#methods)
 
 ### delete()
@@ -240,7 +272,8 @@ ctx.executeAsync().then();
 ```
 [Back](#methods) 
 
-### select
+
+### select()
 
 Select the specified Range in the Excel UI.
 
@@ -266,7 +299,6 @@ ctx.executeAsync().then();
 ```
 [Back](#methods) 
 
-
 ### Get Range
 
 Get a Range object that represents a single cell or a range of cells. 
@@ -276,7 +308,6 @@ Get a Range object that represents a single cell or a range of cells.
 ```js
 worksheetObject.getRange(rangeAddress);
 ```
-
 #### Returns
 
 [Range](range.md) object.
@@ -298,6 +329,7 @@ ctx.executeAsync().then(function() {
 ```
 
 Below example uses a named-range to get the range object.
+
 ```js
 var rangeName = 'MyRange';
 var ctx = new Excel.ExcelClientContext();
@@ -308,39 +340,52 @@ ctx.executeAsync().then(function() {
 });
 ```
 
-[Back](#properties) 
+[Back](#properties)
 
-### clear(applyTo: string)
+### Update Range 
 
-Clear Range values, format, fill, border, etc.
+Set Range values, formula, number format.
 
 #### Syntax
-
 ```js
-rangeObject.clear(applyTo);
+rangeObject.property = value;
 ```
+Where, property is one of the following Range properties that can be set. 
 
-##### Parameters
+#### Properties
 
-Parameter       | Type   | Description
---------------- | ------ | ------------
-`applyTo` | String | Optional. `All`, `Format`, `Content`. If this option is not provided then the content and format of the range will be cleared. 
+|Property          | Type          | Description                                           |
+|----------------- | -------------- | ----------------------------------------------------- |
+|`values`		   | Array [][] (string) or (number)    | Unformatted value of the specified range.	 		        |
+|`numberFormat`    | Array [][] (String) | Typethat represents the format code for the object. |
+|`formula`         | Array [][] (String) | Represents the object's formula notation.             |
+|`formulaLocal`    | Array [][] (String) | Formula for the object, in the language of the user.  |
 
 #### Returns
 
-Nothing
+[Range](../resources/range.md) object.
 
-#### Examples
-Below example clears format and contents of the range. 
+#### Example
+The example below sets number-format, values and formulas on a grid that contains 2x3 grid.
 
 ```js
+
 var sheetName = "Sheet1";
-var rangeAddress = "D:F";
-var ctx = new Excel.ExcelClientContext();
+var rangeAddress = "F5:G7";
+var numberFormat = [[null, "d-mmm"], [null, "d-mmm"], [null, null]]
+var values = [["Today", 42147], ["Tomorrow", "5/24"], ["Difference in days", null]];
+var formula = [[null,null], [null,null], [null,"=G6-G5"]];
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-range.clear();
-ctx.executeAsync().then();
+range.numberFormat = numberFormat;
+range.values = values;
+range.formula = formula;
+ctx.load(range);
+ctx.executeAsync().then(function() {
+	Console.log(range.text);
+});
 ```
+
+[Back](#properties)
 
 
 ### Get Range Worksheet

@@ -43,7 +43,7 @@ ctx.executeAsync().then(function() {
 ```
 [Back](#properties)
 
-### Calculate
+### calculate()
 
 Performs calculation on the Workbook or Application. 
 
