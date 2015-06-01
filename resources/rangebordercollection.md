@@ -16,7 +16,7 @@ None
 
 ## Methods
 
-The border collection resource has the following methods defined:
+The border collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|

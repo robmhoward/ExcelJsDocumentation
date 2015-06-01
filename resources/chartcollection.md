@@ -14,7 +14,7 @@ None
 
 ## Methods
 
-The chart resource has the following methods defined:
+The chart has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|

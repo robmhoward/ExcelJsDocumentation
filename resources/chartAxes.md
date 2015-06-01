@@ -16,7 +16,7 @@ The Chart resource has the following relationships defined:
 | `seriesAxis` | [ChartAxis](chartAxis.md) Object   |Represents the series axis in a 3D chart. | |
      
 
-## Methodsssssss
+## Methods
 
 The complete list of methods for this resource is available in
 the [API](../README.md) topic.

@@ -14,7 +14,7 @@ None
 
 ## Methods
 
-The tablerow collection resource has the following methods defined:
+The tablerow collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|

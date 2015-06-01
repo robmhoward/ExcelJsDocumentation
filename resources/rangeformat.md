@@ -5,7 +5,7 @@ Format object represents format settings of a Range. This includes Font, fill, B
 ## [Properties](#get-range-format)
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`font`            |[Font](Font.md) Object                |Returns the Font object defined on the overall Range selected|Range.Font|
+|`font`            |[Font](rangefont.md) Object                |Returns the Font object defined on the overall Range selected|Range.Font|
 |`fill`      |[Fill](rangefill.md) Object    |Returns the fill object defined on the overall Range selected|Range.Interior|
 |`horizontalAlignment`    | String  |Represents the horizontal alignment for the specified object. The value of this property can be to one of the following constants: `General`, `Fill`, `CenterAcrossSelection`, `Center`, `Distributed`, `Justify`, `Left`, `Right`. `null` indicates that the entire range doesn't have uniform horizontal alignment.|Range.HorizontalAlignment|
 |`verticalAlignment`    | String  |Represents the vertical alignment for the specified object. The value of this property can be to one of the following constants: `Bottom`, `Center`, `Distributed`, `Justify`, `Top`. `null` indicates that the entire range doesn't have uniform vertical alignment.|Range.VerticalAlignment|
@@ -36,10 +36,10 @@ rangeObject.format.borders;
 
 #### Returns
 
-[Range Format](rangeformat.md) object.
-[Range fill](rangefill.md) object.
-[Range Font](rangefont.md) object.
-[Range Border Collection](rangeborder.md) object.
+* [Range Format](rangeformat.md) object.
+* [Range Fill](rangefill.md) object.
+* [Range Font](rangefont.md) object.
+* [Range Border Collection](rangeborder.md) object.
 
 Note: Depending on the need, you can select one or more of the format objects.
 

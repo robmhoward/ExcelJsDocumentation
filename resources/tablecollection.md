@@ -15,7 +15,7 @@ None
 
 ## Methods
 
-The table collection resource has the following methods defined:
+The table collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|

@@ -2,9 +2,7 @@
 
 Represents the Excel application which is managing the workbook. 
 
-
-
-## Properties
+## [Properties](#get-application)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
@@ -15,6 +13,59 @@ Represents the Excel application which is managing the workbook.
 None
 
 ## Methods
+The Application has the following methods defined:
 
-The complete list of methods for this resource is available in
-the [API](../README.md) topic.
+| Method     | Return Type    |Description|Notes  |
+|:-----------------|:--------|:----------|:------|
+|[calculate()](#calculate)| [Worksheet](worksheet.md) object |Get the currently active worksheet in the workbook.| |
+
+### Get Application
+
+Get properties of workbook's application object. 
+
+```js
+context.workbook.application;
+```
+#### Returns
+
+[Application](application.md) object.
+
+#### Examples
+
+```js
+var ctx = new Excel.ExcelClientContext();
+var application = ctx.workbook.application;
+ctx.load(application);
+ctx.executeAsync().then(function() {
+	Console.log(application.calculationMode);
+});
+
+```
+[Back](#properties)
+
+### Calculate
+
+Performs calculation on the Workbook or Application. 
+
+#### Syntax
+```js
+applicationObject.calculate(calculationType)
+```
+#### Parameters
+
+Parameter       | Type  | Description
+--------------- | ------ | ------------
+`calculationType` | String | Optional. `ReCalculate`: does normal calculation, `Full`: forces a full calculation of the data, `FullRebuild`: forces a full calculation of the data and rebuilds the dependencies (this is similar to re-entering all formulas). Note: if request body is not provided then calculation of the type `ReCalculation` is performed.
+
+#### Returns
+
+Nothing
+
+#### Examples 
+
+```js
+var ctx = new Excel.ExcelClientContext();
+ctx.workbook.application.calculate('Full');
+ctx.executeAsync().then();
+```
+

@@ -19,7 +19,7 @@ The Worksheet resource has the following relationships defined:
 
 ## Methods
 
-The Worksheet resource has the following methods defined:
+The Worksheet has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|

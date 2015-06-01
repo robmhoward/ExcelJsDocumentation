@@ -14,7 +14,7 @@ None
 
 ## Methods
 
-The tablecolumn collection resource has the following methods defined:
+The tablecolumn collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|

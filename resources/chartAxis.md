@@ -1,4 +1,4 @@
-# Axix
+# Axis
 Represents a single axis in a chart.
 
 ## [Properties](#get-chart-axis)
@@ -34,9 +34,17 @@ Gets a ChartAxis object.
 Use value axis as an example here.
 
 ```js
-chartObject.axes.valueaxis;
+chartObject.axes.axisTypeObject;
 ```
 
+Where, axisTypeObject could be one of the following: 
+
+| axis Type    | Type    |Description|Notes |
+|:-----------------|:--------|:----------|:-----|
+| `categoryAxis` |[ChartAxis](chartAxis.md) Object | Represents the category axis in a chart. | 
+| `valueAxis` | [ChartAxis](chartAxis.md) Object   | Represents the value axis in a chart.  | |
+| `seriesAxis` | [ChartAxis](chartAxis.md) Object   |Represents the series axis in a 3D chart. | |
+     
 #### Properties
 | Property         | Value    |Description|
 |:-----------------|:--------|:----------|
