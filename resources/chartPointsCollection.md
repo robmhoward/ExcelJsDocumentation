@@ -6,7 +6,7 @@ A collection of all the ChartPoints objects of a chart.
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 |`count`| Number   | Number of objects in the collection.||
-|`items`| Object[] | A collection of all the chart objects that are part of the workbook| |
+|`items`| [Chart Points](chartPoints.md) Array | A collection of all the chart objects that are part of the workbook| |
 
 ## Relationships
 
