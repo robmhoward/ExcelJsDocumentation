@@ -90,7 +90,7 @@ Parameter       | Type  | Description
 
 #### Returns
 
-[nameditem](../resources/nameditem.md) object.
+[nameditem](nameditem.md) object.
 
 #### Examples
 ```js
@@ -120,7 +120,7 @@ Parameter       | Type  | Description
 
 #### Returns
 
-[nameditem](../resources/nameditem.md) object.
+[nameditem](nameditem.md) object.
 
 #### Examples
 ```js

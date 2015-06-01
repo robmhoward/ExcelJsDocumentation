@@ -91,7 +91,7 @@ Parameter       | Type   | Description
 `name`  | String| Optional. String value representing the name of the sheet to be added. If not specified, Excel determines the name of the new chart being added. 
 
 #### Returns
-[chart](../resources/chart.md) object.
+[chart](chart.md) object.
 
 #### Examples
 
@@ -123,7 +123,7 @@ Parameter       | Type  | Description
 
 #### Returns
 
-[chart](../resources/chart.md) object.
+[chart](chart.md) object.
 
 #### Examples
 ```js
@@ -154,7 +154,7 @@ Parameter       | Type  | Description
 
 #### Returns
 
-[chart](../resources/chart.md) object.
+[chart](chart.md) object.
 
 #### Examples
 ```js

@@ -16,8 +16,8 @@ The Table resource has the following relationships defined:
 
 | relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| [`tableColumns`](#list-table-columns)   | TableColumn collection      |Collection of Table columns |ListObject.TableColumns  |          
-| [`tableRows`](#list-table-rows)      | TableRow collection         |Collection of Table rows |ListObject.ListRows      |
+| tableColumns  | [TableColumn collection](tablecolumncollection.md)       |Collection of Table columns |ListObject.TableColumns  |          
+| tableRows      | [TableRow collection](tablerowcollection.md)         |Collection of Table rows |ListObject.ListRows      |
 
 ## Methods
 

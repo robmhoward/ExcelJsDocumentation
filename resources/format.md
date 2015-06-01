@@ -16,7 +16,7 @@ Format object represents format settings of a Range. This includes Font, Backgro
 ## Properties
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`borders`         |[Border](border.md) collection|Collection of border objects that apply to the overall Range selected|Range.Borders|
+|`borders`         |[Border collection](borderCollection.md)|Collection of border objects that apply to the overall Range selected|Range.Borders|
 
 ## Methods
 

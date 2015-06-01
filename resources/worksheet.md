@@ -14,8 +14,8 @@ The Worksheet resource has the following relationships defined:
 
 | Relationship     | Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|         
-|[charts](#list-charts) | [Chart](chart.md) collection |Collection of charts in the worksheet|Worksheet.ChartObject  |       
-|[tables](#list-tables) | [Table](table.md) collection |Collection of Tables in the worksheet|Worksheet.ListObjects  |       
+|charts | [Chart collection](chartCollection.md) |Collection of charts in the worksheet|Worksheet.ChartObject  |       
+|tables | [Table collection](tableCollection.md) |Collection of Tables in the worksheet|Worksheet.ListObjects  |       
 
 ## Methods
 
@@ -103,7 +103,7 @@ Parameter      | Type   | Description
 
 #### Returns
 
-[Range](resources/range.md) object.
+[Range](range.md) object.
 
 #### Examples
 
@@ -138,7 +138,7 @@ Parameter       | Type  | Description
 
 #### Returns
 
-[Range](resources/range.md) object.
+[Range](range.md) object.
 
 
 **Note: the grid properties of the Range (values, numberFormat, formula) contains `null` since the Range in question is unbounded.**
@@ -173,7 +173,7 @@ Parameter       | Type  | Description
 
 #### Returns
 
-[Range](resources/range.md) object.
+[Range](range.md) object.
 
 #### Examples
 
@@ -217,7 +217,7 @@ None
 
 #### Returns
 
-[Range](resources/r.md) object.
+[Range](r.md) object.
 
 #### Examples
 
@@ -233,7 +233,7 @@ ctx.executeAsync().then(function () {
 ```
 [Back](#methods)
 
-### Get Worksheets
+### Get Worksheet
 
 Get Worksheet object properties based on name.
 
@@ -250,94 +250,20 @@ Parameter       | Type  | Description
 
 #### Returns
 
-[Worksheet](../resources/worksheet.md) object.
+[Worksheet](worksheet.md) object.
 
 #### Examples
-
-```js
-var ctx = new Excel.ExcelClientContext();
-var worksheets = ctx.workbook.worksheets;
-ctx.load(worksheets);
-ctx.executeAsync().then(function () {
-	for (var i = 0; i < worksheets.items.length; i++)
-	{
-		Console.log(worksheets.items[i].name);
-		Console.log(worksheets.items[i].index);
-	}
-});
-```
-
-##### Getting the number of worksheets
-
-```js
-var ctx = new Excel.ExcelClientContext();
-var worksheets = ctx.workbook.worksheets;
-ctx.load(tables);
-ctx.executeAsync().then(function () {
-	Console.log("Worksheets: Count= " + worksheets.count);
-});
-
-```
-[Back](#properties)
-
-### Get-Used-Range
-
-Get the used-range of a worksheet. 
-
-#### Syntax
-```js
-worksheetObject.getUsedRange();
-```
-#### Parameters
-
-None
-
-#### Returns
-
-[Range](../resources/r.md) object.
-
-
-#### Examples
-
 ```js
 var ctx = new Excel.ExcelClientContext();
 var wSheetName = 'Sheet1';
 var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
-var usedRange = worksheet.getUsedRange();
-ctx.load(usedRange);
 ctx.executeAsync().then(function () {
-		Console.log(usedRange.address);
+		Console.log(worksheet.index);
 });
 ```
+[Back](#properties)
 
-### List Charts 
 
-Get Charts collection that contains each of the chart objects contained in the worksheet. Each item contains the following properties. 
-
-#### Syntax
-```js
-worksheetObject.charts;
-```
-
-#### Returns
-
-[Chart](resources/chart.md) collection.
-
-#### Examples
-
-```js
-var wSheetName = 'Sheet1';
-var ctx = new Excel.ExcelClientContext();
-var charts = ctx.workbook.worksheets.getItem(wSheetName).charts;
-ctx.load(charts);
-ctx.executeAsync().then(function () {
-	for (var i = 0; i < charts.items.length; i++)
-	{
-		Console.log(charts.items[i].name);
-	}
-});
-```
-[Back](#relationships)
 
 [activate-link]: #activate
 [deleteobject-link]: #deleteobject

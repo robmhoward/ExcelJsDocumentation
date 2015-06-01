@@ -90,7 +90,7 @@ Parameter       | Type   | Description
 `name`  | String| Optional. String value representing the name of the sheet to be added. If not specified, Excel determines the name of the new table being added. 
 
 #### Returns
-[table](../resources/table.md) object.
+[table](table.md) object.
 
 #### Examples
 
@@ -122,7 +122,7 @@ Parameter       | Type  | Description
 
 #### Returns
 
-[table](../resources/table.md) object.
+[table](table.md) object.
 
 #### Examples
 ```js
@@ -153,7 +153,7 @@ Parameter       | Type  | Description
 
 #### Returns
 
-[table](../resources/table.md) object.
+[table](table.md) object.
 
 #### Examples
 ```js

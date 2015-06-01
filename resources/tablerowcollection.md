@@ -90,7 +90,7 @@ Parameter       | Type   | Description
 `name`  | String| Optional. String value representing the name of the sheet to be added. If not specified, Excel determines the name of the new tablerow being added. 
 
 #### Returns
-[tablerow](../resources/tablerow.md) object.
+[tablerow](tablerow.md) object.
 
 #### Examples
 
@@ -122,7 +122,7 @@ Parameter       | Type  | Description
 
 #### Returns
 
-[tablerow](../resources/tablerow.md) object.
+[tablerow](tablerow.md) object.
 
 #### Examples
 ```js
@@ -153,7 +153,7 @@ Parameter       | Type  | Description
 
 #### Returns
 
-[tablerow](../resources/tablerow.md) object.
+[tablerow](tablerow.md) object.
 
 #### Examples
 ```js

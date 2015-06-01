@@ -97,7 +97,7 @@ Parameter       | Type   | Description
 `name`  | String| Optional. String value representing the name of the sheet to be added. If not specified, Excel determines the name of the new border being added. 
 
 #### Returns
-[border](../resources/border.md) object.
+[border](border.md) object.
 
 #### Examples
 
@@ -129,7 +129,7 @@ Parameter       | Type  | Description
 
 #### Returns
 
-[border](../resources/border.md) object.
+[border](border.md) object.
 
 #### Examples
 ```js
@@ -160,7 +160,7 @@ Parameter       | Type  | Description
 
 #### Returns
 
-[border](../resources/border.md) object.
+[border](border.md) object.
 
 #### Examples
 ```js
