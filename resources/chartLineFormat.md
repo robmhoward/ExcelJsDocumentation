@@ -67,7 +67,7 @@ GridlinesObject.format.line.color = "#FF0000";
 
 #### Returns
 
-[Chart Line](chartLine.md) object. 
+[Chart Line Format](chartLineFormat.md) object. 
 
 #### Examples
 

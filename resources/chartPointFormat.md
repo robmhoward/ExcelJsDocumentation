@@ -10,7 +10,7 @@ The Chart Point Format has the following relationships defined:
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 | `fill`          |[Chart Fill](chartFill.md) Object | Represents the fill format of an object, which includes interior/background formating information. 
-| `line`          |[Chart Line](chartLine.md) Object | Represents line and border formatting.
+| `line`          |[Chart Line Format](chartLineFormat.md) Object | Represents line and border formatting.
 
 
 ## Methods

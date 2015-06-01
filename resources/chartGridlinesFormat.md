@@ -9,7 +9,7 @@ The Chart Gridlines Format has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `line`          |[Chart Line](chartLine.md) Object | Represents line and border formatting.
+| `line`          |[Chart Line Format](chartLineFormat.md) Object | Represents line and border formatting.
 
 ## Methods
 None.
