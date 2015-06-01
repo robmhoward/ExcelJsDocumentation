@@ -18,9 +18,9 @@ The tablerow collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(name: string)](#addname-string)| [tablerow](tablerow.md)              |Creates a new tablerow. ||
-|[getItem(name: string)](#getitemname-string)| [tablerow](tablerow.md)      |Retrieve a tablerow object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [tablerow](tablerow.md)     |Retrieve a tablerow based on its position in the items[] array.||
+|[add(name: string)](#addname-string)| [Table Row](tablerow.md) Object  |Creates a new tablerow. ||
+|[getItem(name: string)](#getitemname-string)| [Table Row](tablerow.md) Object |Retrieve a tablerow object using its name||
+|[getItemAt(index: number)](#getitematindex-number)| [Table Row](tablerow.md) Object |Retrieve a tablerow based on its position in the items[] array.||
 
 
 ## API Specification 

@@ -18,9 +18,9 @@ The Worksheet collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(name: string)](#addname-string)| [Worksheet](worksheet.md)              |Creates a new worksheet. The new worksheet becomes the active workbook. ||
-|[getItem(name: string)](#getitemname-string)| [Worksheet](worksheet.md)      |Retrieve a worksheet object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [Worksheet](worksheet.md)     |Retrieve a worksheet based on its position in the items[] array.||
+|[add(name: string)](#addname-string)| [Worksheet](worksheet.md) Object              |Creates a new worksheet. The new worksheet becomes the active workbook. ||
+|[getItem(name: string)](#getitemname-string)| [Worksheet](worksheet.md) Object      |Retrieve a worksheet object using its name||
+|[getItemAt(index: number)](#getitematindex-number)| [Worksheet](worksheet.md) Object     |Retrieve a worksheet based on its position in the items[] array.||
 
 
 ## API Specification 

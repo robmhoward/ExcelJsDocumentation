@@ -18,9 +18,9 @@ The tablecolumn collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(name: string)](#addname-string)| [tablecolumn](tablecolumn.md)              |Creates a new tablecolumn.  ||
-|[getItem(name: string)](#getitemname-string)| [tablecolumn](tablecolumn.md)      |Retrieve a tablecolumn object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [tablecolumn](tablecolumn.md)     |Retrieve a tablecolumn based on its position in the items[] array.||
+|[add(name: string)](#addname-string)| [Table Column](tablecolumn.md) Object             |Creates a new tablecolumn.  ||
+|[getItem(name: string)](#getitemname-string)| [Table Column](tablecolumn.md) Object     |Retrieve a tablecolumn object using its name||
+|[getItemAt(index: number)](#getitematindex-number)| [tablecolumn](tablecolumn.md) Object|Retrieve a tablecolumn based on its position in the items[] array.||
 
 
 ## API Specification 

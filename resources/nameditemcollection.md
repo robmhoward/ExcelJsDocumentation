@@ -18,8 +18,8 @@ The nameditem collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[getItem(name: string)](#getitemname-string)| [nameditem](nameditem.md)      |Retrieve a nameditem object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [nameditem](nameditem.md)     |Retrieve a nameditem based on its position in the items[] array.||
+|[getItem(name: string)](#getitemname-string)| [Named Item](nameditem.md) Object      |Retrieve a nameditem object using its name||
+|[getItemAt(index: number)](#getitematindex-number)| [Named Item](nameditem.md) Object     |Retrieve a nameditem based on its position in the items[] array.||
 
 
 ## API Specification 
