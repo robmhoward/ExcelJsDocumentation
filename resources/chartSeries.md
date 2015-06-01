@@ -12,7 +12,7 @@ The ChartSeries resource has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `points`          |[ChartPoints](chartPoints.md) Object | Represents Points in a series in a chart.
+| `points`          |[ChartPoints Collection](chartPointsCollection.md) | Represents Points in a series in a chart.
 | `format`          |[ChartSeriesFormat](chartSeriesFormat.md) Object |  Represents the format of chart series, which includes fill(interior/background) and line formatting.
 
 ## Methods

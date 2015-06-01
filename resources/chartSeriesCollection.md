@@ -29,7 +29,7 @@ Get the ChartSeries collection.
 
 #### Syntax
 ```js
-context.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").series;	
+chartObject.series;	
 ```
 
 #### Properties
@@ -37,7 +37,7 @@ context.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").series;
 | Property         | Type    |Description|
 |:-----------------|:--------|:----------|
 |`count`| Number   | Number of objects in the collection.|
-|`items`| Object[] | A collection of all the chart objects that are part of the workbook|
+|`items`| [Chart Series](chartSeries.md) Array  | A collection of all the chart objects that are part of the workbook|
 
 
 #### Returns

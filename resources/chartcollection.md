@@ -6,7 +6,7 @@ A collection of all the chart objects on a worksheet.
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 |`count`| Number   | Number of objects in the collection.|charts.count|
-|`items`| Object[] | A collection of all the chart objects that are part of the workbook|[charts.item] |
+|`items`| [Chart](chart.md) Array| A collection of all the chart objects that are part of the workbook|[charts.item] |
 
 ## Relationships
 
