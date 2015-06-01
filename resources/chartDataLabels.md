@@ -1,4 +1,4 @@
-# DataLabels
+# Chart Data Labels
 Represents the data label on a chart point or trendline.
 
 ## [Properties](#set-chart-datalabels)
@@ -20,7 +20,7 @@ The ChartDataLabels resource has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `format`          |[ChartDataLabelsFormat](chartDataLabelFormat.md) Object | Represents the format of chart datalabels, which includes fill(interior/background) and font formatting.
+| `format`          |[Chart Data Label Format](chartDataLabelFormat.md) Object | Represents the format of chart datalabels, which includes fill(interior/background) and font formatting.
 
 ## Methods
 None.

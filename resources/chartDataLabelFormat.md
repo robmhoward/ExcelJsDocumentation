@@ -6,7 +6,7 @@ Format object of the chart data label.
 None.
 
 ## Relationships
-The Chart Title Format resource has the following relationships defined:
+The Chart Data Label Format has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
