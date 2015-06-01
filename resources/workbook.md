@@ -26,7 +26,6 @@ The Worksheet resource has the following methods defined:
 
 ## API Specification 
 
-
 ### getActiveWorksheet()
 
 Get the currently active worksheet in the workbook.
@@ -105,3 +104,4 @@ ctx.executeAsync().then(function() {
 });
 
 ```
+[Back](#relationships)

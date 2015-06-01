@@ -80,7 +80,7 @@ Add a new worksheet to the workbook. The worksheet will be added at the end of e
 
 #### Syntax
 ```js
-worksheetsCollection.add(name);
+worksheetCollection.add(name);
 ```
 
 #### Parameters
@@ -111,7 +111,7 @@ Get Worksheet object properties based on name.
 
 #### Syntax
 ```js
-worksheetsCollection.getItem(name);
+worksheetCollection.getItem(name);
 ```
 
 #### Parameters
@@ -142,7 +142,7 @@ Get Worksheet object properties based on its position in the items[] array.
 
 #### Syntax
 ```js
-worksheetsCollection.getItemAt(index);
+worksheetCollection.getItemAt(index);
 ```
 
 #### Parameters

@@ -239,7 +239,7 @@ Get Worksheet object properties based on name.
 
 #### Syntax
 ```js
-worksheetsCollection.getItem(name);
+worksheetCollection.getItem(name);
 ```
 
 #### Parameters
