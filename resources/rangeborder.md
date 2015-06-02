@@ -1,23 +1,7 @@
-﻿# Border
+﻿
+# Range Border
 
 Represents the border of an object. 
-
-## JSON representation
-
-JSON representation of a Border resource.
-
-
-<!-- { "blockType": "resource", "@odata.type": "Border"
-	 } 
--->
-```json
-{
-  "sideIndex" : "String", 
-  "lineStyle" : "Style",
-  "weight" : "String",
-  "color" : "String" 
-}
-```
 
 ## Properties
 | Property         | Type    |Description|Notes |
@@ -46,8 +30,6 @@ JSON representation of a Border resource.
 None
 
 ## Methods
-
-The complete list of methods for this resource is available in
-the [API](../README.md) topic.
+None
 
 

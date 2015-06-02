@@ -1,26 +1,7 @@
 # TableColumn
 Represents a Column in a table. The TableColumn object is a member of the TableColumns collection.
 
-## JSON representation 
 
-JSON representation of a Table Column resource
-<!-- { "blockType": "resource", "@odata.type": "TableColumn", 
-		"optionalProperties": ["totalRange", "dataBodyRange"],	 
-		"nullableProperties": [ "values"]
-	 } 
--->
-```json
-{
-  "id" : 999,
-  "index" : 1,
-  "name" : "String",
-  "totalsCalculation" : "String",
-  "values" : [[ "values" ]],
-
-  "totalRange":  {"@odata.type": "Range"},
-  "dataBodyRange":  {"@odata.type": "Range"}
-}
-```
 
 ## Properties
 
@@ -34,7 +15,7 @@ JSON representation of a Table Column resource
 
 
 ## Relationships
-The TableColumn resource has the following relationships defined:
+The TableColumn has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
@@ -43,5 +24,4 @@ The TableColumn resource has the following relationships defined:
 
 ## Methods
 
-The complete list of methods for this resource is available in
-the [API](../README.md) topic.
+None

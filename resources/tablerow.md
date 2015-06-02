@@ -1,22 +1,6 @@
 # TableRow
 Represents a row in a table. The TableRow object is a member of the TableRows collection.
 
-## JSON representation 
-
-JSON representation of a Table Row resource
-<!-- { "blockType": "resource", "@odata.type": "TableRow", 
-		"optionalProperties": ["range"],	 
-		"nullableProperties": [ "values"]
-	 } 
--->
-```json
-{
-  "index" : 1,
-  "values" : [[ "values" ]],
-
-  "range":  {"@odata.type": "Range"} 
-}
-```
 
 
 ## Properties
@@ -28,7 +12,7 @@ JSON representation of a Table Row resource
 
 
 ## Relationships
-The TableRow resource has the following relationships defined:
+The TableRow has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
@@ -36,5 +20,4 @@ The TableRow resource has the following relationships defined:
 
 ## Methods
 
-The complete list of methods for this resource is available in
-the [API](../README.md) topic.
+None
