@@ -19,12 +19,106 @@ The table collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(name: string)](#addname-string)| [Table](table.md) Object              |Creates a new table. ||
+|[add(name: string, address: string, showHeaders: bool, showTotals: bool, tableStyle: bool)](#addname-string-address-string-showHeaders-bool-showTotals-bool-tableStyle-bool)| [Table](table.md) Object              |Creates a new table. ||
 |[getItem(name: string)](#getitemname-string)| [Table](table.md) Object      |Retrieve a table object using its name||
 |[getItemAt(index: number)](#getitematindex-number)| [Table](table.md) Object     |Retrieve a table based on its position in the items[] array.||
 
-
 ## API Specification 
+
+### add(name: string, address: string, showHeaders: bool, showTotals: bool, tableStyle: bool)
+
+Create a New Table object. The range source address determines the worksheet under which the table will be added. 
+
+#### Syntax
+```js
+tableCollection.add(name, rangeSource, containsHeader, showTotals, tableStyle);
+```
+#### Parameters 
+
+|Parameter       | Type   | Description
+|--------------- | ------ | ------------
+|`name`  | String | Optional. String value representing the name of the Table.
+|`rangeSource`| String | Required. Address or name of the Range object representing the data source.
+|`containsHeader` | Boolean | Optional. Boolean value that indicates whether the data being imported has column labels. If the Source does not contain headers (i.e,. when this property set to `false`), Excel will automatically generate headers. If this property value is not set, Excel will determine the header row on its own.
+|`showTotals` | Boolean| Optional. Boolean to indicate whether the Total row is visible. This value can be set to show or remove the total row. By default this will be set to `false` 
+|`tableStyle` | String | Optional. Constant that represents the Table style. Possible values include: `Light1` thru `Light21`, `Medium1` thru `Medium28`, `Dark1` thru `Dark11`. Excel determines the default style if one is not specified. 
+
+#### Returns
+[Table](table.md) object.
+
+#### Example
+```js
+var ctx = new Excel.ExcelClientContext();
+var table = ctx.workbook.tables.add('MyTable', 'Sheet1!A1:E7', true, false, null);
+ctx.load(table);
+ctx.executeAsync().then(function () {
+	Console.log(table.name);
+});
+
+```
+
+
+[Back](#methods)
+
+### getItem(name: string)
+
+Get table object properties based on name.
+
+#### Syntax
+```js
+tableCollection.getItem(name);
+```
+
+#### Parameters
+
+Parameter       | Type  | Description
+--------------- | ------ | ------------
+ `name`| String | Required. table name. 
+
+#### Returns
+
+[table](table.md) object.
+
+#### Examples
+```js
+var ctx = new Excel.ExcelClientContext();
+var tableName = 'Table1';
+var table = ctx.workbook.tables.getItem(tableName);
+ctx.executeAsync().then(function () {
+		Console.log(table.index);
+});
+```
+[Back](#methods)
+
+
+### getItemAt(index: number)
+
+Get table object properties based on its position in the items[] array. 
+
+#### Syntax
+```js
+tableCollection.getItemAt(index);
+```
+
+#### Parameters
+
+Parameter       | Type  | Description
+--------------- | ------ | ------------
+ `index`| Number | Required. Index or position in the items[]. Zero indexed.
+
+#### Returns
+
+[table](table.md) object.
+
+#### Examples
+```js
+var ctx = new Excel.ExcelClientContext();
+var table = ctx.workbook.tables.getItemAt(0);
+ctx.executeAsync().then(function () {
+		Console.log(table.name);
+});
+```
+[Back](#methods)
 
 ### Get table Collection
 
@@ -32,7 +126,7 @@ Get properties of the table collection.
 
 #### Syntax
 ```js
-context.workbook.tables.property;
+tableCollection.property;
 ```
 
 #### Properties
@@ -73,94 +167,3 @@ ctx.executeAsync().then(function () {
 
 ```
 [Back](#properties)
-
-### add(name: string)
-
-Add a new table to the workbook. The table will be added at the end of existing tables.
-
-#### Syntax
-```js
-tablesCollection.add(name);
-```
-
-#### Parameters
-
-Parameter       | Type   | Description
---------------- | ------ | ------------
-`name`  | String| Optional. String value representing the name of the sheet to be added. If not specified, Excel determines the name of the new table being added. 
-
-#### Returns
-[table](table.md) object.
-
-#### Examples
-
-```js
-var wSheetName = 'Sample Name';
-var ctx = new Excel.ExcelClientContext();
-var table = ctx.workbook.tables.add(wSheetName);
-ctx.load(table);
-ctx.executeAsync().then(function () {
-	Console.log(table.name);
-});
-```
-[Back](#methods)
-
-### getItem(name: string)
-
-Get table object properties based on name.
-
-#### Syntax
-```js
-tablesCollection.getItem(name);
-```
-
-#### Parameters
-
-Parameter       | Type  | Description
---------------- | ------ | ------------
- `name`| String | Required. table name. 
-
-#### Returns
-
-[table](table.md) object.
-
-#### Examples
-```js
-var ctx = new Excel.ExcelClientContext();
-var tableName = 'Table1';
-var table = ctx.workbook.tables.getItem(tableName);
-ctx.executeAsync().then(function () {
-		Console.log(table.index);
-});
-```
-[Back](#methods)
-
-
-### getItemAt(index: number)
-
-Get table object properties based on its position in the items[] array. 
-
-#### Syntax
-```js
-tablesCollection.getItemAt(index);
-```
-
-#### Parameters
-
-Parameter       | Type  | Description
---------------- | ------ | ------------
- `index`| Number | Required. Index or position in the items[]. Zero indexed.
-
-#### Returns
-
-[table](table.md) object.
-
-#### Examples
-```js
-var ctx = new Excel.ExcelClientContext();
-var table = ctx.workbook.tables.getItemAt(0);
-ctx.executeAsync().then(function () {
-		Console.log(table.name);
-});
-```
-[Back](#methods)

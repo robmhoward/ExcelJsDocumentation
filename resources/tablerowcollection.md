@@ -18,89 +18,40 @@ The tablerow collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(name: string)](#addname-string)| [Table Row](tablerow.md) Object  |Creates a new tablerow. ||
+|[add(index: number, values: array[][])](#addindex-number-values-array)| [Table Row](tablerow.md) Object  |Creates a new tablerow. ||
 |[getItem(name: string)](#getitemname-string)| [Table Row](tablerow.md) Object |Retrieve a tablerow object using its name||
 |[getItemAt(index: number)](#getitematindex-number)| [Table Row](tablerow.md) Object |Retrieve a tablerow based on its position in the items[] array.||
 
 
 ## API Specification 
 
-### Get tablerow Collection
 
-Get properties of the tablerow collection. 
+### add(index: number, values: array[][])
 
-#### Syntax
-```js
-context.workbook.tablerows.property;
-```
-
-#### Properties
-
-| Property         | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|tablerows.count|
-|`items`| Object[] | A collection of all the tablerow objects that are part of the table|[tablerows.item] |
-
-
-#### Returns
-
-[tablerow](tablerow.md) collection. 
-
-#### Examples
-
-```js
-var ctx = new Excel.ExcelClientContext();
-var tablerows = ctx.workbook.tablerows;
-ctx.load(tablerows);
-ctx.executeAsync().then(function () {
-	for (var i = 0; i < tablerows.items.length; i++)
-	{
-		Console.log(tablerows.items[i].name);
-		Console.log(tablerows.items[i].index);
-	}
-});
-```
-
-##### Getting the number of tablerows
-
-```js
-var ctx = new Excel.ExcelClientContext();
-var tablerows = ctx.workbook.tablerows;
-ctx.load(tables);
-ctx.executeAsync().then(function () {
-	Console.log("tablerows: Count= " + tablerows.count);
-});
-
-```
-[Back](#properties)
-
-### add(name: string)
-
-Add a new tablerow to the workbook. The tablerow will be added at the end of existing tablerows.
+Add a new row to the table. 
 
 #### Syntax
 ```js
-tablerowsCollection.add(name);
+tableRowCollection.add(index, values);
 ```
-
-#### Parameters
-
+#### Parameters 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`name`  | String| Optional. String value representing the name of the sheet to be added. If not specified, Excel determines the name of the new tablerow being added. 
+`index` |  Number |Optional. Specifies the relative position of the new row. If not specified, the addition happens at the end. The previous column at this position is shifted outward to the bottom. **Zero Indexed**
+`values` | Collection (primitive) | 2-D array of unformatted values of the table row. 
 
 #### Returns
-[tablerow](tablerow.md) object.
+[Table Row](tableRow.md) object.
 
-#### Examples
-
+#### Example
 ```js
-var wSheetName = 'Sample Name';
 var ctx = new Excel.ExcelClientContext();
-var tablerow = ctx.workbook.tablerows.add(wSheetName);
-ctx.load(tablerow);
+var tables = ctx.workbook.tables;
+var values = [["Sample", "Values", "For", "New", "Row"]];
+var row = tables.getItem("Table1").tablerows.add(null, values);
+ctx.load(row);
 ctx.executeAsync().then(function () {
-	Console.log(tablerow.name);
+	Console.log(row.index);
 });
 ```
 [Back](#methods)
@@ -111,7 +62,7 @@ Get tablerow object properties based on name.
 
 #### Syntax
 ```js
-tablerowsCollection.getItem(name);
+tableRowCollection.getItem(name);
 ```
 
 #### Parameters
@@ -135,14 +86,13 @@ ctx.executeAsync().then(function () {
 ```
 [Back](#methods)
 
-
 ### getItemAt(index: number)
 
 Get tablerow object properties based on its position in the items[] array. 
 
 #### Syntax
 ```js
-tablerowsCollection.getItemAt(index);
+tableRowCollection.getItemAt(index);
 ```
 
 #### Parameters
@@ -165,3 +115,51 @@ ctx.executeAsync().then(function () {
 });
 ```
 [Back](#methods)
+
+### Get tablerow Collection
+
+Get properties of the tablerow collection. 
+
+#### Syntax
+```js
+tableRowCollection.property;
+```
+
+#### Properties
+
+| Property         | Type    |Description|Notes |
+|:-----------------|:--------|:----------|:-----|
+|`count`| Number   | Number of objects in the collection.|tablerows.count|
+|`items`| [Table Row](tablerow.md) Array  | A collection of all the tablerow objects that are part of the table|[tablerows.item] |
+
+
+#### Returns
+
+[tablerow](tablerow.md) collection. 
+
+#### Examples
+
+```js
+var ctx = new Excel.ExcelClientContext();
+var tablerows = ctx.workbook.tablerows;
+ctx.load(tablerows);
+ctx.executeAsync().then(function () {
+	for (var i = 0; i < tablerows.items.length; i++)
+	{
+		Console.log(tablerows.items[i].index);
+	}
+});
+```
+
+##### Getting the number of tablerows
+
+```js
+var ctx = new Excel.ExcelClientContext();
+var tablerows = ctx.workbook.tablerows;
+ctx.load(tables);
+ctx.executeAsync().then(function () {
+	Console.log("tablerows: Count= " + tablerows.count);
+});
+
+```
+[Back](#properties)

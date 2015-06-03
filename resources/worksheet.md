@@ -5,6 +5,7 @@ The Worksheet object is a member of the Worksheets collection. The Worksheets co
 
 | Property       | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
+|`id`   | String | A unique key that identifies the Worksheet object in a Workbook. |        |
 |`index`| Number |The zero-based index of the worksheet within the workbook|Worksheet.Index|
 |`name` | String |The user-visible name of the worksheet|Worksheet.Name    |
 

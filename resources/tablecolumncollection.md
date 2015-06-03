@@ -18,89 +18,39 @@ The tablecolumn collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(name: string)](#addname-string)| [Table Column](tablecolumn.md) Object             |Creates a new tablecolumn.  ||
+|[add(index: number, values: array[][])](#addindex-number-values-array)| [Table Column](tablecolumn.md) Object             |Creates a new tablecolumn.  ||
 |[getItem(name: string)](#getitemname-string)| [Table Column](tablecolumn.md) Object     |Retrieve a tablecolumn object using its name||
 |[getItemAt(index: number)](#getitematindex-number)| [tablecolumn](tablecolumn.md) Object|Retrieve a tablecolumn based on its position in the items[] array.||
 
 
 ## API Specification 
 
-### Get tablecolumn Collection
+### add(index: number, values: array[][])
 
-Get properties of the tablecolumn collection. 
-
-#### Syntax
-```js
-context.workbook.tablecolumns.property;
-```
-
-#### Properties
-
-| Property         | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|tablecolumns.count|
-|`items`| Object[] | A collection of all the tablecolumn objects that are part of the table|[tablecolumns.item] |
-
-
-#### Returns
-
-[tablecolumn](tablecolumn.md) collection. 
-
-#### Examples
-
-```js
-var ctx = new Excel.ExcelClientContext();
-var tablecolumns = ctx.workbook.tablecolumns;
-ctx.load(tablecolumns);
-ctx.executeAsync().then(function () {
-	for (var i = 0; i < tablecolumns.items.length; i++)
-	{
-		Console.log(tablecolumns.items[i].name);
-		Console.log(tablecolumns.items[i].index);
-	}
-});
-```
-
-##### Getting the number of tablecolumns
-
-```js
-var ctx = new Excel.ExcelClientContext();
-var tablecolumns = ctx.workbook.tablecolumns;
-ctx.load(tables);
-ctx.executeAsync().then(function () {
-	Console.log("tablecolumns: Count= " + tablecolumns.count);
-});
-
-```
-[Back](#properties)
-
-### add(name: string)
-
-Add a new tablecolumn to the workbook. The tablecolumn will be added at the end of existing tablecolumns.
+Add a new column to the table. 
 
 #### Syntax
 ```js
-tablecolumnsCollection.add(name);
+tableColumnCollection.add(index, values);
 ```
-
-#### Parameters
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`name`  | String| Optional. String value representing the name of the sheet to be added. If not specified, Excel determines the name of the new tablecolumn being added. 
+`index` |  Number |Optional. Specifies the relative position of the new column. The previous column at this position is shifted outward to the right. If not specified, the addition happens at the end. **Zero Indexed**. **Note: The index value should be equal to or less than the last column's index value. In other words, this API cannot be used to append a column at the end of the table **
+`values` | Collection (primitive) | Required. 2-D array of unformatted values of the table column.
 
 #### Returns
-[tablecolumn](tablecolumn.md) object.
+[Range](range.md) object.
 
-#### Examples
-
+#### Example
 ```js
-var wSheetName = 'Sample Name';
 var ctx = new Excel.ExcelClientContext();
-var tablecolumn = ctx.workbook.tablecolumns.add(wSheetName);
-ctx.load(tablecolumn);
+var tables = ctx.workbook.tables;
+var values = [["Sample"], ["Values"], ["For"], ["New"], ["Column"]];
+var row = tables.getItem("Table1").tableColumns.add(null, values);
+ctx.load(row);
 ctx.executeAsync().then(function () {
-	Console.log(tablecolumn.name);
+	Console.log(row.name);
 });
 ```
 [Back](#methods)
@@ -111,7 +61,7 @@ Get tablecolumn object properties based on name.
 
 #### Syntax
 ```js
-tablecolumnsCollection.getItem(name);
+tableColumnCollection.getItem(name);
 ```
 
 #### Parameters
@@ -135,14 +85,13 @@ ctx.executeAsync().then(function () {
 ```
 [Back](#methods)
 
-
 ### getItemAt(index: number)
 
 Get tablecolumn object properties based on its position in the items[] array. 
 
 #### Syntax
 ```js
-tablecolumnsCollection.getItemAt(index);
+tableColumnCollection.getItemAt(index);
 ```
 
 #### Parameters
@@ -165,3 +114,51 @@ ctx.executeAsync().then(function () {
 });
 ```
 [Back](#methods)
+
+### Get tablecolumn Collection
+
+Get properties of the tablecolumn collection. 
+
+#### Syntax
+```js
+tableColumnCollection.property;
+```
+
+#### Properties
+
+| Property         | Type    |Description|Notes |
+|:-----------------|:--------|:----------|:-----|
+|`count`| Number   | Number of objects in the collection.|tablecolumns.count|
+|`items`| [Table Column](tablecolumn.md) Array | A collection of all the tablecolumn objects that are part of the table|[tablecolumns.item] |
+
+#### Returns
+
+[tablecolumn](tablecolumn.md) collection. 
+
+#### Examples
+
+```js
+var ctx = new Excel.ExcelClientContext();
+var tablecolumns = ctx.workbook.tablecolumns;
+ctx.load(tablecolumns);
+ctx.executeAsync().then(function () {
+	for (var i = 0; i < tablecolumns.items.length; i++)
+	{
+		Console.log(tablecolumns.items[i].name);
+	}
+});
+```
+
+##### Getting the number of tablecolumns
+
+```js
+var ctx = new Excel.ExcelClientContext();
+var tablecolumns = ctx.workbook.tablecolumns;
+ctx.load(tables);
+ctx.executeAsync().then(function () {
+	Console.log("tablecolumns: Count= " + tablecolumns.count);
+});
+
+```
+[Back](#properties)
+
