@@ -19,7 +19,7 @@ The Worksheet collection has the following methods defined:
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[add(name: string)](#addname-string)| [Worksheet](worksheet.md) Object              |Creates a new worksheet. The new worksheet becomes the active workbook. ||
-|[getItem(name: string)](#getitemname-string)| [Worksheet](worksheet.md) Object      |Retrieve a worksheet object using its name||
+|[getItem(param: string)](#getitemparam-string)| [Worksheet](worksheet.md) Object      |Retrieve a worksheet object using its name||
 |[getItemAt(index: number)](#getitematindex-number)| [Worksheet](worksheet.md) Object     |Retrieve a worksheet based on its position in the items[] array.||
 
 
@@ -56,20 +56,20 @@ ctx.executeAsync().then(function () {
 ```
 [Back](#methods)
 
-### getItem(name: string)
+### getItem(param: string)
 
-Get Worksheet object properties based on name.
+Get Worksheet object properties based on name or id.
 
 #### Syntax
 ```js
-worksheetCollection.getItem(name);
+worksheetCollection.getItem(param);
 ```
 
 #### Parameters
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `name`| String | Required. Worksheet name. 
+ `param`| String | Required. Worksheet name or id. 
 
 #### Returns
 

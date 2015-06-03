@@ -25,7 +25,7 @@ The TableColumn has the following methods defined:
 |[getDataBodyRange()](#getdatabodyrange)| [Range](range.md) Object     | Returns a Range object that is the size of the data portion of a column.||
 |[getHeaderRowRange()](#getheaderrowrange)| [Range](range.md) Object     | Returns the header Range object associated with the column.||
 |[getRange()](#getrange)| [Range](range.md) Object     | Returns the Range object associated with the column.||
-|[getTotalRowRange()](#gettotaltowtange)| [Range](range.md) Object     | Returns the Total row for a Column Object||
+|[getTotalRowRange()](#gettotalrowrange)| [Range](range.md) Object     | Returns the Total row for a Column Object||
 
 ## API Specification 
 
@@ -183,14 +183,14 @@ Get Table Column's data and properties.
 
 #### Syntax
 ```js
-tableColumnsCollection.getItemAt(index);
+tableColumnsCollection.getItem(param);
 ```
 
 #### Parameters
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Column index of the column that you wish to get. Zero indexed.
+ `param`| String or Number | Column index (zero indexed) or column name of the column that you wish to get. 
 
 #### Returns
 
@@ -202,7 +202,7 @@ Parameter       | Type  | Description
 ```js
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
-var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItem(0);
 ctx.load(column);
 ctx.executeAsync().then(function () {
 	Console.log(column.index);

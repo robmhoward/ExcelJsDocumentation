@@ -19,7 +19,7 @@ The tablecolumn collection has the following methods defined:
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[add(index: number, values: array[][])](#addindex-number-values-array)| [Table Column](tablecolumn.md) Object             |Creates a new tablecolumn.  ||
-|[getItem(name: string)](#getitemname-string)| [Table Column](tablecolumn.md) Object     |Retrieve a tablecolumn object using its name||
+|[getItem(param: string or number)](#getitemparam-string-or-number)| [Table Column](tablecolumn.md) Object     |Retrieve a tablecolumn object using its name||
 |[getItemAt(index: number)](#getitematindex-number)| [tablecolumn](tablecolumn.md) Object|Retrieve a tablecolumn based on its position in the items[] array.||
 
 
@@ -55,20 +55,20 @@ ctx.executeAsync().then(function () {
 ```
 [Back](#methods)
 
-### getItem(name: string)
+### getItem(param: string or number)
 
 Get tablecolumn object properties based on name.
 
 #### Syntax
 ```js
-tableColumnCollection.getItem(name);
+tableColumnCollection.getItem(param);
 ```
 
 #### Parameters
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `name`| String | Required. tablecolumn name. 
+ `param`| String | Required. tablecolumn name or id. 
 
 #### Returns
 

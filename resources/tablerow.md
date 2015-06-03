@@ -90,7 +90,7 @@ Get Table Row's data and properties
 
 #### Syntax
 ```js
-tableRowsCollection.getItemAt(index);
+tableRowsCollection.getItem(index);
 ```
 
 #### Parameters
@@ -108,7 +108,7 @@ Parameter       | Type  | Description
 ```js
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
-var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(0);
+var row = ctx.workbook.tables.getItem(tableName).tableRows.getItem(0);
 ctx.load(row);
 ctx.executeAsync().then(function () {
 	Console.log(row.index);

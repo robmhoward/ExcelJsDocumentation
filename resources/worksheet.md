@@ -240,14 +240,14 @@ Get Worksheet object properties based on name.
 
 #### Syntax
 ```js
-worksheetCollection.getItem(name);
+worksheetCollection.getItem(param);
 ```
 
 #### Parameters
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `name`| String | Required. Worksheet name. 
+ `param`| String | Required. Worksheet name or id. 
 
 #### Returns
 
