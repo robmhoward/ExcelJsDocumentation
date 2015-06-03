@@ -36,8 +36,8 @@ tableColumnCollection.add(index, values);
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`index` |  Number |Optional. Specifies the relative position of the new column. The previous column at this position is shifted outward to the right. If not specified, the addition happens at the end. **Zero Indexed**. **Note: The index value should be equal to or less than the last column's index value. In other words, this API cannot be used to append a column at the end of the table **
 `values` | array[][] | Required. 2-D array of unformatted values of the table column.
+`index` |  Number | Optional. Specifies the relative position of the new column. The previous column at this position is shifted outward to the right. If not specified, the addition happens at the end.  Note: The index value should be equal to or less than the last column's index value. In other words, this API cannot be used to append a column at the end of the table. **Zero Indexed**.
 
 #### Returns
 [Range](range.md) object.

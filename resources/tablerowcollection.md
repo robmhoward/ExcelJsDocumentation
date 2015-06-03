@@ -37,8 +37,9 @@ tableRowCollection.add(index, values);
 #### Parameters 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`index` |  Number |Optional. Specifies the relative position of the new row. If not specified, the addition happens at the end. The previous column at this position is shifted outward to the bottom. **Zero Indexed**
 `values` | array[][] | 2-D array of unformatted values of the table row. 
+`index` |  Number |Optional. Specifies the relative position of the new row. If not specified, the addition happens at the end. The previous column at this position is shifted outward to the bottom. **Zero Indexed**
+
 
 #### Returns
 [Table Row](tableRow.md) object.
