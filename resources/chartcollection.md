@@ -18,7 +18,7 @@ The chart has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(type: string, sourceData: any, seriesBy: string)](#addtype-string-sourceData-any-seriesBy-string)| [Chart](chart.md) Object              |Creates a new chart. The new chart becomes the active workbook. ||
+|[add(type: string, sourceData: string, seriesBy: string)](#addtype-string-sourcedata-string-seriesby-string)| [Chart](chart.md) Object              |Creates a new chart. The new chart becomes the active workbook. ||
 |[getItem(name: string)](#getitemname-string)| [Chart](chart.md) Object     |Retrieve a chart object using its name||
 |[getItemAt(index: number)](#getitematindex-number)| [Chart](chart.md) Object    |Retrieve a chart based on its position in the items[] array.||
 
@@ -75,7 +75,7 @@ ctx.executeAsync().then(function () {
 ```
 [Back](#properties)
 
-### add(type: string, sourceData: any, seriesBy: string)
+### add(type: string, sourceData: string, seriesBy: string)
 
 Add a new chart to the workbook. The chart will be added at the end of existing charts.
 

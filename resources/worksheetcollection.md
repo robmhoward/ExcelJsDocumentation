@@ -19,60 +19,12 @@ The Worksheet collection has the following methods defined:
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[add(name: string)](#addname-string)| [Worksheet](worksheet.md) Object              |Creates a new worksheet. The new worksheet becomes the active workbook. ||
-|[getItem(name: string)](#getitemname-string)| [Worksheet](worksheet.md) Object      |Retrieve a worksheet object using its name||
+|[getActiveWorksheet()](#getactiveworksheet)| [Worksheet](worksheet.md) object |Get the currently active worksheet in the workbook.| |
+|[getItem(param: string)](#getitemparam-string)| [Worksheet](worksheet.md) Object      |Retrieve a worksheet object using its name||
 |[getItemAt(index: number)](#getitematindex-number)| [Worksheet](worksheet.md) Object     |Retrieve a worksheet based on its position in the items[] array.||
 
 
 ## API Specification 
-
-### Get Worksheet Collection
-
-Get properties of the worksheet collection. 
-
-#### Syntax
-```js
-context.workbook.worksheets.property;
-```
-
-#### Properties
-
-| Property         | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|Worksheets.count|
-|`items`| Object[] | A collection of all the worksheet objects that are part of the workbook|[Worksheets.item] |
-
-
-#### Returns
-
-[Worksheet](worksheet.md) collection. 
-
-#### Examples
-
-```js
-var ctx = new Excel.ExcelClientContext();
-var worksheets = ctx.workbook.worksheets;
-ctx.load(worksheets);
-ctx.executeAsync().then(function () {
-	for (var i = 0; i < worksheets.items.length; i++)
-	{
-		Console.log(worksheets.items[i].name);
-		Console.log(worksheets.items[i].index);
-	}
-});
-```
-
-##### Getting the number of worksheets
-
-```js
-var ctx = new Excel.ExcelClientContext();
-var worksheets = ctx.workbook.worksheets;
-ctx.load(tables);
-ctx.executeAsync().then(function () {
-	Console.log("Worksheets: Count= " + worksheets.count);
-});
-
-```
-[Back](#properties)
 
 ### add(name: string)
 
@@ -105,20 +57,48 @@ ctx.executeAsync().then(function () {
 ```
 [Back](#methods)
 
-### getItem(name: string)
+### getActiveWorksheet()
 
-Get Worksheet object properties based on name.
+Get the currently active worksheet in the workbook.
 
 #### Syntax
 ```js
-worksheetCollection.getItem(name);
+worksheetCollection.getActiveWorksheet();
+```
+#### Parameters
+
+None
+
+#### Returns
+
+[Worksheet](worksheet.md) object.
+
+#### Examples 
+
+```js
+var ctx = new Excel.ExcelClientContext();
+var activeWorksheet = ctx.workbook.worksheets.getActiveWorksheet();
+ctx.load(activeWorksheet);
+ctx.executeAsync().then(function () {
+		Console.log(activeWorksheet.name);
+});
+```
+[Back](#methods)
+
+### getItem(param: string)
+
+Get Worksheet object properties based on name or id.
+
+#### Syntax
+```js
+worksheetCollection.getItem(param);
 ```
 
 #### Parameters
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `name`| String | Required. Worksheet name. 
+ `param`| String | Required. Worksheet name or id. 
 
 #### Returns
 
@@ -165,3 +145,53 @@ ctx.executeAsync().then(function () {
 });
 ```
 [Back](#methods)
+
+
+### Get Worksheet Collection
+
+Get properties of the worksheet collection. 
+
+#### Syntax
+```js
+context.workbook.worksheets.property;
+```
+
+#### Properties
+
+| Property         | Type    |Description|Notes |
+|:-----------------|:--------|:----------|:-----|
+|`count`| Number   | Number of objects in the collection.|Worksheets.count|
+|`items`| [Worksheet](worksheet.md) Array | A collection of all the worksheet objects that are part of the workbook|[Worksheets.item] |
+
+
+#### Returns
+
+[Worksheet](worksheet.md) collection. 
+
+#### Examples
+
+```js
+var ctx = new Excel.ExcelClientContext();
+var worksheets = ctx.workbook.worksheets;
+ctx.load(worksheets);
+ctx.executeAsync().then(function () {
+	for (var i = 0; i < worksheets.items.length; i++)
+	{
+		Console.log(worksheets.items[i].name);
+		Console.log(worksheets.items[i].index);
+	}
+});
+```
+
+##### Getting the number of worksheets
+
+```js
+var ctx = new Excel.ExcelClientContext();
+var worksheets = ctx.workbook.worksheets;
+ctx.load(tables);
+ctx.executeAsync().then(function () {
+	Console.log("Worksheets: Count= " + worksheets.count);
+});
+
+```
+[Back](#properties)

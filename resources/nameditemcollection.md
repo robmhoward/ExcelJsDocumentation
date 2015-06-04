@@ -30,7 +30,7 @@ Get properties of the nameditem collection.
 
 #### Syntax
 ```js
-context.workbook.names.property;
+nameditemCollection.property;
 ```
 
 #### Properties
@@ -38,7 +38,7 @@ context.workbook.names.property;
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 |`count`| Number   | Number of objects in the collection.|nameditems.count|
-|`items`| Object[] | A collection of all the nameditem objects that are part of the workbook|[nameditems.item] |
+|`items`| [Named Item](nameditem.md) Array | A collection of all the nameditem objects that are part of the workbook|[nameditems.item] |
 
 
 #### Returns

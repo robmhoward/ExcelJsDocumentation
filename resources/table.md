@@ -217,7 +217,7 @@ Get Table object properties based on name.
 #### Syntax
 
 ```js
-tablesCollection.getItem(name);
+tableCollection.getItem(name);
 ```
 
 #### Parameters
@@ -228,7 +228,7 @@ Parameter        | Type   | Description
 
 #### Syntax
 ```js
-tablesCollection.getItemAt(index);
+tableCollection.getItemAt(index);
 ```
 
 #### Parameters
@@ -261,6 +261,41 @@ var index = 0;
 var table = ctx.workbook.tables.getItemAt(0);
 ctx.executeAsync().then(function () {
 		Console.log(table.name);
+});
+```
+[Back](#properties)
+
+### Update Table
+
+This API allows setting of Table properties such as name and show totals. In order to update the table content, use the update table row or column API.
+
+#### Syntax
+```js
+tableObject.property = 'new-value';
+```
+
+#### Properties 
+
+Following properties can be updated directly. 
+
+|Property      | Type   | Description      |
+|-------------- | ------ | -----------------|
+| `name`        | String | String value that represents the name of the Table object   | 
+| `showTotals`  | Boolean| Boolean to indicate whether the Total row is visible. This value can be set to show or remove the total row| 
+| `tableStyle`  | String | Constant that represents the Table style. Possible values include: `TableStyleLight1` thru `TableStyleLight21`, `TableStyleMedium1` thru `TableStyleMedium28`, `TableStyleDark1` thru `TableStyleDark11`|
+
+#### Example 
+
+```js
+var tableName = 'Table1';
+var ctx = new Excel.ExcelClientContext();
+var table = ctx.workbook.tables.getItem(tableName);
+table.name = 'Table1-Renamed';
+table.showTotals = false;
+table.tableStyle = 'TableStyleMedium2';
+ctx.load(table);
+ctx.executeAsync().then(function () {
+		Console.log(table.tableStyle);
 });
 ```
 [Back](#properties)

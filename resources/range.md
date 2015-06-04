@@ -9,13 +9,13 @@ Range represents a cell, a row, a column, a selection of cells containing one or
 |`cellCount`       | Number          |Number of cells in the range|Range.Count|
 |`columnIndex`     | Number          |Returns the number of the first column in the first area in the specified range. This is adjusted to be zero indexed. Read-only|Range.Column|
 |`columnCount`    | Number           |Returns the number of the first row of the first area in the range. This is adjusted to be zero indexed. Read-only|Range.Row|
-|`formula`         |Array[][]|Represents the object's formula in A1 style notation|Range.formula|
-|`formulaLocal`    |Array[][]|Formula for the object, in the language of the user in A1 style notation|Range.FormulaLocal|
-|`numberFormat`    |Array[][]|Value that represents the format code for the object|Range.NumberFormat
+|`formula`         |String[][]|Represents the object's formula in A1 style notation|Range.formula|
+|`formulaLocal`    |String[][]|Formula for the object, in the language of the user in A1 style notation|Range.FormulaLocal|
+|`numberFormat`    |String[][]|Value that represents the format code for the object|Range.NumberFormat
 |`rowcount`        | Number          |Returns the total number of columns in the Range selected. Read-only |Range.Column|
 |`rowIndex`        | Number          |Returns the number of the first row of the first area in the range. This is adjusted to be zero indexed. Read-only|Range.Row|
-|`text`            |Array[][]|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel client will not affect the value returned by the API. |Range.Text|
-|`values`          |Array[][]|Unformatted values of the specified range|Range.Value2|
+|`text`            |String[][]|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel client will not affect the value returned by the API. |Range.Text|
+|`values`          |any[][]|Unformatted values of the specified range|Range.Value2|
 
 ## Relationships
 Range has the following relationships defined:
@@ -356,10 +356,10 @@ Where, property is one of the following Range properties that can be set.
 
 |Property          | Type          | Description                                           |
 |----------------- | -------------- | ----------------------------------------------------- |
-|`values`		   | Array[][] of strings or numbers    | Unformatted value of the specified range.	 		        |
-|`numberFormat`    | Array[][] of String | Typethat represents the format code for the object. |
-|`formula`         | Array[][] of String | Represents the object's formula notation.             |
-|`formulaLocal`    | Array[][] of String | Formula for the object, in the language of the user.  |
+|`values`		   | Any[][] of strings or numbers    | Unformatted value of the specified range.	 		        |
+|`numberFormat`    | String[][] of String | Typethat represents the format code for the object. |
+|`formula`         | String[][] of String | Represents the object's formula notation.             |
+|`formulaLocal`    | String[][] of String | Formula for the object, in the language of the user.  |
 
 #### Returns
 

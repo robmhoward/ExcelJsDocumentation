@@ -2,13 +2,12 @@
 
 Represents the border objects that make up Range border. 
 
-
 ## [Properties](#get-border-collection)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 |`count`| Number   | Number of objects in the collection.|range.borders.count|
-|`items`| [Range Border](rangeborder.md) Array | A collection of all the border objects that are part of the workbook|ListObjects |
+|`items`| [Range Border](rangeborder.md) Array | A collection of all the border objects of the Range.|ListObjects |
 
 ## Relationships
 
@@ -21,8 +20,6 @@ The border collection has the following methods defined:
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[getItem(name: string)](#getitemname-string)| [border](rangeborder.md) Object      |Retrieve a border object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [border](rangeborder.md) Object     |Retrieve a border based on its position in the items[] array.||
-
 
 ## API Specification 
 
@@ -40,7 +37,7 @@ rangeObject.borders.property;
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 |`count`| Number   | Number of objects in the collection.|borders.count|
-|`items`| Object[] | A collection of all the border objects that are part of the workbook|[borders.item] |
+|`items`| [Range Border](rangeborder.md) Array | A collection of all the border objects of the range.|[borders.item] |
 
 
 #### Returns
@@ -87,7 +84,7 @@ Sets border to a range and sets the Color, LineStyle, and Weight properties for 
 
 #### Syntax
 ```js
-rangeObject.format.borders(sideIndex).property = value;
+borderCollection(sideIndex).property = value;
 ```
 Where, property is one of the following Range's border properties that can be set. 
 
@@ -130,44 +127,13 @@ ctx.executeAsync().then();
 ```
 [Back](#properties)
 
-### add(name: string)
-
-Add a new border to the workbook. The border will be added at the end of existing borders.
-
-#### Syntax
-```js
-bordersCollection.add(name);
-```
-
-#### Parameters
-
-Parameter       | Type   | Description
---------------- | ------ | ------------
-`name`  | String| Optional. String value representing the name of the sheet to be added. If not specified, Excel determines the name of the new border being added. 
-
-#### Returns
-[border](rangeborder.md) object.
-
-#### Examples
-
-```js
-var wSheetName = 'Sample Name';
-var ctx = new Excel.ExcelClientContext();
-var border = ctx.workbook.borders.add(wSheetName);
-ctx.load(border);
-ctx.executeAsync().then(function () {
-	Console.log(border.name);
-});
-```
-[Back](#methods)
-
 ### getItem(name: string)
 
 Get border object properties based on name.
 
 #### Syntax
 ```js
-bordersCollection.getItem(name);
+borderCollection.getItem(name);
 ```
 
 #### Parameters
@@ -187,36 +153,6 @@ var borderName = 'border1';
 var border = ctx.workbook.borders.getItem(borderName);
 ctx.executeAsync().then(function () {
 		Console.log(border.index);
-});
-```
-[Back](#methods)
-
-
-### getItemAt(index: number)
-
-Get border object properties based on its position in the items[] array. 
-
-#### Syntax
-```js
-bordersCollection.getItemAt(index);
-```
-
-#### Parameters
-
-Parameter       | Type  | Description
---------------- | ------ | ------------
- `index`| Number | Required. Index or position in the items[]. Zero indexed.
-
-#### Returns
-
-[border](rangeborder.md) object.
-
-#### Examples
-```js
-var ctx = new Excel.ExcelClientContext();
-var border = ctx.workbook.borders.getItemAt(0);
-ctx.executeAsync().then(function () {
-		Console.log(border.name);
 });
 ```
 [Back](#methods)

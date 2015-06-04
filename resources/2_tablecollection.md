@@ -19,13 +19,13 @@ The table collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(address: string, hasHeaders: bool)](#addaddress-string-hasheaders-bool)| [Table](table.md) Object | Creates a new table.||
+|[add(address: string, showHeaders: bool, showTotals: bool, tableStyle: bool)](#addname-string-address-string-showHeaders-bool-showTotals-bool-tableStyle-bool)| [Table](table.md) Object              |Creates a new table. ||
 |[getItem(name: string)](#getitemname-string)| [Table](table.md) Object      |Retrieve a table object using its name||
 |[getItemAt(index: number)](#getitematindex-number)| [Table](table.md) Object     |Retrieve a table based on its position in the items[] array.||
 
 ## API Specification 
 
-### add(address: string, hasHeaders: bool)
+### add(name: string, address: string, showHeaders: bool, showTotals: bool, tableStyle: bool)
 
 Create a New Table object. The range source address determines the worksheet under which the table will be added. 
 
@@ -49,7 +49,7 @@ tableCollection.add(name, rangeSource, containsHeader, showTotals, tableStyle);
 #### Example
 ```js
 var ctx = new Excel.ExcelClientContext();
-var table = ctx.workbook.tables.add('Sheet1!A1:E7', true);
+var table = ctx.workbook.tables.add('MyTable', 'Sheet1!A1:E7', true, false, null);
 ctx.load(table);
 ctx.executeAsync().then(function () {
 	Console.log(table.name);
