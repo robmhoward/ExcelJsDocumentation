@@ -47,7 +47,7 @@ Parameter       | Type   | Description
 var ctx = new Excel.ExcelClientContext();
 var tables = ctx.workbook.tables;
 var values = [["Sample"], ["Values"], ["For"], ["New"], ["Column"]];
-var row = tables.getItem("Table1").tableColumns.add(null, values);
+var row = tables.getItem("Table1").tableColumns.add(values, null);
 ctx.load(row);
 ctx.executeAsync().then(function () {
 	Console.log(row.name);
