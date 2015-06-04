@@ -19,6 +19,7 @@ The Worksheet collection has the following methods defined:
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[add(name: string)](#addname-string)| [Worksheet](worksheet.md) Object              |Creates a new worksheet. The new worksheet becomes the active workbook. ||
+|[getActiveWorksheet()](#getactiveworksheet)| [Worksheet](worksheet.md) object |Get the currently active worksheet in the workbook.| |
 |[getItem(param: string)](#getitemparam-string)| [Worksheet](worksheet.md) Object      |Retrieve a worksheet object using its name||
 |[getItemAt(index: number)](#getitematindex-number)| [Worksheet](worksheet.md) Object     |Retrieve a worksheet based on its position in the items[] array.||
 
@@ -52,6 +53,34 @@ var worksheet = ctx.workbook.worksheets.add(wSheetName);
 ctx.load(worksheet);
 ctx.executeAsync().then(function () {
 	Console.log(worksheet.name);
+});
+```
+[Back](#methods)
+
+### getActiveWorksheet()
+
+Get the currently active worksheet in the workbook.
+
+#### Syntax
+```js
+workbookCollection.getActiveWorksheet();
+```
+#### Parameters
+
+None
+
+#### Returns
+
+[Worksheet](worksheet.md) object.
+
+#### Examples 
+
+```js
+var ctx = new Excel.ExcelClientContext();
+var activeWorksheet = ctx.workbook.worksheets.getActiveWorksheet();
+ctx.load(activeWorksheet);
+ctx.executeAsync().then(function () {
+		Console.log(activeWorksheet.name);
 });
 ```
 [Back](#methods)
