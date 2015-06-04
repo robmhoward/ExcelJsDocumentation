@@ -63,7 +63,7 @@ Get the currently active worksheet in the workbook.
 
 #### Syntax
 ```js
-workbookCollection.getActiveWorksheet();
+worksheetCollection.getActiveWorksheet();
 ```
 #### Parameters
 
