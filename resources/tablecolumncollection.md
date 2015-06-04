@@ -18,14 +18,14 @@ The tablecolumn collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(index: number, values: array[][])](#addindex-number-values-array)| [Table Column](tablecolumn.md) Object             |Creates a new tablecolumn.  ||
+|[add(values: any[][], index: number)](#addvalues-any-index-number)| [Table Column](tablecolumn.md) Object             |Creates a new tablecolumn.  ||
 |[getItem(param: string or number)](#getitemparam-string-or-number)| [Table Column](tablecolumn.md) Object     |Retrieve a tablecolumn object using its name||
 |[getItemAt(index: number)](#getitematindex-number)| [tablecolumn](tablecolumn.md) Object|Retrieve a tablecolumn based on its position in the items[] array.||
 
 
 ## API Specification 
 
-### add(index: number, values: array[][])
+### add(values: any[][], index: number)
 
 Add a new column to the table. 
 
@@ -36,7 +36,7 @@ tableColumnCollection.add(index, values);
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`values` | array[][] | Required. 2-D array of unformatted values of the table column.
+`values` | any[][] | Required. 2-D array of unformatted values of the table column.
 `index` |  Number | Optional. Specifies the relative position of the new column. The previous column at this position is shifted outward to the right. If not specified, the addition happens at the end.  Note: The index value should be equal to or less than the last column's index value. In other words, this API cannot be used to append a column at the end of the table. **Zero Indexed**.
 
 #### Returns

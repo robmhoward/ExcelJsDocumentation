@@ -18,7 +18,7 @@ The tablerow collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(index: number, values: array[][])](#addindex-number-values-array)| [Table Row](tablerow.md) Object  |Creates a new tablerow. ||
+|[add(values: any[][], index: number)](##addvalues-any-index-number)| [Table Row](tablerow.md) Object  |Creates a new tablerow. ||
 |[getItem(name: string)](#getitemname-string)| [Table Row](tablerow.md) Object |Retrieve a tablerow object using its name||
 |[getItemAt(index: number)](#getitematindex-number)| [Table Row](tablerow.md) Object |Retrieve a tablerow based on its position in the items[] array.||
 
@@ -26,7 +26,7 @@ The tablerow collection has the following methods defined:
 ## API Specification 
 
 
-### add(index: number, values: array[][])
+### add(values: any[][], index: number)
 
 Add a new row to the table. 
 
@@ -37,7 +37,7 @@ tableRowCollection.add(index, values);
 #### Parameters 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`values` | array[][] | 2-D array of unformatted values of the table row. 
+`values` | any[][] | 2-D array of unformatted values of the table row. 
 `index` |  Number |Optional. Specifies the relative position of the new row. If not specified, the addition happens at the end. The previous column at this position is shifted outward to the bottom. **Zero Indexed**
 
 
