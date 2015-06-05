@@ -2,7 +2,8 @@
 
 This object represents the font attributes (font name, font size, color, and so on) for an object. 
 
-## Properties
+## [Properties](#get-range-font)
+
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 |`name`|String|Font name (e.g., "Calibri")|Range.Font.Name|
@@ -24,7 +25,7 @@ None
 
 ## API Specification
 
-### Get Range Format 
+### Get Range Font 
 
 Get Range's font information. This information is obtained by navigating to the font relation.
 

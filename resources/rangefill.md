@@ -7,7 +7,7 @@ Represents the interior of an object, which includes fill formating information.
 |:-----------------|:--------|:----------|:-----|
 |`color`|String|HTML color code representation of the fill color. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). e.g., `#FF0000` represents Red. ('255' red, '0' green, and '0' blue) |Conversion from Range.Interior.Color value to html color string|
 
-## Programming notes about `color` property: 
+##### Notes about `color` property: 
 
 A `color` hex code is a way of specifying color using hexadecimal values. The code itself is a hex triplet, which represents three separate values that specify the levels of the component colors. The code starts with a pound sign (#) and is followed by six hex values or three hex value pairs (for example, #AFD645). 
 
