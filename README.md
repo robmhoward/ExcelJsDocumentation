@@ -14,6 +14,8 @@
 	* [Chart Collection](resources/chartcollection.md): A collection of charts in a workbook or a worksheet.    
 * [Named-Item](resources/nameditem.md): Represents a defined name for a range of cells or a value. Names can be primitive named objects (as seen in the type below), range object, etc.
 	* [Names Collection](resources/nameditemcollection.md): a collection of named items of a workbook.
+* [Binding](resources/binding.md): An abstract class that represents a binding to a section of the workbook.
+	* [Binding Collection](resources/bindingcollection.md):A collection of all the Binding objects that are part of the workbook. 
 
 Also see: 
 
