@@ -1,5 +1,5 @@
 # Reference Collection
-Reference collection allows add-ins add and remove temporary references on range.
+Reference collection allows add-ins to add and remove temporary references on range.
 
 ## Properties
 None.

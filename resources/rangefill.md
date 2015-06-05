@@ -2,7 +2,7 @@
 
 Represents the interior of an object, which includes fill formating information. 
 
-## Properties
+## [Properties](#get-range-fill)
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 |`color`|String|HTML color code representation of the fill color. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). e.g., `#FF0000` represents Red. ('255' red, '0' green, and '0' blue) |Conversion from Range.Interior.Color value to html color string|
@@ -22,3 +22,63 @@ None
 ## Methods
 None
 
+## API Specification
+
+### Get Range Fill
+
+Get Range's background/fill information. This information is obtained by navigating to the fill relation.
+
+#### Syntax
+
+```js
+rangeObject.format.fill;
+```
+
+#### Returns
+
+* [Range Fill](rangefill.md) object.
+
+#### Examples
+
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "F:G";
+var ctx = new Excel.ExcelClientContext();
+var worksheet = ctx.workbook.worksheets.getItem(sheetName);
+var range = worksheet.getRange(rangeAddress);
+var rangeFill = ramge.format.fill;
+ctx.load(rangeFill);
+ctx.executeAsync().then(function() {
+	Console.log(rangeFill.color);
+});
+```
+[Back](#properties)
+
+### Set Range Fill 
+
+Set range background/fill properties.
+
+#### Syntax
+```js
+rangeObject.format.fill.property = value;
+```
+Where, property is one of the following properties that can be set. 
+
+#### Properties
+
+| Property         | Type    |Description|
+|:-----------------|:--------|:----------| 
+|`color`|String|HTML color code representation of the fill color. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). e.g., `#FF0000` represents Red. ('255' red, '0' green, and '0' blue) |
+
+#### Example
+The example below sets fill color. 
+
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "F:G";
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+range.format.fill.color = '0000FF';
+ctx.executeAsync().then();
+```
+
+[Back](#properties)

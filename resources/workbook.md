@@ -21,38 +21,10 @@ The Worksheet has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[getActiveWorksheet()](#getactiveworksheet)| [Worksheet](worksheet.md) object |Get the currently active worksheet in the workbook.| |
 |[getSelectedRange()](#getselectedrange)| [Range](range.md) object |Get the currently selected Range from the Workbook. | |  
 
 ## API Specification 
 
-### getActiveWorksheet()
-
-Get the currently active worksheet in the workbook.
-
-#### Syntax
-```js
-context.workbook.getActiveWorksheet();
-```
-#### Parameters
-
-None
-
-#### Returns
-
-[Worksheet](worksheet.md) object.
-
-#### Examples 
-
-```js
-var ctx = new Excel.ExcelClientContext();
-var activeWorksheet = ctx.workbook.getActiveWorksheet();
-ctx.load(activeWorksheet);
-ctx.executeAsync().then(function () {
-		Console.log(activeWorksheet.name);
-});
-```
-[Back](#methods)
 
 
 ### getSelectedRange()
