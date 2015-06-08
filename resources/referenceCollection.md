@@ -45,10 +45,10 @@ var rangeAddress = "A1:B2";
 var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 ctx.references.add(range);
-range.insert("Down");
-
 ctx.load(range);
+
 ctx.executeAsync().then(function () {
+	range.insert("Down");
 	Console.log(range.address); // Address should be updated to A3:B4
 });
 ```
@@ -75,19 +75,20 @@ Null
 #### Examples
 
 ```js
+```js
 var sheetName = "Sheet1";
 var rangeAddress = "A1:B2";
 var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 ctx.references.add(range);
-range.insert("Down");
-
 ctx.load(range);
+
 ctx.executeAsync().then(function () {
+	range.insert("Down");
 	Console.log(range.address); // Address should be updated to A3:B4
-	ctx.references.remove(range);
-	// Using the variable "range" beyond the remove() method will result in an error since it has been removed from the reference collection. 
+	ctx.references.remove(range); 
 	ctx.executeAsync().then();
 });
 ```
 [Back](#methods)
+
