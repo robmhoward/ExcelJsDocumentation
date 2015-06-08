@@ -27,7 +27,7 @@ The Binding collection has the following methods defined:
 
 ### add(id: string)
 
-Add a new binding to the workbook. The binding will be added at the end of existing bindings.
+Add a new binding object. 
 
 #### Syntax
 ```js

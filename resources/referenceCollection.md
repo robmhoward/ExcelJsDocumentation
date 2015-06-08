@@ -10,7 +10,7 @@ None
 
 ## Methods
 
-The Binding collection has the following methods defined:
+The Reference collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
@@ -22,7 +22,7 @@ The Binding collection has the following methods defined:
 
 ### add(rangeObject: range)
 
-Add a new binding to the workbook. The binding will be added at the end of existing bindings.
+Add a range object to the reference collection. 
 
 #### Syntax
 ```js
@@ -57,7 +57,7 @@ ctx.executeAsync().then(function () {
 
 ### remove(rangeObject: range)
 
-Add a new binding to the workbook. The binding will be added at the end of existing bindings.
+Remove a reference object from the collection. 
 
 #### Syntax
 ```js
@@ -68,7 +68,7 @@ referenceCollection.remove(rangeObject);
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`rangeObject`  | [Range](range.md)| The Range Object which needs to be removed to the reference collection.
+`rangeObject`  | [Range](range.md)| The Range Object which needs to be removed from the reference collection.
 
 #### Returns
 Null
@@ -88,9 +88,8 @@ ctx.executeAsync().then(function () {
 	Console.log(range.address); // Address should be updated to A3:B4
 
 	ctx.references.remove(range);
-	range.insert("Down");
 	ctx.executeAsync().then(function () {
-		Console.log(range.address); // Address will remain A3:B4 though the underlying range shifted down after another range was inserted.
+		Console.log(range.address); // This will result in an error since the "range" reference has been removed from the reference collection.
 	});
 });
 ```
