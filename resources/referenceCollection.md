@@ -21,7 +21,6 @@ The Reference collection has the following methods defined:
 ## API Specification 
 
 ### add(rangeObject: range)
-
 Add a range object to the reference collection. 
 
 #### Syntax
