@@ -85,11 +85,9 @@ range.insert("Down");
 ctx.load(range);
 ctx.executeAsync().then(function () {
 	Console.log(range.address); // Address should be updated to A3:B4
-
 	ctx.references.remove(range);
-	ctx.executeAsync().then(function () {
-		Console.log(range.address); // This will result in an error since the "range" reference has been removed from the reference collection.
-	});
+	// Using the variable "range" beyond the remove() method will result in an error since it has been removed from the reference collection. 
+	ctx.executeAsync().then();
 });
 ```
 [Back](#methods)
