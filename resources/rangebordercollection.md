@@ -66,7 +66,7 @@ ctx.executeAsync().then(function () {
 
 ```js
 var sheetName = "Sheet1";
-var rangeAddress = "D5:F8";
+var rangeAddress = "F:G";
 var ctx = new Excel.ExcelClientContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);

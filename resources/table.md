@@ -25,7 +25,7 @@ The Worksheet has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[deleteObject()](#delete)| void     |Deletes the worksheet ||
+|[delete()](#delete)| void     |Deletes the worksheet ||
 |[getHeaderRowRange()](#getheaderrowrange) | [Range](range.md) Object |Retrieve the Range object associated with Data Body of the Table.||
 |[getDataBodyRange()](#getdatabodyrange) | [Range](range.md) Object |Retrieve the Header Row Range object associated with the Table  ||
 |[getRange()](#getrange) | [Range](range.md) Object |Get Range object associated with the Table. ||
@@ -33,7 +33,7 @@ The Worksheet has the following methods defined:
 
 ## API Specification 
 
-### deleteObject()
+### delete()
 
 Deletes Table and clears the cell data from the Table.
 
@@ -54,7 +54,7 @@ Nothing
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
 var table = ctx.workbook.tables.getItem(tableName);
-table.deleteObject();
+table.delete();
 ctx.executeAsync().then();
 ```
 [Back](#methods)
@@ -80,7 +80,7 @@ Nothing
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
 var table = ctx.workbook.tables.getItem(tableName);
-table.deleteObject();
+table.delete();
 ctx.executeAsync().then();
 ```
 [Back](#methods)

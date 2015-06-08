@@ -25,7 +25,7 @@ The Worksheet has the following methods defined:
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[activate()][activate-link]| void     |Activates the worksheet |   |
-|[deleteObject()][deleteobject-link]| void     |Deletes the worksheet ||
+|[delete()][deleteobject-link]| void     |Deletes the worksheet ||
 |[getCell(row: number, column: number)][getcell-link]| [Range](range.md) object |Returns a range containing the single cell specified by the zero-indexed row and column numbers          
 |[getEntireWorksheetRange()][getentireworksheetrange-link]| [Range](range.md) object |Returns the range containing all cells in the worksheet| |
 |[getRange(address: string)][getrange-link]| [Range](range.md) object |Returns the range specified by the address| |
@@ -59,13 +59,13 @@ ctx.executeAsync().then();
 ```
 [Back](#methods)
 
-### deleteObject()
+### delete()
 
 Delete a worksheet from the workbook. 
 
 #### Syntax
 ```js
-worksheetObject.deleteObject();
+worksheetObject.delete();
 ```
 #### Parameters
 None
@@ -80,7 +80,7 @@ Nothing
 var wSheetName = 'Sheet1';
 var ctx = new Excel.ExcelClientContext();
 var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
-worksheet.deleteObject();
+worksheet.delete();
 ctx.executeAsync().then();
 ```
 [Back](#methods)
@@ -267,7 +267,7 @@ ctx.executeAsync().then(function () {
 
 
 [activate-link]: #activate
-[deleteobject-link]: #deleteobject
+[deleteobject-link]: #delete
 [getcell-link]: #getcellrow-number-column-number
 [getentireworksheetrange-link]: #getentireworksheetrange
 [getrange-link]: #getrangeaddress-string

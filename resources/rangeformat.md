@@ -5,8 +5,6 @@ Format object represents format settings of a Range. This includes Font, fill, B
 ## [Properties](#get-range-format)
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`font`            |[Range Font](rangefont.md) Object                |Returns the Font object defined on the overall Range selected|Range.Font|
-|`fill`      |[Range Fill](rangefill.md) Object    |Returns the fill object defined on the overall Range selected|Range.Interior|
 |`horizontalAlignment`    | String  |Represents the horizontal alignment for the specified object. The value of this property can be to one of the following constants: `General`, `Fill`, `CenterAcrossSelection`, `Center`, `Distributed`, `Justify`, `Left`, `Right`. `null` indicates that the entire range doesn't have uniform horizontal alignment.|Range.HorizontalAlignment|
 |`verticalAlignment`    | String  |Represents the vertical alignment for the specified object. The value of this property can be to one of the following constants: `Bottom`, `Center`, `Distributed`, `Justify`, `Top`. `null` indicates that the entire range doesn't have uniform vertical alignment.|Range.VerticalAlignment|
 |`wrapText`    | Boolean  |Indicates if Excel wraps the text in the object. `null` indicates that the entire range doesn't have uniform wrap setting|Range.WrapText|
@@ -16,14 +14,18 @@ Format object represents format settings of a Range. This includes Font, fill, B
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 |`borders`         |[Range Border collection](rangebordercollection.md)|Collection of border objects that apply to the overall Range selected|Range.Borders|
+|`font`            |[Range Font](rangefont.md) Object                |Returns the Font object defined on the overall Range selected|Range.Font|
+|`fill`      |[Range Fill](rangefill.md) Object    |Returns the fill object defined on the overall Range selected|Range.Interior||
 
 ## Methods
 
 None
 
+## API Specification 
+
 ### Get Range Format 
 
-Get Range's format and styling details such as font, border, fill information. This information is obtained by navigating to the font, fill or borders property. 
+Get Range's format and styling details such as font, border, fill information. This information is obtained by navigating to the font, fill or borders relations. 
 
 #### Syntax
 
@@ -49,11 +51,11 @@ Below example selects all of the Range's format properties.
 
 ```js
 var sheetName = "Sheet1";
-var rangeAddress = "D5:F8";
+var rangeAddress = "F:G";
 var ctx = new Excel.ExcelClientContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
-ctx.load(range, select: ["format", "format/fill", "format/borders", "format/font"] );
+ctx.load(range, {expand: "fill, borders, font"} );
 ctx.executeAsync().then(function() {
 	Console.log(range.format.wrapText);
 	Console.log(range.format.fill.color);
@@ -75,7 +77,7 @@ Where, property is one of the following Range's Format properties that can be se
 
 #### Properties
 
-[Range Format](Format.md)
+[Range Format](rangeformat.md)
 
 | Property         | Type    |Description|
 |:-----------------|:--------|:----------| 
@@ -83,7 +85,7 @@ Where, property is one of the following Range's Format properties that can be se
 |`verticalAlignment`    | String  |Optional. Represents the vertical alignment for the specified object. The value of this property can be to one of the following constants: `Bottom`, `Center`, `Distributed`, `Justify`, `Top`. `null` indicates that the entire range doesn't have uniform vertical alignment.|Range.VerticalAlignment|
 |`wrapText`    | Boolean  |Optional. Indicates if Excel wraps the text in the object. `null` indicates that the entire range doesn't have uniform wrap setting|Range.WrapText|    
 
-[Range Font](Font.md)
+[Range Font](rangefont.md)
 
 | Property         | Type    |Description| 
 |:-----------------|:--------|:----------|

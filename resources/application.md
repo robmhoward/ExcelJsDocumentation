@@ -24,7 +24,7 @@ The Application has the following methods defined:
 Get properties of workbook's application object. 
 
 ```js
-context.workbook.application;
+workbookObject..application;
 ```
 #### Returns
 
