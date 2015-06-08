@@ -94,7 +94,7 @@ Get properties of the binding collection.
 
 #### Syntax
 ```js
-context.workbook.bindings.property;
+workbookObject..bindings.property;
 ```
 
 #### Properties

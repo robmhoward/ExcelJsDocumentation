@@ -153,7 +153,7 @@ Get properties of the worksheet collection.
 
 #### Syntax
 ```js
-context.workbook.worksheets.property;
+workbookObject..worksheets.property;
 ```
 
 #### Properties
