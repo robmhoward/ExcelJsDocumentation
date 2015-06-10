@@ -16,6 +16,7 @@
 	* [Names Collection](resources/nameditemcollection.md): a collection of named items of a workbook.
 * [Binding](resources/binding.md): An abstract class that represents a binding to a section of the workbook.
 	* [Binding Collection](resources/bindingCollection.md):A collection of all the Binding objects that are part of the workbook. 
+* [Reference Collection](resources/referenceCollection.md): A collection of all references in the application.
 
 Also see: 
 

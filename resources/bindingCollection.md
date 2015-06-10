@@ -18,44 +18,11 @@ The Binding collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(id: string)](#addid-string)| [Binding](binding.md) Object              |Creates a new binding.  ||
 |[getItem(param: string)](#getitemparam-string)| [Binding](binding.md) Object      |Retrieve a binding  object using its id||
 |[getItemAt(index: number)](#getitematindex-number)| [Binding](binding.md) Object     |Retrieve a binding based on its position in the items[] array.||
 
 
 ## API Specification 
-
-### add(id: string)
-
-Add a new binding to the workbook. The binding will be added at the end of existing bindings.
-
-#### Syntax
-```js
-bindingCollection.add(id);
-```
-
-#### Parameters
-
-Parameter       | Type   | Description
---------------- | ------ | ------------
-`id`  | String| String value representing the id of the binding to be added. If not specified, Excel determines the id of the new binding being added. 
-
-#### Returns
-[Binding](binding.md) object.
-
-#### Examples
-
-```js
-var bID = 'Sample Name';
-var ctx = new Excel.ExcelClientContext();
-var binding = ctx.workbook.bindings.add(bID);
-ctx.load(binding);
-ctx.executeAsync().then(function () {
-	Console.log(binding.id);
-});
-```
-[Back](#methods)
-
 
 ### getItemAt(index: number)
 
