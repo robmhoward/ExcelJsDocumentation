@@ -13,7 +13,6 @@ The Binding object is a member of the Bindings collection. The Bindings collecti
 None.    
 
 ## Methods
-
 The Binding has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |

@@ -21,7 +21,7 @@ The TableColumn has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[deleteObject()](#deleteobject)| void     |Deletes the column ||
+|[delete()](#delete)| void     |Deletes the column ||
 |[getDataBodyRange()](#getdatabodyrange)| [Range](range.md) Object     | Returns a Range object that is the size of the data portion of a column.||
 |[getHeaderRowRange()](#getheaderrowrange)| [Range](range.md) Object     | Returns the header Range object associated with the column.||
 |[getRange()](#getrange)| [Range](range.md) Object     | Returns the Range object associated with the column.||
@@ -29,7 +29,7 @@ The TableColumn has the following methods defined:
 
 ## API Specification 
 
-### deleteObject() 
+### delete() 
 
 Deletes Table Column and clears the cell data from the Table Column.
 
@@ -51,7 +51,7 @@ Nothing
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
 var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(2);
-column.deleteObject();
+column.delete();
 ctx.executeAsync().then();
 ```
 [Back](#methods)

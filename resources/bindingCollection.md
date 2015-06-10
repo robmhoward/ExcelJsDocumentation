@@ -9,7 +9,6 @@ A collection of all the [Binding](binding.md) objects that are part of the workb
 |`items`| [Binding](binding.md) Array | A collection of all the Binding objects that are part of the workbook|[Bindings.item] |
 
 ## Relationships
-
 None
 
 ## Methods
@@ -61,7 +60,7 @@ Get properties of the binding collection.
 
 #### Syntax
 ```js
-context.workbook.bindings.property;
+workbookObject..bindings.property;
 ```
 
 #### Properties

@@ -77,7 +77,7 @@ ctx.executeAsync().then(function () {
 
 ### add(type: string, sourceData: string, seriesBy: string)
 
-Add a new chart to the workbook. The chart will be added at the end of existing charts.
+Add a new chart to the workbook. 
 
 #### Syntax
 ```js

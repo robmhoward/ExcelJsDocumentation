@@ -1,5 +1,5 @@
 # Reference Collection
-Reference collection allows add-ins add and remove temporary references on range.
+Reference collection allows add-ins to add and remove temporary references on range.
 
 ## Properties
 None.
@@ -10,7 +10,7 @@ None
 
 ## Methods
 
-The Binding collection has the following methods defined:
+The Reference collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
@@ -21,8 +21,7 @@ The Binding collection has the following methods defined:
 ## API Specification 
 
 ### add(rangeObject: range)
-
-Add a new binding to the workbook. The binding will be added at the end of existing bindings.
+Add a range object to the reference collection. 
 
 #### Syntax
 ```js
@@ -46,18 +45,19 @@ var rangeAddress = "A1:B2";
 var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 ctx.references.add(range);
-range.insert("Down");
-
 ctx.load(range);
+
 ctx.executeAsync().then(function () {
+	range.insert("Down");
 	Console.log(range.address); // Address should be updated to A3:B4
+	ctx.executeAsync().then();
 });
 ```
 [Back](#methods)
 
 ### remove(rangeObject: range)
 
-Add a new binding to the workbook. The binding will be added at the end of existing bindings.
+Remove a reference object from the collection. 
 
 #### Syntax
 ```js
@@ -68,7 +68,7 @@ referenceCollection.remove(rangeObject);
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`rangeObject`  | [Range](range.md)| The Range Object which needs to be removed to the reference collection.
+`rangeObject`  | [Range](range.md)| The Range Object which needs to be removed from the reference collection.
 
 #### Returns
 Null
@@ -76,22 +76,20 @@ Null
 #### Examples
 
 ```js
+```js
 var sheetName = "Sheet1";
 var rangeAddress = "A1:B2";
 var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 ctx.references.add(range);
-range.insert("Down");
-
 ctx.load(range);
-ctx.executeAsync().then(function () {
-	Console.log(range.address); // Address should be updated to A3:B4
 
-	ctx.references.remove(range);
+ctx.executeAsync().then(function () {
 	range.insert("Down");
-	ctx.executeAsync().then(function () {
-		Console.log(range.address); // Address will remain A3:B4 though the underlying range shifted down after another range was inserted.
-	});
+	Console.log(range.address); // Address should be updated to A3:B4
+	ctx.references.remove(range); 
+	ctx.executeAsync().then();
 });
 ```
 [Back](#methods)
+
