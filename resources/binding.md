@@ -6,7 +6,6 @@ The Binding object is a member of the Bindings collection. The Bindings collecti
 | Property       | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |`id`   | String | String |The user-visible name of the binding. Get only.|Binding.Name    |       
-|`index`| Number |The zero-based index of the binding within the workbook|Binding.Index|
 |`type`| String |Returns the type of the binding. Can be `Table`,`Range` or `Text`. Get only. |Binding.Type|
 
 
@@ -20,7 +19,7 @@ The Binding has the following methods defined:
 |:-----------------|:--------|:----------|:------|
 |[getRange()][getrange-link]| [Range](range.md) object |Returns the Range of the Binding| |
 |[getTable()][gettable-link]| [Table](table.md) object |Returns the Table of the Binding| |  
-|[getText()][gettable-link]| String |Returns the text of the Binding| |  
+|[getText()][gettext-link]| String |Returns the text of the Binding| |  
 
 ## API Specification 
 ### getRange()
@@ -129,7 +128,6 @@ bindingObject.type;
 | Property       | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |`id`   | String | String |The user-visible name of the binding|Binding.Name    |       
-|`index`| Number |The zero-based index of the binding within the workbook|Binding.Index|
 |`type`| String |Returns the type of the binding. |Binding.Type|
 
 
@@ -157,3 +155,4 @@ ctx.executeAsync().then(function() {
 
 [getrange-link]: #getrange
 [gettable-link]: #gettable
+[gettext-link]: #gettext
