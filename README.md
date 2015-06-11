@@ -18,7 +18,7 @@
 	* [Binding Collection](resources/bindingCollection.md):A collection of all the Binding objects that are part of the workbook. 
 * [Reference Collection](resources/referenceCollection.md): Reference collection allows add-ins to add and remove temporary references on range.
 
-Also see: 
+Also read the following programming notes: 
 
 * [Error Messages](#error-messages): Provide important programming details related to Excel APIs.
 * [Programming Notes](#programming-notes): Provide important programming details related to Excel APIs.
