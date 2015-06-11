@@ -18,7 +18,7 @@ The tablerow collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(values: any[][], index: number)](#addvalues-any-index-number)| [Table Row](tablerow.md) Object  |Creates a new tablerow. ||
+|[add(index: number, values: any[][])](#index-number-values-any)| [Table Row](tablerow.md) Object  |Creates a new tablerow. ||
 |[getItem(name: string)](#getitemname-string)| [Table Row](tablerow.md) Object |Retrieve a tablerow object using its name||
 |[getItemAt(index: number)](#getitematindex-number)| [Table Row](tablerow.md) Object |Retrieve a tablerow based on its position in the items[] array.||
 
@@ -26,13 +26,13 @@ The tablerow collection has the following methods defined:
 ## API Specification 
 
 
-### add(values: any[][], index: number)
+### add(index: number, values: any[][])
 
 Add a new row to the table. 
 
 #### Syntax
 ```js
-tableRowCollection.add(index, values);
+tableRowCollection.add(values, values);
 ```
 #### Parameters 
 Parameter       | Type   | Description
@@ -49,7 +49,7 @@ Parameter       | Type   | Description
 var ctx = new Excel.ExcelClientContext();
 var tables = ctx.workbook.tables;
 var values = [["Sample", "Values", "For", "New", "Row"]];
-var row = tables.getItem("Table1").tablerows.add(values, null);
+var row = tables.getItem("Table1").tablerows.add(null, values);
 ctx.load(row);
 ctx.executeAsync().then(function () {
 	Console.log(row.index);

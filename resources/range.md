@@ -135,7 +135,7 @@ Parameter      | Type   | Description
 
 ```js
 var sheetName = "Sheet1";
-var rangeAddress = "D5:F8";
+var rangeAddress = "A1:F8";
 var ctx = new Excel.ExcelClientContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
@@ -318,7 +318,7 @@ Below example uses range address to get the range object.
 
 ```js
 var sheetName = "Sheet1";
-var rangeAddress = "D5:F8";
+var rangeAddress = "A1:F8";
 var ctx = new Excel.ExcelClientContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);

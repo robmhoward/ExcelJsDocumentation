@@ -18,20 +18,20 @@ The tablecolumn collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(values: any[][], index: number)](#addvalues-any-index-number)| [Table Column](tablecolumn.md) Object             |Creates a new tablecolumn.  ||
+|[add(index: number, values: any[][])](#index-number-values-any)| [Table Column](tablecolumn.md) Object             |Creates a new tablecolumn.  ||
 |[getItem(param: string or number)](#getitemparam-string-or-number)| [Table Column](tablecolumn.md) Object     |Retrieve a tablecolumn object using its name||
 |[getItemAt(index: number)](#getitematindex-number)| [tablecolumn](tablecolumn.md) Object|Retrieve a tablecolumn based on its position in the items[] array.||
 
 
 ## API Specification 
 
-### add(values: any[][], index: number)
+### add(index: number, values: any[][])
 
 Add a new column to the table. 
 
 #### Syntax
 ```js
-tableColumnCollection.add(index, values);
+tableColumnCollection.add(values, index);
 ```
 
 Parameter       | Type   | Description
@@ -47,7 +47,7 @@ Parameter       | Type   | Description
 var ctx = new Excel.ExcelClientContext();
 var tables = ctx.workbook.tables;
 var values = [["Sample"], ["Values"], ["For"], ["New"], ["Column"]];
-var row = tables.getItem("Table1").tableColumns.add(values, null);
+var row = tables.getItem("Table1").tableColumns.add(null, values);
 ctx.load(row);
 ctx.executeAsync().then(function () {
 	Console.log(row.name);
