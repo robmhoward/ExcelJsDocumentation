@@ -9,8 +9,8 @@ Range represents a cell, a row, a column, a selection of cells containing one or
 |`cellCount`       | Number          |Number of cells in the range|Range.Count|
 |`columnIndex`     | Number          |Returns the number of the first column in the first area in the specified range. This is adjusted to be zero indexed. Read-only|Range.Column|
 |`columnCount`    | Number           |Returns the number of the first row of the first area in the range. This is adjusted to be zero indexed. Read-only|Range.Row|
-|`formula`         |String[][]|Represents the object's formula in A1 style notation|Range.formula|
-|`formulaLocal`    |String[][]|Formula for the object, in the language of the user in A1 style notation|Range.FormulaLocal|
+|`formulas`         |String[][]|Represents the object's formula in A1 style notation|Range.formula|
+|`formulasLocal`    |String[][]|Formula for the object, in the language of the user in A1 style notation|Range.FormulaLocal|
 |`numberFormat`    |String[][]|Value that represents the format code for the object|Range.NumberFormat
 |`rowcount`        | Number          |Returns the total number of columns in the Range selected. Read-only |Range.Column|
 |`rowIndex`        | Number          |Returns the number of the first row of the first area in the range. This is adjusted to be zero indexed. Read-only|Range.Row|

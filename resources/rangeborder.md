@@ -7,7 +7,7 @@ Represents the border of an object.
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 |sideIndex| String | Constant value that indicates the specific side of the border. Possible values are:  `DiagonalDown`, `DiagonalUp`, `EdgeBottom`, `EdgeLeft`, `EdgeRight`, `EdgeTop`, `InsideHorizontal`, `InsideVertical`.| String value derived from xlBordersIndex constants|
-|lineStyle| String | One of the constants of LineStyle specifying the line style for the border. Options are: `Continuous`: Continuous line, `Dash`: Dashed line, `DashDot`: Alternating dashes and dots, `DashDotDot`: Dash followed by two dots, `Dot`: Dotted line, `Double`: Double line, `LineStyleNone`: No line, `SlantDashDot`: Slanted dashes.|Border.LineStyle|
+|style| String | One of the constants of line style specifying the line style for the border. Options are: `Continuous`: Continuous line, `Dash`: Dashed line, `DashDot`: Alternating dashes and dots, `DashDotDot`: Dash followed by two dots, `Dot`: Dotted line, `Double`: Double line, `None`: No line, `SlantDashDot`: Slanted dashes.|Border.LineStyle|
 |weight| String | BorderWeight value that specifies the weight of the border around a range. Options are: `Hairline`: Hairline (thinnest border), `Medium`: Medium, `Thick`: Thick (widest border), `Thin`: Thin.|Border.Weight|
 |color| String | HTML color code representing the color of the border line|Border.Color's representation in HTML color code.|
 

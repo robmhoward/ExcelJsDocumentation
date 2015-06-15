@@ -14,7 +14,7 @@ This object represents the font attributes (font name, font size, color, and so 
 |`strikethrough`|Boolean|true if the font is struck through with a horizontal line. false by default.|Range.Font.Strikethrough|
 |`subscript`|Boolean|true if the font is formatted as subscript. false by default.|Range.Font.Subscript|
 |`superscript`|Boolean|true if the font is formatted as superscript; false by default.|Range.Font.Superscript  |
-|`underlineStyle`|String|Type of underline applied to the font. Can be one of the following constants. Possible Values: `None`, `Single`, `Double`, `SingleAccounting`, `DoubleAccounting`|Range.Font.Underline|
+|`underline`|String|Type of underline applied to the font. Can be one of the following constants. Possible Values: `None`, `Single`, `Double`, `SingleAccounting`, `DoubleAccounting`|Range.Font.Underline|
 
 ## Relationships
 None

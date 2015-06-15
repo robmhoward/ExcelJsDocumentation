@@ -10,10 +10,11 @@ The Workbook has the following relationships defined:
 
 | Relationship    | Type    |Description|Notes |
 |:----------------|:--------|:----------|:-----|
-| application  | [Application](application.md)| Returns an object that represents epresents the Excel application which is managing the workbook. |
+| application  | [Application](application.md)| Returns an object that represents the Excel application managing the workbook. |
 | names       | [NamedItem collection](nameditemCollection.md)| Collection of Named Ranges associated with the workbook  |Workbook.Names      |
 | tables       | [Table collection](tableCollection.md)        | Collection of Tables associated with the workbook        |Workbook.ListObjects|
 | worksheets   | [Worksheet collection](worksheetCollection.md)| Collection of Worksheets associated with the workbook    |Workbook.Worksheets |
+| bindings   | [Binding collection](bindingCollection.md)| A collection of all the Binding objects that are part of the workbook.    | |
 
 ## Methods
 

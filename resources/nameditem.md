@@ -10,7 +10,7 @@ This object can be used to obtain Range object associated with names.
 | `name`  | String|String value representing the name of the object.| Name.Name|
 | `type` | String|Indicates what type of reference is associated with the name. Possible options are: `Range`, `String`, `Integer`, `Double`, `Boolean`. | Derived property |
 | `value`| String |Represents the formula that the name is defined to refer to. e.g., `=Sheet14!$B$2:$H$12`, `=4.75`, etc. | Name.Value|
-| `visibile` | Boolean |Boolean value that determines whether the object is visible. | Name.Visible |
+| `visible` | Boolean |Boolean value that determines whether the object is visible. | Name.Visible |
 
 ## Relationships
 None
