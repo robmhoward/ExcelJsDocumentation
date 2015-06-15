@@ -138,6 +138,7 @@ Parameter       | Type  | Description
 #### Returns
 
 [Range](range.md) object.
+**Note: If the entire worksheet range is returned, the grid properties of the Range (values, numberFormat, formula) will contain `null` since the Range in question is unbounded.**
 
 #### Examples
 
