@@ -9,15 +9,15 @@ Represents collection of organized cells designed to make management of the data
 | `name`       | String| String value that represents the name of the Table object   | ListObject.Name       |
 | `showHeaders` | Boolean| Boolean to indicate whether the Header row is visible or not. This value can be set to show or remove the header row| ListObject.ShowHeaders|
 | `showTotals` | Boolean| Boolean to indicate whether the Total row is visible or not. This value can be set to show or remove the total row| ListObject.ShowTotals|
-| `tableStyle` | String | Constant that represents the Table style. Possible values include: `Light1` thru `Light21`, `Medium1` thru `Medium28`, `StyleDark1` thru `StyleDark11`|ListObject.TableStyle|
+| `style` | String | Constant that represents the Table style. Possible values include: `Light1` thru `Light21`, `Medium1` thru `Medium28`, `StyleDark1` thru `StyleDark11`|ListObject.TableStyle|
 
 ## Relationships
 The Table has the following relationships defined:
 
 | relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| tableColumns  | [TableColumn collection](tablecolumncollection.md)       |Collection of Table columns |ListObject.TableColumns  |          
-| tableRows      | [TableRow collection](tablerowcollection.md)         |Collection of Table rows |ListObject.ListRows      |
+| columns  | [TableColumn collection](tablecolumncollection.md)       |Collection of Table columns |ListObject.TableColumns  |          
+| rows      | [TableRow collection](tablerowcollection.md)         |Collection of Table rows |ListObject.ListRows      |
 
 ## Methods
 

@@ -47,10 +47,10 @@ Parameter       | Type   | Description
 var ctx = new Excel.ExcelClientContext();
 var tables = ctx.workbook.tables;
 var values = [["Sample"], ["Values"], ["For"], ["New"], ["Column"]];
-var row = tables.getItem("Table1").tableColumns.add(values, null);
-ctx.load(row);
+var column = tables.getItem("Table1").columns.add(values, null);
+ctx.load(column);
 ctx.executeAsync().then(function () {
-	Console.log(row.name);
+	Console.log(column.name);
 });
 ```
 [Back](#methods)
@@ -77,10 +77,10 @@ Parameter       | Type  | Description
 #### Examples
 ```js
 var ctx = new Excel.ExcelClientContext();
-var wSheetName = 'Sheet1';
-var tablecolumn = ctx.workbook.tablecolumns.getItem(wSheetName);
+var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItem(0);
+ctx.load(tablecolumn)
 ctx.executeAsync().then(function () {
-		Console.log(tablecolumn.index);
+		Console.log(tablecolumn.name);
 });
 ```
 [Back](#methods)
@@ -107,8 +107,8 @@ Parameter       | Type  | Description
 #### Examples
 ```js
 var ctx = new Excel.ExcelClientContext();
-var lastPosition = ctx.workbook.tablecolumns.count - 1;
-var tablecolumn = ctx.workbook.tablecolumns.getItemAt(lastPosition);
+var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItemAt(0);
+ctx.load(tablecolumn)
 ctx.executeAsync().then(function () {
 		Console.log(tablecolumn.name);
 });
@@ -139,7 +139,7 @@ tableColumnCollection.property;
 
 ```js
 var ctx = new Excel.ExcelClientContext();
-var tablecolumns = ctx.workbook.tablecolumns;
+var tablecolumns = ctx.workbook.tables.getItem['Table1'].columns;
 ctx.load(tablecolumns);
 ctx.executeAsync().then(function () {
 	for (var i = 0; i < tablecolumns.items.length; i++)
@@ -153,8 +153,8 @@ ctx.executeAsync().then(function () {
 
 ```js
 var ctx = new Excel.ExcelClientContext();
-var tablecolumns = ctx.workbook.tablecolumns;
-ctx.load(tables);
+var tablecolumns = ctx.workbook.tables.getItem['Table1'].columns;
+ctx.load(tablecolumns);
 ctx.executeAsync().then(function () {
 	Console.log("tablecolumns: Count= " + tablecolumns.count);
 });

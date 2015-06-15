@@ -19,9 +19,7 @@ The tablerow collection has the following methods defined:
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[add(values: any[][], index: number)](#addvalues-any-index-number)| [Table Row](tablerow.md) Object  |Creates a new tablerow. ||
-|[getItem(name: string)](#getitemname-string)| [Table Row](tablerow.md) Object |Retrieve a tablerow object using its name||
 |[getItemAt(index: number)](#getitematindex-number)| [Table Row](tablerow.md) Object |Retrieve a tablerow based on its position in the items[] array.||
-
 
 ## API Specification 
 
@@ -49,40 +47,10 @@ Parameter       | Type   | Description
 var ctx = new Excel.ExcelClientContext();
 var tables = ctx.workbook.tables;
 var values = [["Sample", "Values", "For", "New", "Row"]];
-var row = tables.getItem("Table1").tablerows.add(values, null);
+var row = tables.getItem("Table1").rows.add(values, null);
 ctx.load(row);
 ctx.executeAsync().then(function () {
 	Console.log(row.index);
-});
-```
-[Back](#methods)
-
-### getItem(name: string)
-
-Get tablerow object properties based on name.
-
-#### Syntax
-```js
-tableRowCollection.getItem(name);
-```
-
-#### Parameters
-
-Parameter       | Type  | Description
---------------- | ------ | ------------
- `name`| String | Required. tablerow name. 
-
-#### Returns
-
-[tablerow](tablerow.md) object.
-
-#### Examples
-```js
-var ctx = new Excel.ExcelClientContext();
-var wSheetName = 'Sheet1';
-var tablerow = ctx.workbook.tablerows.getItem(wSheetName);
-ctx.executeAsync().then(function () {
-		Console.log(tablerow.index);
 });
 ```
 [Back](#methods)
@@ -109,8 +77,8 @@ Parameter       | Type  | Description
 #### Examples
 ```js
 var ctx = new Excel.ExcelClientContext();
-var lastPosition = ctx.workbook.tablerows.count - 1;
-var tablerow = ctx.workbook.tablerows.getItemAt(lastPosition);
+var tablerow = ctx.workbook.tables.getItem('Table1').rows.getItemAt(0);
+ctx.load(tablerow);
 ctx.executeAsync().then(function () {
 		Console.log(tablerow.name);
 });
@@ -142,7 +110,7 @@ tableRowCollection.property;
 
 ```js
 var ctx = new Excel.ExcelClientContext();
-var tablerows = ctx.workbook.tablerows;
+var tablerows = ctx.workbook.tables.getItem('Table1').rows;
 ctx.load(tablerows);
 ctx.executeAsync().then(function () {
 	for (var i = 0; i < tablerows.items.length; i++)
@@ -156,8 +124,8 @@ ctx.executeAsync().then(function () {
 
 ```js
 var ctx = new Excel.ExcelClientContext();
-var tablerows = ctx.workbook.tablerows;
-ctx.load(tables);
+var tablerow = ctx.workbook.tables.getItem('Table1').rows.getItemAt(0);
+ctx.load(tablerows);
 ctx.executeAsync().then(function () {
 	Console.log("tablerows: Count= " + tablerows.count);
 });
