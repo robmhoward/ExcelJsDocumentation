@@ -18,12 +18,7 @@ The tablerow collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-<<<<<<< HEAD
 |[add(index: number, values: any[][])](#index-number-values-any)| [Table Row](tablerow.md) Object  |Creates a new tablerow. ||
-|[getItem(name: string)](#getitemname-string)| [Table Row](tablerow.md) Object |Retrieve a tablerow object using its name||
-=======
-|[add(values: any[][], index: number)](#addvalues-any-index-number)| [Table Row](tablerow.md) Object  |Creates a new tablerow. ||
->>>>>>> 8fcb47ff7422ac46ccb364ef484b77e8c5ba109a
 |[getItemAt(index: number)](#getitematindex-number)| [Table Row](tablerow.md) Object |Retrieve a tablerow based on its position in the items[] array.||
 
 ## API Specification 
@@ -35,13 +30,13 @@ Add a new row to the table.
 
 #### Syntax
 ```js
-tableRowCollection.add(values, values);
+tableRowCollection.add(index, values);
 ```
 #### Parameters 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`values` | any[][] | 2-D array of unformatted values of the table row. 
 `index` |  Number |Optional. Specifies the relative position of the new row. If not specified, the addition happens at the end. The previous column at this position is shifted outward to the bottom. **Zero Indexed**
+`values` | any[][] | 2-D array of unformatted values of the table row. 
 
 
 #### Returns
@@ -52,11 +47,7 @@ Parameter       | Type   | Description
 var ctx = new Excel.ExcelClientContext();
 var tables = ctx.workbook.tables;
 var values = [["Sample", "Values", "For", "New", "Row"]];
-<<<<<<< HEAD
-var row = tables.getItem("Table1").tablerows.add(null, values);
-=======
-var row = tables.getItem("Table1").rows.add(values, null);
->>>>>>> 8fcb47ff7422ac46ccb364ef484b77e8c5ba109a
+var row = tables.getItem("Table1").rows.add(null, values);
 ctx.load(row);
 ctx.executeAsync().then(function () {
 	Console.log(row.index);
