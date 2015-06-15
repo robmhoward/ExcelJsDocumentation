@@ -27,7 +27,6 @@ The Worksheet has the following methods defined:
 |[activate()][activate-link]| void     |Activates the worksheet |   |
 |[delete()][deleteobject-link]| void     |Deletes the worksheet ||
 |[getCell(row: number, column: number)][getcell-link]| [Range](range.md) object |Returns a range containing the single cell specified by the zero-indexed row and column numbers          
-|[getEntireWorksheetRange()][getentireworksheetrange-link]| [Range](range.md) object |Returns the range containing all cells in the worksheet| |
 |[getRange(address: string)][getrange-link]| [Range](range.md) object |Returns the range specified by the address| |
 |[getUsedRange()][getusedrange-link]| [Range](range.md) object |Returns the used range of the worksheet| |  
 
@@ -110,7 +109,7 @@ Parameter      | Type   | Description
 
 ```js
 var sheetName = "Sheet1";
-var rangeAddress = "D5:F8";
+var rangeAddress = "A1:F8";
 var ctx = new Excel.ExcelClientContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var cell = worksheet.getCell(0,0);
@@ -121,45 +120,9 @@ ctx.executeAsync().then(function() {
 ```
 [Back](#methods)
 
-### getEntireWorksheetRange()
-
-Get the entire Range associated with the worksheet.
-
-#### Syntax
-```js
-worksheetObject.getEntireSheetRange();
-```
-
-#### Parameters
-
-Parameter       | Type  | Description
---------------- | ------ | ------------
- `name`| String | Required. Worksheet name. 
-
-
-#### Returns
-
-[Range](range.md) object.
-
-
-**Note: the grid properties of the Range (values, numberFormat, formula) contains `null` since the Range in question is unbounded.**
-
-#### Examples
-```js
-var ctx = new Excel.ExcelClientContext();
-var wSheetName = 'Sheet1';
-var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
-var entireRange = worksheet.getEntireSheetRange();
-ctx.load(entireRange);
-ctx.executeAsync().then(function () {
-		Console.log(entireRange.address);
-});
-```
-[Back](#methods)
-
 ### getRange(address: string)
 
-Get a Range object that represents a single cell or a range of cells. 
+Get a Range object that represents a single cell or a range of cells. This API can also be used to obtain the entire range object associated with the worksheet. 
 
 #### Syntax
 
@@ -170,7 +133,7 @@ worksheetObject.getRange(address);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `address`| String | Required. Address of the Range. 
+ `address`| String | Optional. Address or the name of the Range. If not specified, the entire worksheet range is returned. 
 
 #### Returns
 
@@ -182,7 +145,7 @@ Below example uses range address to get the range object.
 
 ```js
 var sheetName = "Sheet1";
-var rangeAddress = "D5:F8";
+var rangeAddress = "A1:F8";
 var ctx = new Excel.ExcelClientContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
@@ -193,15 +156,35 @@ ctx.executeAsync().then(function() {
 ```
 
 Below example uses a named-range to get the range object.
+
+```js
+var sheetName = "Sheet1";
+var rangeName = 'MyRange';
+var ctx = new Excel.ExcelClientContext();
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeName);
+ctx.load(range);
+ctx.executeAsync().then(function() {
+	Console.log(range.address);
+});
+```
+
+Below example get the entire worksheeet range.
+**Note: If the entire worksheet range is returned, the grid properties of the Range (values, numberFormat, formula) will contain `null` since the Range in question is unbounded.**
+
 ```js
 var rangeName = 'MyRange';
 var ctx = new Excel.ExcelClientContext();
-var range = ctx.workbook.names.getItem(rangeName).range;
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange();
 ctx.load(range);
 ctx.executeAsync().then(function() {
-	Console.log(range.cellCount);
+	Console.log(range.address);
 });
 ```
+
+
+
+
+
 [Back](#methods)
 
 ### getUsedRange()

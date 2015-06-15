@@ -54,7 +54,7 @@ Clear Range values, format, fill, border, etc.
 rangeObject.clear(applyTo);
 ```
 
-##### Parameters
+#### Parameters
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
@@ -86,7 +86,7 @@ Delete the Range data and clear the format and shift the cells.
 ```js
 rangeObject.delete(shift);
 ```
-##### Parameters
+#### Parameters
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
@@ -156,7 +156,7 @@ Get an object that represents the entire column of the Range. This API is valid 
 ```js
 rangeObject.getEntireColumn();
 ```
-##### Parameters
+#### Parameters
 
 None
 
@@ -188,7 +188,7 @@ Get an object that represents the entire row of the Range. This API is valid onl
 ```js
 rangeObject.getEntireRow();
 ```
-##### Parameters
+#### Parameters
 
 None
 
@@ -219,7 +219,7 @@ Get used-range portion within the requested Range object.
 ```js
 rangeObject.getUsedRange();
 ```
-##### Parameters
+#### Parameters
 
 None
 
