@@ -17,7 +17,7 @@ The Application has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[calculate()](#calculate)| [Worksheet](worksheet.md) object |Get the currently active worksheet in the workbook.| |
+|[calculate()](#calculate)| [Worksheet](worksheet.md) object |Perform calculation on the workbook or application.| |
 
 ### Get Application
 
@@ -45,7 +45,7 @@ ctx.executeAsync().then(function() {
 
 ### calculate()
 
-Performs calculation on the Workbook or Application. 
+Performs calculation on the workbook or application. 
 
 #### Syntax
 ```js

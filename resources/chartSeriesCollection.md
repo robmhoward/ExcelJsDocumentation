@@ -18,7 +18,7 @@ The chart has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[getItemAt(index: number)](#getitematindex-number)| [ChartSeries](chartSeries.md)     |Retrieve a ChartSeries based on its position in the items[] array.||
+|[getItemAt(index: number)](#getitematindex-number)| [ChartSeries](chartSeries.md)     |Retrieve a ChartSeries based on its position in the collection..||
 
 
 ## API Specification 
@@ -75,7 +75,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get chartSeries object properties based on its position in the items[] array. 
+Get chartSeries object properties based on its position in the collection.. 
 
 #### Syntax
 ```js
@@ -86,7 +86,7 @@ ChartSeriesCollection.getItemAt(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index or position in the items[]. Zero indexed.
+ `index`| Number | Required. Index value of the object to be retrieved.. Zero indexed.
 
 #### Returns
 

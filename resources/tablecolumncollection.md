@@ -20,7 +20,7 @@ The tablecolumn collection has the following methods defined:
 |:-----------------|:--------|:----------|:------|
 |[add(index: number, values: any[][])](#index-number-values-any)| [Table Column](tablecolumn.md) Object             |Creates a new tablecolumn.  ||
 |[getItem(param: string or number)](#getitemparam-string-or-number)| [Table Column](tablecolumn.md) Object     |Retrieve a tablecolumn object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [tablecolumn](tablecolumn.md) Object|Retrieve a tablecolumn based on its position in the items[] array.||
+|[getItemAt(index: number)](#getitematindex-number)| [tablecolumn](tablecolumn.md) Object|Retrieve a tablecolumn based on its position in the collection..||
 
 
 ## API Specification 
@@ -88,7 +88,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get tablecolumn object properties based on its position in the items[] array. 
+Get tablecolumn object properties based on its position in the collection.. 
 
 #### Syntax
 ```js
@@ -99,7 +99,7 @@ tableColumnCollection.getItemAt(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index or position in the items[]. Zero indexed.
+ `index`| Number | Required. Index value of the object to be retrieved.. Zero indexed.
 
 #### Returns
 

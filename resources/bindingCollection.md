@@ -18,14 +18,14 @@ The Binding collection has the following methods defined:
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[getItem(param: string)](#getitemparam-string)| [Binding](binding.md) Object      |Retrieve a binding  object using its id||
-|[getItemAt(index: number)](#getitematindex-number)| [Binding](binding.md) Object     |Retrieve a binding based on its position in the items[] array.||
+|[getItemAt(index: number)](#getitematindex-number)| [Binding](binding.md) Object     |Retrieve a binding based on its position in the collection..||
 
 
 ## API Specification 
 
 ### getItemAt(index: number)
 
-Get Binding object properties based on its position in the items[] array. 
+Get Binding object properties based on its position in the collection.. 
 
 #### Syntax
 ```js
@@ -36,7 +36,7 @@ bindingCollection.getItemAt(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index or position in the items[]. Zero indexed.
+ `index`| Number | Required. Index value of the object to be retrieved.. Zero indexed.
 
 #### Returns
 

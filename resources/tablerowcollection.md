@@ -19,7 +19,7 @@ The tablerow collection has the following methods defined:
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[add(index: number, values: any[][])](#index-number-values-any)| [Table Row](tablerow.md) Object  |Creates a new tablerow. ||
-|[getItemAt(index: number)](#getitematindex-number)| [Table Row](tablerow.md) Object |Retrieve a tablerow based on its position in the items[] array.||
+|[getItemAt(index: number)](#getitematindex-number)| [Table Row](tablerow.md) Object |Retrieve a tablerow based on its position in the collection..||
 
 ## API Specification 
 
@@ -57,7 +57,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get tablerow object properties based on its position in the items[] array. 
+Get tablerow object properties based on its position in the collection.. 
 
 #### Syntax
 ```js
@@ -68,7 +68,7 @@ tableRowCollection.getItemAt(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index or position in the items[]. Zero indexed.
+ `index`| Number | Required. Index value of the object to be retrieved.. Zero indexed.
 
 #### Returns
 

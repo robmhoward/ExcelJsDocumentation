@@ -21,7 +21,7 @@ The table collection has the following methods defined:
 |:-----------------|:--------|:----------|:------|
 |[add(address: string, hasHeaders: bool)](#addaddress-string-hasheaders-bool)| [Table](table.md) Object | Creates a new table.||
 |[getItem(name: string)](#getitemname-string)| [Table](table.md) Object      |Retrieve a table object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [Table](table.md) Object     |Retrieve a table based on its position in the items[] array.||
+|[getItemAt(index: number)](#getitematindex-number)| [Table](table.md) Object     |Retrieve a table based on its position in the collection..||
 
 ## API Specification 
 
@@ -93,7 +93,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get table object properties based on its position in the items[] array. 
+Get table object properties based on its position in the collection.. 
 
 #### Syntax
 ```js
@@ -104,7 +104,7 @@ tableCollection.getItemAt(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index or position in the items[]. Zero indexed.
+ `index`| Number | Required. Index value of the object to be retrieved.. Zero indexed.
 
 #### Returns
 
