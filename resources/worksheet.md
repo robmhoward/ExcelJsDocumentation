@@ -1,22 +1,21 @@
 # Worksheet
-The Worksheet object is a member of the Worksheets collection. The Worksheets collection contains all the Worksheet objects in a workbook.
+An Excel worksheet is a collection cells organized by rows and columns. It can contain data, tables, charts, etc. 
 
 ## [Properties](#get-worksheet)
 
 | Property       | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|`id`   | String | A unique key that identifies the Worksheet object in a Workbook. |        |
-|`position`| Number |The zero-based position of the worksheet within the workbook|Worksheet.Index|
-|`name` | String |The user-visible name of the worksheet|Worksheet.Name    |
+|`id`   | String | A unique Id that identifies the Worksheet object in a Workbook. For a given worksheet, the Id remains constant through changes such as renames or moves.|        |
+|`position`| Number |The zero-based position of the worksheet within the workbook.|Worksheet.Index|
+|`name` | String |The display name of the worksheet. |Worksheet.Name    |
 
 
 ## Relationships
-The Worksheet has the following relationships defined:
 
 | Relationship     | Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|         
-|charts | [Chart collection](chartcollection.md) |Collection of charts in the worksheet|Worksheet.ChartObject  |       
-|tables | [Table collection](tablecollection.md) |Collection of Tables in the worksheet|Worksheet.ListObjects  |       
+|charts | [Chart collection](chartcollection.md)|Collection of charts that are part of the worksheet.|Worksheet.ChartObject| 
+|tables | [Table collection](tablecollection.md)|Collection of tables that are part of the worksheet.|Worksheet.ListObjects|       
 
 ## Methods
 
@@ -24,9 +23,9 @@ The Worksheet has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[activate()][activate-link]| void     |Activates the worksheet |   |
-|[delete()][deleteobject-link]| void     |Deletes the worksheet ||
-|[getCell(row: number, column: number)][getcell-link]| [Range](range.md) object |Returns a range containing the single cell specified by the zero-indexed row and column numbers          
+|[activate()][activate-link]| void       |Makes the worksheet the active in the Excel application. |   |
+|[delete()][deleteobject-link]| void     |Deletes the worksheet and its associated data. ||
+|[getCell(row: number, column: number)][getcell-link]| [Range](range.md) object |Returns a range object based on the the zero-indexed row and column numbers.||          
 |[getRange(address: string)][getrange-link]| [Range](range.md) object |Returns the range specified by the address| |
 |[getUsedRange()][getusedrange-link]| [Range](range.md) object |Returns the used range of the worksheet| |  
 

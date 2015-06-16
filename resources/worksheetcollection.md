@@ -1,12 +1,12 @@
 # Worksheet Collection
-A collection of all the worksheet objects that are part of the workbook. 
+Represents a collection of worksheet objects that are part of the workbook. 
 
 ## [Properties](#get-worksheet-collection)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 |`count`| Number   | Number of objects in the collection.|Worksheets.count|
-|`items`| [Worksheet](worksheet.md) Array | A collection of all the worksheet objects that are part of the workbook|[Worksheets.item] |
+|`items`| [Worksheet](worksheet.md) Array | A collection of worksheet objects that are part of the workbook|[Worksheets.item] |
 
 ## Relationships
 
@@ -18,10 +18,10 @@ The Worksheet collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(name: string)](#addname-string)| [Worksheet](worksheet.md) object              |Creates a new worksheet. The new worksheet becomes the active workbook. ||
+|[add(name: string)](#addname-string)| [Worksheet](worksheet.md) object              |Creates a new worksheet. The new worksheet becomes active in the workbook. ||
 |[getActiveWorksheet()](#getactiveworksheet)| [Worksheet](worksheet.md) object |Get the currently active worksheet in the workbook.| |
-|[getItem(param: string)](#getitemparam-string)| [Worksheet](worksheet.md) object      |Retrieve a worksheet object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [Worksheet](worksheet.md) object     |Retrieve a worksheet based on its position in the collection.||
+|[getItem(param: string)](#getitemparam-string)| [Worksheet](worksheet.md) object      |Retrieve a worksheet object using its name or Id.||
+
 
 
 ## API Specification 
@@ -115,38 +115,6 @@ ctx.executeAsync().then(function () {
 ```
 [Back](#methods)
 
-
-### getItemAt(index: number)
-
-Get Worksheet object properties based on its position in the collection. 
-
-#### Syntax
-```js
-worksheetCollection.getItemAt(index);
-```
-
-#### Parameters
-
-Parameter       | Type  | Description
---------------- | ------ | ------------
- `index`| Number | Required. Index value of the object to be retrieved. Zero-indexed.
-
-#### Returns
-
-[Worksheet](worksheet.md) object.
-
-#### Examples
-```js
-var ctx = new Excel.ExcelClientContext();
-var lastPosition = ctx.workbook.worksheets.count - 1;
-var worksheet = ctx.workbook.worksheets.getItemAt(lastPosition);
-ctx.executeAsync().then(function () {
-		Console.log(worksheet.name);
-});
-```
-[Back](#methods)
-
-
 ### Get Worksheet Collection
 
 Get properties of the worksheet collection. 
@@ -161,7 +129,7 @@ workbookObject.worksheets.property;
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 |`count`| Number   | Number of objects in the collection.|Worksheets.count|
-|`items`| [Worksheet](worksheet.md) Array | A collection of all the worksheet objects that are part of the workbook|[Worksheets.item] |
+|`items`| [Worksheet](worksheet.md) Array | A collection of all the worksheet objects that are part of the workbook.|[Worksheets.item] |
 
 
 #### Returns
@@ -182,7 +150,6 @@ ctx.executeAsync().then(function () {
 	}
 });
 ```
-
 ##### Getting the number of worksheets
 
 ```js
