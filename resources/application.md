@@ -55,7 +55,7 @@ applicationObject.calculate(calculationType)
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
-`calculationType` | String | Optional. `ReCalculate`: does normal calculation, `Full`: forces a full calculation of the data, `FullRebuild`: forces a full calculation of the data and rebuilds the dependencies (this is similar to re-entering all formulas). Note: if request body is not provided then calculation of the type `ReCalculation` is performed.
+`calculationType` | String | Optional. Available Options are: `ReCalculate`: does normal calculation, `Full`: forces a full calculation of the data, `FullRebuild`: forces a full calculation of the data and rebuilds the dependencies (this is similar to re-entering all formulas). Note: if request body is not provided then calculation of the type `ReCalculation` is performed.
 
 #### Returns
 

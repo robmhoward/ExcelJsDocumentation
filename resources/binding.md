@@ -6,7 +6,7 @@ The Binding object is a member of the Bindings collection. The Bindings collecti
 | Property       | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |`id`   | String | String |The user-visible name of the binding. Get only.|Binding.Name    |       
-|`type`| String |Returns the type of the binding. Can be `Table`,`Range` or `Text`. Get only. |Binding.Type|
+|`type`| String |Returns the type of the binding. Can be `Table`,`Range` or `Text`. |Binding.Type|
 
 
 ## Relationships
