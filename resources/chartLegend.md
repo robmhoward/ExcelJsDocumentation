@@ -6,16 +6,15 @@ Represents the legend in a chart. Each chart can have only one legend.
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 | `visible` | Boolean |A boolean value the represents the visibility of a ChartLegend object. If visible is set to be ture, the legend will be visible on the chart. |  |
-| `position` | String |Returns or sets a Legend Position value that represents the position of the legend on the chart, including `Top`,`Bottom`,`Cornor`,`Left`,`Right`,'Custom','Invalid'| Legend.position |
+| `position` | String |Returns or sets a legend position value that represents the position of the legend on the chart. Possible values are: `Top`,`Bottom`,`Cornor`,`Left`,`Right`,'Custom','Invalid'| Legend.position |
 | `overlay` | Boolean |True if the legend with be overlapping with the chart. | Legend.IncludeInLayout |
 
 
 ## Relationships
-The Chart Legend has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `format`          |[ChartLegendFormat](chartLegendFormat.md) Object | Represents the format of a chart legend, which includes fill(interior/background) and font formatting.
+| `format`          |[ChartLegendFormat](chartLegendFormat.md) object | Represents the format of a chart legend, which includes fill(interior/background) and font formatting.
      
 
 ## Methods
@@ -59,7 +58,7 @@ ctx.executeAsync().then(function () {
 
 ### Set Chart Legend
 
-Set a ChartLegend properties.
+Set the properties of the legend.
 
 #### Syntax
 
@@ -73,7 +72,7 @@ chartObject.legend.overlay = true;
 | Property         | Type    |Description| 
 |:-----------------|:--------|:----------|
 | `visible` | Boolean |A boolean value the represents the visibility of a ChartLegend object. If visible is set to be ture, the legend will be visible on the chart. |  
-| `position` | String |Returns or sets a Legend Position value that represents the position of the legend on the chart, including `Top`,`Bottom`,`Cornor`,`Left`,`Right`,'Custom','Invalid'| 
+| `position` | String |Returns or sets a legend position value that represents the position of the legend on the chart. Possible options are: including `Top`,`Bottom`,`Cornor`,`Left`,`Right`,'Custom','Invalid'| 
 | `overlay` | Boolean |True if the legend with be overlapping with the chart. | 
 
 #### Returns

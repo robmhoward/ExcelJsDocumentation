@@ -1,5 +1,5 @@
 # Chart Axis Title Format
-Provides access to the Office Art formatting for chart axis title.
+The ChartAxisTitleFormat object has the following relationships defined:
 
 ## Properties
 None.
@@ -9,7 +9,7 @@ The ChartAxisTitleFormat has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `font`          |[ChartFont](chartFont.md) Object | Represents the font attributes (font name, font size, color, and so on) for an object. 
+| `font`          |[ChartFont](chartFont.md) object | Represents the font attributes, such as font name, font size, color, etc. of chart axis title object. 
 
 ## Methods
 None.

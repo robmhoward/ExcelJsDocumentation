@@ -19,9 +19,9 @@ The border collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[getItem(name: string)](#getitemname-string)| [border](rangeborder.md) Object      |Retrieve a border object using its name||
-|[getItem(name: string)](#getitemname-string)| [border](rangeborder.md) Object      |Retrieve a border object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [border](rangeborder.md) Object|Retrieve a border object using its index||
+|[getItem(name: string)](#getitemname-string)| [border](rangeborder.md) object      |Retrieve a border object using its name||
+|[getItem(name: string)](#getitemname-string)| [border](rangeborder.md) object      |Retrieve a border object using its name||
+|[getItemAt(index: number)](#getitematindex-number)| [border](rangeborder.md) object|Retrieve a border object using its index||
 
 ## API Specification 
 

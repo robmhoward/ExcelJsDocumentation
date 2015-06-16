@@ -1,5 +1,5 @@
 # Reference Collection
-Reference collection allows add-ins to add and remove temporary references on range.
+Reference collection allows Add-ins to add and remove temporary references on range.
 
 ## Properties
 None.
@@ -32,7 +32,7 @@ referenceCollection.add(rangeObject);
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`rangeObject`  | [Range](range.md)| The Range Object which needs to be added to the reference collection.
+`rangeObject`  | [Range](range.md)| The Range object which needs to be added to the reference collection.
 
 #### Returns
 Null
@@ -68,7 +68,7 @@ referenceCollection.remove(rangeObject);
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`rangeObject`  | [Range](range.md)| The Range Object which needs to be removed from the reference collection.
+`rangeObject`  | [Range](range.md)| The Range object which needs to be removed from the reference collection.
 
 #### Returns
 Null

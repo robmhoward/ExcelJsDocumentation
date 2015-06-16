@@ -1,13 +1,12 @@
 # Binding
-The Binding object is a member of the Bindings collection. The Bindings collection contains all the Binding objects in a workbook.
+Represents a Add-in binding that is defined in the workbook. 
 
 ## [Properties](#get-binding)
 
 | Property       | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|`id`   | String | String |The user-visible name of the binding. Get only.|Binding.Name    |       
-|`type`| String |Returns the type of the binding. Can be `Table`,`Range` or `Text`. |Binding.Type|
-
+|`id`   | String | String |Returns the name of the binding that was specified at the time of its definition.||       
+|`type`| String |Returns the type of the binding. Possible values are: `Table`,`Range` or `Text`. ||
 
 ## Relationships
 None.    
@@ -17,14 +16,15 @@ The Binding has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[getRange()][getrange-link]| [Range](range.md) object |Returns the Range of the Binding| |
-|[getTable()][gettable-link]| [Table](table.md) object |Returns the Table of the Binding| |  
-|[getText()][gettext-link]| String |Returns the text of the Binding| |  
+|[getRange()][getrange-link]| [Range](range.md) object |Returns the range represented by the binding.| |
+|[getTable()][gettable-link]| [Table](table.md) object |Returns the table represented by the binding.| |  
+|[getText()][gettext-link]| String |Returns the text represented by the binding.| |  
 
 ## API Specification 
+
 ### getRange()
 
-Get a Range object that represents a single cell or a range of cells. 
+Gets the Range object represented by the binding. The range can be a single cell or a range of cells. 
 
 #### Syntax
 
@@ -40,7 +40,7 @@ None.
 
 #### Examples
 
-Below example uses binding to get the range.
+Below example uses binding object to get the associated range.
 
 ```js
 var ctx = new Excel.ExcelClientContext();
@@ -56,7 +56,7 @@ ctx.executeAsync().then(function() {
 
 ### getTable()
 
-Get the table of the binding. 
+Gets the text represented by the binding. 
 
 #### Syntax
 ```js
@@ -101,8 +101,6 @@ String.
 
 #### Examples
 
-Below example uses binding to get the range.
-
 ```js
 var ctx = new Excel.ExcelClientContext();
 var binding = ctx.workbook.bindings.getItemAt(0);
@@ -127,17 +125,14 @@ bindingObject.type;
 #### Properties
 | Property       | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|`id`   | String | String |The user-visible name of the binding|Binding.Name    |       
-|`type`| String |Returns the type of the binding. |Binding.Type|
-
+|`id`   | String | Returns the name of the binding that was specified at the time of its definition. | Read-only.   |           
+|`type`| String |Returns the type of the binding. Can be `Table`,`Range` or `Text`. | Read-only. |
 
 #### Returns
 
 [Binding](binding.md) object.
 
 #### Examples
-
-Below example to get binding properties.
 
 ```js
 var ctx = new Excel.ExcelClientContext();

@@ -18,8 +18,8 @@ The tablerow collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(index: number, values: any[][])](#index-number-values-any)| [Table Row](tablerow.md) Object  |Creates a new tablerow. ||
-|[getItemAt(index: number)](#getitematindex-number)| [Table Row](tablerow.md) Object |Retrieve a tablerow based on its position in the collection..||
+|[add(index: number, values: any[][])](#index-number-values-any)| [Table Row](tablerow.md) object  |Creates a new tablerow. ||
+|[getItemAt(index: number)](#getitematindex-number)| [Table Row](tablerow.md) object |Retrieve a tablerow based on its position in the collection..||
 
 ## API Specification 
 

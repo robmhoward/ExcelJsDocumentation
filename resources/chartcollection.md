@@ -18,9 +18,9 @@ The chart has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(type: string, sourceData: string, seriesBy: string)](#addtype-string-sourcedata-string-seriesby-string)| [Chart](chart.md) Object              |Creates a new chart. The new chart becomes the active workbook. ||
-|[getItem(name: string)](#getitemname-string)| [Chart](chart.md) Object     |Retrieve a chart object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [Chart](chart.md) Object    |Retrieve a chart based on its position in the collection..||
+|[add(type: string, sourceData: string, seriesBy: string)](#addtype-string-sourcedata-string-seriesby-string)| [Chart](chart.md) object              |Creates a new chart. The new chart becomes the active workbook. ||
+|[getItem(name: string)](#getitemname-string)| [Chart](chart.md) object     |Retrieve a chart object using its name||
+|[getItemAt(index: number)](#getitematindex-number)| [Chart](chart.md) object    |Retrieve a chart based on its position in the collection..||
 
 
 ## API Specification 
@@ -39,7 +39,7 @@ worksheetObject.charts;
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 |`count`| Number   | Number of objects in the collection.|charts.count|
-|`items`| Object[] | A collection of all the chart objects that are part of the workbook|[charts.item] |
+|`items`| object[] | A collection of all the chart objects that are part of the workbook|[charts.item] |
 
 
 #### Returns

@@ -17,25 +17,25 @@ The Chart has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `title`          |[ChartTitle](chartTitle.md) Object | Returns a ChartTitle object that represents the title of the specified chart, including the text, visibility, position and formating of the title.
-| `series`         |[Chart Series Collection](chartSeriesCollection.md) |Represents a series in a chart.
-| `axes`          |[Chart Axes](chartAxes.md) Object |Represents a collection of Axes in the Chart.
-| `dataLabels`          |[Chart Data Labels](chartDataLabels.md) Object | Represents the datalabels on the chart.
-| `legend`          |[Chart Legend](chartLegend.md) Object | Returns a Legend object that represents the legend for the chart. 
-| `format`          |[Chart Area Format](chartareaformat.md) Object | Represents the format of a chart object, which includes fill(interior/background), line/border and font formatting.
+| `title`          |[ChartTitle](chartTitle.md) object | Returns a ChartTitle object that represents the title of the specified chart, including the text, visibility, position and formating of the title.|
+| `series`         |[Chart Series Collection](chartSeriesCollection.md) |Returns an object that represents either a single series or collection of series in the chart.|
+| `axes`          |[Chart Axes](chartAxes.md) object |Represents a collection of Axes in the Chart.|
+| `dataLabels`          |[Chart Data Labels](chartDataLabels.md) object | Represents the datalabels on the chart.|
+| `legend`          |[Chart Legend](chartLegend.md) object | Returns a Legend object that represents the legend for the chart. |
+| `format`          |[Chart Area Format](chartareaformat.md) object | Represents the format of a chart object, which includes fill(interior/background), line/border and font formatting.|
 
 ## Methods
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[delete()](#delete)| void     |Deletes the Chart ||
-|[setData(sourceData: string, seriesBy: string)](#setdatasourcedata-string-seriesby-string)| [Chart](Chart.md)  object |Sets the sourceData and seriesBy of a Chart.          
+|[setData(sourceData: string, seriesBy: string)](#setdatasourcedata-string-seriesby-string)| [Chart](Chart.md)  object |Sets the sourceData and seriesBy of the Chart.          
 
 ## API Specification 
 
 ### delete()
 
-Deletes a chart directly on the grid.
+Deletes the chart. 
 
 #### Syntax
 
@@ -79,8 +79,8 @@ chartObject.setData(sourceData, seriesBy);
 #### Parameters
 | Parameter         | Value    |Description|
 |:-----------------|:--------|:----------|
-| `sourceData`  | String|  Sets an address or name of the Range object as the data source.|
-| `seriesBy`  | String |  Sets the way columns or rows are used as data series on the chart. Can be one of the following `Rows`, `Columns` or `Auto`.|
+| `sourceData`  | String|  The address or name of the range that contains the source data.|
+| `seriesBy`  | String |  Specifies the way columns or rows are used as data series on the chart. Can be one of the following: `Rows`, `Columns` or `Auto`.|
 
 #### Returns
 
@@ -148,10 +148,10 @@ chartObject.weight = 200;
 | Property         | Value    |Description|
 |:-----------------|:--------|:----------|
 | `name`  | String|A String value that represents the name of a Chart object                              |
-| `height`|  Number |Returns or sets a Number value that represents the height, in points, of the object |
-| `width` |  Number |Returns or sets a Number value that represents the width, in points, of the object. | 
-| `top` |  Number |Returns or sets a Number value that represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).|
-| `left` |  Number |Returns or sets a Number value that represents the distance, in points, from the left edge of the object to the left edge of column A (on a worksheet) or the left edge of the chart area (on a chart). | 
+| `height`|  Number |Represents the height, in points, of the object |
+| `width` |  Number |Represents the width, in points, of the object. | 
+| `top` |  Number |Represents the distance, in points, from the top edge of the object to the top of row 1 or the top of the chart area on a chart.|
+| `left` |  Number |Represents the distance, in points, from the left edge of the object to the left edge of column or the left edge of the chart area on a chart. | 
 
 #### Returns
 

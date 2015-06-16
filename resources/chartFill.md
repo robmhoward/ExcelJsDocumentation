@@ -1,5 +1,5 @@
 # Chart Fill Format
-Represents the interior/background of an object.
+Represents the fill formatting for a chart element.
 
 ## Properties
 None.
@@ -11,14 +11,14 @@ None
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[setSolidColor(color: string)](#setsolidcolorcolor-string)|void |Sets the solid color of a chart element.
+|[setSolidColor(color: string)](#setsolidcolorcolor-string)|void |Sets the fill formatting of a chart element to a uniform color.
 |[clear()](#clear)|void |Clear the fill format of a chart element.
 
 
 
 ### setSolidColor(color: string)
 
-Sets the solid color of a chart element.
+Sets the fill formatting of a chart element to a uniform color.
 
 #### Syntax
 ```js
@@ -51,7 +51,7 @@ ctx.executeAsync().then(function () {
 
 ### clear()
 
-Clear the line format of a chart eleme
+Clear the fill format of a chart element.
 
 #### Syntax
 Use chart major gridlines on value axis as an example.
@@ -68,7 +68,7 @@ Nothing.
 
 #### Examples
 
-##### Clear the line format of the major Gridlines on value axis of the Chart named "Chart1"
+Clear the line format of the major Gridlines on value axis of the Chart named "Chart1"
 
 ```js
 var ctx = new Excel.ExcelClientContext();

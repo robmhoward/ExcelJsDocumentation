@@ -1,26 +1,25 @@
 # Chart Data Labels
-Represents the data label on a chart point or trendline.
+Represents a colection of all the data labels on a chart point or trendline.
 
 ## [Properties](#set-chart-datalabels)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`position`          |String|Returns or sets a DataLabelPosition value that represents the position of the data label. Valid position for DataLabels are: "Invalid", "None", "Center", "InsideEnd", "InsideBase", "OutsideEnd","Left", "Right", "Top","Bottom", "BestFit", "Callout". |DataLabel.Position|
-|`separator`         |String|Returns or setsor returns a String representing the separator used for the data labels on a chart. |DataLabel.separator|
-|`showBubbleSize`          |Boolean|True to show the bubble size for the data labels on a chart. False to hide.|DataLabel.showBubbleSize|
-|`showCategoryName`          |Boolean|True to display the category name for the data labels on a chart. False to hide. |DataLabel.showCategoryName|
+|`position`          |String|DataLabelPosition value that represents the position of the data label. Valid position for DataLabels are: "Invalid", "None", "Center", "InsideEnd", "InsideBase", "OutsideEnd","Left", "Right", "Top","Bottom", "BestFit", "Callout". |DataLabel.Position|
+|`separator`         |String|String representing the separator used for the data labels on a chart. |DataLabel.separator|
+|`showBubbleSize`          |Boolean|Set to true to show the bubble size for the data labels on a chart. Set to false to hide.|DataLabel.showBubbleSize|
+|`showCategoryName`          |Boolean|Set to true to display the category name for the data labels on a chart. Set to false to hide. |DataLabel.showCategoryName|
 |`showLegendKey`          |Boolean|True if the data label legend key is visible.  |DataLabel.showLegendKey|
-|`showPercentage`          |Boolean|True to display the percentage value for the data labels on a chart. False to hide.  |DataLabel.showPercentage|
-|`showSeriesName`          |Boolean|True to display the series name for the data labels on a chart. False to hide. |DataLabel.showSeriesName|
-|`ShowValue`          |Boolean|True to display the value for the data labels on a chart. False to hide.|DataLabel.ShowValue|
+|`showPercentage`          |Boolean|Set to true to display the percentage value for the data labels on a chart. Seto to false to hide.  |DataLabel.showPercentage|
+|`showSeriesName`          |Boolean|Set to true to display the series name for the data labels on a chart. Set to false to hide. |DataLabel.showSeriesName|
+|`ShowValue`          |Boolean|Set to true to display the value for the data labels on a chart. Set to false hide.|DataLabel.ShowValue|
 
 
 ## Relationships
-The ChartDataLabels has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `format`          |[Chart Data Label Format](chartDataLabelFormat.md) Object | Represents the format of chart datalabels, which includes fill(interior/background) and font formatting.
+| `format`          |[Chart Data Label Format](chartDataLabelFormat.md) object | Represents the format of chart datalabels, which includes fill(interior/background) and font formatting.
 
 ## Methods
 None.
@@ -30,7 +29,7 @@ None.
 
 ### Set Chart DataLabels
 
-Set chart datalables properties.
+Set the properties of the chart datalables.
 
 #### Syntax
 
@@ -43,15 +42,14 @@ chartObject.datalabels.ShowSeriesName = true;
 #### Properties
 | Property         | Type    |Description|
 |:-----------------|:--------|:----------|
-|`position`          |String|Returns or sets a XlDataLabelPosition value that represents the position of the data label.  |
-|`separator`         |String|Sets or returns a Variant representing the separator used for the data labels on a chart. |
-|`showBubbleSize`          |Boolean|True to show the bubble size for the data labels on a chart. False to hide.|
-|`showCategoryName`          |Boolean|True to display the category name for the data labels on a chart. False to hide. |
+|`position`          |String|DataLabelPosition value that represents the position of the data label. Valid position for DataLabels are: "Invalid", "None", "Center", "InsideEnd", "InsideBase", "OutsideEnd","Left", "Right", "Top","Bottom", "BestFit", "Callout". | 
+|`separator`         |String|String representing the separator used for the data labels on a chart. | 
+|`showBubbleSize`          |Boolean|Set to true to show the bubble size for the data labels on a chart. Set to false to hide.| 
+|`showCategoryName`          |Boolean|Set to true to display the category name for the data labels on a chart. Set to false to hide. | 
 |`showLegendKey`          |Boolean|True if the data label legend key is visible.  |
-|`showPercentage`          |Boolean|True to display the percentage value for the data labels on a chart. False to hide.  |
-|`showSeriesName`          |Boolean|Returns or sets a Boolean corresponding to a specified chart's data label values display behavior. True displays the values. False to hide.  |
-|`ShowValue`          |Boolean|Returns or sets a Boolean corresponding to a specified chart's data label values display behavior. True displays the values. False to hide.|
-
+|`showPercentage`          |Boolean|Set to true to display the percentage value for the data labels on a chart. Seto to false to hide.  |
+|`showSeriesName`          |Boolean|Set to true to display the series name for the data labels on a chart. Set to false to hide. |
+|`ShowValue`          |Boolean|Set to true to display the value for the data labels on a chart. Set to false hide.|
 #### Returns
 None.
 

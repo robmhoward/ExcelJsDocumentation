@@ -26,10 +26,10 @@ The Worksheet has the following methods defined:
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[delete()](#delete)| void     |Deletes the worksheet ||
-|[getHeaderRowRange()](#getheaderrowrange) | [Range](range.md) Object |Retrieve the Range object associated with Data Body of the Table.||
-|[getDataBodyRange()](#getdatabodyrange) | [Range](range.md) Object |Retrieve the Header Row Range object associated with the Table  ||
-|[getRange()](#getrange) | [Range](range.md) Object |Get Range object associated with the Table. ||
-|[getTotalRowRange()](#gettotalrowrange) | [Range](range.md) Object |Get Totals Range object associated with the Table. ||
+|[getHeaderRowRange()](#getheaderrowrange) | [Range](range.md) object |Retrieve the Range object associated with Data Body of the Table.||
+|[getDataBodyRange()](#getdatabodyrange) | [Range](range.md) object |Retrieve the Header Row Range object associated with the Table  ||
+|[getRange()](#getrange) | [Range](range.md) object |Get Range object associated with the Table. ||
+|[getTotalRowRange()](#gettotalrowrange) | [Range](range.md) object |Get Totals Range object associated with the Table. ||
 
 ## API Specification 
 

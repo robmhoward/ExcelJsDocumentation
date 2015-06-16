@@ -22,10 +22,10 @@ The TableColumn has the following methods defined:
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[delete()](#delete)| void     |Deletes the column ||
-|[getDataBodyRange()](#getdatabodyrange)| [Range](range.md) Object     | Returns a Range object that is the size of the data portion of a column.||
-|[getHeaderRowRange()](#getheaderrowrange)| [Range](range.md) Object     | Returns the header Range object associated with the column.||
-|[getRange()](#getrange)| [Range](range.md) Object     | Returns the Range object associated with the column.||
-|[getTotalRowRange()](#gettotalrowrange)| [Range](range.md) Object     | Returns the Total row for a Column Object||
+|[getDataBodyRange()](#getdatabodyrange)| [Range](range.md) object     | Returns a Range object that is the size of the data portion of a column.||
+|[getHeaderRowRange()](#getheaderrowrange)| [Range](range.md) object     | Returns the header Range object associated with the column.||
+|[getRange()](#getrange)| [Range](range.md) object     | Returns the Range object associated with the column.||
+|[getTotalRowRange()](#gettotalrowrange)| [Range](range.md) object     | Returns the Total row for a Column object||
 
 ## API Specification 
 

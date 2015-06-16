@@ -18,10 +18,11 @@ None.
 ## API Specification 
 ### clear()
 
-Clear the line format of a chart eleme
+Clears the line formatting in a chart element.
 
 #### Syntax
 Use chart major gridlines on value axis as an example.
+
 ```js
 GridlinesObject.format.line.clear();
 ```
@@ -50,7 +51,7 @@ ctx.executeAsync().then(function () {
 
 ### Set Line Format
 
-Update a chart line formatting.
+Updates the chart line formatting.
 
 #### Syntax
 Use chart major gridlines on value axis as an example.

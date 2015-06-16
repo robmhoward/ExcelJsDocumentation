@@ -14,8 +14,8 @@ Format object represents format settings of a Range. This includes Font, fill, B
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 |`borders`         |[Range Border collection](rangebordercollection.md)|Collection of border objects that apply to the overall Range selected|Range.Borders|
-|`font`            |[Range Font](rangefont.md) Object                |Returns the Font object defined on the overall Range selected|Range.Font|
-|`fill`      |[Range Fill](rangefill.md) Object    |Returns the fill object defined on the overall Range selected|Range.Interior||
+|`font`            |[Range Font](rangefont.md) object                |Returns the Font object defined on the overall Range selected|Range.Font|
+|`fill`      |[Range Fill](rangefill.md) object    |Returns the fill object defined on the overall Range selected|Range.Interior||
 
 ## Methods
 

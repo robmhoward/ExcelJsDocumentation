@@ -1,12 +1,12 @@
 # Binding Collection
-A collection of all the [Binding](binding.md) objects that are part of the workbook. 
+Represents the collection of all the [Binding](binding.md) objects that are part of the workbook. 
 
 ## [Properties](#get-binding-collection)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|Bindings.count|
-|`items`| [Binding](binding.md) Array | A collection of all the Binding objects that are part of the workbook|[Bindings.item] |
+|`count`| Number   | Returns the number of bindings in the collection.| |
+|`items`| [Binding](binding.md) array | Returns a collection of all the bindings defined in a workbook.| |
 
 ## Relationships
 None
@@ -17,8 +17,8 @@ The Binding collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[getItem(param: string)](#getitemparam-string)| [Binding](binding.md) Object      |Retrieve a binding  object using its id||
-|[getItemAt(index: number)](#getitematindex-number)| [Binding](binding.md) Object     |Retrieve a binding based on its position in the collection..||
+|[getItem(param: string)](#getitemparam-string)| [Binding](binding.md) object      |Gets a Binding object by id.||
+|[getItemAt(index: number)](#getitematindex-number)| [Binding](binding.md) object     |Gets a Binding object based on its position in the items[] array.||
 
 
 ## API Specification 
@@ -36,7 +36,7 @@ bindingCollection.getItemAt(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index value of the object to be retrieved.. Zero indexed.
+ `index`| Number | Required. Index value of the object to be retrieved. Zero indexed.
 
 #### Returns
 
@@ -56,7 +56,7 @@ ctx.executeAsync().then(function () {
 
 ### Get Binding Collection
 
-Get properties of the binding collection. 
+Get the properties of the binding collection. 
 
 #### Syntax
 ```js
@@ -67,9 +67,8 @@ workbookObject..bindings.property;
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|Bindings.count|
-|`items`| [Binding](binding.md) Array | A collection of all the binding objects that are part of the workbook|[Bindings.item] |
-
+|`count`| Number   | Returns the number of bindings in the collection.| |
+|`items`| [Binding](binding.md) array | Returns a collection of all the Binding objects that are part of the workbook.| |
 
 #### Returns
 

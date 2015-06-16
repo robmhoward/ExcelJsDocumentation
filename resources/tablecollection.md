@@ -19,9 +19,9 @@ The table collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(address: string, hasHeaders: bool)](#addaddress-string-hasheaders-bool)| [Table](table.md) Object | Creates a new table.||
-|[getItem(name: string)](#getitemname-string)| [Table](table.md) Object      |Retrieve a table object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [Table](table.md) Object     |Retrieve a table based on its position in the collection..||
+|[add(address: string, hasHeaders: bool)](#addaddress-string-hasheaders-bool)| [Table](table.md) object | Creates a new table.||
+|[getItem(name: string)](#getitemname-string)| [Table](table.md) object      |Retrieve a table object using its name||
+|[getItemAt(index: number)](#getitematindex-number)| [Table](table.md) object     |Retrieve a table based on its position in the collection..||
 
 ## API Specification 
 
@@ -131,7 +131,7 @@ tableCollection.property;
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 |`count`| Number   | Number of objects in the collection.|tables.count|
-|`items`| Object[] | A collection of all the table objects that are part of the workbook|[tables.item] |
+|`items`| object[] | A collection of all the table objects that are part of the workbook|[tables.item] |
 
 
 #### Returns

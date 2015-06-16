@@ -1,6 +1,6 @@
 # Application
 
-Represents the Excel application which is managing the workbook. 
+Represents the Excel application that manages the workbook.
 
 ## [Properties](#get-application)
 
@@ -17,11 +17,11 @@ The Application has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[calculate()](#calculate)| [Worksheet](worksheet.md) object |Perform calculation on the workbook or application.| |
+|[calculate()](#calculate)| Void |Perform calculation on the workbook or application.| |
 
 ### Get Application
 
-Get properties of workbook's application object. 
+Get the properties of the Application object.
 
 ```js
 workbookObject..application;
@@ -55,7 +55,7 @@ applicationObject.calculate(calculationType)
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
-`calculationType` | String | Optional. Available Options are: `ReCalculate`: does normal calculation, `Full`: forces a full calculation of the data, `FullRebuild`: forces a full calculation of the data and rebuilds the dependencies (this is similar to re-entering all formulas). Note: if request body is not provided then calculation of the type `ReCalculation` is performed.
+`calculationType` | String | Optional. Specifies the calculation type to use. Possible values are: `ReCalculate`: Performs normal calculation by calculating all the formulas in the workbook, `Full`: Forces a full calculation of the data, `FullRebuild`: Forces a full calculation of the data and rebuilds the dependencies. This option is similar to re-entering all formulas. Note: If calculationType is not specified, the 'ReCalculate' option is used by default.
 
 #### Returns
 

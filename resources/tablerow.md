@@ -14,7 +14,7 @@ The TableRow has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `range`  | [Range](range.md) Object |Returns a Range object associated with the Table Row.|ListRow.Range|
+| `range`  | [Range](range.md) object |Returns a Range object associated with the Table Row.|ListRow.Range|
 
 ## Methods
 The TableRow has the following methods defined:
@@ -22,7 +22,7 @@ The TableRow has the following methods defined:
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[delete()](#delete)| void     |Deletes the row ||
-|[getRange()](#getrange)| [Range](range.md) Object     | Returns the Range object associated with the row.||
+|[getRange()](#getrange)| [Range](range.md) object     | Returns the Range object associated with the row.||
 
 
 ## API Specification 

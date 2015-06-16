@@ -1,23 +1,22 @@
 # AxisTitle
-Represents the title of a specified axis.
+Represents the title of a specified chart axis.
 
 ## [Properties](#get-chart-axis-title)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `text` | String |A String value that represents the title of a Axis. | 
-| `visible` | Boolean |A boolean that specifies the visibility of an Axis Title. True if the axis or chart has a visible title.  | 
+| `text` | String |A String value that represents the title of a axis. | 
+| `visible` | Boolean |A boolean that specifies the visibility of an axis title. True if the axis or chart has a visible title.  | 
 
 ## Relationships
 The ChartAxisTitle has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `format`          |[ChartAxisTitleFormat](chartAxisTitleFormat.md) Object | Represents the format of a chart axis title font formatting.
+| `format`          |[ChartAxisTitleFormat](chartAxisTitleFormat.md) object | Represents the formatting of a chart axis title font formatting.
 
 ## Methods
 None.
-
 
 ## API Specification 
 
@@ -34,8 +33,8 @@ chartObject.axes.valueaxis.title;
 #### Properties
 | Property         | Type    |Description| 
 |:-----------------|:--------|:----------|
-| `text` | String |A String value that represents the title of a Axis. | 
-| `visible` | Boolean |A boolean that specifies the visibility of an Axis Title. True if the axis or chart has a visible title.  |
+| `text` | String |Returns or sets the title of an axis. | 
+| `visible` | Boolean |Returns or sets a boolean that specifies the visibility of an axis title. True if the axis or chart has a visible title.  | 
 
 #### Returns
 
@@ -59,7 +58,7 @@ ctx.executeAsync().then(function () {
 
 ### Set Chart Axis Title
 
-Set chart axis title properties including text and visibility.
+Set the properties of a chart axis title, including text and visibility.
 
 #### Syntax
 Use value axis as an example here.
@@ -71,8 +70,8 @@ chartObject.axes.valueaxis.title.visible = true;
 #### Properties
 | Property         | Type    |Description| 
 |:-----------------|:--------|:----------|
-| `text` | String |A String value that represents the title of a Axis. | 
-| `visible` | Boolean |A boolean that specifies the visibility of an Axis Title. True if the axis or chart has a visible title.  |
+| `text` | String |Returns or sets the title of an axis. | 
+| `visible` | Boolean |Returns or sets a boolean that specifies the visibility of an axis title. True if the axis or chart has a visible title.  |
 
 #### Returns
 

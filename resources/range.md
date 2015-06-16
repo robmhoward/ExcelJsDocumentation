@@ -4,26 +4,26 @@ Range represents a cell, a row, a column, a selection of cells containing one or
 ## [Properties](#get-range)
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`address`         |String         |Returns a String value that represents the range reference in A1 Style. **Address value will contain the Sheet reference (e.g., `Sheet1!A1:B4`)**|Range.Address|
+|`address`         |String         |Returns a String value that represents the range reference in A1 Style. Address value will contain the Sheet reference (e.g., `Sheet1!A1:B4`). |Range.Address|
 |`addressLocal`    |String         |Returns the range reference for the specified range in the language of the user.
-|`cellCount`       | Number          |Number of cells in the range|Range.Count|
+|`cellCount`       | Number          |Number of cells in the range.|Range.Count|
 |`columnIndex`     | Number          |Returns the number of the first column in the first area in the specified range. This is adjusted to be zero indexed. |Range.Column|
 |`columnCount`    | Number           |Returns the number of the first row of the first area in the range. This is adjusted to be zero indexed. |Range.Row|
-|`formulas`         |String[][]|Represents the object's formula in A1 style notation|Range.formula|
-|`formulasLocal`    |String[][]|Formula for the object, in the language of the user in A1 style notation|Range.FormulaLocal|
-|`numberFormat`    |String[][]|Value that represents the format code for the object|Range.NumberFormat
-|`rowcount`        | Number          |Returns the total number of columns in the Range selected.  |Range.Column|
+|`formulas`         |String[][]|Represents the object's formula in A1 style notation. |Range.formula|
+|`formulasLocal`    |String[][]|Formula for the object, in the language of the user in A1 style notation. |Range.FormulaLocal|
+|`numberFormat`    |String[][]|Value that represents the format code for the object. |Range.NumberFormat
+|`rowcount`        | Number          |Returns the total number of columns in the Range selected. |Range.Column|
 |`rowIndex`        | Number          |Returns the number of the first row of the first area in the range. This is adjusted to be zero indexed. |Range.Row|
 |`text`            |String[][]|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel client will not affect the value returned by the API. |Range.Text|
-|`values`          |any[][]|Unformatted values of the specified range|Range.Value2|
+|`values`          |any[][]|Unformatted values of the specified range. |Range.Value2|
 
 ## Relationships
 Range has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|format        |[Range Format](rangeformat.md) Object  |Format object contains Range's Font, fill, Borders, Alignment, Style, etc. settings ||
-|[worksheet](#get-range-worksheet) |[Worksheet](worksheet.md) Object  |The worksheet containing the current range. ||
+|format        |[Range Format](rangeformat.md) object  |Format object contains Range's Font, fill, Borders, Alignment, Style, etc. settings ||
+|[worksheet](#get-range-worksheet) |[Worksheet](worksheet.md) object  |The worksheet containing the current range. ||
 
 
 ## Methods

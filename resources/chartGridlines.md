@@ -5,14 +5,13 @@ Represents major or minor gridlines on a chart axis.
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|visible| Boolean | True if the axis has gridlines. ||
+|visible| Boolean | Returns or sets a boolean. True if the axis has gridlines. ||
 
 ## Relationships
-The ChartGridlines has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `format`          |[ChartGridlinesFormat](chartGridlinesFormat.md) Object | Represents the format of chart gridlines.
+| `format`          |[ChartGridlinesFormat](chartGridlinesFormat.md) object | Represents the formatting of chart gridlines.
           
 
 ## Methods
@@ -32,7 +31,7 @@ chartObject.axes.valueaxis.majorGridlines;
 #### Properties
 | Property         | Type    |Description|
 |:-----------------|:--------|:----------|
-|visible| Boolean | True if the axis has gridlines. |
+|visible| Boolean | Returns true if the axis has gridlines. |
 
 #### Returns
 
@@ -56,7 +55,7 @@ ctx.executeAsync().then(function () {
 
 ### Set Chart Gridlines
 
-Show Gridlines on an Axis. 
+Show Gridlines on an axis. 
 
 #### Syntax
 Use major gridlines on value axis as an example here.
