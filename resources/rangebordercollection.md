@@ -57,7 +57,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get border object properties based on its position in the collection.. 
+Get border object properties based on its position in the collection. 
 
 #### Syntax
 ```js
@@ -68,7 +68,7 @@ borderCollection.getItemAt();
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index value of the object to be retrieved.. Zero indexed.
+ `index`| Number | Required. Index value of the object to be retrieved. Zero-indexed.
 
 #### Returns
 [border](rangeborder.md) object.

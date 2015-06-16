@@ -20,7 +20,7 @@ The chart has the following methods defined:
 |:-----------------|:--------|:----------|:------|
 |[add(type: string, sourceData: string, seriesBy: string)](#addtype-string-sourcedata-string-seriesby-string)| [Chart](chart.md) object              |Creates a new chart. The new chart becomes the active workbook. ||
 |[getItem(name: string)](#getitemname-string)| [Chart](chart.md) object     |Retrieve a chart object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [Chart](chart.md) object    |Retrieve a chart based on its position in the collection..||
+|[getItemAt(index: number)](#getitematindex-number)| [Chart](chart.md) object    |Retrieve a chart based on its position in the collection.||
 
 
 ## API Specification 
@@ -89,8 +89,8 @@ chartsCollection.add(type, sourceData, seriesBy);
 | Parameter         | Value    |Description|
 |:-----------------|:--------|:----------|
 | `type` | String | A String value that represents the type of a chart.  |
-| `sourceData`  | String | A String that represents an address or name of the Range object as the data source.|
-| `seriesBy` | String |  A String that represents the way columns or rows are used as data series on the chart. Can be `auto`, `Rows` or `Columns`.|
+| `sourceData`  | String | The address or name of the range that contains the source data.|
+| `seriesBy` | String |  Specifies the way columns or rows are used as data series on the chart. Can be one of the following: `Rows`, `Columns` or `Auto`.|
 
 #### Returns
 [chart](chart.md) object.
@@ -143,7 +143,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get chart object properties based on its position in the collection.. 
+Get chart object properties based on its position in the collection. 
 
 #### Syntax
 ```js
@@ -154,7 +154,7 @@ chartsCollection.getItemAt(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index value of the object to be retrieved.. Zero indexed.
+ `index`| Number | Required. Index value of the object to be retrieved. Zero-indexed.
 
 #### Returns
 

@@ -5,22 +5,22 @@ Represents a series in a chart.
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`name`          |String|A String value that represents a Series object ||
+|`name`          |String|Returns or sets the name of a series in a chart. ||
 
 ## Relationships
-The ChartSeries has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `points`          |[ChartPoint Collection](chartPointsCollection.md) | Represents Points in a series in a chart.
-| `format`          |[ChartSeriesFormat](chartSeriesFormat.md) object |  Represents the format of chart series, which includes fill(interior/background) and line formatting.
+| `points`          |[ChartPoint Collection](chartPointsCollection.md) | Represents an object that returns a single point or a collection of all the points in the series. 
+| `format`          |[ChartSeriesFormat](chartSeriesFormat.md) Object |  Represents the formatting of a chart series, which includes fill(interior/background) and line formatting.
 
 ## Methods
 None.
 
 ## API Specification
+
 ### Set Chart Series
-Set properties of ChartSeries.
+Set the properties of a series in a chart.
 
 #### Syntax
 

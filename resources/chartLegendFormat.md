@@ -9,7 +9,7 @@ None.
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 | `fill`          |[Chart Fill](chartFill.md) object | Represents the fill format of an object, which includes interior/background formating information. 
-| `font`          |[ChartFont](chartFont.md) object | Represents the font attributes such as font name, font size, color, etc. of an object.  chart legend.
+| `font`          |[ChartFont](chartFont.md) object | Represents the font attributes such as font name, font size, color, etc. of a chart legend.
 
 ## Methods
 None.

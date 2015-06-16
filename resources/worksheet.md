@@ -98,8 +98,8 @@ worksheetObject.getCell(row, column);
 
 Parameter      | Type   | Description
 -------------- | ------ | ------------
-`row`          | Number | Required. Row number of the cell to be retrieved. Zero indexed. 
-`column`          | Number | Required. Column number of the cell to be retrieved. Zero indexed.
+`row`          | Number | Required. Row number of the cell to be retrieved. Zero-indexed. 
+`column`          | Number | Required. Column number of the cell to be retrieved. Zero-indexed.
 
 #### Returns
 

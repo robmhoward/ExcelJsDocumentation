@@ -22,7 +22,7 @@ The Chart has the following relationships defined:
 | `axes`          |[Chart Axes](chartAxes.md) object |Represents a collection of Axes in the Chart.|
 | `dataLabels`          |[Chart Data Labels](chartDataLabels.md) object | Represents the datalabels on the chart.|
 | `legend`          |[Chart Legend](chartLegend.md) object | Returns a Legend object that represents the legend for the chart. |
-| `format`          |[Chart Area Format](chartareaformat.md) object | Represents the format of a chart object, which includes fill(interior/background), line/border and font formatting.|
+| `format`          |[Chart Area Format](chartareaformat.md) object | Represents the formatting of a chart object, which includes fill(interior/background), line/border and font formatting.|
 
 ## Methods
 

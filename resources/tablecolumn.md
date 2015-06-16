@@ -6,8 +6,8 @@ Represents a Column in a table. The TableColumn object is a member of the TableC
 |Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 | `id`     |  Number | A unique key that identifies the Table Column within the Table   |        |
-|`index`          |  Number | Index number of the TableColumn object within the TableColumns collection. **Zero Indexed**| ListColumn.Index|
-|`name`           | String | String value that represents the name of the Table column..| ListColumn.Name|
+|`index`          |  Number | Index number of the TableColumn object within the TableColumns collection. **Zero-indexed**| ListColumn.Index|
+|`name`           | String | String value that represents the name of the Table column.| ListColumn.Name|
 |`totalsCalculation` |String | Constant value that determines the type of calculation in the Totals row of the list column. Possible values are: `Average`, `Count`, `CountNums`, `Max`, `Min`, `None`, `Sum`, `StdDev`, `Var`
 |`values`         | Array (Primitive)  | Unformatted values of the table Column. |Collection of ListColumn.Range.Value2|
 
@@ -190,7 +190,7 @@ tableColumnsCollection.getItem(param);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `param`| String or Number | Column index (zero indexed) or column name of the column that you wish to get. 
+ `param`| String or Number | Column index (Zero-indexed) or column name of the column that you wish to get. 
 
 #### Returns
 

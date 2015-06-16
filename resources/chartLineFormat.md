@@ -5,7 +5,7 @@ Provides access to the Office Art formatting for chart line elements.
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|color| String | HTML color code representing the color of lines in the chart. |Chart.ChartFormat.LineFormat.Color's representation in HTML color code.|
+|color| String | HTML color code representing the color of lines in the chart. ||
 
 ## Relationships
 None.
@@ -16,6 +16,7 @@ None.
 |[clear()](#clear)|void |Clear the line format of a chart element.
 
 ## API Specification 
+
 ### clear()
 
 Clears the line formatting in a chart element.

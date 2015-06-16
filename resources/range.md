@@ -7,13 +7,13 @@ Range represents a cell, a row, a column, a selection of cells containing one or
 |`address`         |String         |Returns a String value that represents the range reference in A1 Style. Address value will contain the Sheet reference (e.g., `Sheet1!A1:B4`). |Range.Address|
 |`addressLocal`    |String         |Returns the range reference for the specified range in the language of the user.
 |`cellCount`       | Number          |Number of cells in the range.|Range.Count|
-|`columnIndex`     | Number          |Returns the number of the first column in the first area in the specified range. This is adjusted to be zero indexed. |Range.Column|
-|`columnCount`    | Number           |Returns the number of the first row of the first area in the range. This is adjusted to be zero indexed. |Range.Row|
+|`columnIndex`     | Number          |Returns the number of the first column in the first area in the specified range. This is adjusted to be Zero-indexed. |Range.Column|
+|`columnCount`    | Number           |Returns the number of the first row of the first area in the range. This is adjusted to be Zero-indexed. |Range.Row|
 |`formulas`         |String[][]|Represents the object's formula in A1 style notation. |Range.formula|
 |`formulasLocal`    |String[][]|Formula for the object, in the language of the user in A1 style notation. |Range.FormulaLocal|
 |`numberFormat`    |String[][]|Value that represents the format code for the object. |Range.NumberFormat
 |`rowcount`        | Number          |Returns the total number of columns in the Range selected. |Range.Column|
-|`rowIndex`        | Number          |Returns the number of the first row of the first area in the range. This is adjusted to be zero indexed. |Range.Row|
+|`rowIndex`        | Number          |Returns the number of the first row of the first area in the range. This is adjusted to be Zero-indexed. |Range.Row|
 |`text`            |String[][]|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel client will not affect the value returned by the API. |Range.Text|
 |`values`          |any[][]|Unformatted values of the specified range. |Range.Value2|
 
@@ -33,20 +33,20 @@ The Worksheet has the following methods defined:
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[clear(applyTo: string)](#clearapplyto-string)| void     |Clear Range values, format, fill, border, etc. |   |
-|[delete()](#delete)| void     |Deletes the worksheet ||
+|[delete()](#delete)| void     |Deletes the range data, clears the formatting, and shifts the cells.||
 |[getCell(row: number, column: number)](#getcellrow-number-column-number)| [Range](range.md) object |Returns a range containing the single cell specified by the zero-indexed row and column numbers          
-|[getEntireColumn()](#getentirecolumn)| [Range](range.md) object |Get an object that represents the entire column of the Range. This API is valid only if the subject range object is a single cell or a column of cells.| |
-|[getEntireRow()](#getentirerow)| [Range](range.md) object |Get an object that represents the entire row of the Range. This API is valid only if the subject range object is a single cell or a row of cells.| |
-|[getUsedRange()](#getusedrange)| [Range](range.md) object |Returns the used range of the Range.| |  
+|[getEntireColumn()](#getentirecolumn)| [Range](range.md) object |Gets an object that represents the entire column of the Range. This API is valid only if the subject range object is a single cell or a column of cells.| |
+|[getEntireRow()](#getentirerow)| [Range](range.md) object |Gets an object that represents the entire row of the Range. This API is valid only if the subject range object is a single cell or a row of cells.| |
+|[getUsedRange()](#getusedrange)| [Range](range.md) object |Returns the used range of the given range object.| |  
 |[insert(shift: string)](#insertshift-string)|void| Inserts a cell or a range of cells into the worksheet and shifts other cells away to make space.| |
-|[select()](#select)|void| Select the specified Range in the Excel UI.| |
+|[select()](#select)|void| Selects the specified Range in the Excel UI.| |
 
 ## API Specification 
 
 
 ### clear(applyTo: string)
 
-Clear Range values, format, fill, border, etc.
+Clears the entire range object.
 
 #### Syntax
 
@@ -79,7 +79,7 @@ ctx.executeAsync().then();
 
 ### delete()
 
-Delete the Range data and clear the format and shift the cells.
+Deletes the Range data and clear the format and shift the cells.
 
 #### Syntax
 
@@ -90,7 +90,7 @@ rangeObject.delete(shift);
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-shift| String | Specifies which way to shift the cells. Can be one of the following: `Left` or `Up`. If this argument is omitted, Microsoft Excel decides based on the shape of the range.
+shift| String | Specifies which way to shift the cells. Possible values are: `Left` or `Up`. If this argument is omitted, Microsoft Excel decides based on the shape of the range.
 
 #### Returns
 
@@ -110,9 +110,7 @@ ctx.executeAsync().then();
 
 ### getCell(row: number, column: number)
 
-Get the Cell (as a Range object) object based on row and column address relative to a Range. 
-
-Note that the returned object is a Range representing the single cell requested. The `address`, `columnIndex`, `rowIndex`, etc. property values of returned Range is relative to the worksheet. 
+Returns a range containing the single cell specified by the zero-indexed row and column numbers. Note that the returned object is a range representing the single cell requested. The `address`, `columnIndex`, `rowIndex`, etc. property values of the returned range are relative to the worksheet. 
 
 #### Syntax
 
@@ -124,8 +122,8 @@ rangeObject.getCell(row, column);
 
 Parameter      | Type   | Description
 -------------- | ------ | ------------
-`row`          | Number | Required. Row number of the cell to be retrieved. Zero indexed. 
-`column`          | Number | Required. Column number of the cell to be retrieved. Zero indexed.
+`row`          | Number | Required. Row number of the cell to be retrieved. Zero-indexed. 
+`column`          | Number | Required. Column number of the cell to be retrieved. Zero-indexed.
 
 #### Returns
 

@@ -34,7 +34,7 @@ Get the currently selected Range from the Workbook.
 
 #### Syntax
 ```js
-workbookObject..getSelectedRange();
+workbookObject.getSelectedRange();
 ```
 #### Parameters
 None

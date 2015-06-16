@@ -235,7 +235,7 @@ tableCollection.getItemAt(index);
 
 Parameter        | Type   | Description
 ---------------  | ------ | ------------
- `index`| Number | Required. Table index. Zero indexed.
+ `index`| Number | Required. Table index. Zero-indexed.
 
 #### Returns
 

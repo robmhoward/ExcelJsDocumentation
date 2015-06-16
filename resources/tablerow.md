@@ -6,7 +6,7 @@ Represents a row in a table. The TableRow object is a member of the TableRows co
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `index`          |  Number | Index number of the TableRow object within the TableRows collection. **Zero Indexed**.| ListRow.Index|
+| `index`          |  Number | Index number of the TableRow object within the TableRows collection. **Zero-indexed**.| ListRow.Index|
 | `values`         | Array (Primitive)  | Unformatted values of the table row. |Collection of ListRow.Range.Value2|
 
 ## Relationships
@@ -97,7 +97,7 @@ tableRowsCollection.getItem(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Row index of the row that you wish to get. Zero indexed.
+ `index`| Number | Row index of the row that you wish to get. Zero-indexed.
 
 #### Returns
 

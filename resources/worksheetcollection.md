@@ -21,7 +21,7 @@ The Worksheet collection has the following methods defined:
 |[add(name: string)](#addname-string)| [Worksheet](worksheet.md) object              |Creates a new worksheet. The new worksheet becomes the active workbook. ||
 |[getActiveWorksheet()](#getactiveworksheet)| [Worksheet](worksheet.md) object |Get the currently active worksheet in the workbook.| |
 |[getItem(param: string)](#getitemparam-string)| [Worksheet](worksheet.md) object      |Retrieve a worksheet object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [Worksheet](worksheet.md) object     |Retrieve a worksheet based on its position in the collection..||
+|[getItemAt(index: number)](#getitematindex-number)| [Worksheet](worksheet.md) object     |Retrieve a worksheet based on its position in the collection.||
 
 
 ## API Specification 
@@ -118,7 +118,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get Worksheet object properties based on its position in the collection.. 
+Get Worksheet object properties based on its position in the collection. 
 
 #### Syntax
 ```js
@@ -129,7 +129,7 @@ worksheetCollection.getItemAt(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index value of the object to be retrieved.. Zero indexed.
+ `index`| Number | Required. Index value of the object to be retrieved. Zero-indexed.
 
 #### Returns
 
@@ -153,7 +153,7 @@ Get properties of the worksheet collection.
 
 #### Syntax
 ```js
-workbookObject..worksheets.property;
+workbookObject.worksheets.property;
 ```
 
 #### Properties

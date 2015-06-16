@@ -21,7 +21,7 @@ The Worksheet has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[getRange()](#getrange)| [Range](range.md) object |Returns the Range object that is associated with the name. `null` if the name is not of the type `Range`.| |
+|[getRange()](#getrange)| [Range](range.md) object |Returns the Range object that is associated with the name. Returns `null` if the name is not of the type `Range`.| |
 
 ## API Specification 
 

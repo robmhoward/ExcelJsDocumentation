@@ -5,8 +5,8 @@ A collection of all the ChartSeries objects of a chart.
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.||
-|`items`| [Chart Series](chartSeries.md) Array | A collection of all the chart objects that are part of the workbook||
+|`count`| Number   | Returns the number of series in the collection.||
+|`items`| [Chart Series](chartSeries.md) Array | A collection of all the chart series objects.||
 
 ## Relationships
 
@@ -18,7 +18,7 @@ The chart has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[getItemAt(index: number)](#getitematindex-number)| [ChartSeries](chartSeries.md)     |Retrieve a ChartSeries based on its position in the collection..||
+|[getItemAt(index: number)](#getitematindex-number)| [ChartSeries](chartSeries.md)     |Gets a ChartSeries object based on its position in the collection.||
 
 
 ## API Specification 
@@ -75,7 +75,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get chartSeries object properties based on its position in the collection.. 
+Gets a ChartSeries object based on its position in the collection. 
 
 #### Syntax
 ```js
@@ -86,7 +86,7 @@ ChartSeriesCollection.getItemAt(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index value of the object to be retrieved.. Zero indexed.
+ `index`| Number | Required. Index value of the object to be retrieved. Zero-indexed.
 
 #### Returns
 

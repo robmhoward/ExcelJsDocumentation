@@ -14,7 +14,7 @@ Represents the legend in a chart. Each chart can have only one legend.
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `format`          |[ChartLegendFormat](chartLegendFormat.md) object | Represents the format of a chart legend, which includes fill(interior/background) and font formatting.
+| `format`          |[ChartLegendFormat](chartLegendFormat.md) object | Represents the formatting of a chart legend, which includes fill(interior/background) and font formatting.
      
 
 ## Methods

@@ -1,12 +1,13 @@
 # Chart Point Collection
+
 A collection of all the ChartPoint objects of a chart. 
 
 ## [Properties](#get-chartpoint-collection)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.||
-|`items`| [Chart Point](chartPoint.md) Array | A collection of all the chart objects that are part of the workbook| |
+|`count`| Number   | Returns the number of chart points in the collection.||
+|`items`| [Chart Point](chartPoint.md) Array | A collection of all the chart objects that are part of the workbook.| |
 
 ## Relationships
 
@@ -14,11 +15,9 @@ None
 
 ## Methods
 
-The chart has the following methods defined:
-
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[getItemAt(index: number)](#getitematindex-number)| [ChartPoint](chartPoint.md)     |Retrieve a ChartPoint object based on its position in the collection..||
+|[getItemAt(index: number)](#getitematindex-number)| [ChartPoint](chartPoint.md)     |Retrieve a ChartPoint object based on its position in the collection.||
 
 
 ## API Specification 
@@ -37,7 +36,7 @@ chartObject.points;
 | Property         | Type    |Description|
 |:-----------------|:--------|:----------|
 |`count`| Number   | Number of objects in the collection.|
-|`items`| object[] | A collection of all the chart objects that are part of the workbook|
+|`items`| [Chart Point](chartPoint.md) array | A collection of all the chart points objects.|
 
 #### Returns
 
@@ -71,7 +70,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get chartPoint object properties based on its position in the collection.. 
+Gets a collection of all the ChartPoint objects in a chart.
 
 #### Syntax
 ```js
@@ -82,7 +81,7 @@ ChartPointsCollection.getItemAt(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index value of the object to be retrieved.. Zero indexed.
+ `index`| Number | Required. Index value of the object to be retrieved. Zero-indexed.
 
 #### Returns
 

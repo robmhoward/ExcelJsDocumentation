@@ -19,7 +19,7 @@ The nameditem collection has the following methods defined:
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[getItem(name: string)](#getitemname-string)| [Named Item](nameditem.md) object      |Retrieve a nameditem object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [Named Item](nameditem.md) object     |Retrieve a nameditem based on its position in the collection..||
+|[getItemAt(index: number)](#getitematindex-number)| [Named Item](nameditem.md) object     |Retrieve a nameditem based on its position in the collection.||
 
 
 ## API Specification 
@@ -105,7 +105,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get nameditem object properties based on its position in the collection.. 
+Get nameditem object properties based on its position in the collection. 
 
 #### Syntax
 ```js
@@ -116,7 +116,7 @@ nameditemCollection.getItemAt(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index value of the object to be retrieved.. Zero indexed.
+ `index`| Number | Required. Index value of the object to be retrieved. Zero-indexed.
 
 #### Returns
 

@@ -25,7 +25,7 @@ The Binding collection has the following methods defined:
 
 ### getItemAt(index: number)
 
-Get Binding object properties based on its position in the collection.. 
+Get Binding object properties based on its position in the collection. 
 
 #### Syntax
 ```js
@@ -36,7 +36,7 @@ bindingCollection.getItemAt(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index value of the object to be retrieved. Zero indexed.
+ `index`| Number | Required. Index value of the object to be retrieved. Zero-indexed.
 
 #### Returns
 
@@ -60,7 +60,7 @@ Get the properties of the binding collection.
 
 #### Syntax
 ```js
-workbookObject..bindings.property;
+workbookObject.bindings.property;
 ```
 
 #### Properties

@@ -20,7 +20,7 @@ The tablecolumn collection has the following methods defined:
 |:-----------------|:--------|:----------|:------|
 |[add(index: number, values: any[][])](#index-number-values-any)| [Table Column](tablecolumn.md) object             |Creates a new tablecolumn.  ||
 |[getItem(param: string or number)](#getitemparam-string-or-number)| [Table Column](tablecolumn.md) object     |Retrieve a tablecolumn object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [tablecolumn](tablecolumn.md) object|Retrieve a tablecolumn based on its position in the collection..||
+|[getItemAt(index: number)](#getitematindex-number)| [tablecolumn](tablecolumn.md) object|Retrieve a tablecolumn based on its position in the collection.||
 
 
 ## API Specification 
@@ -36,7 +36,7 @@ tableColumnCollection.add(index, values);
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`index` |  Number | Optional. Specifies the relative position of the new column. The previous column at this position is shifted outward to the right. If not specified, the addition happens at the end.  Note: The index value should be equal to or less than the last column's index value. In other words, this API cannot be used to append a column at the end of the table. **Zero Indexed**.
+`index` |  Number | Optional. Specifies the relative position of the new column. The previous column at this position is shifted outward to the right. If not specified, the addition happens at the end.  Note: The index value should be equal to or less than the last column's index value. In other words, this API cannot be used to append a column at the end of the table. **Zero-indexed**.
 `values` | any[][] | Required. 2-D array of unformatted values of the table column.
 
 
@@ -88,7 +88,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get tablecolumn object properties based on its position in the collection.. 
+Get tablecolumn object properties based on its position in the collection. 
 
 #### Syntax
 ```js
@@ -99,7 +99,7 @@ tableColumnCollection.getItemAt(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index value of the object to be retrieved.. Zero indexed.
+ `index`| Number | Required. Index value of the object to be retrieved. Zero-indexed.
 
 #### Returns
 
