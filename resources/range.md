@@ -145,6 +145,7 @@ ctx.executeAsync().then(function() {
 	Console.log(cell.address);
 });
 ```
+
 [Back](#methods) 
 
 ### getEntireColumn()
