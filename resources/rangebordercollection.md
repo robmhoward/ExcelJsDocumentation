@@ -20,9 +20,68 @@ The border collection has the following methods defined:
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[getItem(name: string)](#getitemname-string)| [border](rangeborder.md) Object      |Retrieve a border object using its name||
+|[getItem(name: string)](#getitemname-string)| [border](rangeborder.md) Object      |Retrieve a border object using its name||
+|[getItemAt(index: number)](#getitematindex-number)| [border](rangeborder.md) Object|Retrieve a border object using its index||
 
 ## API Specification 
 
+### getItem(name: string)
+
+Get border object properties based on name.
+
+#### Syntax
+```js
+borderCollection.getItem(name);
+```
+
+#### Parameters
+
+Parameter       | Type  | Description
+--------------- | ------ | ------------
+ `name`| String | Required. border name. 
+
+#### Returns
+
+[border](rangeborder.md) object.
+
+#### Examples
+```js
+var ctx = new Excel.ExcelClientContext();
+var borderName = 'border1';
+var border = ctx.workbook.borders.getItem(borderName);
+ctx.executeAsync().then(function () {
+		Console.log(border.style);
+});
+```
+[Back](#methods)
+
+### getItemAt(index: number)
+
+Get border object properties based on its position in the collection.. 
+
+#### Syntax
+```js
+borderCollection.getItemAt();
+```
+
+#### Parameters
+
+Parameter       | Type  | Description
+--------------- | ------ | ------------
+ `index`| Number | Required. Index value of the object to be retrieved.. Zero indexed.
+
+#### Returns
+[border](rangeborder.md) object.
+
+#### Examples
+```js
+var ctx = new Excel.ExcelClientContext();
+var borderName = 'border1';
+var border = ctx.workbook.borders.getItemAt(1);
+ctx.executeAsync().then(function () {
+		Console.log(border.style);
+});
+```
 ### Get border Collection
 
 Get properties of the border collection. 
@@ -48,7 +107,7 @@ rangeObject.borders.property;
 
 ```js
 var sheetName = "Sheet1";
-var rangeAddress = "D5:F8";
+var rangeAddress = "A1:F8";
 var ctx = new Excel.ExcelClientContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
@@ -66,7 +125,7 @@ ctx.executeAsync().then(function () {
 
 ```js
 var sheetName = "Sheet1";
-var rangeAddress = "D5:F8";
+var rangeAddress = "F:G";
 var ctx = new Excel.ExcelClientContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
@@ -126,33 +185,3 @@ range.format.borders('EdgeTop').lineStyle = 'Continuous';
 ctx.executeAsync().then();
 ```
 [Back](#properties)
-
-### getItem(name: string)
-
-Get border object properties based on name.
-
-#### Syntax
-```js
-borderCollection.getItem(name);
-```
-
-#### Parameters
-
-Parameter       | Type  | Description
---------------- | ------ | ------------
- `name`| String | Required. border name. 
-
-#### Returns
-
-[border](rangeborder.md) object.
-
-#### Examples
-```js
-var ctx = new Excel.ExcelClientContext();
-var borderName = 'border1';
-var border = ctx.workbook.borders.getItem(borderName);
-ctx.executeAsync().then(function () {
-		Console.log(border.index);
-});
-```
-[Back](#methods)

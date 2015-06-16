@@ -21,13 +21,13 @@ The TableRow has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[deleteObject()](#deleteobject)| void     |Deletes the row ||
+|[delete()](#delete)| void     |Deletes the row ||
 |[getRange()](#getrange)| [Range](range.md) Object     | Returns the Range object associated with the row.||
 
 
 ## API Specification 
 
-### deleteObject()  
+### delete()  
 
 Deletes Table Row and clears the cell data from Table row.
 
@@ -48,7 +48,7 @@ Nothing
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
 var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
-row.deleteObject();
+row.delete();
 ctx.executeAsync().then();
 ```
 

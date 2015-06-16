@@ -18,13 +18,13 @@ The tablerow collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(values: any[][], index: number)](#addvalues-any-index-number)| [Table Row](tablerow.md) Object  |Creates a new tablerow. ||
-|[getItemAt(index: number)](#getitematindex-number)| [Table Row](tablerow.md) Object |Retrieve a tablerow based on its position in the items[] array.||
+|[add(index: number, values: any[][])](#index-number-values-any)| [Table Row](tablerow.md) Object  |Creates a new tablerow. ||
+|[getItemAt(index: number)](#getitematindex-number)| [Table Row](tablerow.md) Object |Retrieve a tablerow based on its position in the collection..||
 
 ## API Specification 
 
 
-### add(values: any[][], index: number)
+### add(index: number, values: any[][])
 
 Add a new row to the table. 
 
@@ -35,8 +35,8 @@ tableRowCollection.add(index, values);
 #### Parameters 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`values` | any[][] | 2-D array of unformatted values of the table row. 
 `index` |  Number |Optional. Specifies the relative position of the new row. If not specified, the addition happens at the end. The previous column at this position is shifted outward to the bottom. **Zero Indexed**
+`values` | any[][] | 2-D array of unformatted values of the table row. 
 
 
 #### Returns
@@ -47,7 +47,7 @@ Parameter       | Type   | Description
 var ctx = new Excel.ExcelClientContext();
 var tables = ctx.workbook.tables;
 var values = [["Sample", "Values", "For", "New", "Row"]];
-var row = tables.getItem("Table1").rows.add(values, null);
+var row = tables.getItem("Table1").rows.add(null, values);
 ctx.load(row);
 ctx.executeAsync().then(function () {
 	Console.log(row.index);
@@ -57,7 +57,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get tablerow object properties based on its position in the items[] array. 
+Get tablerow object properties based on its position in the collection.. 
 
 #### Syntax
 ```js
@@ -68,7 +68,7 @@ tableRowCollection.getItemAt(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index or position in the items[]. Zero indexed.
+ `index`| Number | Required. Index value of the object to be retrieved.. Zero indexed.
 
 #### Returns
 

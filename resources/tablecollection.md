@@ -21,7 +21,7 @@ The table collection has the following methods defined:
 |:-----------------|:--------|:----------|:------|
 |[add(address: string, hasHeaders: bool)](#addaddress-string-hasheaders-bool)| [Table](table.md) Object | Creates a new table.||
 |[getItem(name: string)](#getitemname-string)| [Table](table.md) Object      |Retrieve a table object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [Table](table.md) Object     |Retrieve a table based on its position in the items[] array.||
+|[getItemAt(index: number)](#getitematindex-number)| [Table](table.md) Object     |Retrieve a table based on its position in the collection..||
 
 ## API Specification 
 
@@ -31,17 +31,14 @@ Create a New Table object. The range source address determines the worksheet und
 
 #### Syntax
 ```js
-tableCollection.add(name, rangeSource, containsHeader, showTotals, tableStyle);
+tableCollection.add(rangeAddress, hasHeader);
 ```
 #### Parameters 
 
 |Parameter       | Type   | Description
 |--------------- | ------ | ------------
-|`name`  | String | Optional. String value representing the name of the Table.
-|`rangeSource`| String | Required. Address or name of the Range object representing the data source.
-|`containsHeader` | Boolean | Optional. Boolean value that indicates whether the data being imported has column labels. If the Source does not contain headers (i.e,. when this property set to `false`), Excel will automatically generate headers. If this property value is not set, Excel will determine the header row on its own.
-|`showTotals` | Boolean| Optional. Boolean to indicate whether the Total row is visible. This value can be set to show or remove the total row. By default this will be set to `false` 
-|`tableStyle` | String | Optional. Constant that represents the Table style. Possible values include: `Light1` thru `Light21`, `Medium1` thru `Medium28`, `Dark1` thru `Dark11`. Excel determines the default style if one is not specified. 
+|`address`| String | Required. Address or name of the Range object representing the data source.
+|`hasHeader` | Boolean | Optional. Boolean value that indicates whether the data being imported has column labels. If the Source does not contain headers (i.e,. when this property set to `false`), Excel will automatically generate headers. If this property value is not set, Excel will determine the header row on its own.
 
 #### Returns
 [Table](table.md) object.
@@ -93,7 +90,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get table object properties based on its position in the items[] array. 
+Get table object properties based on its position in the collection.. 
 
 #### Syntax
 ```js
@@ -104,7 +101,7 @@ tableCollection.getItemAt(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index or position in the items[]. Zero indexed.
+ `index`| Number | Required. Index value of the object to be retrieved.. Zero indexed.
 
 #### Returns
 

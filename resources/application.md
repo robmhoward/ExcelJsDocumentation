@@ -17,14 +17,14 @@ The Application has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[calculate()](#calculate)| [Worksheet](worksheet.md) object |Get the currently active worksheet in the workbook.| |
+|[calculate()](#calculate)| [Worksheet](worksheet.md) object |Perform calculation on the workbook or application.| |
 
 ### Get Application
 
 Get properties of workbook's application object. 
 
 ```js
-context.workbook.application;
+workbookObject..application;
 ```
 #### Returns
 
@@ -45,7 +45,7 @@ ctx.executeAsync().then(function() {
 
 ### calculate()
 
-Performs calculation on the Workbook or Application. 
+Performs calculation on the workbook or application. 
 
 #### Syntax
 ```js
@@ -55,7 +55,7 @@ applicationObject.calculate(calculationType)
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
-`calculationType` | String | Optional. `ReCalculate`: does normal calculation, `Full`: forces a full calculation of the data, `FullRebuild`: forces a full calculation of the data and rebuilds the dependencies (this is similar to re-entering all formulas). Note: if request body is not provided then calculation of the type `ReCalculation` is performed.
+`calculationType` | String | Optional. Available Options are: `ReCalculate`: does normal calculation, `Full`: forces a full calculation of the data, `FullRebuild`: forces a full calculation of the data and rebuilds the dependencies (this is similar to re-entering all formulas). Note: if request body is not provided then calculation of the type `ReCalculation` is performed.
 
 #### Returns
 

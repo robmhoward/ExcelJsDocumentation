@@ -20,7 +20,7 @@ The chart has the following methods defined:
 |:-----------------|:--------|:----------|:------|
 |[add(type: string, sourceData: string, seriesBy: string)](#addtype-string-sourcedata-string-seriesby-string)| [Chart](chart.md) Object              |Creates a new chart. The new chart becomes the active workbook. ||
 |[getItem(name: string)](#getitemname-string)| [Chart](chart.md) Object     |Retrieve a chart object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [Chart](chart.md) Object    |Retrieve a chart based on its position in the items[] array.||
+|[getItemAt(index: number)](#getitematindex-number)| [Chart](chart.md) Object    |Retrieve a chart based on its position in the collection..||
 
 
 ## API Specification 
@@ -77,7 +77,7 @@ ctx.executeAsync().then(function () {
 
 ### add(type: string, sourceData: string, seriesBy: string)
 
-Add a new chart to the workbook. The chart will be added at the end of existing charts.
+Add a new chart to the workbook. 
 
 #### Syntax
 ```js
@@ -143,7 +143,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get chart object properties based on its position in the items[] array. 
+Get chart object properties based on its position in the collection.. 
 
 #### Syntax
 ```js
@@ -154,7 +154,7 @@ chartsCollection.getItemAt(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index or position in the items[]. Zero indexed.
+ `index`| Number | Required. Index value of the object to be retrieved.. Zero indexed.
 
 #### Returns
 
