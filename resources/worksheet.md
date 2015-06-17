@@ -23,11 +23,11 @@ The Worksheet has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[activate()][activate-link]| void       |Makes the worksheet the active in the Excel application. |   |
-|[delete()][deleteobject-link]| void     |Deletes the worksheet and its associated data. ||
-|[getCell(row: number, column: number)][getcell-link]| [Range](range.md) object |Returns a range object based on the the zero-indexed row and column numbers.||          
-|[getRange(address: string)][getrange-link]| [Range](range.md) object |Returns the range specified by the address| |
-|[getUsedRange()][getusedrange-link]| [Range](range.md) object |Returns the used range of the worksheet| |  
+|[activate()][activate-link]| void       | Activate the worksheet in the Excel UI. |   |
+|[delete()][deleteobject-link]| void     |Deletes the worksheet from the workbook. ||
+|[getCell(row: number, column: number)][getcell-link]| [Range](range.md) object |Gets the range object containing the single cell specified by the zero-indexed row and column numbers. ||          
+|[getRange(address: string)][getrange-link]| [Range](range.md) object |Gets the range object specified by the address or name. | |
+|[getUsedRange()][getusedrange-link]| [Range](range.md) object |Gets the used range of the worksheet.| |  
 
 ## API Specification 
 
@@ -85,7 +85,7 @@ ctx.executeAsync().then();
 
 
 ### getCell(row: number, column: number)
-Get the Cell (as a Range object) object based on row and column address relative to a top of worksheet. 
+Gets the range object containing the single cell specified by the zero-indexed row and column numbers. 
 
 #### Syntax
 
@@ -97,8 +97,8 @@ worksheetObject.getCell(row, column);
 
 Parameter      | Type   | Description
 -------------- | ------ | ------------
-`row`          | Number | Required. Row number of the cell to be retrieved. Zero-indexed. 
-`column`          | Number | Required. Column number of the cell to be retrieved. Zero-indexed.
+`row`          | Number | Required. The row number of the cell to be retrieved. Zero-indexed. 
+`column`          | Number | Required. the column number of the cell to be retrieved. Zero-indexed.
 
 #### Returns
 
@@ -121,7 +121,7 @@ ctx.executeAsync().then(function() {
 
 ### getRange(address: string)
 
-Get a Range object that represents a single cell or a range of cells. This API can also be used to obtain the entire range object associated with the worksheet. 
+Gets the range object specified by the address or name.
 
 #### Syntax
 
@@ -132,7 +132,7 @@ worksheetObject.getRange(address);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `address`| String | Optional. Address or the name of the Range. If not specified, the entire worksheet range is returned. 
+ `address`| String | Optional. The address or the name of the range. If not specified, the entire worksheet range is returned. 
 
 #### Returns
 
@@ -181,15 +181,11 @@ ctx.executeAsync().then(function() {
 });
 ```
 
-
-
-
-
 [Back](#methods)
 
 ### getUsedRange()
 
-Get the used-range of a worksheet. 
+Gets the used range of the worksheet.
 
 #### Syntax
 ```js
@@ -230,7 +226,7 @@ worksheetCollection.getItem(param);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `param`| String | Required. Worksheet name or id. 
+ `param`| String | Required. The name or id of the worksheet. 
 
 #### Returns
 

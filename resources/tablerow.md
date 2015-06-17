@@ -1,28 +1,27 @@
-# TableRow
+# Table Row
 
-Represents a row in a table. The TableRow object is a member of the TableRows collection.
+Represents a row in a table. 
 
 ## [Properties](#get-table-row)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `index`          |  Number | Index number of the TableRow object within the TableRows collection. **Zero-indexed**.| ListRow.Index|
-| `values`         | Array (Primitive)  | Unformatted values of the table row. |Collection of ListRow.Range.Value2|
+| `index`          |  Number | Returns the index number of the row within the rows collection of the table. Zero-indexed.| ListRow.Index|
+| `values`         | Array (Primitive)  | Returns or sets the unformatted values in the column. |Collection of ListRow.Range.Value2|
 
 ## Relationships
-The TableRow has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `range`  | [Range](range.md) object |Returns a Range object associated with the Table Row.|ListRow.Range|
+| `range`  | [Range](range.md) object |Returns the range object associated with the row.|ListRow.Range|
 
 ## Methods
 The TableRow has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[delete()](#delete)| void     |Deletes the row ||
-|[getRange()](#getrange)| [Range](range.md) object     | Returns the Range object associated with the row.||
+|[delete()](#delete)| void     |Deletes the row from the table.||
+|[getRange()](#getrange)| [Range](range.md) object     | Returns the Range object associated with the entire row.||
 
 
 ## API Specification 
@@ -124,7 +123,7 @@ Update values of table row.
 ```js
 tableRowObject.values = new-values
 ```
-New-values is a 2-D array values of the table row 
+New-values is a 2-dimensional array values of the table row 
 
 #### Example
 ```js

@@ -11,9 +11,9 @@ The Workbook has the following relationships defined:
 | Relationship    | Type    |Description|Notes |
 |:----------------|:--------|:----------|:-----|
 | application  | [Application](application.md)| Returns an object that represents the Excel application managing the workbook. |
-| names       | [NamedItem collection](nameditemCollection.md)| Collection of Named Ranges associated with the workbook  |Workbook.Names      |
-| tables       | [Table collection](tableCollection.md)        | Collection of Tables associated with the workbook        |Workbook.ListObjects|
-| worksheets   | [Worksheet collection](worksheetCollection.md)| Collection of Worksheets associated with the workbook    |Workbook.Worksheets |
+| names       | [NamedItem collection](nameditemCollection.md)| Collection of named items defined in the workbook. Returns referene and range names.  |Workbook.Names      |
+| tables       | [Table collection](tableCollection.md)        | Collection of Tables associated with the workbook.        |Workbook.ListObjects|
+| worksheets   | [Worksheet collection](worksheetCollection.md)| Collection of Worksheets associated with the workbook.    |Workbook.Worksheets |
 | bindings   | [Binding collection](bindingCollection.md)| A collection of all the Binding objects that are part of the workbook.    | |
 
 ## Methods
@@ -22,7 +22,7 @@ The Worksheet has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[getSelectedRange()](#getselectedrange)| [Range](range.md) object |Get the currently selected Range from the Workbook. | |  
+|[getSelectedRange()](#getselectedrange)| [Range](range.md) object |Gets the currently selected Range from the Workbook. | |  
 
 ## API Specification 
 

@@ -4,7 +4,7 @@ Range represents a cell, a row, a column, a selection of cells containing one or
 ## [Properties](#get-range)
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`address`         |String         |Returns a String value that represents the range reference in A1 Style. Address value will contain the Sheet reference (e.g., `Sheet1!A1:B4`). |Range.Address|
+|`address`         |String         |Returns Represents the range reference in A1 Style. Address value will contain the Sheet reference (e.g., `Sheet1!A1:B4`). |Range.Address|
 |`addressLocal`    |String         |Returns the range reference for the specified range in the language of the user.
 |`cellCount`       | Number          |Number of cells in the range.|Range.Count|
 |`columnIndex`     | Number          |Returns the number of the first column in the first area in the specified range. This is adjusted to be Zero-indexed. |Range.Column|

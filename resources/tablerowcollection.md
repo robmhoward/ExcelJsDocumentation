@@ -1,12 +1,12 @@
-# tablerow Collection
-A collection of all the tablerow objects that are part of the table. 
+# Table Row Collection
+Represents a collection of all the rows that are part of the table.
 
 ## [Properties](#get-tablerow-collection)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|tablerows.count|
-|`items`| [Table Row](tablerow.md) Array | A collection of all the tablerow objects that are part of the table|[tablerows.item] |
+|`count`| Number   | Returns the number of rows in the table.|tablerows.count|
+|`items`| [Table Row](tablerow.md) Array | Returns a collection of all the row objects that are part of the table.|[tablerows.item] |
 
 ## Relationships
 
@@ -18,8 +18,8 @@ The tablerow collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(index: number, values: any[][])](#index-number-values-any)| [Table Row](tablerow.md) object  |Creates a new tablerow. ||
-|[getItemAt(index: number)](#getitematindex-number)| [Table Row](tablerow.md) object |Retrieve a tablerow based on its position in the collection.||
+|[add(index: number, values: any[][])](#index-number-values-any)| [Table Row](tablerow.md) object  |Adds a new row to the table. ||
+|[getItemAt(index: number)](#getitematindex-number)| [Table Row](tablerow.md) object |Gets a row based on its position in the collection.||
 
 ## API Specification 
 
@@ -36,7 +36,7 @@ tableRowCollection.add(index, values);
 Parameter       | Type   | Description
 --------------- | ------ | ------------
 `index` |  Number |Optional. Specifies the relative position of the new row. If not specified, the addition happens at the end. The previous column at this position is shifted outward to the bottom. **Zero-indexed**
-`values` | any[][] | 2-D array of unformatted values of the table row. 
+`values` | any[][] | A 2-dimensional array of unformatted values of the table row. 
 
 
 #### Returns

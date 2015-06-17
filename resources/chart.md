@@ -5,7 +5,7 @@ Represents a chart object in a workbook.
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `name`  | String | A String value that represents the name of a Chart object.   | Chart.Name      |
+| `name`  | String | Represents the name of a Chart object.   | Chart.Name      |
 | `height`| Number | A Number value that represents the height, in points, of the chart object. | ChartArea.Height|
 | `width` | Number | A Number value that represents the width, in points, of the chart object. | ChartArea.Width |
 | `top` | Number |a Number value that represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).| ChartArea.Top |
@@ -147,7 +147,7 @@ chartObject.weight = 200;
 #### Properties
 | Property         | Value    |Description|
 |:-----------------|:--------|:----------|
-| `name`  | String|A String value that represents the name of a Chart object                              |
+| `name`  | String|Represents the name of a Chart object                              |
 | `height`|  Number |Represents the height, in points, of the object |
 | `width` |  Number |Represents the width, in points, of the object. | 
 | `top` |  Number |Represents the distance, in points, from the top edge of the object to the top of row 1 or the top of the chart area on a chart.|

@@ -1,15 +1,14 @@
-# TableColumn
+# Table Column
 Represents a Column in a table. The TableColumn object is a member of the TableColumns collection.
 
 ## [Properties](#get-table-column)
 
 |Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `id`     |  Number | A unique key that identifies the Table Column within the Table   |        |
-|`index`          |  Number | Index number of the TableColumn object within the TableColumns collection. **Zero-indexed**| ListColumn.Index|
-|`name`           | String | String value that represents the name of the Table column.| ListColumn.Name|
-|`totalsCalculation` |String | Constant value that determines the type of calculation in the Totals row of the list column. Possible values are: `Average`, `Count`, `CountNums`, `Max`, `Min`, `None`, `Sum`, `StdDev`, `Var`
-|`values`         | Array (Primitive)  | Unformatted values of the table Column. |Collection of ListColumn.Range.Value2|
+| `id`     |  Number | Returns the unique key that identifies the column within the table.    |        |
+|`index`          |  Number | Returns the index number of the column within the columns collection of the table. Zero-indexed.| ListColumn.Index|
+|`name`           | String | Returns the name of the table column.| ListColumn.Name|
+|`values`         | Array (Primitive)  | Returns unformatted values of the table Column. |Collection of ListColumn.Range.Value2|
 
 
 ## Relationships
@@ -21,17 +20,17 @@ The TableColumn has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[delete()](#delete)| void     |Deletes the column ||
-|[getDataBodyRange()](#getdatabodyrange)| [Range](range.md) object     | Returns a Range object that is the size of the data portion of a column.||
-|[getHeaderRowRange()](#getheaderrowrange)| [Range](range.md) object     | Returns the header Range object associated with the column.||
-|[getRange()](#getrange)| [Range](range.md) object     | Returns the Range object associated with the column.||
-|[getTotalRowRange()](#gettotalrowrange)| [Range](range.md) object     | Returns the Total row for a Column object||
+|[delete()](#delete)| void     |Deletes the column from the table.  ||
+|[getDataBodyRange()](#getdatabodyrange)| [Range](range.md) object     | Gets a range object associated with the data portion of the column.||
+|[getHeaderRowRange()](#getheaderrowrange)| [Range](range.md) object     | Gets a header range object associated with the column.||
+|[getRange()](#getrange)| [Range](range.md) object     | Gets a range object associated with the entire column.||
+|[getTotalRowRange()](#gettotalrowrange)| [Range](range.md) object     | Gets the Range object associated with the totals row of the column.||
 
 ## API Specification 
 
 ### delete() 
 
-Deletes Table Column and clears the cell data from the Table Column.
+Deletes the column from the table. 
 
 #### Syntax
 
@@ -75,8 +74,8 @@ None
 ```js
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
-var row = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
-var dataBodyRange = row.getDataBodyRange();
+var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+var dataBodyRange = column.getDataBodyRange();
 ctx.load(dataBodyRange);
 ctx.executeAsync().then(function () {
 	Console.log(dataBodyRange.address);
@@ -107,8 +106,8 @@ None
 ```js
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
-var row = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
-var headerRowRange = row.getHeaderRowRange();
+var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+var headerRowRange = columns.getHeaderRowRange();
 ctx.load(headerRowRange);
 ctx.executeAsync().then(function () {
 	Console.log(headerRowRange.address);
@@ -135,8 +134,8 @@ None
 ```js
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
-var row = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
-var columnRange = row.getRange();
+var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+var columnRange = columns.getRange();
 ctx.load(range);
 ctx.executeAsync().then(function () {
 	Console.log(range.columnRange);
@@ -167,8 +166,8 @@ None
 ```js
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
-var row = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
-var totalRowRange = row.getTotalRowRange();
+var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+var totalRowRange = columns.getTotalRowRange();
 ctx.load(totalRowRange);
 ctx.executeAsync().then(function () {
 	Console.log(totalRowRange.address);
@@ -218,7 +217,7 @@ Update values of table column.
 ```js
 tableColumnObject.values = new-values
 ```
-Where, new-values is a 2-D array values of the table column. 
+Where, new-values is a 2-dimensional array values of the table column. 
 
 #### Example
 

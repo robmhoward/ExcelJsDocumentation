@@ -1,13 +1,13 @@
 # Table Collection
 
-A collection of all the table objects that are part of the workbook. 
+Represents a collection of all the tables that are part of the workbook. 
 
 ## [Properties](#get-table-collection)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|ListObjects.count|
-|`items`| [Table](table.md) Array | A collection of all the table objects that are part of the workbook.|[ListObjects.item] |
+|`count`| Number   | Returns the number of tables in the workbook.|ListObjects.count|
+|`items`| [Table](table.md) Array | Returns a collection of all the table objects that are part of the workbook.|[ListObjects.item] |
 
 ## Relationships
 
@@ -15,13 +15,11 @@ None
 
 ## Methods
 
-The table collection has the following methods defined:
-
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(address: string, hasHeaders: bool)](#addaddress-string-hasheaders-bool)| [Table](table.md) object | Creates a new table.||
-|[getItem(name: string)](#getitemname-string)| [Table](table.md) object      |Retrieve a table object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [Table](table.md) object     |Retrieve a table based on its position in the collection.||
+|[add(address: string, hasHeaders: bool)](#addaddress-string-hasheaders-bool)| [Table](table.md) object | Create a new table. The range source address determines the worksheet under which the table will be added. ||
+|[getItem(name: string)](#getitemname-string)| [Table](table.md) object      |Gets a table by name.||
+|[getItemAt(index: number)](#getitematindex-number)| [Table](table.md) object     |Gets a table based on its position in the collection.||
 
 ## API Specification 
 
