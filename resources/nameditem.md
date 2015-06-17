@@ -1,5 +1,4 @@
 # NamedItem
-
 Represents a defined name for a range of cells or value. Names can be primitive named objects (as seen in the type below), range object, reference to a range.
 This object can be used to obtain Range object associated with names.
 
@@ -7,10 +6,10 @@ This object can be used to obtain Range object associated with names.
 
 | Property         | Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:-----|
-| `name`  | String|String value representing the name of the object.| Name.Name|
-| `type` | String|Indicates what type of reference is associated with the name. Possible options are: `Range`, `String`, `Integer`, `Double`, `Boolean`. | Derived property |
+| `name`  | String|The name of the object.| Name.Name|
+| `type` | String| Indicates what type of reference is associated with the name. Possible values are: `Range`, `String`, `Integer`, `Double`, `Boolean`. | Derived property |
 | `value`| String |Represents the formula that the name is defined to refer to. e.g., `=Sheet14!$B$2:$H$12`, `=4.75`, etc. | Name.Value|
-| `visible` | Boolean |Boolean value that determines whether the object is visible. | Name.Visible |
+| `visible` | Boolean |Determines whether the object is visible or not. | Name.Visible |
 
 ## Relationships
 None

@@ -5,7 +5,7 @@ Represents a chart title object of a chart. A ChartTitle object specifies the te
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `text` | String |A String value that represents the title text of a chart. When a title text is set, the display property will be automaticlly set to top and the chart title will be displayed on top of the chart without overlapping. | Chart.ChartTitle |
+| `text` | String |Represents the title text of a chart. When a title text is set, the display property will be automaticlly set to top and the chart title will be displayed on top of the chart without overlapping. | Chart.ChartTitle |
 | `visible` | Boolean |A boolean value the represents the visibility of a chart title object. If visible is set to be ture, the chart title will be visible on the chart. |  |
 | `overlay` | Boolean |True if the title overlays the chart. | Chart.ChartTitle.Position |
 
@@ -32,7 +32,7 @@ chartObject.title;
 #### Properties
 | Property         | Type    |Description| 
 |:-----------------|:--------|:----------|
-| `text` | String |A String value that represents the title text of a chart. When a title text is set, the display property will be automaticlly set to top and the chart title will be displayed on top of the chart without overlapping. | 
+| `text` | String |Represents the title text of a chart. When a title text is set, the display property will be automaticlly set to top and the chart title will be displayed on top of the chart without overlapping. | 
 | `visible` | Boolean |A boolean value the represents the visibility of a chart title object. If visible is set to be ture, the chart title will be visible on the chart. |  |
 | `overlay` | Boolean |True if the title overlays the chart. | 
 
@@ -42,7 +42,8 @@ chartObject.title;
 
 #### Examples
 
-##### Get the `text` of Chart Title from Chart1
+Get the `text` of Chart Title from Chart1.
+
 ```js
 var ctx = new Excel.ExcelClientContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
@@ -71,7 +72,7 @@ chartObject.title.overlay=true;
 #### Properties
 | Property         | Type    |Description| 
 |:-----------------|:--------|:----------|
-| `text` | String |A String value that represents the title text of a chart. When a title text is set, the display property will be automaticlly set to top and the chart title will be displayed on top of the chart without overlapping. | 
+| `text` | String |Represents the title text of a chart. When a title text is set, the display property will be automaticlly set to top and the chart title will be displayed on top of the chart without overlapping. | 
 | `visible` | Boolean |A boolean value the represents the visibility of a chart title object. If visible is set to be ture, the chart title will be visible on the chart. |  |
 | `overlay` | Boolean |True if the title overlays the chart. | 
 

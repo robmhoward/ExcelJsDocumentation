@@ -5,7 +5,7 @@ Represents the title of a specified chart axis.
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `text` | String |A String value that represents the title of a axis. | 
+| `text` | String |Represents the title of a axis. | 
 | `visible` | Boolean |A boolean that specifies the visibility of an axis title. True if the axis or chart has a visible title.  | 
 
 ## Relationships

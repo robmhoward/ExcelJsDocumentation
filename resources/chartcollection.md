@@ -19,8 +19,8 @@ The chart has the following methods defined:
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[add(type: string, sourceData: string, seriesBy: string)](#addtype-string-sourcedata-string-seriesby-string)| [Chart](chart.md) object              |Creates a new chart. The new chart becomes the active workbook. ||
-|[getItem(name: string)](#getitemname-string)| [Chart](chart.md) object     |Retrieve a chart object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [Chart](chart.md) object    |Retrieve a chart based on its position in the collection.||
+|[getItem(name: string)](#getitemname-string)| [Chart](chart.md) object     |Gets a chart object using its name||
+|[getItemAt(index: number)](#getitematindex-number)| [Chart](chart.md) object    |Gets a chart based on its position in the collection.||
 
 
 ## API Specification 
@@ -88,7 +88,7 @@ chartsCollection.add(type, sourceData, seriesBy);
 
 | Parameter         | Value    |Description|
 |:-----------------|:--------|:----------|
-| `type` | String | A String value that represents the type of a chart.  |
+| `type` | String | Represents the type of a chart.  |
 | `sourceData`  | String | The address or name of the range that contains the source data.|
 | `seriesBy` | String |  Specifies the way columns or rows are used as data series on the chart. Can be one of the following: `Rows`, `Columns` or `Auto`.|
 

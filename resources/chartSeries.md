@@ -32,7 +32,7 @@ chartObject.series.getItemAt(0);
 
 | Property         | Type    |Description|
 |:-----------------|:--------|:----------|
-|`name`          |String|A String value that represents a Series object |
+|`name`          |String|Represents a Series object |
 
 #### Returns
 [ChartSeries](chartSeries.md) object. 

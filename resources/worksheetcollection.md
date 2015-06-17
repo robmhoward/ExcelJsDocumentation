@@ -18,17 +18,15 @@ The Worksheet collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(name: string)](#addname-string)| [Worksheet](worksheet.md) object              |Creates a new worksheet. The new worksheet becomes active in the workbook. ||
-|[getActiveWorksheet()](#getactiveworksheet)| [Worksheet](worksheet.md) object |Get the currently active worksheet in the workbook.| |
-|[getItem(param: string)](#getitemparam-string)| [Worksheet](worksheet.md) object      |Retrieve a worksheet object using its name or Id.||
-
-
+|[add(name: string)](#addname-string)| [Worksheet](worksheet.md) object              |Adds a new worksheet to the workbook. The worksheet will be added at the end of existing worksheets and the new worksheet becomes the active sheet in the workbook. ||
+|[getActiveWorksheet()](#getactiveworksheet)| [Worksheet](worksheet.md) object |Gets the currently active worksheet in the workbook.| |
+|[getItem(param: string)](#getitemparam-string)| [Worksheet](worksheet.md) object      |Gets a worksheet object using its name or Id.||
 
 ## API Specification 
 
 ### add(name: string)
 
-Add a new worksheet to the workbook. The worksheet will be added at the end of existing worksheets.
+Adds a new worksheet to the workbook. The worksheet will be added at the end of existing worksheets and the new worksheet becomes the active sheet in the workbook.
 
 #### Syntax
 ```js
@@ -39,7 +37,7 @@ worksheetCollection.add(name);
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`name`  | String| Optional. String value representing the name of the sheet to be added. If not specified, Excel determines the name of the new worksheet being added. 
+`name`  | String| Optional. The name of the worksheet to be added. If not specified, Excel determines the name of the new worksheet being added. 
 
 #### Returns
 [Worksheet](worksheet.md) object.
@@ -87,7 +85,7 @@ ctx.executeAsync().then(function () {
 
 ### getItem(param: string)
 
-Get Worksheet object properties based on name or id.
+Gets a worksheet object by name or id.
 
 #### Syntax
 ```js
@@ -98,7 +96,7 @@ worksheetCollection.getItem(param);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `param`| String | Required. Worksheet name or id. 
+ `param`| String | Required. The name or id of the worksheet. 
 
 #### Returns
 

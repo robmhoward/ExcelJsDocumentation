@@ -1,12 +1,12 @@
-# tablecolumn Collection
-A collection of all the tablecolumn objects that are part of the table. 
+# Table Column Collection
+Represents a collection of all the columns that are part of the table.  
 
 ## [Properties](#get-tablecolumn-collection)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|tablecolumns.count|
-|`items`| [Table Column](tablecolumn.md) Array | A collection of all the tablecolumn objects that are part of the table|[tablecolumns.item] |
+|`count`| Number   | Returns the number of columns in the table.|tablecolumns.count|
+|`items`| [Table Column](tablecolumn.md) Array | Returns a collection of all the column objects that are part of the table.|[tablecolumns.item] |
 
 ## Relationships
 
@@ -14,13 +14,11 @@ None
 
 ## Methods
 
-The tablecolumn collection has the following methods defined:
-
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(index: number, values: any[][])](#index-number-values-any)| [Table Column](tablecolumn.md) object             |Creates a new tablecolumn.  ||
-|[getItem(param: string or number)](#getitemparam-string-or-number)| [Table Column](tablecolumn.md) object     |Retrieve a tablecolumn object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [tablecolumn](tablecolumn.md) object|Retrieve a tablecolumn based on its position in the collection.||
+|[add(index: number, values: any[][])](#index-number-values-any)| [Table Column](tablecolumn.md) object             |Adds a new column to the table.  ||
+|[getItem(param: string or number)](#getitemparam-string-or-number)| [Table Column](tablecolumn.md) object     |Gets a column object by name or id.||
+|[getItemAt(index: number)](#getitematindex-number)| [tablecolumn](tablecolumn.md) object|Gets a column based on its position in the collection.||
 
 
 ## API Specification 
@@ -37,7 +35,7 @@ tableColumnCollection.add(index, values);
 Parameter       | Type   | Description
 --------------- | ------ | ------------
 `index` |  Number | Optional. Specifies the relative position of the new column. The previous column at this position is shifted outward to the right. If not specified, the addition happens at the end.  Note: The index value should be equal to or less than the last column's index value. In other words, this API cannot be used to append a column at the end of the table. **Zero-indexed**.
-`values` | any[][] | Required. 2-D array of unformatted values of the table column.
+`values` | any[][] | Required. A 2-dimensional array of unformatted values of the table column.
 
 
 #### Returns

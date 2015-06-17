@@ -17,7 +17,7 @@ None
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[getItemAt(index: number)](#getitematindex-number)| [ChartPoint](chartPoint.md)     |Retrieve a ChartPoint object based on its position in the collection.||
+|[getItemAt(index: number)](#getitematindex-number)| [ChartPoint](chartPoint.md)     |Gets a ChartPoint object based on its position in the collection.||
 
 
 ## API Specification 
