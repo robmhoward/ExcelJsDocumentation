@@ -18,7 +18,7 @@ None
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[add(address: string, hasHeaders: bool)](#addaddress-string-hasheaders-bool)| [Table](table.md) object | Create a new table. The range source address determines the worksheet under which the table will be added. ||
-|[getItem(name: string)](#getitemname-string)| [Table](table.md) object      |Gets a table by name.||
+|[getItem(id: object)](#getitemname-object)| [Table](table.md) object      |Gets a table by name or id.||
 |[getItemAt(index: number)](#getitematindex-number)| [Table](table.md) object     |Gets a table based on its position in the collection.||
 
 ## API Specification 
@@ -33,10 +33,10 @@ tableCollection.add(rangeAddress, hasHeader);
 ```
 #### Parameters 
 
-|Parameter       | Type   | Description
-|--------------- | ------ | ------------
+Parameter       | Type   | Description
+--------------- | ------ | ------------
 |`address`| String | Required. Address or name of the Range object representing the data source.
-|`hasHeader` | Boolean | Optional. Boolean value that indicates whether the data being imported has column labels. If the Source does not contain headers (i.e,. when this property set to `false`), Excel will automatically generate headers. If this property value is not set, Excel will determine the header row on its own.
+|`hasHeaders` | Boolean | Optional. Boolean value that indicates whether the data being imported has column labels. If the Source does not contain headers (i.e,. when this property set to `false`), Excel will automatically generate headers. If this property value is not set, Excel will determine the header row on its own.
 
 #### Returns
 [Table](table.md) object.
@@ -55,20 +55,20 @@ ctx.executeAsync().then(function () {
 
 [Back](#methods)
 
-### getItem(name: string)
+### getItem(id: object)
 
-Get table object properties based on name.
+Gets a table object based on name or id.
 
 #### Syntax
 ```js
-tableCollection.getItem(name);
+tableCollection.getItem(id);
 ```
 
 #### Parameters
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `name`| String | Required. table name. 
+ `id`| String | Required. Name or id of the table to be retrieved.
 
 #### Returns
 
@@ -88,7 +88,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get table object properties based on its position in the collection. 
+Gets a table object based on its position in the collection. 
 
 #### Syntax
 ```js

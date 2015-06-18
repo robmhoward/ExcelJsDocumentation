@@ -183,19 +183,19 @@ ctx.executeAsync().then(function () {
 
 ### Get Table
 
-Get Table object properties based on name. 
+Gets a Table object based on name. 
 
 #### Syntax
 
 ```js
-tableCollection.getItem(name);
+tableCollection.getItem(index);
 ```
 
 #### Parameters
 
 Parameter        | Type   | Description
 ---------------  | ------ | ------------
- `name`| String  | Required. Table name. 
+ `index`| String  | Required. Name or id of the table object to be retrieved. 
 
 #### Syntax
 ```js

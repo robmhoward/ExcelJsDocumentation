@@ -5,8 +5,8 @@ A collection of all the chart objects on a worksheet.
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|charts.count|
-|`items`| [Chart](chart.md) Array| A collection of all the chart objects that are part of the workbook|[charts.item] |
+|`count`| Number   | Returns the number of charts in the collection.|charts.count|
+|`items`| [Chart](chart.md) Array| Returns a collection of all the charts in a workbook. |[charts.item] |
 
 ## Relationships
 
@@ -18,8 +18,8 @@ The chart has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(type: string, sourceData: string, seriesBy: string)](#addtype-string-sourcedata-string-seriesby-string)| [Chart](chart.md) object              |Creates a new chart. The new chart becomes the active workbook. ||
-|[getItem(name: string)](#getitemname-string)| [Chart](chart.md) object     |Gets a chart object using its name||
+|[add(type: string, sourceData: string, seriesBy: string)](#addtype-string-sourcedata-string-seriesby-string)| [Chart](chart.md) object              |Creates a new chart. ||
+|[getItem(name: string)](#getitemname-id)| [Chart](chart.md) object     |Gets a chart using its name.||
 |[getItemAt(index: number)](#getitematindex-number)| [Chart](chart.md) object    |Gets a chart based on its position in the collection.||
 
 
@@ -112,7 +112,7 @@ ctx.executeAsync().then(function () {
 
 ### getItem(name: string)
 
-Get chart object properties based on name.
+Gets a chart object based on its name.
 
 #### Syntax
 ```js
@@ -123,7 +123,7 @@ chartsCollection.getItem(name);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `name`| String | Required. chart name. 
+ `name`| String | Required. If of the chart to be retrieved. 
 
 #### Returns
 
@@ -143,7 +143,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get chart object properties based on its position in the collection. 
+Gets a chart object based on its position in the collection. 
 
 #### Syntax
 ```js

@@ -20,7 +20,7 @@ The Worksheet collection has the following methods defined:
 |:-----------------|:--------|:----------|:------|
 |[add(name: string)](#addname-string)| [Worksheet](worksheet.md) object              |Adds a new worksheet to the workbook. The worksheet will be added at the end of existing worksheets and the new worksheet becomes the active sheet in the workbook. ||
 |[getActiveWorksheet()](#getactiveworksheet)| [Worksheet](worksheet.md) object |Gets the currently active worksheet in the workbook.| |
-|[getItem(param: string)](#getitemparam-string)| [Worksheet](worksheet.md) object      |Gets a worksheet object using its name or Id.||
+|[getItem(index: string)](#getitemindex-string)| [Worksheet](worksheet.md) object      |Gets a worksheet object using its name or Id.||
 
 ## API Specification 
 
@@ -83,20 +83,20 @@ ctx.executeAsync().then(function () {
 ```
 [Back](#methods)
 
-### getItem(param: string)
+### getItem(index: string)
 
 Gets a worksheet object by name or id.
 
 #### Syntax
 ```js
-worksheetCollection.getItem(param);
+worksheetCollection.getItem(index);
 ```
 
 #### Parameters
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `param`| String | Required. The name or id of the worksheet. 
+ `index`| String | Required. The name or id of the worksheet. 
 
 #### Returns
 

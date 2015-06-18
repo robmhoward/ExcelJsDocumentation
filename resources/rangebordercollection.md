@@ -19,26 +19,26 @@ The border collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[getItem(name: string)](#getitemname-string)| [border](rangeborder.md) object      |Gets a border object using its name||
+|[getItem(index: string)](#getitemindex-string)| [border](rangeborder.md) object      |Gets a border object using its name||
 |[getItem(name: string)](#getitemname-string)| [border](rangeborder.md) object      |Gets a border object using its name||
 |[getItemAt(index: number)](#getitematindex-number)| [border](rangeborder.md) object|Gets a border object using its index||
 
 ## API Specification 
 
-### getItem(name: string)
+### getItem(index: string)
 
-Get border object properties based on name.
+Gets a border object based on its name.
 
 #### Syntax
 ```js
-borderCollection.getItem(name);
+borderCollection.getItem(index);
 ```
 
 #### Parameters
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `name`| String | Required. border name. 
+ `index`| String | Required. Index value of the border object to be retrieved. 
 
 #### Returns
 
@@ -47,8 +47,8 @@ Parameter       | Type  | Description
 #### Examples
 ```js
 var ctx = new Excel.ExcelClientContext();
-var borderName = 'border1';
-var border = ctx.workbook.borders.getItem(borderName);
+var borderIndex = 'EdgeTop';
+var border = ctx.workbook.borders.getItem(borderIndex);
 ctx.executeAsync().then(function () {
 		Console.log(border.style);
 });
@@ -57,7 +57,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get border object properties based on its position in the collection. 
+Gets a border object based on its position in the collection. 
 
 #### Syntax
 ```js

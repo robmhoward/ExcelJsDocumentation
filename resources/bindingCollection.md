@@ -17,15 +17,45 @@ The Binding collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[getItem(param: string)](#getitemparam-string)| [Binding](binding.md) object      |Gets a Binding object by id.||
+|[getItem(id: string)](#getitemid-string)| [Binding](binding.md) object      |Gets a Binding object by id.||
 |[getItemAt(index: number)](#getitematindex-number)| [Binding](binding.md) object     |Gets a Binding object based on its position in the items[] array.||
 
 
 ## API Specification 
 
+### getItem(id: string)
+
+Gets Binding object by its id.
+
+#### Syntax
+```js
+bindingCollection.getItem(index);
+```
+
+#### Parameters
+
+Parameter       | Type  | Description
+--------------- | ------ | ------------
+ `id`| String | Required. Id of the binding object to be retrieved. Zero-indexed.
+
+#### Returns
+
+[Binding](binding.md) object.
+
+#### Examples
+```js
+var ctx = new Excel.ExcelClientContext();
+var bindingId = 'myrange11'
+var binding = ctx.workbook.bindings.getItem(bindingId);
+ctx.executeAsync().then(function () {
+		Console.log(binding.type);
+});
+```
+[Back](#methods)
+
 ### getItemAt(index: number)
 
-Get Binding object properties based on its position in the collection. 
+Gets Binding object based on its position in the collection. 
 
 #### Syntax
 ```js
@@ -52,7 +82,6 @@ ctx.executeAsync().then(function () {
 });
 ```
 [Back](#methods)
-
 
 ### Get Binding Collection
 

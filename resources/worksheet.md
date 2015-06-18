@@ -220,7 +220,7 @@ ctx.executeAsync().then(function () {
 
 ### Get Worksheet
 
-Get Worksheet object properties based on name.
+Gets a Worksheet object based on name.
 
 #### Syntax
 ```js

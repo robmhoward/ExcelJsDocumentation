@@ -75,7 +75,7 @@ ctx.executeAsync().then(function () {
 
 ### getItem(name: string)
 
-Get nameditem object properties based on name.
+Gets a nameditem object based on its name.
 
 #### Syntax
 ```js
@@ -105,7 +105,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get nameditem object properties based on its position in the collection. 
+Gets nameditem object based on its position in the collection. 
 
 #### Syntax
 ```js

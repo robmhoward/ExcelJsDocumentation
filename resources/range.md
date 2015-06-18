@@ -232,8 +232,8 @@ rangeObject.getOffsetRange(row, column);
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-row | Number | The number of rows (positive, negative, or 0)  by which the range is to be offset. Positive values are offset downward, and negative values are offset upward. 
-column | Number |  The number of columns (positive, negative, or 0) by which the range is to be offset. Positive values are offset to the right, and negative values are offset to the left.
+rowOffset | Number | The number of rows (positive, negative, or 0)  by which the range is to be offset. Positive values are offset downward, and negative values are offset upward. 
+columnOffset | Number |  The number of columns (positive, negative, or 0) by which the range is to be offset. Positive values are offset to the right, and negative values are offset to the left.
 
 #### Returns
 
@@ -300,7 +300,7 @@ rangeObject.getBoundingRect(anotherRange);
 
 Parameter      | Type   | Description
 -------------- | ------ | ------------
-`range`       | Range object | Required. The range object or range address or range name that will be used to determine the smalest range that encompasses both the ranges.
+`anotherRange`       | Range object | Required. The range object or range address or range name that will be used to determine the smalest range that encompasses both the ranges.
 
 #### Returns
 
@@ -431,7 +431,7 @@ rangeObject.getIntersection(anotherRange);
 
 Parameter      | Type   | Description
 -------------- | ------ | ------------
-`range`       | Range object | Required. The range object or range address or range name that will be used to determine the intersection of ranges.
+`anotherRange`       | Range object | Required. The range object or range address or range name that will be used to determine the intersection of ranges.
 
 #### Returns
 

@@ -57,7 +57,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get tablerow object properties based on its position in the collection. 
+Gets a tablerow object based on its position in the collection. 
 
 #### Syntax
 ```js

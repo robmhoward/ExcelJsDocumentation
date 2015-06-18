@@ -17,7 +17,7 @@ None
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[add(index: number, values: any[][])](#index-number-values-any)| [Table Column](tablecolumn.md) object             |Adds a new column to the table.  ||
-|[getItem(param: string or number)](#getitemparam-string-or-number)| [Table Column](tablecolumn.md) object     |Gets a column object by name or id.||
+|[getItem(id: object)](#getitemid-object)| [Table Column](tablecolumn.md) object     |Gets a column object by name or id.||
 |[getItemAt(index: number)](#getitematindex-number)| [tablecolumn](tablecolumn.md) object|Gets a column based on its position in the collection.||
 
 
@@ -31,6 +31,8 @@ Add a new column to the table.
 ```js
 tableColumnCollection.add(index, values);
 ```
+
+#### Parameters 
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
@@ -54,20 +56,20 @@ ctx.executeAsync().then(function () {
 ```
 [Back](#methods)
 
-### getItem(param: string or number)
+### getItem(id: object)
 
-Get tablecolumn object properties based on name.
+Gets a tablecolumn object based on name.
 
 #### Syntax
 ```js
-tableColumnCollection.getItem(param);
+tableColumnCollection.getItem(id);
 ```
 
 #### Parameters
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `param`| String | Required. tablecolumn name or id. 
+ `id`| String | Required. tablecolumn name or id. 
 
 #### Returns
 
@@ -86,7 +88,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get tablecolumn object properties based on its position in the collection. 
+Gets a tablecolumn object based on its position in the collection. 
 
 #### Syntax
 ```js

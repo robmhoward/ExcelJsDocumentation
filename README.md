@@ -67,7 +67,6 @@ Following sections provide important programming details related to Excel APIs.
 * [Document Binding](#null-input)
 * [Reference Binding](#null-input)
 * [Null-Input](#null-input)
-* [Null-Input](#null-input)
 * [Null-Response](#null-response)
 * [Blank Input and Output](#blank-input-and-output)
 * [Unbounded-Range](#unbounded-range)

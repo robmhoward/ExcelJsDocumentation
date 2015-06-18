@@ -1,6 +1,6 @@
 # Range Fill
 
-Represents the interior of an object, which includes fill formating information. 
+Represents the background of a range object.
 
 ## [Properties](#get-range-fill)
 | Property         | Type    |Description|Notes |
@@ -20,9 +20,46 @@ When `color` value is updated, the input value needs to follow the appropriate f
 None
 
 ## Methods
-None
+
+| Method     | Return Type    |Description|Notes  |
+|:-----------------|:--------|:----------|:------|
+|[clear()](#clear)| Nil|Resets the range background.||
+
 
 ## API Specification
+
+### clear()
+
+Resets the range background. 
+
+#### Syntax
+
+```js
+rangeObject.format.fill.clear();
+```
+
+#### Parameters
+
+None 
+
+#### Returns
+
+Nothing
+
+#### Examples
+Below example clears format and contents of the range. 
+
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "D:F";
+var ctx = new Excel.ExcelClientContext();
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+range.format.fill.clear();
+ctx.executeAsync().then();
+```
+[Back](#methods)
+
+
 
 ### Get Range Fill
 
