@@ -35,14 +35,18 @@ The Worksheet has the following methods defined:
 |[clear(applyTo: string)](#clearapplyto-string)| void     |Clear Range values, format, fill, border, etc. |   |
 |[delete()](#delete)| void     |Deletes the range data, clears the formatting, and shifts the cells.||
 |[getCell(row: number, column: number)](#getcellrow-number-column-number)| [Range](range.md) object |Returns a range containing the single cell specified by the zero-indexed row and column numbers          
+|[getBoundingRect(range1: range, range2: range)][getboundingrectrange1-range-range2-range]| [Range](range.md) object |Gets the smallest range object that encompasses the given ranges.| |  
 |[getEntireColumn()](#getentirecolumn)| [Range](range.md) object |Gets an object that represents the entire column of the Range. This API is valid only if the subject range object is a single cell or a column of cells.| |
 |[getEntireRow()](#getentirerow)| [Range](range.md) object |Gets an object that represents the entire row of the Range. This API is valid only if the subject range object is a single cell or a row of cells.| |
 |[getUsedRange()](#getusedrange)| [Range](range.md) object |Returns the used range of the given range object.| |  
-|[insert(shift: string)](#insertshift-string)|void| Inserts a cell or a range of cells into the worksheet and shifts other cells away to make space.| |
+|[intersect(range1: range, range2: range)][intersectrange1-range-range2-range]| [Range](range.md) object |Gets the range object that represents the rectangular intersection of two ranges.| |  
+|[insert(shift: string)](#insertshift-string)|[Range](range.md)| Inserts a cell or a range of cells into the worksheet and shifts other cells away to make space.| |
 |[select()](#select)|void| Selects the specified Range in the Excel UI.| |
+|[getRow(index: number)](#getrowindex-number)|[Range](range.md)| Gets a row contained in the range.| |
+|[getColumn(index: number)](#getcolumnindex-number)|[Range](range.md)|Gets a column contained in the range.| |
+|[getOffsetRange(rowOffset: number, columnOffset: number)](#getoffsetrangerowoffset-number-columnoffset-number)|[Range](range.md)|Gets an object which represents a range that's offset from the specified range. Note that the returning range object dimension will match the specified range.| |
 
 ## API Specification 
-
 
 ### clear(applyTo: string)
 
@@ -146,6 +150,111 @@ ctx.executeAsync().then(function() {
 
 [Back](#methods) 
 
+### getColumn()
+
+Gets a column contained in the range.
+
+#### Syntax
+
+```js
+rangeObject.getColumn(column);
+```
+#### Parameters
+
+Parameter       | Type   | Description
+--------------- | ------ | ------------
+column| Number | Column number of the range to be retrieved. Zero indexed. 
+
+#### Returns
+
+[Range](range.md) object.
+
+#### Examples
+
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "D:F";
+var ctx = new Excel.ExcelClientContext();
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+var rangeColumn = range.getColumn(5);
+ctx.load(rangeColumn);
+ctx.executeAsync().then(function() {
+	Console.log(rangeColumn.address);
+});
+```
+[Back](#methods)
+
+### getRow()
+
+Gets a row contained in the range.
+
+#### Syntax
+
+```js
+rangeObject.getRow(row);
+```
+#### Parameters
+
+Parameter       | Type   | Description
+--------------- | ------ | ------------
+row | Number | Row number of the range to be retrieved. Zero indexed. 
+
+#### Returns
+
+[Range](range.md) object.
+
+#### Examples
+
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "D:F";
+var ctx = new Excel.ExcelClientContext();
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+var rangeRow = range.getColumn(5);
+ctx.load(rangeRow);
+ctx.executeAsync().then(function() {
+	Console.log(rangeRow.address);
+});
+```
+[Back](#methods)
+
+
+### getOffsetRange()
+
+Gets an object which represents a range that's offset from the specified range. Note that the returning range object dimension will match the specified range.
+
+#### Syntax
+
+```js
+rangeObject.getOffsetRange(row, column);
+```
+#### Parameters
+
+Parameter       | Type   | Description
+--------------- | ------ | ------------
+row | Number | The number of rows (positive, negative, or 0)  by which the range is to be offset. Positive values are offset downward, and negative values are offset upward. 
+column | Number |  The number of columns (positive, negative, or 0) by which the range is to be offset. Positive values are offset to the right, and negative values are offset to the left.
+
+#### Returns
+
+[Range](range.md) object.
+
+#### Examples
+
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "D4:F8";
+var ctx = new Excel.ExcelClientContext();
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+var offsetRrange = range.getOffsetRange(0, -3);
+ctx.load(offsetRrange);
+ctx.executeAsync().then(function() {
+	Console.log(offsetRrange.address);
+	// Prints Sheet1!A4:C8
+});
+```
+[Back](#methods)
+
 ### getEntireColumn()
 
 Get an object that represents the entire column of the Range. This API is valid only if the subject range object is a single cell or a column of cells.
@@ -174,6 +283,43 @@ var rangeEC = range.getEntireColumn();
 ctx.load(rangeEC);
 ctx.executeAsync().then(function() {
 	Console.log(rangeEC.address);
+});
+```
+[Back](#methods)
+
+### getBoundingRect(range: range) 
+Gets the smallest range object that encompasses the given ranges.
+
+#### Syntax
+
+```js
+rangeObject.getBoundingRect(range);
+```
+
+#### Parameters 
+
+Parameter      | Type   | Description
+-------------- | ------ | ------------
+`range`       | Range object | Required. The range object or range address or range name that will be used to determine the smalest range that encompasses both the ranges.
+
+#### Returns
+
+[Range](range.md) object.
+
+#### Examples
+
+```js
+var sheetName = "Sheet1";
+var rangeAddress1 = "C4:E8";
+var rangeAddress2 = "B7:F9";
+var ctx = new Excel.ExcelClientContext();
+var range1 = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress1);
+var range2 = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress2);
+var range3 = range1.getBoundingRect(range2);
+
+ctx.executeAsync().then(function() {
+	Console.log(range3.address);
+	//This will print Sheet1!B4:F9
 });
 ```
 [Back](#methods)
@@ -270,6 +416,44 @@ range.insert();
 ctx.executeAsync().then();
 ```
 [Back](#methods) 
+
+
+### intersect(range: range) 
+Gets the range object that represents the rectangular intersection of two ranges.
+
+#### Syntax
+
+```js
+rangeObject.intersect(range);
+```
+
+#### Parameters 
+
+Parameter      | Type   | Description
+-------------- | ------ | ------------
+`range`       | Range object | Required. The range object or range address or range name that will be used to determine the intersection of ranges.
+
+#### Returns
+
+[Range](range.md) object.
+
+#### Examples
+
+```js
+var sheetName = "Sheet1";
+var rangeAddress1 = "C4:E8";
+var rangeAddress2 = "B7:F9";
+var ctx = new Excel.ExcelClientContext();
+var range1 = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress1);
+var range2 = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress2);
+var range3 = range1.intersect(range2);
+
+ctx.executeAsync().then(function() {
+	Console.log(range3.address);
+	//This will print Sheet1!C7:E8
+});
+```
+[Back](#methods)
 
 
 ### select()

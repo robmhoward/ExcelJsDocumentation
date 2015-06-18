@@ -25,9 +25,12 @@ The Worksheet has the following methods defined:
 |:-----------------|:--------|:----------|:------|
 |[activate()][activate-link]| void       | Activate the worksheet in the Excel UI. |   |
 |[delete()][deleteobject-link]| void     |Deletes the worksheet from the workbook. ||
-|[getCell(row: number, column: number)][getcell-link]| [Range](range.md) object |Gets the range object containing the single cell specified by the zero-indexed row and column numbers. ||          
+|[getCell(row: number, column: number)][getcell-link]| [Range](range.md) object |Gets the range object containing the single cell specified by the zero-indexed row and column numbers. |          
 |[getRange(address: string)][getrange-link]| [Range](range.md) object |Gets the range object specified by the address or name. | |
+|[getRow(address: string)][getrange-link]| [Range](range.md) object |Gets the range object specified by the address or name. | |
 |[getUsedRange()][getusedrange-link]| [Range](range.md) object |Gets the used range of the worksheet.| |  
+
+GetContainedRange
 
 ## API Specification 
 
@@ -118,6 +121,8 @@ ctx.executeAsync().then(function() {
 });
 ```
 [Back](#methods)
+
+
 
 ### getRange(address: string)
 
