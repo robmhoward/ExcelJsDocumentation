@@ -35,11 +35,11 @@ The Worksheet has the following methods defined:
 |[clear(applyTo: string)](#clearapplyto-string)| void     |Clear Range values, format, fill, border, etc. |   |
 |[delete()](#delete)| void     |Deletes the range data, clears the formatting, and shifts the cells.||
 |[getCell(row: number, column: number)](#getcellrow-number-column-number)| [Range](range.md) object |Returns a range containing the single cell specified by the zero-indexed row and column numbers          
-|[getBoundingRect(range1: range, range2: range)][getboundingrectrange1-range-range2-range]| [Range](range.md) object |Gets the smallest range object that encompasses the given ranges.| |  
+|[getBoundingRect(anotherRange: object)][getboundingrectanotherrange-object]| [Range](range.md) object |Gets the smallest range object that encompasses the given ranges.| |  
 |[getEntireColumn()](#getentirecolumn)| [Range](range.md) object |Gets an object that represents the entire column of the Range. This API is valid only if the subject range object is a single cell or a column of cells.| |
 |[getEntireRow()](#getentirerow)| [Range](range.md) object |Gets an object that represents the entire row of the Range. This API is valid only if the subject range object is a single cell or a row of cells.| |
 |[getUsedRange()](#getusedrange)| [Range](range.md) object |Returns the used range of the given range object.| |  
-|[intersect(range1: range, range2: range)][intersectrange1-range-range2-range]| [Range](range.md) object |Gets the range object that represents the rectangular intersection of two ranges.| |  
+|[getIntersection(anotherRange: object)][getintersectionanotherrange-object]| [Range](range.md) object |Gets the range object that represents the rectangular intersection of two ranges.| |  
 |[insert(shift: string)](#insertshift-string)|[Range](range.md)| Inserts a cell or a range of cells into the worksheet and shifts other cells away to make space.| |
 |[select()](#select)|void| Selects the specified Range in the Excel UI.| |
 |[getRow(index: number)](#getrowindex-number)|[Range](range.md)| Gets a row contained in the range.| |
@@ -287,13 +287,13 @@ ctx.executeAsync().then(function() {
 ```
 [Back](#methods)
 
-### getBoundingRect(range: range) 
+### getBoundingRect(anotherRange: object)
 Gets the smallest range object that encompasses the given ranges.
 
 #### Syntax
 
 ```js
-rangeObject.getBoundingRect(range);
+rangeObject.getBoundingRect(anotherRange);
 ```
 
 #### Parameters 
@@ -418,13 +418,13 @@ ctx.executeAsync().then();
 [Back](#methods) 
 
 
-### intersect(range: range) 
+### getIntersection(anotherRange: object) 
 Gets the range object that represents the rectangular intersection of two ranges.
 
 #### Syntax
 
 ```js
-rangeObject.intersect(range);
+rangeObject.getIntersection(anotherRange);
 ```
 
 #### Parameters 
@@ -446,7 +446,7 @@ var rangeAddress2 = "B7:F9";
 var ctx = new Excel.ExcelClientContext();
 var range1 = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress1);
 var range2 = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress2);
-var range3 = range1.intersect(range2);
+var range3 = range1.getIntersection(range2);
 
 ctx.executeAsync().then(function() {
 	Console.log(range3.address);
