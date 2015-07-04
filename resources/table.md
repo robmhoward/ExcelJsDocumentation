@@ -23,10 +23,10 @@ Represents a collection of organized cells designed to make management of the da
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[delete()](#delete)| void     |Deletes the worksheet ||
-|[getHeaderRowRange()](#getheaderrowrange) | [Range](range.md) object |Gets the Range object associated with Data Body of the Table.||
-|[getDataBodyRange()](#getdatabodyrange) | [Range](range.md) object |Gets the Header Row Range object associated with the Table  ||
-|[getRange()](#getrange) | [Range](range.md) object |Gets the Range object associated with the Table. ||
-|[getTotalRowRange()](#gettotalrowrange) | [Range](range.md) object |Get Totals Range object associated with the Table. ||
+|[getHeaderRowRange()](#getheaderrowrange) | [Range](range.md) object |Gets the range object associated with header row of the table.||
+|[getDataBodyRange()](#getdatabodyrange) | [Range](range.md) object |Gets the range object associated with the data body of the table.  ||
+|[getRange()](#getrange) | [Range](range.md) object |Gets the range object associated with the entire table. ||
+|[getTotalRowRange()](#gettotalrowrange) | [Range](range.md) object |Gets the range object associated with totals row of the table. ||
 
 ## API Specification 
 

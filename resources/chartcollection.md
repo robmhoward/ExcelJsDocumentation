@@ -123,7 +123,7 @@ chartsCollection.getItem(name);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `name`| String | Required. If of the chart to be retrieved. 
+ `name`| String | Required. Id of the chart to be retrieved. 
 
 #### Returns
 

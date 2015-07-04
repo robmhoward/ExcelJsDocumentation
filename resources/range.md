@@ -4,18 +4,18 @@ Range represents a cell, a row, a column, a selection of cells containing one or
 ## [Properties](#get-range)
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`address`         |String         |Returns Represents the range reference in A1 Style. Address value will contain the Sheet reference (e.g., `Sheet1!A1:B4`). |Range.Address|
+|`address`         |String         |Represents the range reference in A1 Style. Address value will contain the Sheet reference (e.g., `Sheet1!A1:B4`). |Range.Address|
 |`addressLocal`    |String         |Returns the range reference for the specified range in the language of the user.
 |`cellCount`       | Number          |Number of cells in the range.|Range.Count|
-|`columnIndex`     | Number          |Returns the number of the first column in the first area in the specified range. This is adjusted to be Zero-indexed. |Range.Column|
-|`columnCount`    | Number           |Returns the number of the first row of the first area in the range. This is adjusted to be Zero-indexed. |Range.Row|
-|`formulas`         |String[][]|Represents the object's formula in A1 style notation. |Range.formula|
-|`formulasLocal`    |String[][]|Formula for the object, in the language of the user in A1 style notation. |Range.FormulaLocal|
-|`numberFormat`    |String[][]|Value that represents the format code for the object. |Range.NumberFormat
-|`rowcount`        | Number          |Returns the total number of columns in the Range selected. |Range.Column|
-|`rowIndex`        | Number          |Returns the number of the first row of the first area in the range. This is adjusted to be Zero-indexed. |Range.Row|
-|`text`            |String[][]|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel client will not affect the value returned by the API. |Range.Text|
-|`values`          |any[][]|Unformatted values of the specified range. |Range.Value2|
+|`columnIndex`     | Number          |Returns the column number of the first cell in the range.  This is adjusted to be Zero-indexed. |Range.Column|
+|`columnCount`    | Number           |Returns the total number of columns in the Range selected.  |Range.Row|
+|`formulas`         |String[][]|Represents the formula in A1 style notation. |Range.formula|
+|`formulasLocal`    |String[][]|Represents the formula in A1 style notation in the language of the user. |Range.FormulaLocal|
+|`numberFormat`    |String[][]|Represents Excel's number format code for the given cell. |Range.NumberFormat
+|`rowcount`        | Number          |Returns the total number of rows in the Range selected. |Range.Column|
+|`rowIndex`        | Number          |Returns the row number of the first cell in the range.  This is adjusted to be Zero-indexed. |Range.Row|
+|`text`            |String[][]|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. |Range.Text|
+|`values`          |any[][]|Represents the unformatted values of the specified range. |Range.Value2|
 
 ## Relationships
 Range has the following relationships defined:
@@ -62,7 +62,7 @@ rangeObject.clear(applyTo);
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`applyTo` | String | Optional. `All`, `Format`, `Content`. If this option is not provided then the content and format of the range will be cleared. 
+`applyTo` | String | Optional. Determines the type of clear action. Possible values are `All`, `Format`, `Content`. If this option is not provided then the content and format of the range will be cleared. 
 
 #### Returns
 
@@ -300,7 +300,7 @@ rangeObject.getBoundingRect(anotherRange);
 
 Parameter      | Type   | Description
 -------------- | ------ | ------------
-`anotherRange`       | Range object | Required. The range object or range address or range name that will be used to determine the smalest range that encompasses both the ranges.
+`anotherRange`       | Range object | Required. The range object or range address or range name that will be used to determine the smallest range that encompasses both the ranges.
 
 #### Returns
 

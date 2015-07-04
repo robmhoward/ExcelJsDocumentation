@@ -21,9 +21,9 @@ The TableColumn has the following methods defined:
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[delete()](#delete)| void     |Deletes the column from the table.  ||
-|[getDataBodyRange()](#getdatabodyrange)| [Range](range.md) object     | Gets a range object associated with the data portion of the column.||
-|[getHeaderRowRange()](#getheaderrowrange)| [Range](range.md) object     | Gets a header range object associated with the column.||
-|[getRange()](#getrange)| [Range](range.md) object     | Gets a range object associated with the entire column.||
+|[getDataBodyRange()](#getdatabodyrange)| [Range](range.md) object     | Gets the range object associated with the data body of the column.||
+|[getHeaderRowRange()](#getheaderrowrange)| [Range](range.md) object     | Gets the range object associated with the header row of the column.||
+|[getRange()](#getrange)| [Range](range.md) object     | Gets the range object associated with the entire column.||
 |[getTotalRowRange()](#gettotalrowrange)| [Range](range.md) object     | Gets the Range object associated with the totals row of the column.||
 
 ## API Specification 
