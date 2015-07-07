@@ -1,164 +1,130 @@
-# tablecolumn Collection
-A collection of all the tablecolumn objects that are part of the table. 
+# TableColumnCollection
 
-## [Properties](#get-tablecolumn-collection)
+Represents a collection of all the columns that are part of the table.
 
-| Property         | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|tablecolumns.count|
-|`items`| [Table Column](tablecolumn.md) Array | A collection of all the tablecolumn objects that are part of the table|[tablecolumns.item] |
+## [Properties](#getter-examples)
+| Property       | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|count|int|Returns the number of columns in the table. Read-only.||
+|items|[TableColumnCollection](tablecolumncollection.md)|A collection of tableColumn objects. Read-only.||
 
 ## Relationships
-
 None
+
 
 ## Methods
 
-The tablecolumn collection has the following methods defined:
+| Method           | Return Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|[add(index: number, values: object[][])](#addindex-number-values-object)|[TableColumn](tablecolumn.md)|Adds a new column to the table.||
+|[getItem(id: object)](#getitemid-object)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID.||
+|[getItemAt(index: number)](#getitematindex-number)|[TableColumn](tablecolumn.md)|Gets a column based on its position in the collection.||
 
-| Method     | Return Type    |Description|Notes  |
-|:-----------------|:--------|:----------|:------|
-|[add(values: any[][], index: number)](#addvalues-any-index-number)| [Table Column](tablecolumn.md) Object             |Creates a new tablecolumn.  ||
-|[getItem(param: string or number)](#getitemparam-string-or-number)| [Table Column](tablecolumn.md) Object     |Retrieve a tablecolumn object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [tablecolumn](tablecolumn.md) Object|Retrieve a tablecolumn based on its position in the items[] array.||
+## API Specification
 
-
-## API Specification 
-
-### add(values: any[][], index: number)
-
-Add a new column to the table. 
+### add(index: number, values: object[][])
+Adds a new column to the table.
 
 #### Syntax
 ```js
-tableColumnCollection.add(index, values);
+tableColumnCollectionObject.add(index, values);
 ```
 
-Parameter       | Type   | Description
---------------- | ------ | ------------
-`values` | any[][] | Required. 2-D array of unformatted values of the table column.
-`index` |  Number | Optional. Specifies the relative position of the new column. The previous column at this position is shifted outward to the right. If not specified, the addition happens at the end.  Note: The index value should be equal to or less than the last column's index value. In other words, this API cannot be used to append a column at the end of the table. **Zero Indexed**.
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|index|number|Specifies the relative position of the new column. The previous column at this position is shifted to the right. The index value should be equal to or less than the last column's index value, so it cannot be used to append a column at the end of the table. Zero-indexed.|
+|values|object[][]|Optional. A 2-dimensional array of unformatted values of the table column.|
 
 #### Returns
-[Range](range.md) object.
+[TableColumn](tablecolumn.md)
 
-#### Example
+#### Examples
+
 ```js
 var ctx = new Excel.ExcelClientContext();
 var tables = ctx.workbook.tables;
 var values = [["Sample"], ["Values"], ["For"], ["New"], ["Column"]];
-var row = tables.getItem("Table1").tableColumns.add(values, null);
-ctx.load(row);
+var column = tables.getItem("Table1").columns.add(null, values);
+ctx.load(column);
 ctx.executeAsync().then(function () {
-	Console.log(row.name);
+	Console.log(column.name);
 });
 ```
+
+
 [Back](#methods)
 
-### getItem(param: string or number)
-
-Get tablecolumn object properties based on name.
+### getItem(id: object)
+Gets a column object by Name or ID.
 
 #### Syntax
 ```js
-tableColumnCollection.getItem(param);
+tableColumnCollectionObject.getItem(id);
 ```
 
 #### Parameters
-
-Parameter       | Type  | Description
---------------- | ------ | ------------
- `param`| String | Required. tablecolumn name or id. 
-
-#### Returns
-
-[tablecolumn](tablecolumn.md) object.
-
-#### Examples
-```js
-var ctx = new Excel.ExcelClientContext();
-var wSheetName = 'Sheet1';
-var tablecolumn = ctx.workbook.tablecolumns.getItem(wSheetName);
-ctx.executeAsync().then(function () {
-		Console.log(tablecolumn.index);
-});
-```
-[Back](#methods)
-
-### getItemAt(index: number)
-
-Get tablecolumn object properties based on its position in the items[] array. 
-
-#### Syntax
-```js
-tableColumnCollection.getItemAt(index);
-```
-
-#### Parameters
-
-Parameter       | Type  | Description
---------------- | ------ | ------------
- `index`| Number | Required. Index or position in the items[]. Zero indexed.
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|id|object| Column Name or ID.|
 
 #### Returns
-
-[tablecolumn](tablecolumn.md) object.
+[TableColumn](tablecolumn.md)
 
 #### Examples
+
 ```js
 var ctx = new Excel.ExcelClientContext();
-var lastPosition = ctx.workbook.tablecolumns.count - 1;
-var tablecolumn = ctx.workbook.tablecolumns.getItemAt(lastPosition);
+var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItem(0);
+ctx.load(tablecolumn)
 ctx.executeAsync().then(function () {
 		Console.log(tablecolumn.name);
 });
 ```
+
+
 [Back](#methods)
 
-### Get tablecolumn Collection
-
-Get properties of the tablecolumn collection. 
+### getItemAt(index: number)
+Gets a column based on its position in the collection.
 
 #### Syntax
 ```js
-tableColumnCollection.property;
+tableColumnCollectionObject.getItemAt(index);
 ```
 
-#### Properties
-
-| Property         | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|tablecolumns.count|
-|`items`| [Table Column](tablecolumn.md) Array | A collection of all the tablecolumn objects that are part of the table|[tablecolumns.item] |
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
-
-[tablecolumn](tablecolumn.md) collection. 
+[TableColumn](tablecolumn.md)
 
 #### Examples
+```js
+var ctx = new Excel.ExcelClientContext();
+var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItemAt(0);
+ctx.load(tablecolumn)
+ctx.executeAsync().then(function () {
+		Console.log(tablecolumn.name);
+});
+```
+
+[Back](#methods)
+
+#### Getter Examples
 
 ```js
 var ctx = new Excel.ExcelClientContext();
-var tablecolumns = ctx.workbook.tablecolumns;
+var tablecolumns = ctx.workbook.tables.getItem['Table1'].columns;
 ctx.load(tablecolumns);
 ctx.executeAsync().then(function () {
+	Console.log("tablecolumns Count: " + tablecolumns.count);
 	for (var i = 0; i < tablecolumns.items.length; i++)
 	{
 		Console.log(tablecolumns.items[i].name);
 	}
 });
 ```
-
-##### Getting the number of tablecolumns
-
-```js
-var ctx = new Excel.ExcelClientContext();
-var tablecolumns = ctx.workbook.tablecolumns;
-ctx.load(tables);
-ctx.executeAsync().then(function () {
-	Console.log("tablecolumns: Count= " + tablecolumns.count);
-});
-
-```
 [Back](#properties)
-

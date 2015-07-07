@@ -1,145 +1,113 @@
 # Binding
-The Binding object is a member of the Bindings collection. The Bindings collection contains all the Binding objects in a workbook.
 
-## [Properties](#get-binding)
+Represents an Office.js binding that is defined in the workbook.
 
+## [Properties](#getter-examples)
 | Property       | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|`id`   | String | String |The user-visible name of the binding. Get only.|Binding.Name    |       
-|`index`| Number |The zero-based index of the binding within the workbook|Binding.Index|
-|`type`| String |Returns the type of the binding. Can be `Table`,`Range` or `Text`. Get only. |Binding.Type|
-
+|id|string|Represents binding identifier. Read-only.||
+|type|string|Returns the type of the binding. Read-only. Possible values are: Range, Table, Text.||
 
 ## Relationships
-None.    
+None
+
 
 ## Methods
-The Binding has the following methods defined:
 
-| Method     | Return Type    |Description|Notes  |
-|:-----------------|:--------|:----------|:------|
-|[getRange()][getrange-link]| [Range](range.md) object |Returns the Range of the Binding| |
-|[getTable()][gettable-link]| [Table](table.md) object |Returns the Table of the Binding| |  
-|[getText()][gettable-link]| String |Returns the text of the Binding| |  
+| Method           | Return Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|[getRange()](#getrange)|[Range](range.md)|Returns the range represented by the binding. Will throw an error if binding is not of the correct type.||
+|[getTable()](#gettable)|[Table](table.md)|Returns the table represented by the binding. Will throw an error if binding is not of the correct type.||
+|[getText()](#gettext)|string|Returns the text represented by the binding. Will throw an error if binding is not of the correct type.||
 
-## API Specification 
+## API Specification
+
 ### getRange()
-
-Get a Range object that represents a single cell or a range of cells. 
+Returns the range represented by the binding. Will throw an error if binding is not of the correct type.
 
 #### Syntax
-
 ```js
 bindingObject.getRange();
 ```
+
 #### Parameters
-None.
+None
 
 #### Returns
-
-[Range](range.md) object.
+[Range](range.md)
 
 #### Examples
-
-Below example uses binding to get the range.
+Below example uses binding object to get the associated range.
 
 ```js
 var ctx = new Excel.ExcelClientContext();
 var binding = ctx.workbook.bindings.getItemAt(0);
-var range = binding.getRange();
 ctx.load(range);
 ctx.executeAsync().then(function() {
 	Console.log(range.cellCount);
 });
 ```
 
+
 [Back](#methods)
 
 ### getTable()
-
-Get the table of the binding. 
+Returns the table represented by the binding. Will throw an error if binding is not of the correct type.
 
 #### Syntax
 ```js
 bindingObject.getTable();
 ```
-#### Parameters
 
+#### Parameters
 None
 
 #### Returns
-
-[Table](table.md) object.
+[Table](table.md)
 
 #### Examples
-
 ```js
 var ctx = new Excel.ExcelClientContext();
 
 var binding = ctx.workbook.bindings.getItemAt(0);
-var table = binding.getTable();
 ctx.load(table);
 ctx.executeAsync().then(function () {
 		Console.log(table.name);
 });
 ```
+
+
 [Back](#methods)
 
 ### getText()
-
-Get the text of a binding. 
+Returns the text represented by the binding. Will throw an error if binding is not of the correct type.
 
 #### Syntax
-
 ```js
 bindingObject.getText();
 ```
+
 #### Parameters
-None.
+None
 
 #### Returns
-String.
+string
 
 #### Examples
-
-Below example uses binding to get the range.
 
 ```js
 var ctx = new Excel.ExcelClientContext();
 var binding = ctx.workbook.bindings.getItemAt(0);
-var text = binding.getText();
 ctx.load(text);
 ctx.executeAsync().then(function() {
 	Console.log(text);
 });
 ```
 
+
 [Back](#methods)
 
-### Get Binding
-
-Get a Binding object properties. 
-
-#### Syntax
-
-```js
-bindingObject.type;
-```
-#### Properties
-| Property       | Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|`id`   | String | String |The user-visible name of the binding|Binding.Name    |       
-|`index`| Number |The zero-based index of the binding within the workbook|Binding.Index|
-|`type`| String |Returns the type of the binding. |Binding.Type|
-
-
-#### Returns
-
-[Binding](binding.md) object.
-
-#### Examples
-
-Below example to get binding properties.
+#### Getter Examples
 
 ```js
 var ctx = new Excel.ExcelClientContext();
@@ -149,11 +117,4 @@ ctx.executeAsync().then(function() {
 	Console.log(binding.type);
 });
 ```
-
 [Back](#properties)
-
-
-
-
-[getrange-link]: #getrange
-[gettable-link]: #gettable

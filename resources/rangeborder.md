@@ -1,35 +1,58 @@
-﻿
-# Range Border
+# RangeBorder
 
-Represents the border of an object. 
+Represents the border of an object.
 
-## Properties
-| Property         | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-|sideIndex| String | Constant value that indicates the specific side of the border. Possible values are:  `DiagonalDown`, `DiagonalUp`, `EdgeBottom`, `EdgeLeft`, `EdgeRight`, `EdgeTop`, `InsideHorizontal`, `InsideVertical`.| String value derived from xlBordersIndex constants|
-|lineStyle| String | One of the constants of LineStyle specifying the line style for the border. Options are: `Continuous`: Continuous line, `Dash`: Dashed line, `DashDot`: Alternating dashes and dots, `DashDotDot`: Dash followed by two dots, `Dot`: Dotted line, `Double`: Double line, `LineStyleNone`: No line, `SlantDashDot`: Slanted dashes.|Border.LineStyle|
-|weight| String | BorderWeight value that specifies the weight of the border around a range. Options are: `Hairline`: Hairline (thinnest border), `Medium`: Medium, `Thick`: Thick (widest border), `Thin`: Thin.|Border.Weight|
-|color| String | HTML color code representing the color of the border line|Border.Color's representation in HTML color code.|
-
-
-`sideindex` specifies type of border to be retrieved/set as part of Borders collection. 
-
-|SideIndex|Description|
-|:--------|:----------|
-|`InsideHorizontal`|Horizontal borders for all cells in the range except borders on the outside of the range.|
-|`InsideVertical`  |Vertical borders for all the cells in the range except borders on the outside of the range.|
-|`DiagonalDown`    |Border running from the upper left-hand corner to the lower right of each cell in the range.|
-|`DiagonalUp`      |Border running from the lower left-hand corner to the upper right of each cell in the range.|
-|`EdgeBottom`      |Border at the bottom of the range.|
-|`EdgeLeft`        |Border at the left-hand edge of the range.|
-|`EdgeRight`       |Border at the right-hand edge of the range.|
-|`EdgeTop`         |Border at the top of the range.|
-
+## [Properties](#getter-and-setter-examples)
+| Property       | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|color|string|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange")||
+|sideIndex|string|Constant value that indicates the specific side of the border. Read-only. Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp.||
+|style|string|One of the constants of line style specifying the line style for the border. Possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.||
+|weight|string|BorderWeight value that specifies the weight of the border around a range. Possible values are: Hairline, Thin, Medium, Thick.||
 
 ## Relationships
 None
+
 
 ## Methods
 None
 
 
+## API Specification
+
+#### Getter and Setter Examples
+
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "A1:F8";
+var ctx = new Excel.ExcelClientContext();
+var worksheet = ctx.workbook.worksheets.getItem(sheetName);
+var range = worksheet.getRange(rangeAddress);
+var borders = range.format.borders;
+ctx.load(borders);
+ctx.executeAsync().then(function () {
+	Console.log(borders.count);
+	for (var i = 0; i < borders.items.length; i++)
+	{
+		Console.log(borders.items[i].sideIndex);
+	}
+});
+```
+The example below adds grid border around the range.
+
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "A1:F8";
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+range.format.borders('InsideHorizontal').lineStyle = 'Continuous';
+range.format.borders('InsideVertical').lineStyle = 'Continuous';
+range.format.borders('EdgeBottom').lineStyle = 'Continuous';
+range.format.borders('EdgeLeft').lineStyle = 'Continuous';
+range.format.borders('EdgeRight').lineStyle = 'Continuous';
+range.format.borders('EdgeTop').lineStyle = 'Continuous';
+ctx.executeAsync().then();
+```
+
+
+
+[Back](#properties)

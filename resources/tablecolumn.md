@@ -1,203 +1,173 @@
 # TableColumn
-Represents a Column in a table. The TableColumn object is a member of the TableColumns collection.
 
-## [Properties](#get-table-column)
+Represents a column in a table.
 
-|Property         | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-| `id`     |  Number | A unique key that identifies the Table Column within the Table   |        |
-|`index`          |  Number | Index number of the TableColumn object within the TableColumns collection. **Zero Indexed**| ListColumn.Index|
-|`name`           | String | String value that represents the name of the Table column..| ListColumn.Name|
-|`totalsCalculation` |String | Constant value that determines the type of calculation in the Totals row of the list column. Possible values are: `Average`, `Count`, `CountNums`, `Max`, `Min`, `None`, `Sum`, `StdDev`, `Var`
-|`values`         | Array (Primitive)  | Unformatted values of the table Column. |Collection of ListColumn.Range.Value2|
-
+## [Properties](#getter-and-setter-examples)
+| Property       | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|id|int|Returns a unique key that identifies the column within the table. Read-only.||
+|index|int|Returns the index number of the column within the columns collection of the table. Zero-indexed. Read-only.||
+|name|string|Returns the name of the table column. Read-only.||
+|values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.||
 
 ## Relationships
 None
 
+
 ## Methods
 
-The TableColumn has the following methods defined:
+| Method           | Return Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|[delete()](#delete)|void|Deletes the column from the table.||
+|[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|Gets the range object associated with the data body of the column.||
+|[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|Gets the range object associated with the header row of the column.||
+|[getRange()](#getrange)|[Range](range.md)|Gets the range object associated with the entire column.||
+|[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Gets the range object associated with the totals row of the column.||
 
-| Method     | Return Type    |Description|Notes  |
-|:-----------------|:--------|:----------|:------|
-|[delete()](#delete)| void     |Deletes the column ||
-|[getDataBodyRange()](#getdatabodyrange)| [Range](range.md) Object     | Returns a Range object that is the size of the data portion of a column.||
-|[getHeaderRowRange()](#getheaderrowrange)| [Range](range.md) Object     | Returns the header Range object associated with the column.||
-|[getRange()](#getrange)| [Range](range.md) Object     | Returns the Range object associated with the column.||
-|[getTotalRowRange()](#gettotalrowrange)| [Range](range.md) Object     | Returns the Total row for a Column Object||
+## API Specification
 
-## API Specification 
-
-### delete() 
-
-Deletes Table Column and clears the cell data from the Table Column.
+### delete()
+Deletes the column from the table.
 
 #### Syntax
-
 ```js
 tableColumnObject.delete();
 ```
 
-#### Parameters 
+#### Parameters
 None
 
 #### Returns
-Nothing
+void
 
-#### Example 
+#### Examples
 
 ```js
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
 var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(2);
-column.delete();
 ctx.executeAsync().then();
 ```
+
+
 [Back](#methods)
 
-### getDataBodyRange() 
-Get Range object associated with the Column's data body.
+### getDataBodyRange()
+Gets the range object associated with the data body of the column.
 
+#### Syntax
 ```js
 tableColumnObject.getDataBodyRange();
 ```
-#### Parameters
 
+#### Parameters
 None
 
 #### Returns
-
-[Range](range.md) object.
+[Range](range.md)
 
 #### Examples
 
 ```js
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
-var row = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
-var dataBodyRange = row.getDataBodyRange();
+var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
 ctx.load(dataBodyRange);
 ctx.executeAsync().then(function () {
 	Console.log(dataBodyRange.address);
 });
 ```
+
+
 [Back](#methods)
 
 ### getHeaderRowRange()
-
-Get Range object associated with the Column's header.
+Gets the range object associated with the header row of the column.
 
 #### Syntax
-
 ```js
 tableColumnObject.getHeaderRowRange();
 ```
 
 #### Parameters
-
 None
 
 #### Returns
-
-[Range](range.md) object.
+[Range](range.md)
 
 #### Examples
 
 ```js
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
-var row = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
-var headerRowRange = row.getHeaderRowRange();
+var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
 ctx.load(headerRowRange);
 ctx.executeAsync().then(function () {
 	Console.log(headerRowRange.address);
 });
 ```
+
 [Back](#methods)
 
-### getRange() 
-Get Range object associated with the Column.
+### getRange()
+Gets the range object associated with the entire column.
 
+#### Syntax
 ```js
 tableColumnObject.getRange();
 ```
-#### Parameters
 
+#### Parameters
 None
 
 #### Returns
-
-[Range](range.md) object.
+[Range](range.md)
 
 #### Examples
 
 ```js
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
-var row = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
-var columnRange = row.getRange();
+var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
 ctx.load(range);
 ctx.executeAsync().then(function () {
 	Console.log(range.columnRange);
 });
 ```
+
+
 [Back](#methods)
 
-### getTotalRowRange() 
+### getTotalRowRange()
+Gets the range object associated with the totals row of the column.
 
-Get Range object associated with the Column's total.
-
-#### Syntax 
-
+#### Syntax
 ```js
 tableColumnObject.getTotalRowRange();
 ```
 
 #### Parameters
-
 None
 
 #### Returns
-
-[Range](range.md) object.
+[Range](range.md)
 
 #### Examples
 
 ```js
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
-var row = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
-var totalRowRange = row.getTotalRowRange();
+var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
 ctx.load(totalRowRange);
 ctx.executeAsync().then(function () {
 	Console.log(totalRowRange.address);
 });
 ```
 
+
 [Back](#methods)
 
-### Get Table Column 
-
-Get Table Column's data and properties.  
-
-#### Syntax
-```js
-tableColumnsCollection.getItem(param);
-```
-
-#### Parameters
-
-Parameter       | Type  | Description
---------------- | ------ | ------------
- `param`| String or Number | Column index (zero indexed) or column name of the column that you wish to get. 
-
-#### Returns
-
-[Table Column](tableColumn.md) object.
-
-
-#### Examples
+#### Getter and Setter Examples
 
 ```js
 var tableName = 'Table1';
@@ -208,19 +178,6 @@ ctx.executeAsync().then(function () {
 	Console.log(column.index);
 });
 ```
-[Back](#properties)
-
-### Update Table Column 
-
-Update values of table column.
-
-#### Syntax
-```js
-tableColumnObject.values = new-values
-```
-Where, new-values is a 2-D array values of the table column. 
-
-#### Example
 
 ```js
 var ctx = new Excel.ExcelClientContext();

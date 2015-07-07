@@ -1,70 +1,67 @@
 # Range
-Range represents a cell, a row, a column, a selection of cells containing one or more contiguous blocks of cells. 
 
-## [Properties](#get-range)
-| Property         | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-|`address`         |String         |Returns a String value that represents the range reference in A1 Style. **Address value will contain the Sheet reference (e.g., `Sheet1!A1:B4`)**|Range.Address|
-|`addressLocal`    |String         |Returns the range reference for the specified range in the language of the user.
-|`cellCount`       | Number          |Number of cells in the range|Range.Count|
-|`columnIndex`     | Number          |Returns the number of the first column in the first area in the specified range. This is adjusted to be zero indexed. Read-only|Range.Column|
-|`columnCount`    | Number           |Returns the number of the first row of the first area in the range. This is adjusted to be zero indexed. Read-only|Range.Row|
-|`formula`         |String[][]|Represents the object's formula in A1 style notation|Range.formula|
-|`formulaLocal`    |String[][]|Formula for the object, in the language of the user in A1 style notation|Range.FormulaLocal|
-|`numberFormat`    |String[][]|Value that represents the format code for the object|Range.NumberFormat
-|`rowcount`        | Number          |Returns the total number of columns in the Range selected. Read-only |Range.Column|
-|`rowIndex`        | Number          |Returns the number of the first row of the first area in the range. This is adjusted to be zero indexed. Read-only|Range.Row|
-|`text`            |String[][]|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel client will not affect the value returned by the API. |Range.Text|
-|`values`          |any[][]|Unformatted values of the specified range|Range.Value2|
+Range represents a set of one or more contiguous cells such as a cell, a row, a column, block of cells, etc.
+
+## [Properties](#getter-and-setter-examples)
+| Property       | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|address|string|Represents the range reference in A1-style. Address value will contain the Sheet reference (e.g. Sheet1!A1:B4). Read-only.||
+|addressLocal|string|Represents range reference for the specified range in the language of the user. Read-only.||
+|cellCount|int|Number of cells in the range. Read-only.||
+|columnCount|int|Represents the total number of columns in the range. Read-only.||
+|columnIndex|int|Represents the column number of the first cell in the range. Zero-indexed. Read-only.||
+|formulas|object[][]|Represents the formula in A1-style notation.||
+|formulasLocal|object[][]|Represents the formula in A1-style notation, in the user's language and number-formatting locale.  For example, the English "=SUM(A1, 1.5)" formula would become "=SUMME(A1; 1,5)" in German.||
+|numberFormat|object[][]|Represents Excel's number format code for the given cell.||
+|rowCount|int|Returns the total number of rows in the range. Read-only.||
+|rowIndex|int|Returns the row number of the first cell in the range. Zero-indexed. Read-only.||
+|text|object[][]|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.||
+|values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.||
 
 ## Relationships
-Range has the following relationships defined:
-
-| Relationships    | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-|format        |[Range Format](rangeformat.md) Object  |Format object contains Range's Font, fill, Borders, Alignment, Style, etc. settings ||
-|[worksheet](#get-range-worksheet) |[Worksheet](worksheet.md) Object  |The worksheet containing the current range. ||
-
+| Relationship | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|format|[RangeFormat](rangeformat.md)|Returns a format object, encapsulating the range's font, fill, borders, alignment, and other properties. Read-only.||
+|worksheet|[Worksheet](worksheet.md)|The worksheet containing the current range. Read-only.||
 
 ## Methods
 
-The Worksheet has the following methods defined:
+| Method           | Return Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|[clear(applyTo: string)](#clearapplyto-string)|void|Clear range values, format, fill, border, etc.||
+|[delete(shift: string)](#deleteshift-string)|void|Deletes the cells associated with the range.||
+|[getBoundingRect(anotherRange: object)](#getboundingrectanotherrange-object)|[Range](range.md)|Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E16".||
+|[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it's stays within the worksheet grid. The returned cell is located relative to the top left cell of the range.||
+|[getColumn(column: number)](#getcolumncolumn-number)|[Range](range.md)|Gets a column contained in the range.||
+|[getEntireColumn()](#getentirecolumn)|[Range](range.md)|Gets an object that represents the entire column of the range.||
+|[getEntireRow()](#getentirerow)|[Range](range.md)|Gets an object that represents the entire row of the range.||
+|[getIntersection(anotherRange: object)](#getintersectionanotherrange-object)|[Range](range.md)|Gets the range object that represents the rectangular intersection of the given ranges.||
+|[getOffsetRange(rowOffset: number, columnOffset: number)](#getoffsetrangerowoffset-number-columnoffset-number)|[Range](range.md)|Gets an object which represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an exception will be thrown.||
+|[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Gets a row contained in the range.||
+|[getUsedRange()](#getusedrange)|[Range](range.md)|Returns the used range of the given range object.||
+|[insert(shift: string)](#insertshift-string)|void|Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space.||
+|[select()](#select)|void|Selects the specified range in the Excel UI.||
 
-| Method     | Return Type    |Description|Notes  |
-|:-----------------|:--------|:----------|:------|
-|[clear(applyTo: string)](#clearapplyto-string)| void     |Clear Range values, format, fill, border, etc. |   |
-|[delete()](#delete)| void     |Deletes the worksheet ||
-|[getCell(row: number, column: number)](#getcellrow-number-column-number)| [Range](range.md) object |Returns a range containing the single cell specified by the zero-indexed row and column numbers          
-|[getEntireColumn()](#getentirecolumn)| [Range](range.md) object |Get an object that represents the entire column of the Range. This API is valid only if the subject range object is a single cell or a column of cells.| |
-|[getEntireRow()](#getentirerow)| [Range](range.md) object |Get an object that represents the entire row of the Range. This API is valid only if the subject range object is a single cell or a row of cells.| |
-|[getUsedRange()](#getusedrange)| [Range](range.md) object |Returns the used range of the Range.| |  
-|[insert(shift: string)](#insertshift-string)|void| Inserts a cell or a range of cells into the worksheet and shifts other cells away to make space.| |
-|[select()](#select)|void| Select the specified Range in the Excel UI.| |
-
-## API Specification 
-
+## API Specification
 
 ### clear(applyTo: string)
-
-Clear Range values, format, fill, border, etc.
+Clear range values, format, fill, border, etc.
 
 #### Syntax
-
 ```js
 rangeObject.clear(applyTo);
 ```
 
-##### Parameters
-
-Parameter       | Type   | Description
---------------- | ------ | ------------
-`applyTo` | String | Optional. `All`, `Format`, `Content`. If this option is not provided then the content and format of the range will be cleared. 
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|applyTo|string|Optional. Determines the type of clear action. Possible values are: All (default option), Format, and Content. Possible values are: `All` Default-option,`Formats` ,`Contents` |
 
 #### Returns
-
-Nothing
+void
 
 #### Examples
+
 Below example clears format and contents of the range. 
 
 ```js
@@ -75,26 +72,25 @@ var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 range.clear();
 ctx.executeAsync().then();
 ```
+
+
 [Back](#methods)
 
-### delete()
-
-Delete the Range data and clear the format and shift the cells.
+### delete(shift: string)
+Deletes the cells associated with the range.
 
 #### Syntax
-
 ```js
 rangeObject.delete(shift);
 ```
-##### Parameters
 
-Parameter       | Type   | Description
---------------- | ------ | ------------
-shift| String | Specifies which way to shift the cells. Can be one of the following: `Left` or `Up`. If this argument is omitted, Microsoft Excel decides based on the shape of the range.
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|shift|string|Specifies which way to shift the cells. Possible values are: Up (default option) or Left.  Possible values are: Up, Left|
 
 #### Returns
-
-Nothing
+void
 
 #### Examples
 
@@ -106,36 +102,65 @@ var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 range.delete();
 ctx.executeAsync().then();
 ```
-[Back](#methods) 
 
-### getCell(row: number, column: number)
 
-Get the Cell (as a Range object) object based on row and column address relative to a Range. 
+[Back](#methods)
 
-Note that the returned object is a Range representing the single cell requested. The `address`, `columnIndex`, `rowIndex`, etc. property values of returned Range is relative to the worksheet. 
+### getBoundingRect(anotherRange: object)
+Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E16".
 
 #### Syntax
-
 ```js
-rangeObject.getCell(row, column);
+rangeObject.getBoundingRect(anotherRange);
 ```
 
-#### Parameters 
-
-Parameter      | Type   | Description
--------------- | ------ | ------------
-`row`          | Number | Required. Row number of the cell to be retrieved. Zero indexed. 
-`col`          | Number | Required. Column number of the cell to be retrieved. Zero indexed.
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|anotherRange|object|The range object or address or range name.|
 
 #### Returns
-
-[Range](range.md) object.
+[Range](range.md)
 
 #### Examples
 
 ```js
 var sheetName = "Sheet1";
-var rangeAddress = "D5:F8";
+var rangeAddress = "D4:G6";
+var ctx = new Excel.ExcelClientContext();
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+var range = range.getBoundingRect("G4:H8");
+ctx.load(range);
+ctx.executeAsync().then(function() {
+	Console.log(range.address); // Prints Sheet1!D4:H8
+});
+```
+
+
+[Back](#methods)
+
+### getCell(row: number, column: number)
+Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it's stays within the worksheet grid. The returned cell is located relative to the top left cell of the range.
+
+#### Syntax
+```js
+rangeObject.getCell(row, column);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|row|number|Row number of the cell to be retrieved. Zero-indexed.|
+|column|number|Column number of the cell to be retrieved. Zero-indexed.|
+
+#### Returns
+[Range](range.md)
+
+#### Examples
+
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "A1:F8";
 var ctx = new Excel.ExcelClientContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
@@ -145,87 +170,212 @@ ctx.executeAsync().then(function() {
 	Console.log(cell.address);
 });
 ```
-[Back](#methods) 
 
-### getEntireColumn()
 
-Get an object that represents the entire column of the Range. This API is valid only if the subject range object is a single cell or a column of cells.
+[Back](#methods)
+
+### getColumn(column: number)
+Gets a column contained in the range.
 
 #### Syntax
+```js
+rangeObject.getColumn(column);
+```
 
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|column|number|Column number of the range to be retrieved. Zero-indexed.|
+
+#### Returns
+[Range](range.md)
+
+#### Examples
+
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "A1:F8";
+var ctx = new Excel.ExcelClientContext();
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getColumn(1);
+ctx.load(range);
+ctx.executeAsync().then(function() {
+	Console.log(range.address); // prints Sheet1!B1:B8
+});
+```
+
+[Back](#methods)
+
+### getEntireColumn()
+Gets an object that represents the entire column of the range.
+
+#### Syntax
 ```js
 rangeObject.getEntireColumn();
 ```
-##### Parameters
 
+#### Parameters
 None
 
 #### Returns
+[Range](range.md)
 
-[Range](range.md) object.
-**Note: the grid properties of the Range (values, numberFormat, formula) contains `null` since the Range in question is unbounded.**
 #### Examples
+
+Note: the grid properties of the Range (values, numberFormat, formula) contains `null` since the Range in question is unbounded.
 
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "D:F";
 var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-var rangeEC = range.getEntireColumn();
 ctx.load(rangeEC);
 ctx.executeAsync().then(function() {
 	Console.log(rangeEC.address);
 });
 ```
+
 [Back](#methods)
 
 ### getEntireRow()
-
-Get an object that represents the entire row of the Range. This API is valid only if the subject range object is a single cell or a row of cells.
+Gets an object that represents the entire row of the range.
 
 #### Syntax
-
 ```js
 rangeObject.getEntireRow();
 ```
-##### Parameters
 
+#### Parameters
 None
 
 #### Returns
+[Range](range.md)
 
-[Range](range.md) object.
-**Note: the grid properties of the Range (values, numberFormat, formula) contains `null` since the Range in question is unbounded.**
 #### Examples
-
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "D:F";
 var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-var rangeER = range.getEntireRow();
 ctx.load(rangeER);
 ctx.executeAsync().then(function() {
 	Console.log(rangeER.address);
 });
 ```
+The grid properties of the Range (values, numberFormat, formula) contains `null` since the Range in question is unbounded.
+
+
+[Back](#methods)
+
+### getIntersection(anotherRange: object)
+Gets the range object that represents the rectangular intersection of the given ranges.
+
+#### Syntax
+```js
+rangeObject.getIntersection(anotherRange);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|anotherRange|object|The range object or range address that will be used to determine the intersection of ranges.|
+
+#### Returns
+[Range](range.md)
+
+#### Examples
+
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "A1:F8";
+var ctx = new Excel.ExcelClientContext();
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getIntersection("D4:G6");
+ctx.load(range);
+ctx.executeAsync().then(function() {
+	Console.log(range.address); // prints Sheet1!D4:F6
+});
+```
+
+
+[Back](#methods)
+
+### getOffsetRange(rowOffset: number, columnOffset: number)
+Gets an object which represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an exception will be thrown.
+
+#### Syntax
+```js
+rangeObject.getOffsetRange(rowOffset, columnOffset);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|rowOffset|number|The number of rows (positive, negative, or 0) by which the range is to be offset. Positive values are offset downward, and negative values are offset upward.|
+|columnOffset|number|The number of columns (positive, negative, or 0) by which the range is to be offset. Positive values are offset to the right, and negative values are offset to the left.|
+
+#### Returns
+[Range](range.md)
+
+#### Examples
+
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "D4:F6";
+var ctx = new Excel.ExcelClientContext();
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getOffsetRange(-1,4);
+ctx.load(range);
+ctx.executeAsync().then(function() {
+	Console.log(range.address); // prints Sheet1!H3:K5
+});
+```
+
+
+[Back](#methods)
+
+### getRow(row: number)
+Gets a row contained in the range.
+
+#### Syntax
+```js
+rangeObject.getRow(row);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|row|number|Row number of the range to be retrieved. Zero-indexed.|
+
+#### Returns
+[Range](range.md)
+
+#### Examples
+
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "A1:F8";
+var ctx = new Excel.ExcelClientContext();
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getRow(1);
+ctx.load(range);
+ctx.executeAsync().then(function() {
+	Console.log(range.address); // prints Sheet1!A2:F2
+});
+```
+
+
 [Back](#methods)
 
 ### getUsedRange()
-Get used-range portion within the requested Range object. 
+Returns the used range of the given range object.
 
 #### Syntax
-
 ```js
 rangeObject.getUsedRange();
 ```
-##### Parameters
 
+#### Parameters
 None
 
 #### Returns
-
-[Range](range.md) object.
+[Range](range.md)
 
 #### Examples
 
@@ -234,33 +384,32 @@ var sheetName = "Sheet1";
 var rangeAddress = "D:F";
 var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-var rangeUR = range.getUsedRange();
 ctx.load(rangeUR);
 ctx.executeAsync().then(function() {
 	Console.log(rangeUR.address);
 });
 ```
 
-[Back](#methods) 
+
+[Back](#methods)
 
 ### insert(shift: string)
-
-Inserts a cell or a range of cells into the worksheet and shifts other cells away to make space.
+Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space.
 
 #### Syntax
 ```js
 rangeObject.insert(shift);
 ```
-#### Parameters
 
-Parameter       | Type   | Description
---------------- | ------ | ------------
-`shift`| String | Optional. Specifies which way to shift the cells. Can be one of the following: `Right` or `Down`. If this argument is omitted, Microsoft Excel decides based on the shape of the range.
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|shift|string|Specifies which way to shift the cells. Can be one of the following: Down (default option) or Right.  Possible values are: Down, Right|
 
 #### Returns
-Nothing
+void
 
-#### Example
+#### Examples
 
 ```js
 var sheetName = "Sheet1";
@@ -270,55 +419,44 @@ var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 range.insert();
 ctx.executeAsync().then();
 ```
-[Back](#methods) 
 
+
+[Back](#methods)
 
 ### select()
-
-Select the specified Range in the Excel UI.
+Selects the specified range in the Excel UI.
 
 #### Syntax
 ```js
 rangeObject.select();
 ```
+
 #### Parameters
 None
 
 #### Returns
-Nothing
+void
 
-#### Example
+#### Examples
 
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "F5:F10";
 var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-range.select();
 ctx.executeAsync().then();
 ```
-[Back](#methods) 
 
-### Get Range
 
-Get a Range object that represents a single cell or a range of cells. 
+[Back](#methods)
 
-#### Syntax
-
-```js
-worksheetObject.getRange(rangeAddress);
-```
-#### Returns
-
-[Range](range.md) object.
-
-#### Examples
+#### Getter and Setter Examples
 
 Below example uses range address to get the range object.
 
 ```js
 var sheetName = "Sheet1";
-var rangeAddress = "D5:F8";
+var rangeAddress = "A1:F8";
 var ctx = new Excel.ExcelClientContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
@@ -340,32 +478,6 @@ ctx.executeAsync().then(function() {
 });
 ```
 
-[Back](#properties)
-
-### Update Range 
-
-Set Range values, formula, number format.
-
-#### Syntax
-```js
-rangeObject.property = value;
-```
-Where, property is one of the following Range properties that can be set. 
-
-#### Properties
-
-|Property          | Type          | Description                                           |
-|----------------- | -------------- | ----------------------------------------------------- |
-|`values`		   | Any[][] of strings or numbers    | Unformatted value of the specified range.	 		        |
-|`numberFormat`    | String[][] of String | Typethat represents the format code for the object. |
-|`formula`         | String[][] of String | Represents the object's formula notation.             |
-|`formulaLocal`    | String[][] of String | Formula for the object, in the language of the user.  |
-
-#### Returns
-
-[Range](range.md) object.
-
-#### Example
 The example below sets number-format, values and formulas on a grid that contains 2x3 grid.
 
 ```js
@@ -384,23 +496,8 @@ ctx.executeAsync().then(function() {
 	Console.log(range.text);
 });
 ```
+Get the worksheet containing the range. 
 
-[Back](#properties)
-
-
-### Get Range Worksheet
-
-Get Worksheet object of the current Range.
-
-#### Syntax
-```js
-rangeObject.worksheet;
-```
-#### Returns
-
-[Worksheet](worksheet.md) object.
-
-#### Examples
 ```js
 var ctx = new Excel.ExcelClientContext();
 var names = ctx.workbook.names;
@@ -412,4 +509,5 @@ ctx.executeAsync().then(function () {
 		Console.log(rangeWorksheet.name);
 });
 ```
-[Back](#relationships)
+
+[Back](#properties)

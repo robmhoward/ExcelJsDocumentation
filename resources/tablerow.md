@@ -1,74 +1,65 @@
 # TableRow
 
-Represents a row in a table. The TableRow object is a member of the TableRows collection.
+Represents a row in a table.
 
-## [Properties](#get-table-row)
-
-| Property         | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-| `index`          |  Number | Index number of the TableRow object within the TableRows collection. **Zero Indexed**.| ListRow.Index|
-| `values`         | Array (Primitive)  | Unformatted values of the table row. |Collection of ListRow.Range.Value2|
+## [Properties](#getter-and-setter-examples)
+| Property       | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|index|int|Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.||
+|values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.||
 
 ## Relationships
-The TableRow has the following relationships defined:
+None
 
-| Relationships    | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-| `range`  | [Range](range.md) Object |Returns a Range object associated with the Table Row.|ListRow.Range|
 
 ## Methods
-The TableRow has the following methods defined:
 
-| Method     | Return Type    |Description|Notes  |
-|:-----------------|:--------|:----------|:------|
-|[delete()](#delete)| void     |Deletes the row ||
-|[getRange()](#getrange)| [Range](range.md) Object     | Returns the Range object associated with the row.||
+| Method           | Return Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|[delete()](#delete)|void|Deletes the row from the table.||
+|[getRange()](#getrange)|[Range](range.md)|Returns the range object associated with the entire row.||
 
+## API Specification
 
-## API Specification 
-
-### delete()  
-
-Deletes Table Row and clears the cell data from Table row.
+### delete()
+Deletes the row from the table.
 
 #### Syntax
-
 ```js
 tableRowObject.delete();
 ```
-#### Parameters 
+
+#### Parameters
 None
 
 #### Returns
-Nothing
+void
 
-#### Example 
+#### Examples
 
 ```js
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
 var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
-row.delete();
 ctx.executeAsync().then();
 ```
 
+
 [Back](#methods)
 
-### getRange() 
-
-Get Range object associated with the Row.
+### getRange()
+Returns the range object associated with the entire row.
 
 #### Syntax
 ```js
 tableRowObject.getRange();
 ```
-#### Parameters
 
+#### Parameters
 None
 
 #### Returns
-
-[Range](range.md) object.
+[Range](range.md)
 
 #### Examples
 
@@ -76,34 +67,16 @@ None
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
 var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(0);
-var rowRange = row.getRange();
 ctx.load(rowRange);
 ctx.executeAsync().then(function () {
 	Console.log(rowRange.address);
 });
 ```
+
+
 [Back](#methods)
 
-### Get Table Row 
-
-Get Table Row's data and properties  
-
-#### Syntax
-```js
-tableRowsCollection.getItem(index);
-```
-
-#### Parameters
-
-Parameter       | Type  | Description
---------------- | ------ | ------------
- `index`| Number | Row index of the row that you wish to get. Zero indexed.
-
-#### Returns
-
-[Table Row](tableRow.md) object.
-
-#### Examples
+#### Getter and Setter Examples
 
 ```js
 var tableName = 'Table1';
@@ -114,19 +87,7 @@ ctx.executeAsync().then(function () {
 	Console.log(row.index);
 });
 ```
-[Back](#properties)
 
-### Update Table Row 
-
-Update values of table row.
-
-#### Syntax
-```js
-tableRowObject.values = new-values
-```
-New-values is a 2-D array values of the table row 
-
-#### Example
 ```js
 var ctx = new Excel.ExcelClientContext();
 var tables = ctx.workbook.tables;

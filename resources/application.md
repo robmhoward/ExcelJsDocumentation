@@ -1,37 +1,49 @@
 # Application
 
-Represents the Excel application which is managing the workbook. 
+Represents the Excel application that manages the workbook.
 
-## [Properties](#get-application)
-
-| Property         | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-| `calculationMode`        | String      | Specifies the Calculation mode of the workbook. Possible values are `Automatic`: Excel controls recalculation, `Manual`: Calculation is done when the user requests it, or `Semiautomatic`: Excel controls recalculation but ignores changes in tables.         |Workbook.Application.Calculation|
-
+## [Properties](#getter-examples)
+| Property       | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|calculationMode|string|Returns the calculation mode used in the workbook. Read-only. Possible values are: `Automatic` Excel controls recalculation.,`AutomaticExceptTables` Excel controls recalculation but ignores changes in tables.,`Manual` Calculation is done when the user requests it.||
 
 ## Relationships
 None
 
+
 ## Methods
-The Application has the following methods defined:
 
-| Method     | Return Type    |Description|Notes  |
-|:-----------------|:--------|:----------|:------|
-|[calculate()](#calculate)| [Worksheet](worksheet.md) object |Get the currently active worksheet in the workbook.| |
+| Method           | Return Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|[calculate(calculationType: string)](#calculatecalculationtype-string)|void|Recalculate all currently opened workbooks in Excel.||
 
-### Get Application
+## API Specification
 
-Get properties of workbook's application object. 
+### calculate(calculationType: string)
+Recalculate all currently opened workbooks in Excel.
 
+#### Syntax
 ```js
-workbookObject..application;
+applicationObject.calculate(calculationType);
 ```
-#### Returns
 
-[Application](application.md) object.
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|calculationType|string|Specifies the calculation type to use. Possible values are: `Recalculate` Default-option. Performs normal calculation by calculating all the formulas in the workbook.,`Full` Forces a full calculation of the data.,`FullRebuild`  Forces a full calculation of the data and rebuilds the dependencies.|
+
+#### Returns
+void
 
 #### Examples
+```js
+var ctx = new Excel.ExcelClientContext();
+ctx.workbook.application.calculate('Full');
+ctx.executeAsync().then();
+```
+[Back](#methods)
 
+#### Getter Examples
 ```js
 var ctx = new Excel.ExcelClientContext();
 var application = ctx.workbook.application;
@@ -39,33 +51,6 @@ ctx.load(application);
 ctx.executeAsync().then(function() {
 	Console.log(application.calculationMode);
 });
-
 ```
+
 [Back](#properties)
-
-### calculate()
-
-Performs calculation on the Workbook or Application. 
-
-#### Syntax
-```js
-applicationObject.calculate(calculationType)
-```
-#### Parameters
-
-Parameter       | Type  | Description
---------------- | ------ | ------------
-`calculationType` | String | Optional. `ReCalculate`: does normal calculation, `Full`: forces a full calculation of the data, `FullRebuild`: forces a full calculation of the data and rebuilds the dependencies (this is similar to re-entering all formulas). Note: if request body is not provided then calculation of the type `ReCalculation` is performed.
-
-#### Returns
-
-Nothing
-
-#### Examples 
-
-```js
-var ctx = new Excel.ExcelClientContext();
-ctx.workbook.application.calculate('Full');
-ctx.executeAsync().then();
-```
-
