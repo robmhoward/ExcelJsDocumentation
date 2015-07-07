@@ -44,7 +44,7 @@ var ctx = new Excel.ExcelClientContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 var rangeFill = ramge.format.fill;
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 
@@ -70,6 +70,6 @@ var sheetName = "Sheet1";
 var rangeAddress = "F:G";
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 range.format.fill.color = '0000FF';
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 [Back](#properties)

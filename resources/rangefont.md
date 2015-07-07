@@ -43,7 +43,7 @@ var sheetName = "Sheet1";
 var rangeAddress = "F:G";
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 range.format.font.name = 'Times New Roman';
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 [Back](#properties)

@@ -47,7 +47,7 @@ void
 var ctx = new Excel.ExcelClientContext();
 var wSheetName = 'Sheet1';
 var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 
@@ -73,7 +73,7 @@ void
 var wSheetName = 'Sheet1';
 var ctx = new Excel.ExcelClientContext();
 var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 
@@ -207,7 +207,7 @@ var ctx = new Excel.ExcelClientContext();
 var wSheetName = 'Sheet1';
 var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
 worksheet.position = 0;
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 

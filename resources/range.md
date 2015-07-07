@@ -70,7 +70,7 @@ var rangeAddress = "D:F";
 var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 range.clear();
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 
@@ -100,7 +100,7 @@ var rangeAddress = "D:F";
 var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 range.delete();
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 
@@ -417,7 +417,7 @@ var rangeAddress = "F5:F10";
 var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 range.insert();
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 
@@ -444,7 +444,7 @@ var sheetName = "Sheet1";
 var rangeAddress = "F5:F10";
 var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 

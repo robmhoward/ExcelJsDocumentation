@@ -41,7 +41,7 @@ void
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
 var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 

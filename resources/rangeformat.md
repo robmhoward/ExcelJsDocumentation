@@ -50,7 +50,7 @@ var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 range.format.wrapText = true;
 range.format.font.name = 'Times New Roman';
 range.format.fill.color = '0000FF';
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 The example below adds grid border around the range.
@@ -65,7 +65,7 @@ range.format.borders('EdgeBottom').lineStyle = 'Continuous';
 range.format.borders('EdgeLeft').lineStyle = 'Continuous';
 range.format.borders('EdgeRight').lineStyle = 'Continuous';
 range.format.borders('EdgeTop').lineStyle = 'Continuous';
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 [Back](#properties)
