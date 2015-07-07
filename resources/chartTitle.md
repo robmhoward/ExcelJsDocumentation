@@ -1,46 +1,26 @@
-# Chart Title
-Represents a chart title object of a chart. A ChartTitle object specifies the text, visibility and formating of the chart title.
+# ChartTitle
 
-## [Properties](#get-chart-title)
+Represents a chart title object of a chart.
 
-| Property         | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-| `text` | String |Represents the title text of a chart. When a title text is set, the display property will be automaticlly set to top and the chart title will be displayed on top of the chart without overlapping. | Chart.ChartTitle |
-| `visible` | Boolean |A boolean value the represents the visibility of a chart title object. If visible is set to be ture, the chart title will be visible on the chart. |  |
-| `overlay` | Boolean |True if the title overlays the chart. | Chart.ChartTitle.Position |
+## [Properties](#getter-and-setter-examples)
+| Property       | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|overlay|bool|Boolean value representing if the chart title will overlay the chart or not.||
+|text|string|Represents the title text of a chart.||
+|visible|bool|A boolean value the represents the visibility of a chart title object.||
 
 ## Relationships
-The ChartTitle has the following relationships defined:
+| Relationship | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|format|[ChartTitleFormat](charttitleformat.md)|Represents the formatting of a chart title, which includes fill and font formatting. Read-only.||
 
-| Relationships    | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-| `format`          |[ChartTitleFormat](chartTitleFormat.md) object | Represents the formatting of a chart title, which includes fill(interior/background) and font formatting.
-     
 ## Methods
-None.
+None
 
-## API Specification 
 
-### Get Chart Title
+## API Specification
 
-Gets a ChartTitle object.
-
-#### Syntax
-```js
-chartObject.title;
-```
-#### Properties
-| Property         | Type    |Description| 
-|:-----------------|:--------|:----------|
-| `text` | String |Represents the title text of a chart. When a title text is set, the display property will be automaticlly set to top and the chart title will be displayed on top of the chart without overlapping. | 
-| `visible` | Boolean |A boolean value the represents the visibility of a chart title object. If visible is set to be ture, the chart title will be visible on the chart. |  |
-| `overlay` | Boolean |True if the title overlays the chart. | 
-
-#### Returns
-
-[ChartTitle](chartTitle.md) object. 
-
-#### Examples
+#### Getter and Setter Examples
 
 Get the `text` of Chart Title from Chart1.
 
@@ -51,39 +31,12 @@ var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
 var title = chart.title;
 ctx.load(title);
 ctx.executeAsync().then(function () {
-		logComment(title.text);
+		Console.log(title.text);
 });
 ```
 
-[Back](#properties)
+Set the `text` of Chart Title to "My Chart" and Make it show on top of the chart without overlaying.
 
-### Set Chart Title
-
-Set chart title properties including text and visibility.
-
-#### Syntax
-
-```js
-chartObject.title.text= "My Chart"; 
-chartObject.title.visible=true;
-chartObject.title.overlay=true;
-```
-
-#### Properties
-| Property         | Type    |Description| 
-|:-----------------|:--------|:----------|
-| `text` | String |Represents the title text of a chart. When a title text is set, the display property will be automaticlly set to top and the chart title will be displayed on top of the chart without overlapping. | 
-| `visible` | Boolean |A boolean value the represents the visibility of a chart title object. If visible is set to be ture, the chart title will be visible on the chart. |  |
-| `overlay` | Boolean |True if the title overlays the chart. | 
-
-#### Returns
-
-[ChartTitle](chartTitle.md) object. 
-
-
-#### Examples
-
-##### Set the `text` of Chart Title to "My Chart" and Make it show on top of the chart without overlaying.
 ```js
 var ctx = new Excel.ExcelClientContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
@@ -93,7 +46,8 @@ chart.title.visible=true;
 chart.title.overlay=true;
 
 ctx.executeAsync().then(function () {
-		logComment("Char Title Changed");
+		Console.log("Char Title Changed");
 });
 ```
+
 [Back](#properties)

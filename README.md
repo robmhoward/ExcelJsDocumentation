@@ -27,8 +27,8 @@ Also read the following programming notes:
 
 Errors are returned using an error object that consists of a code and a message. The following table provides a list of possible error conditions that can occur. 
 
-|error.code|error.message|
-|---------:|---------:|
+|error.code | error.message |
+|----------:|--------------:|
 |InvalidArgument |The argument is invalid or missing or has an incorrect format.|
 |InvalidRequest  |Cannot process the request.|
 |InvalidReference|This reference is not valid for the current operation.|
@@ -66,7 +66,6 @@ Following sections provide important programming details related to Excel APIs.
 * [Properties and Relations Selection](#properties-and-relations-selection)
 * [Document Binding](#null-input)
 * [Reference Binding](#null-input)
-* [Null-Input](#null-input)
 * [Null-Input](#null-input)
 * [Null-Response](#null-response)
 * [Blank Input and Output](#blank-input-and-output)

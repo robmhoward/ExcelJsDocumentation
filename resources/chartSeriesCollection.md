@@ -1,52 +1,59 @@
-# Chart Series Collection
-A collection of all the ChartSeries objects of a chart. 
+# ChartSeriesCollection
 
-## [Properties](#get-chartseries-collection)
+Represents a collection of chart series.
 
-| Property         | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Returns the number of series in the collection.||
-|`items`| [Chart Series](chartSeries.md) Array | A collection of all the chart series objects.||
+## [Properties](#getter-examples)
+| Property       | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|count|int|Returns the number of series in the collection. Read-only.||
+|items|[ChartSeriesCollection](chartseriescollection.md)|A collection of chartSeries objects. Read-only.||
 
 ## Relationships
-
 None
+
 
 ## Methods
 
-The chart has the following methods defined:
+| Method           | Return Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|[getItemAt(index: number)](#getitematindex-number)|[ChartSeries](chartseries.md)|Retrieves a series based on its position in the collection||
 
-| Method     | Return Type    |Description|Notes  |
-|:-----------------|:--------|:----------|:------|
-|[getItemAt(index: number)](#getitematindex-number)| [ChartSeries](chartSeries.md)     |Gets a ChartSeries object based on its position in the collection.||
+## API Specification
 
-
-## API Specification 
-
-### Get ChartSeries Collection
-
-Get the ChartSeries collection. 
+### getItemAt(index: number)
+Retrieves a series based on its position in the collection
 
 #### Syntax
 ```js
-chartObject.series;	
+chartSeriesCollectionObject.getItemAt(index);
 ```
 
-#### Properties
-
-| Property         | Type    |Description|
-|:-----------------|:--------|:----------|
-|`count`| Number   | Number of objects in the collection.|
-|`items`| [Chart Series](chartSeries.md) Array  | A collection of all the chart objects that are part of the workbook|
-
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
-
-[ChartSeries](chartSeries.md) collection. 
+[ChartSeries](chartseries.md)
 
 #### Examples
 
-##### Getting the names of series in the series collection
+Get the name of the first series in the series collection.
+```js
+var ctx = new Excel.ExcelClientContext();
+var seriesCollection = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").series;
+ctx.load(seriesCollection);
+ctx.executeAsync().then(function () {
+	Console.log(seriesCollection.items[0].name);
+});
+```
+
+
+[Back](#methods)
+
+#### Getter Examples
+Getting the names of series in the series collection.
+
 ```js
 var ctx = new Excel.ExcelClientContext();
 var seriesCollection = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").series;
@@ -59,7 +66,7 @@ ctx.executeAsync().then(function () {
 });
 ```
 
-##### Getting the number of series
+Get the number of chart series in collection.
 
 ```js
 var ctx = new Excel.ExcelClientContext();
@@ -70,37 +77,6 @@ ctx.executeAsync().then(function () {
 });
 
 ```
+
+
 [Back](#properties)
-
-
-### getItemAt(index: number)
-
-Gets a ChartSeries object based on its position in the collection. 
-
-#### Syntax
-```js
-ChartSeriesCollection.getItemAt(index);
-```
-
-#### Parameters
-
-Parameter       | Type  | Description
---------------- | ------ | ------------
- `index`| Number | Required. Index value of the object to be retrieved. Zero-indexed.
-
-#### Returns
-
-[chartSeries](chartSeries.md) object.
-
-#### Examples
-
-##### Getting the name of the first series in the series collection
-```js
-var ctx = new Excel.ExcelClientContext();
-var seriesCollection = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").series;
-ctx.load(seriesCollection);
-ctx.executeAsync().then(function () {
-	Console.log(seriesCollection.items[0].name);
-});
-```
-[Back](#methods)

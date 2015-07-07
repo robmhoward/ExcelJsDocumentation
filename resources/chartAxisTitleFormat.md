@@ -1,15 +1,15 @@
-# Chart Axis Title Format
-The ChartAxisTitleFormat object has the following relationships defined:
+# ChartAxisTitleFormat
+
+Represents the chart axis title formatting.
 
 ## Properties
-None.
+None
 
 ## Relationships
-The ChartAxisTitleFormat has the following relationships defined:
-
-| Relationships    | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-| `font`          |[ChartFont](chartFont.md) object | Represents the font attributes, such as font name, font size, color, etc. of chart axis title object. 
+| Relationship | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|font|[ChartFont](chartfont.md)|Represents the font attributes, such as font name, font size, color, etc. of chart axis title object. Read-only.||
 
 ## Methods
-None.
+None
+

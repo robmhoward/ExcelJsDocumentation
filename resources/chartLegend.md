@@ -1,48 +1,29 @@
-# Chart Legend
-Represents the legend in a chart. Each chart can have only one legend.
+# ChartLegend
 
-## [Properties](#get-chart-legend)
+Represents the legend in a chart.
 
-| Property         | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-| `visible` | Boolean |A boolean value the represents the visibility of a ChartLegend object. If visible is set to be ture, the legend will be visible on the chart. |  |
-| `position` | String |Returns or sets a legend position value that represents the position of the legend on the chart. Possible values are: `Top`,`Bottom`,`Cornor`,`Left`,`Right`,'Custom','Invalid'| Legend.position |
-| `overlay` | Boolean |True if the legend with be overlapping with the chart. | Legend.IncludeInLayout |
-
+## [Properties](#getter-and-setter-examples)
+| Property       | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|overlay|bool|Boolean value for whether the chart legend should overlap with the main body of the chart.||
+|position|string|Represents the position of the legend on the chart. Possible values are: Top, Bottom, Left, Right, Corner, Custom.||
+|visible|bool|A boolean value the represents the visibility of a ChartLegend object.||
 
 ## Relationships
-
-| Relationships    | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-| `format`          |[ChartLegendFormat](chartLegendFormat.md) object | Represents the formatting of a chart legend, which includes fill(interior/background) and font formatting.
-     
+| Relationship | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|format|[ChartLegendFormat](chartlegendformat.md)|Represents the formatting of a chart legend, which includes fill and font formatting. Read-only.||
 
 ## Methods
-None.
+None
 
-## API Specification 
-### Get Chart Legend
 
-Gets a ChartLegend sobject.
+## API Specification
 
-#### Syntax
-```js
-chartObject.legend;
-```
-#### Properties
-| Property         | Type    |Description| 
-|:-----------------|:--------|:----------|
-| `visible` | Boolean |A boolean value the represents the visibility of a ChartLegend object. If visible is set to be ture, the legend will be visible on the chart. |  
-| `position` | String |Returns or sets a Legend Position value that represents the position of the legend on the chart, including `Top`,`Bottom`,`Cornor`,`Left`,`Right`,'Custom','Invalid'| 
-| `overlay` | Boolean |True if the legend with be overlapping with the chart. | 
+#### Getter and Setter Examples
 
-#### Returns
+Get the `position` of Chart Legend from Chart1
 
-[ChartLegend](chartLegend.md) object. 
-
-#### Examples
-
-##### Get the `position` of Chart Legend from Chart1
 ```js
 var ctx = new Excel.ExcelClientContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
@@ -50,38 +31,12 @@ var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
 var legend = chart.legend;
 ctx.load(legend);
 ctx.executeAsync().then(function () {
-		logComment(legend.position);
+		Console.log(legend.position);
 });
 ```
 
-[Back](#properties)
+Set to show legend of Chart1 and make it on top of the chart.
 
-### Set Chart Legend
-
-Set the properties of the legend.
-
-#### Syntax
-
-```js
-chartObject.legend.visible = true;
-chartObject.legend.position = "top"; 
-chartObject.legend.overlay = true;
-```
-
-#### Properties
-| Property         | Type    |Description| 
-|:-----------------|:--------|:----------|
-| `visible` | Boolean |A boolean value the represents the visibility of a ChartLegend object. If visible is set to be ture, the legend will be visible on the chart. |  
-| `position` | String |Returns or sets a legend position value that represents the position of the legend on the chart. Possible options are: including `Top`,`Bottom`,`Cornor`,`Left`,`Right`,'Custom','Invalid'| 
-| `overlay` | Boolean |True if the legend with be overlapping with the chart. | 
-
-#### Returns
-[ChartLegend](chartLegend.md) object. 
-
-
-#### Examples
-
-##### Show Legend of Chart1 and make it on top of the chart.
 ```js
 var ctx = new Excel.ExcelClientContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
@@ -90,7 +45,7 @@ chart.legend.visible = true;
 chart.legend.position = "top"; 
 chart.legend.overlay = false; 
 ctx.executeAsync().then(function () {
-		logComment("Legend Shown ");
+		Console.log("Legend Shown ");
 });
 ``` 
 [Back](#properties)

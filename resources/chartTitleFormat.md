@@ -1,17 +1,16 @@
-# Chart Title Format
-Provides access to the Office Art formatting for chart title.
+# ChartTitleFormat
+
+Provides access to the office art formatting for chart title.
 
 ## Properties
-None.
+None
 
 ## Relationships
-The Chart Title Format has the following relationships defined:
-
-| Relationships    | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-| `fill`          |[Chart Fill](chartFill.md) object | Represents the fill format of an object, which includes interior/background formating information. |
-| `font`          |[ChartFont](chartFont.md) object | Represents the font attributes (font name, font size, color, and so on) for an object. |
-
+| Relationship | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|fill|[ChartFill](chartfill.md)|Represents the fill format of an object, which includes interiorbackground formating information. Read-only.||
+|font|[ChartFont](chartfont.md)|Represents the font attributes (font name, font size, color, etc.) for an object. Read-only.||
 
 ## Methods
-None.
+None
+

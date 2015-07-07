@@ -1,16 +1,16 @@
-# Chart Axis Format
-Provides access to the Office Art formatting for chart Axis.
+# ChartAxisFormat
+
+Encapsulates the format properties for the chart axis.
 
 ## Properties
-None.
+None
 
 ## Relationships
-
-| Relationships    | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-| `line`          |[Chart Line Format](chartLineFormat.md) object | Represents line and border formatting.
-| `font`          |[ChartFont](chartFont.md) object | Represents the font attributes (font name, font size, color, and so on) for a chart axis element.  
-
+| Relationship | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|font|[ChartFont](chartfont.md)|Represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.||
+|line|[ChartLineFormat](chartlineformat.md)|Represents chart line formatting. Read-only.||
 
 ## Methods
-None.
+None
+

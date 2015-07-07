@@ -1,51 +1,53 @@
-# NamedItem Collection
-A collection of all the nameditem objects that are part of the workbook. 
+# NamedItemCollection
 
-## [Properties](#get-nameditem-collection)
+A collection of all the nameditem objects that are part of the workbook.
 
-| Property         | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|nameditems.count|
-|`items`| [Named Item](nameditem.md) Array | A collection of all the nameditem objects that are part of the workbook|[nameditems.item] |
+## [Properties](#getter-examples)
+| Property       | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|items|[NamedItemCollection](nameditemcollection.md)|A collection of namedItem objects. Read-only.||
 
 ## Relationships
-
 None
+
 
 ## Methods
 
-The nameditem collection has the following methods defined:
+| Method           | Return Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|[getItem(name: string)](#getitemname-string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name||
 
-| Method     | Return Type    |Description|Notes  |
-|:-----------------|:--------|:----------|:------|
-|[getItem(name: string)](#getitemname-string)| [Named Item](nameditem.md) object      |Gets a nameditem object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [Named Item](nameditem.md) object     |Gets a nameditem based on its position in the collection.||
+## API Specification
 
-
-## API Specification 
-
-### Get Nameditem Collection
-
-Get properties of the nameditem collection. 
+### getItem(name: string)
+Gets a nameditem object using its name
 
 #### Syntax
 ```js
-nameditemCollection.property;
+namedItemCollectionObject.getItem(name);
 ```
 
-#### Properties
-
-| Property         | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|nameditems.count|
-|`items`| [Named Item](nameditem.md) Array | A collection of all the nameditem objects that are part of the workbook|[nameditems.item] |
-
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|name|string|nameditem name.|
 
 #### Returns
-
-[nameditem](nameditem.md) collection. 
+[NamedItem](nameditem.md)
 
 #### Examples
+
+```js
+var ctx = new Excel.ExcelClientContext();
+var nameditem = ctx.workbook.names.getItem(wSheetName);
+ctx.executeAsync().then(function () {
+		Console.log(nameditem.type);
+});
+```
+
+[Back](#methods)
+
+#### Getter Examples
 
 ```js
 var ctx = new Excel.ExcelClientContext();
@@ -60,7 +62,7 @@ ctx.executeAsync().then(function () {
 });
 ```
 
-##### Getting the number of nameditems
+Get the number of nameditems.
 
 ```js
 var ctx = new Excel.ExcelClientContext();
@@ -71,63 +73,6 @@ ctx.executeAsync().then(function () {
 });
 
 ```
+
+
 [Back](#properties)
-
-### getItem(name: string)
-
-Get nameditem object properties based on name.
-
-#### Syntax
-```js
-nameditemCollection.getItem(name);
-```
-
-#### Parameters
-
-Parameter       | Type  | Description
---------------- | ------ | ------------
- `name`| String | Required. nameditem name. 
-
-#### Returns
-
-[nameditem](nameditem.md) object.
-
-#### Examples
-```js
-var ctx = new Excel.ExcelClientContext();
-var nameditem = ctx.workbook.names.getItem(wSheetName);
-ctx.executeAsync().then(function () {
-		Console.log(nameditem.type);
-});
-```
-[Back](#methods)
-
-
-### getItemAt(index: number)
-
-Get nameditem object properties based on its position in the collection. 
-
-#### Syntax
-```js
-nameditemCollection.getItemAt(index);
-```
-
-#### Parameters
-
-Parameter       | Type  | Description
---------------- | ------ | ------------
- `index`| Number | Required. Index value of the object to be retrieved. Zero-indexed.
-
-#### Returns
-
-[nameditem](nameditem.md) object.
-
-#### Examples
-```js
-var ctx = new Excel.ExcelClientContext();
-var nameditem = ctx.workbook.names.getItemAt(0);
-ctx.executeAsync().then(function () {
-		Console.log(nameditem.name);
-});
-```
-[Back](#methods)

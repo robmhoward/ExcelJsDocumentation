@@ -1,45 +1,26 @@
-# Chart Gridlines
+# ChartGridlines
+
 Represents major or minor gridlines on a chart axis.
 
-## [Properties](#get-chart-gridlines)
-
-| Property         | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-|visible| Boolean | Returns or sets a boolean. True if the axis has gridlines. ||
+## [Properties](#getter-and-setter-examples)
+| Property       | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|visible|bool|Boolean value representing if the axis gridlines are visible or not.||
 
 ## Relationships
-
-| Relationships    | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-| `format`          |[ChartGridlinesFormat](chartGridlinesFormat.md) object | Represents the formatting of chart gridlines.
-          
+| Relationship | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|format|[ChartGridlinesFormat](chartgridlinesformat.md)|Represents the formatting of chart gridlines. Read-only.||
 
 ## Methods
-None.
+None
 
-## API Specification 
-### Get Chart Gridlines
 
-Gets a ChartGridlines object.
+## API Specification
 
-#### Syntax
-Use major gridlines on value axis as an example here.
+#### Getter and Setter Examples
 
-```js
-chartObject.axes.valueaxis.majorGridlines;
-```
-#### Properties
-| Property         | Type    |Description|
-|:-----------------|:--------|:----------|
-|visible| Boolean | Returns true if the axis has gridlines. |
-
-#### Returns
-
-[ChartGridlines](chartGridlines.md) object. 
-
-#### Examples
-
-##### Get the `visible` of Major Gridlines on value axis of Chart1
+Get the `visible` of Major Gridlines on value axis of Chart1
 ```js
 var ctx = new Excel.ExcelClientContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
@@ -47,33 +28,11 @@ var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
 var majGridlines = chart.axes.valueaxis.majorGridlines;
 ctx.load(majGridlines);
 ctx.executeAsync().then(function () {
-		logComment(majGridlines.visible);
+		Console.log(majGridlines.visible);
 });
 ```
 
-[Back](#properties)
-
-### Set Chart Gridlines
-
-Show Gridlines on an axis. 
-
-#### Syntax
-Use major gridlines on value axis as an example here.
-```js
-chartObject.axes.valueaxis.majorgridlines.visible = true;
-```
-
-#### Properties
-| Property         | Type    |Description|
-|:-----------------|:--------|:----------|
-|visible| Boolean | True if the axis has gridlines. |
-
-#### Returns
-[ChartGridlines](chartGridlines.md) object. 
-
-#### Examples
-
-##### Show Major Gridlines on ValueAxis of Chart1
+Set to show major gridlines on valueAxis of Chart1
 
 ```js
 var ctx = new Excel.ExcelClientContext();
@@ -82,7 +41,8 @@ var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
 chart.axes.valueaxis.majorgridlines.visible = true;
 
 ctx.executeAsync().then(function () {
-		logComment("Axis Gridlines Added ");
+		Console.log("Axis Gridlines Added ");
 });
 ```
+
 [Back](#properties)

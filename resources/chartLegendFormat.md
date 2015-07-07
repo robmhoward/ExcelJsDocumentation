@@ -1,15 +1,16 @@
-# Chart Legend Format
-Provides access to the Office Art formatting for chart Legend.
+# ChartLegendFormat
+
+Encapsulates the format properties of a chart legend.
 
 ## Properties
-None.
+None
 
 ## Relationships
-
-| Relationships    | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-| `fill`          |[Chart Fill](chartFill.md) object | Represents the fill format of an object, which includes interior/background formating information. 
-| `font`          |[ChartFont](chartFont.md) object | Represents the font attributes such as font name, font size, color, etc. of a chart legend.
+| Relationship | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|fill|[ChartFill](chartfill.md)|Represents the fill format of an object, which includes interiorbackground formating information. Read-only.||
+|font|[ChartFont](chartfont.md)|Represents the font attributes such as font name, font size, color, etc. of a chart legend. Read-only.||
 
 ## Methods
-None.
+None
+

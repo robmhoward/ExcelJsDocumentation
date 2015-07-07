@@ -1,14 +1,15 @@
-# Chart Gridlines Format
-Provides access to the Office Art formatting for chart gridlines.
+# ChartGridlinesFormat
+
+Encapsulates the format properties for chart gridlines.
 
 ## Properties
-None.
+None
 
 ## Relationships
-
-| Relationships    | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-| `line`          |[Chart Line Format](chartLineFormat.md) object | Represents line and border formatting.
+| Relationship | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|line|[ChartLineFormat](chartlineformat.md)|Represents chart line formatting. Read-only.||
 
 ## Methods
-None.
+None
+

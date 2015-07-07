@@ -1,80 +1,59 @@
 # NamedItem
-Represents a defined name for a range of cells or value. Names can be primitive named objects (as seen in the type below), range object, reference to a range.
-This object can be used to obtain Range object associated with names.
 
-## [Properties](#get-named-item)
+Represents a defined name for a range of cells or value. Names can be primitive named objects (as seen in the type below), range object, reference to a range. This object can be used to obtain range object associated with names.
 
-| Property         | Type    |Description|Notes  |
-|:-----------------|:--------|:----------|:-----|
-| `name`  | String|The name of the object.| Name.Name|
-| `type` | String| Indicates what type of reference is associated with the name. Possible values are: `Range`, `String`, `Integer`, `Double`, `Boolean`. | Derived property |
-| `value`| String |Represents the formula that the name is defined to refer to. e.g., `=Sheet14!$B$2:$H$12`, `=4.75`, etc. | Name.Value|
-| `visible` | Boolean |Determines whether the object is visible or not. | Name.Visible |
+## [Properties](#getter-examples)
+| Property       | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|name|string|The name of the object. Read-only.||
+|type|string|Indicates what type of reference is associated with the name. Read-only. Possible values are: String, Integer, Double, Boolean, Range.||
+|value|object|Represents the formula that the name is defined to refer to. E.g. =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.||
+|visible|bool|Specifies whether the object is visible or not.||
 
 ## Relationships
 None
-     
+
+
 ## Methods
 
-The Worksheet has the following methods defined:
+| Method           | Return Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|[getRange()](#getrange)|[Range](range.md)|Returns the range object that is associated with the name. Throws an exception if the named item's type is not a range.||
 
-| Method     | Return Type    |Description|Notes  |
-|:-----------------|:--------|:----------|:------|
-|[getRange()](#getrange)| [Range](range.md) object |Returns the Range object that is associated with the name. Returns `null` if the name is not of the type `Range`.| |
-
-## API Specification 
+## API Specification
 
 ### getRange()
-
-Returns the Range object that is associated with the name. `null` if the name is not of the type `Range`. 
-
-**Note: This API currently supports only the Workbook scoped items.**
+Returns the range object that is associated with the name. Throws an exception if the named item's type is not a range.
 
 #### Syntax
 ```js
-namedItemObject.getRange(); 
+namedItemObject.getRange();
 ```
 
 #### Parameters
 None
 
 #### Returns
-
-[Range](range.md) object.
+[Range](range.md)
 
 #### Examples
+
+Returns the Range object that is associated with the name. `null` if the name is not of the type `Range`. Note: This API currently supports only the Workbook scoped items.**
+
 ```js
 var ctx = new Excel.ExcelClientContext();
 var names = ctx.workbook.names;
-var range = names.getItem('MyRange').getRange();
 ctx.load(range);
 ctx.executeAsync().then(function () {
 		Console.log(range.address);
 });
 ```
+
+
 [Back](#methods)
 
-### Get Named Item
+#### Getter Examples
 
-Get a Named object. 
-
-** Note: This API currently supports only the Workbook scoped items. **
-#### Syntax
-```js
-namesCollection.getItem(name);
-```
-
-#### Parameters
-
-Parameter       | Type  | Description
---------------- | ------ | ------------
- `name`| String | Required. Name of the item.
-
-#### Returns
-
-[Named-Item](nameditem.md) object.
-
-#### Examples
 ```js
 var ctx = new Excel.ExcelClientContext();
 var names = ctx.workbook.names;
@@ -84,4 +63,5 @@ ctx.executeAsync().then(function () {
 		Console.log(namedItem.type);
 });
 ```
+
 [Back](#properties)

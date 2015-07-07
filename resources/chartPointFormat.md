@@ -1,15 +1,15 @@
-# Chart Point Format
-Provides access to the Office Art formatting for chart points.
+# ChartPointFormat
+
+Represents formatting object for chart points.
 
 ## Properties
-None.
+None
 
 ## Relationships
-| Relationships    | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-| `fill`          |[Chart Fill](chartFill.md) object | Represents the fill format of an object, which includes interior/background formating information. 
-| `line`          |[Chart Line Format](chartLineFormat.md) object | Represents line and border formatting.
-
+| Relationship | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|fill|[ChartFill](chartfill.md)|Represents the fill format of a chart, which includes interiorbackground formating information. Read-only.||
 
 ## Methods
-None.
+None
+

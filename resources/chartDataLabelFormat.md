@@ -1,17 +1,16 @@
-# Chart Data Label Format
+# ChartDataLabelFormat
 
-Provides access to the Office Art formatting of the chart data label.
+Encapsulates the format properties for the chart data labels.
 
 ## Properties
-None.
+None
 
 ## Relationships
-
-| Relationships    | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-| `fill`          |[Chart Fill](chartFill.md) object | Represents the fill format of the chart data label, which includes interior/background formating information. 
-| `font`          |[ChartFont](chartFont.md) object | Represents the font attributes (font name, font size, color, and so on) for a chart data label. 
-
+| Relationship | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|fill|[ChartFill](chartfill.md)|Represents the fill format of the current chart data label. Read-only.||
+|font|[ChartFont](chartfont.md)|Represents the font attributes (font name, font size, color, etc.) for a chart data label. Read-only.||
 
 ## Methods
-None.
+None
+

@@ -1,15 +1,17 @@
-# Chart Point
+# ChartPoint
+
 Represents a point of a series in a chart.
 
 ## Properties
-None.
+| Property       | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|value|object|Returns the value of a chart point. Read-only.||
 
 ## Relationships
-The ChartPoint has the following relationships defined:
-
-| Relationships    | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-| `format`          |[Chart Point Format](chartPointFormat.md) object | Represents the formatting of a chart point, which includes fill (interior/background) and line formatting.
+| Relationship | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|format|[ChartPointFormat](chartpointformat.md)|Encapsulates the format properties chart point. Read-only.||
 
 ## Methods
-None.
+None
+

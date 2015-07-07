@@ -1,18 +1,17 @@
-# Chart Axes
-Represents a collection of all Axis objects in a chart including categoryAxis, valueAxis, and seriesAxis.
+# ChartAxes
+
+Represents the chart axes.
 
 ## Properties
-None.
-
+None
 
 ## Relationships
-
-| Relationships    | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-| `categoryAxis` |[ChartAxis](chartAxis.md) object | Represents the category axis in a chart. | 
-| `valueAxis` | [ChartAxis](chartAxis.md) object   | Represents the value axis in a chart.  | |
-| `seriesAxis` | [ChartAxis](chartAxis.md) object   |Represents the series axis in a 3D chart. | |
-     
+| Relationship | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|categoryAxis|[ChartAxis](chartaxis.md)|Represents the category axis in a chart. Read-only.||
+|seriesAxis|[ChartAxis](chartaxis.md)|Represents the series axis of a 3-dimensional chart. Read-only.||
+|valueAxis|[ChartAxis](chartaxis.md)|Represents the value axis in an axis. Read-only.||
 
 ## Methods
 None
+

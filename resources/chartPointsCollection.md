@@ -1,50 +1,57 @@
-# Chart Point Collection
+# ChartPointsCollection
 
-A collection of all the ChartPoint objects of a chart. 
+A collection of all the chart points within a series inside a chart.
 
-## [Properties](#get-chartpoint-collection)
-
-| Property         | Type    |Description|Notes |
-|:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Returns the number of chart points in the collection.||
-|`items`| [Chart Point](chartPoint.md) Array | A collection of all the chart objects that are part of the workbook.| |
+## [Properties](#getter-examples)
+| Property       | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|count|int|Returns the number of chart points in the collection. Read-only.||
+|items|[ChartPointsCollection](chartpointscollection.md)|A collection of chartPoints objects. Read-only.||
 
 ## Relationships
-
 None
+
 
 ## Methods
 
-| Method     | Return Type    |Description|Notes  |
-|:-----------------|:--------|:----------|:------|
-|[getItemAt(index: number)](#getitematindex-number)| [ChartPoint](chartPoint.md)     |Gets a ChartPoint object based on its position in the collection.||
+| Method           | Return Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|[getItemAt(index: number)](#getitematindex-number)|[ChartPoint](chartpoint.md)|Retrieve a point based on its position within the series.||
 
+## API Specification
 
-## API Specification 
-
-### Get ChartPoint Collection
-
-Get the ChartPoint Collection. 
+### getItemAt(index: number)
+Retrieve a point based on its position within the series.
 
 #### Syntax
 ```js
-chartObject.points;	
+chartPointsCollectionObject.getItemAt(index);
 ```
 
-#### Properties
-
-| Property         | Type    |Description|
-|:-----------------|:--------|:----------|
-|`count`| Number   | Number of objects in the collection.|
-|`items`| [Chart Point](chartPoint.md) array | A collection of all the chart points objects.|
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
-
-[ChartPoint](chartPoint.md) collection. 
+[ChartPoint](chartpoint.md)
 
 #### Examples
+Set the border color for the first points in the points collection
 
-##### Getting the names of points in the points collection
+```js
+var ctx = new Excel.ExcelClientContext();
+var point = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").series.getItemAt(0).points;
+points.getItemAt(0).format.fill.setSolidColor("8FBC8F");
+ctx.executeAsync().then(function () {
+	Console.log("Point Border Color Changed");
+});
+```
+[Back](#methods)
+
+#### Getter Examples
+
+Get the names of points in the points collection
 ```js
 var ctx = new Excel.ExcelClientContext();
 var pointsCollection = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").points;
@@ -54,7 +61,7 @@ ctx.executeAsync().then(function () {
 });
 ```
 
-##### Getting the number of points
+Get the number of points
 
 ```js
 var ctx = new Excel.ExcelClientContext();
@@ -65,37 +72,5 @@ ctx.executeAsync().then(function () {
 });
 
 ```
+
 [Back](#properties)
-
-
-### getItemAt(index: number)
-
-Gets a collection of all the ChartPoint objects in a chart.
-
-#### Syntax
-```js
-ChartPointsCollection.getItemAt(index);
-```
-
-#### Parameters
-
-Parameter       | Type  | Description
---------------- | ------ | ------------
- `index`| Number | Required. Index value of the object to be retrieved. Zero-indexed.
-
-#### Returns
-
-[ChartPoint](chartPoint.md) object.
-
-#### Examples
-
-##### set the border color for the first points in the points collection
-```js
-var ctx = new Excel.ExcelClientContext();
-var point = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").series.getItemAt(0).points;
-points.getItemAt(0).format.fill.setSolidColor("8FBC8F");
-ctx.executeAsync().then(function () {
-	Console.log("Point Border Color Changed");
-});
-```
-[Back](#methods)
