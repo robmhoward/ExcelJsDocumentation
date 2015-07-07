@@ -17,7 +17,6 @@ None
 | Method           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[add(type: string, sourceData: string, seriesBy: string)](#addtype-string-sourcedata-string-seriesby-string)|[Chart](chart.md)|Creates a new chart.||
-|[getItem(id: string)](#getitemid-string)|[Chart](chart.md)|Gets a chart using its ID.||
 |[getItem(name: string)](#getitemname-string)|[Chart](chart.md)|Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.||
 |[getItemAt(index: number)](#getitematindex-number)|[Chart](chart.md)|Gets a chart based on its position in the collection.||
 
@@ -54,37 +53,6 @@ ctx.executeAsync().then(function () {
 		Console.log("New Chart Added");
 });
 ```
-
-
-[Back](#methods)
-
-### getItem(id: string)
-Gets a chart using its ID.
-
-#### Syntax
-```js
-chartCollectionObject.getItem(id);
-```
-
-#### Parameters
-| Parameter       | Type    |Description|
-|:---------------|:--------|:----------|
-|id|string|Id of the chart to be retrieved.|
-
-#### Returns
-[Chart](chart.md)
-
-#### Examples
-
-```js
-var ctx = new Excel.ExcelClientContext();
-var chartId = 'SamplChartId';
-var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem(chartId);
-ctx.executeAsync().then(function () {
-		Console.log(chart.height);
-});
-```
-
 
 
 [Back](#methods)
