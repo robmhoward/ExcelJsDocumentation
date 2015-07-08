@@ -99,6 +99,7 @@ ctx.executeAsync()
 ```
 
 ### executeAsync() 
+Promise Object |Submits the request queue to Excel and returns a promise object, which can be used for chaining further actions.
 
 #### Syntax
 ```js
