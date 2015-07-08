@@ -39,7 +39,7 @@ None
 #### Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var selectedRange = ctx.workbook.getSelectedRange();
 ctx.executeAsync().then(function () {
 		Console.log(selectedRange.address);

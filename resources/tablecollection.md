@@ -42,7 +42,7 @@ tableCollectionObject.add(address, hasHeaders);
 #### Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var table = ctx.workbook.tables.add('Sheet1!A1:E7', true);
 ctx.load(table);
 ctx.executeAsync().then(function () {
@@ -72,7 +72,7 @@ tableCollectionObject.getItem(id);
 #### Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var tableName = 'Table1';
 var table = ctx.workbook.tables.getItem(tableName);
 ctx.executeAsync().then(function () {
@@ -102,7 +102,7 @@ tableCollectionObject.getItemAt(index);
 #### Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var table = ctx.workbook.tables.getItemAt(0);
 ctx.executeAsync().then(function () {
 		Console.log(table.name);
@@ -115,7 +115,7 @@ ctx.executeAsync().then(function () {
 #### Getter Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var tables = ctx.workbook.tables;
 ctx.load(tables);
 ctx.executeAsync().then(function () {
@@ -130,7 +130,7 @@ ctx.executeAsync().then(function () {
 Get the number of tables
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var tables = ctx.workbook.tables;
 ctx.load(tables);
 ctx.executeAsync().then(function () {

@@ -11,7 +11,7 @@
 	* [TableColumn Collection](resources/tablecolumncollection.md): A collection of all the columns in a Table. 
 	* [TableRow Collection](resources/tablerowcollection.md): A collection of all the rows in a Table. 
 * [Chart](resources/chart.md): Represents a chart object in a workbook, which is a visual representation of underlying data.   
-	* [Chart Collection](resources/chartcollection.md): A collection of charts in a workbook or a worksheet.    
+	* [Chart Collection](resources/chartcollection.md): A collection of charts in a workbook or a worksheet.	
 * [NamedItem](resources/nameditem.md): Represents a defined name for a range of cells or a value. Names can be primitive named objects (as seen in the type below), range object, etc.
 	* [NamedItem Collection](resources/nameditemcollection.md): a collection of named items of a workbook.
 * [Binding](resources/binding.md): An abstract class that represents a binding to a section of the workbook.
@@ -23,46 +23,13 @@ Also read the following programming notes:
 * [Error Messages](#error-messages): Provide important programming details related to Excel APIs.
 * [Programming Notes](#programming-notes): Provide important programming details related to Excel APIs.
 
-## Error Messages
-
-Errors are returned using an error object that consists of a code and a message. The following table provides a list of possible error conditions that can occur. 
-
-|error.code | error.message |
-|----------:|--------------:|
-|InvalidArgument |The argument is invalid or missing or has an incorrect format.|
-|InvalidRequest  |Cannot process the request.|
-|InvalidReference|This reference is not valid for the current operation.|
-|InvalidBinding  |This object binding is no longer valid due to previous updates.|
-|InvalidSelection|The current selection is invalid for this operation.|
-|Unauthenticated |Required authentication information is either missing or invalid.|
-|AccessDenied    |You cannot perform the requested operation.|
-|ItemNotFound    |The requested resource doesn't exist.|
-|InvalidMethod   | The method in the request is not allowed on the resource. |
-|EditConflict    |Request could not be processed because of conflict.|
-|ActivityLimitReached|Activity limit has been reached.|
-|GeneralException|There was an internal error while processing the request.|
-|NotImplemented  |The requested feature isn't implemented.|
-|ServiceNotAvailable|The service is unavailable.|
-
-#### Examples
-
-```js
-ctx.executeAsync().then(
-function () {
-	Console.log("...");
-    },
-    function (error) {
-	   some.log("ErrorCode =" + error.code); //"InvalidArgument"
-	   some.log("ErrorMessage =" + error.message); //"The argument is invalid or missing or has an incorrect format."
-	});
-
-```
 [top](#excel-javascript-apis)
 
 ## Programming Notes
 
 Following sections provide important programming details related to Excel APIs.
 
+* [The Basics](#the-basics)
 * [Properties and Relations Selection](#properties-and-relations-selection)
 * [Document Binding](#null-input)
 * [Reference Binding](#null-input)
@@ -75,6 +42,131 @@ Following sections provide important programming details related to Excel APIs.
 * [Throttling](#throttling)
 
 [top](#excel-javascript-apis)
+
+### The Basics
+
+This section introduces three key concepts to help get started with the Excel API. Namely, RequestContext, executeAsync and load statements.  
+
+#### RequestContext()
+The RequestContext object facilitates requests to the Excel application. Since the Office add-in and the Excel application run in two different processes, request context is required to get access to Excel and related objects such as worksheets, tables, etc. from the add-in. 
+
+```js
+var ctx = new Excel.RequestContext();
+```
+#### executeAsync()
+
+The Excel JavaScript objects created in the add-ins are local proxy objects. Any method invocation or setting of properties queues commands in JavaScript, but does not submit them until executeAsync() is called. executeAsync submits the request queue to Excel and  returns a promise object, which can be used for chaining further actions. 
+
+##### Example
+
+The following example shows how to write values from an array to a range. First RequestContext() is created to get access to the workbook. Then a worksheet is added. Range A1:B2 on the sheet is retrieved afterwards. Finally we assign the values stored in the array to this range. All these commands are queued and will run when ctx.executeAsync() is called.  executeAsync() returns a promise which can be used to chain it with other operations.
+
+```js
+	var ctx = new Excel.RequestContext();
+	var sheet = ctx.workbook.worksheets.add();
+	var values = [
+				 ["Type", "Estimate"],
+				 ["Transportation", 1670]
+				 ];
+	var range = sheet.getRange("A1:B2");
+	range.values = values;
+
+	//statements queued above will not be executed until the executeAsync() is called. 
+	ctx.executeAsync()
+		.then(function () {   			
+			console.log("Done");
+		 })
+		.catch(function(error) {
+			console. error(JSON.stringify(error));
+		});
+```
+
+#### load()
+Load method is used to fill in the Excel proxy objects created in the add-in JavaScript layer. When trying to retrieve an object, say, a worksheet, a local proxy object is created first in the JavaScript layer. Such an object can be used to queue up setting of its properties and invoking methods. However, for reading object properties or relations, the load() method and executeAsync() needs to be invoked first. Load method takes in the parameters and relations that needs to be loaded when the executeAsync is called. 
+
+##### Syntax
+```js
+ctx.load(object, "property1, property2, relationship1/property3");
+```
+or
+
+```js
+object.load("property1, property2, property3, relationship/property1");
+```
+
+##### Example
+The following example shows how to read how to copy the values from Range A1:A2 to B1:B2.
+
+```js
+var ctx = new Excel.RequestContext();
+var range = ctx.workbook.worksheets.getActiveWorksheet().getRange("A1:A2");
+range.load ("address, values"); 
+//or ctx.load(range, “address, values”);
+
+ctx.executeAsync()
+	.then(function () {
+	var myvalues=range.values;
+	ctx.workbook.worksheets. getActiveWorksheet().getRange("B1:B2").values= myvalues;
+	ctx.executeAsync()
+  		.then(function () {
+			console.log(range.address);
+			console.log(range.values);
+		})
+		.catch(function(error) {
+			console. error(JSON.stringify(error));
+		})
+});
+```
+
+##### Example
+The following example loads the name property of worksheet and names of tables that are part of the worksheet and their associated column names. It prints the worksheet name, table name and column names after executeAsync all. 
+
+```js
+
+var ctx = new Excel.RequestContext();
+	var worksheets = ctx.workbook.worksheets;
+	worksheets.load([name, items, tables\name, tables\column\name]);
+	ctx.executeAsync()
+		.then(function () {
+			for (var i = 0; i < worksheets.items.length; i++) {
+				for (var j = 0; j < worksheets.items[i].tables.length ; j++) {
+					for (var k = 0; k < worksheets.items[i].tables.items[j].columns.count; k++) {
+						console.log(worksheets.items[i].name + worksheets.items[i].tables.items[j].name + worksheets.items[i].talbes.items[j].columns.items[k].name);
+					}
+				}
+			}
+		})
+		.then(function () {
+			console.log("Done");
+		})
+		.catch(function (error) {
+		console.error(JSON.stringify(error));
+		});
+```
+
+Following example uses expand to load the format relationship of the range.
+
+```js
+var ctx = new Excel.RequestContext();
+var range = ctx.workbook.worksheets.getActiveWorksheet().getRange("A1:A2");
+range.load(expand: "format") 
+ctx.executeAsync()
+	.then(function () {
+			console.log(range.format.wrapText);
+	.catch(function(error) {
+			console. error(JSON.stringify(error));
+		})
+});
+
+```
+
+#### Key Takeaways
+1.	Getting a RequestContext is the first step to interact with Excel.
+2.	All JavaScript objects are local proxy objects.  Any method invocation or setting of properties queues commands in JavaScript, but does not submit them until executeAsync() is called. 
+3.	Load is a special type of command for retrieval of properties. Properties can only be accesed after invoking executeAsync(). 
+4.	For performance reasons, avoid loading objects without specifying individual properties that will be used.
+
+[top](#programming-notes)
 
 ### Properties and Relations Selection 
 
@@ -91,8 +183,12 @@ Following sections provide important programming details related to Excel APIs.
 	* Provide an array of property name strings
 
 ```js	
-context.load (<object-var>, select: []);
-context.load (<object-var>, select: "comma separated list of properties");
+context.load (<var1>,<relation1/var2>);
+object.load  (<var1>,<relation1/var2>);
+
+// Pass the parameter as an array.
+context.load (["var1", "relation1/var2"]);
+object.load (["var1", "relation1/var2"]);
 ```
 
 #### Examples
@@ -105,7 +201,7 @@ var myRange = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 
 //load statement below loads the address, values, numberFormat properties of the Range and then expands on the format, format/background, entireRow relations
  
-ctx.load (myRange, select: ["address", "values", "numberFormat", format, format/background, entireRow ]);
+myRange.load (["address", "values", "numberFormat", "format", "format/background", "entireRow"]);
 
 ctx.executeAsync().then(function () {
 		console.log (myRange.address); //ok
@@ -119,17 +215,15 @@ ctx.executeAsync().then(function () {
 
 //load statement below loads all the properties of the Range and then expands on the format, format/background, entireRow relations. If the "*" is left out of the load, none of the Range’s direct properties will be included in the load statement.
  
-ctx.load (myRange, select: ["*", "format", "format/background", "entireRow" ]);
+ctx.load (myRange, select: ["address", "format", "format/background", "entireRow" ]);
 
 ctx.executeAsync().then(function () {
 		console.log (myRange.address); //ok
-		console.log (myRange.cellCount); //ok
 		console.log (myRange.format.wrapText); //ok
 		console.log (myRange.format.background.color); //ok
 		console.log (myRange.format.font.color); //not-ok
 		console.log (myRange.entireRow.address); //ok
 		console.log (myRange.entireColumn.address); //not-ok
-
 ```
 
 [Back](#programming-notes)
@@ -312,12 +406,49 @@ API requests while the throttle is in effect will result in below error conditio
 ctx.executeAsync().then(
 function () {
 	Console.log("...");
-    },
-    function (error) {
+	},
+	function (error) {
 	   some.log("ErrorCode =" + error.code); //"ActivityLimitReached"
 	   some.log("ErrorMessage =" + error.message); //"Activity limit has been reached."
 	});
 ```
 [Back](#programming-notes)
 
+## Error Messages
+
+Errors are returned using an error object that consists of a code and a message. The following table provides a list of possible error conditions that can occur. 
+
+|error.code | error.message |
+|----------:|--------------:|
+|InvalidArgument |The argument is invalid or missing or has an incorrect format.|
+|InvalidRequest  |Cannot process the request.|
+|InvalidReference|This reference is not valid for the current operation.|
+|InvalidBinding  |This object binding is no longer valid due to previous updates.|
+|InvalidSelection|The current selection is invalid for this operation.|
+|Unauthenticated |Required authentication information is either missing or invalid.|
+|AccessDenied	|You cannot perform the requested operation.|
+|ItemNotFound	|The requested resource doesn't exist.|
+|InvalidMethod   | The method in the request is not allowed on the resource. |
+|EditConflict	|Request could not be processed because of conflict.|
+|ActivityLimitReached|Activity limit has been reached.|
+|GeneralException|There was an internal error while processing the request.|
+|NotImplemented  |The requested feature isn't implemented.|
+|ServiceNotAvailable|The service is unavailable.|
+
+
+
+#### Examples
+
+```js
+ctx.executeAsync().then(
+function () {
+	Console.log("...");
+	},
+	function (error) {
+	   some.log("ErrorCode =" + error.code); //"InvalidArgument"
+	   some.log("ErrorMessage =" + error.message); //"The argument is invalid or missing or has an incorrect format."
+	});
+```
+
 [top](#excel-javascript-apis)
+

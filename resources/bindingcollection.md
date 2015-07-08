@@ -40,7 +40,7 @@ bindingCollectionObject.getItem(id);
 #### Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var binding = ctx.workbook.bindings.getItem("sampleBindingId");
 ctx.executeAsync().then(function () {
 		Console.log(binding.type);
@@ -69,7 +69,7 @@ bindingCollectionObject.getItemAt(index);
 
 #### Examples
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var lastPosition = ctx.workbook.bindings.count - 1;
 var binding = ctx.workbook.bindings.getItemAt(lastPosition);
 ctx.executeAsync().then(function () {
@@ -83,7 +83,7 @@ ctx.executeAsync().then(function () {
 #### Getter Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var bindings = ctx.workbook.bindings;
 ctx.load(bindings);
 ctx.executeAsync().then(function () {
@@ -97,7 +97,7 @@ ctx.executeAsync().then(function () {
 Get the number of bindings
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var bindings = ctx.workbook.bindings;
 ctx.load(bindings);
 ctx.executeAsync().then(function () {

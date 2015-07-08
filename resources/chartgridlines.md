@@ -22,7 +22,7 @@ None
 
 Get the `visible` of Major Gridlines on value axis of Chart1
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 var majGridlines = chart.axes.valueaxis.majorGridlines;
@@ -35,7 +35,7 @@ ctx.executeAsync().then(function () {
 Set to show major gridlines on valueAxis of Chart1
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 chart.axes.valueaxis.majorgridlines.visible = true;

@@ -25,7 +25,7 @@ None
 Get the `text` of Chart Title from Chart1.
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 var title = chart.title;
@@ -38,7 +38,7 @@ ctx.executeAsync().then(function () {
 Set the `text` of Chart Title to "My Chart" and Make it show on top of the chart without overlaying.
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 chart.title.text= "My Chart"; 

@@ -44,7 +44,7 @@ void
 
 ```js
 var tableName = 'Table1';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(2);
 column.delete();
 ctx.executeAsync();
@@ -71,7 +71,7 @@ None
 
 ```js
 var tableName = 'Table1';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
 var dataBodyRange = column.getDataBodyRange();
 ctx.load(dataBodyRange);
@@ -101,7 +101,7 @@ None
 
 ```js
 var tableName = 'Table1';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
 var headerRowRange = columns.getHeaderRowRange();
 ctx.load(headerRowRange);
@@ -130,7 +130,7 @@ None
 
 ```js
 var tableName = 'Table1';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
 var columnRange = columns.getRange();
 ctx.load(range);
@@ -160,7 +160,7 @@ None
 
 ```js
 var tableName = 'Table1';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
 var totalRowRange = columns.getTotalRowRange();
 ctx.load(totalRowRange);
@@ -176,7 +176,7 @@ ctx.executeAsync().then(function () {
 
 ```js
 var tableName = 'Table1';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItem(0);
 ctx.load(column);
 ctx.executeAsync().then(function () {
@@ -185,7 +185,7 @@ ctx.executeAsync().then(function () {
 ```
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var tables = ctx.workbook.tables;
 var newValues = [["New"], ["Values"], ["For"], ["New"], ["Column"]];
 var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(2);

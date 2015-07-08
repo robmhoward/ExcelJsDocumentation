@@ -37,7 +37,7 @@ void
 
 #### Examples
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 ctx.workbook.application.calculate('Full');
 ctx.executeAsync();
 ```
@@ -45,7 +45,7 @@ ctx.executeAsync();
 
 #### Getter Examples
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var application = ctx.workbook.application;
 ctx.load(application);
 ctx.executeAsync().then(function() {

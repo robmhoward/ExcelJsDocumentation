@@ -23,7 +23,7 @@ None
 Get the `text` of Chart Axis Title from the value axis of Chart1.
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 var title = chart.axes.valueaxis.title;
@@ -34,7 +34,7 @@ ctx.executeAsync().then(function () {
 
 Add "Values" as the title for the value Axis
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 chart.axes.valueaxis.title.text = "Values";

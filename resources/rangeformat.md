@@ -29,7 +29,7 @@ Below example selects all of the Range's format properties.
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "F:G";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 ctx.load(range, {expand: "fill, borders, font"} );

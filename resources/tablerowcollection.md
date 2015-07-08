@@ -41,7 +41,7 @@ tableRowCollectionObject.add(index, values);
 #### Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var tables = ctx.workbook.tables;
 var values = [["Sample", "Values", "For", "New", "Row"]];
 var row = tables.getItem("Table1").rows.add(null, values);
@@ -72,7 +72,7 @@ tableRowCollectionObject.getItemAt(index);
 #### Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var tablerow = ctx.workbook.tables.getItem('Table1').rows.getItemAt(0);
 ctx.load(tablerow);
 ctx.executeAsync().then(function () {
@@ -85,7 +85,7 @@ ctx.executeAsync().then(function () {
 #### Getter Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var tablerows = ctx.workbook.tables.getItem('Table1').rows;
 ctx.load(tablerows);
 ctx.executeAsync().then(function () {

@@ -27,7 +27,7 @@ None
 #### Getter and Setter Examples
 Get the `maximum` of Chart Axis from Chart1
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 var axis = chart.axes.valueaxis;
@@ -40,7 +40,7 @@ ctx.executeAsync().then(function () {
 Set the  `maximum`,  `minimum`,  `majorunit`, `minorunit` of valueaxis. 
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 chart.axes.valueaxis.maximum = 5;

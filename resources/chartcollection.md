@@ -47,7 +47,7 @@ Add a chart of `chartType` "ColumnClustered" on worksheet "Charts" with `sourceD
 ```js
 var sheetName = "Sheet1";
 var sourceData = sheetName + "!" + "A1:B4";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem(sheetName).charts.add("ColumnClustered", sourceData, "auto");
 ctx.executeAsync().then(function () {
 		Console.log("New Chart Added");
@@ -76,7 +76,7 @@ chartCollectionObject.getItem(name);
 #### Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var chartname = 'Chart1';
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem(chartname);
 ctx.executeAsync().then(function () {
@@ -106,7 +106,7 @@ chartCollectionObject.getItemAt(index);
 #### Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var lastPosition = ctx.workbook.worksheets.getItem("Sheet1").charts.count - 1;
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItemAt(lastPosition);
 ctx.executeAsync().then(function () {
@@ -120,7 +120,7 @@ ctx.executeAsync().then(function () {
 #### Getter Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var charts = ctx.workbook.worksheets.getItem("Sheet1").charts;
 ctx.load(charts);
 ctx.executeAsync().then(function () {
@@ -135,7 +135,7 @@ ctx.executeAsync().then(function () {
 Get the number of charts
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var charts = ctx.workbook.worksheets.getItem("Sheet1").charts;
 ctx.load(charts);
 ctx.executeAsync().then(function () {
