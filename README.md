@@ -17,11 +17,12 @@
 * [Binding](resources/binding.md): An abstract class that represents a binding to a section of the workbook.
 	* [Binding Collection](resources/bindingcollection.md):A collection of all the Binding objects that are part of the workbook. 
 * [Reference Collection](resources/referencecollection.md): Reference collection allows add-ins to add and remove temporary references on range.
+* [Request Context](resources/requestcontext.md): The RequestContext object facilitates requests to the Excel application.
 
 Also read the following programming notes: 
 
-* [Error Messages](#error-messages): Provide important programming details related to Excel APIs.
 * [Programming Notes](#programming-notes): Provide important programming details related to Excel APIs.
+* [Error Messages](#error-messages): Provide important programming details related to Excel APIs.
 
 [top](#excel-javascript-apis)
 
@@ -227,12 +228,7 @@ ctx.executeAsync().then(function () {
 ```
 
 [Back](#programming-notes)
-### Document Binding
 
-[Back](#programming-notes)
-### Reference Binding
-
-[Back](#programming-notes)
 ### Null-Input
 
 #### null input in 2-D Array
@@ -271,10 +267,6 @@ Example: A Range can consist of one of more cells. In cases where the individual
   "size" : null,
   "color" : null,
 ```
-
-
-
-
 
 ### Blank Input and Output
 
