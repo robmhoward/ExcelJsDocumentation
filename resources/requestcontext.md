@@ -9,8 +9,8 @@ None
 
 | Method         | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|[load(param: object, expand: object)](loadparam-object)  |void     |Fills the Excel proxy object created in JavaScript layer with property and object values specified in the parameter.||
-|[executeAsync()](load)  |Promise Object |Submits the request queue to Excel and returns a promise object, which can be used for chaining further actions.||
+|[load(param: object, expand: object)](#loadparam-object-expand-object)  |void     |Fills the Excel proxy object created in JavaScript layer with property and object values specified in the parameter.||
+|[executeAsync()](#executeasync)  |Promise Object |Submits the request queue to Excel and returns a promise object, which can be used for chaining further actions.||
 
 ## API Specification
 
