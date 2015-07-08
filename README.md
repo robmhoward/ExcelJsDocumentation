@@ -93,7 +93,7 @@ var ctx = new Excel.RequestContext();
 Add-in and the Excel application run in two different processes and the RequestContext() object is the one that makes the actual requests to the Excel application.  All JavaScript objects are local proxy objects.  Any method invocation or setting of properties queues commands in JavaScript, but does not submit them until executeAsync() is called. 
 
 #####Example
-The following example shows how to write values from an array to a range. First RequestContext() is created to get access to workbook. Then a worksheet is added. Range A1:B2 on the sheet is retrieved afterwards. Finally we assign the values stored in the array to this range. All these commands are queued and will run when ctx.executeAsync() is called.  execucteAsync returns a promise which can be used to chain it with other operations.
+The following example shows how to write values from an array to a range. First RequestContext() is created to get access to workbook. Then a worksheet is added. Range A1:B2 on the sheet is retrieved afterwards. Finally we assign the values stored in the array to this range. All these commands are queued and will run when ctx.executeAsync() is called.  executeAsync() returns a promise which can be used to chain it with other operations.
 
 ```js
 	var ctx = new Excel.RequestContext();
