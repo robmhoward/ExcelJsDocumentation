@@ -62,7 +62,7 @@ function () {
 ## Programming Notes
 
 Following sections provide important programming details related to Excel APIs.
-
+* [Quick Tips to Get Started](#quick-tips-to-get-started)
 * [Properties and Relations Selection](#properties-and-relations-selection)
 * [Document Binding](#null-input)
 * [Reference Binding](#null-input)
@@ -75,6 +75,80 @@ Following sections provide important programming details related to Excel APIs.
 * [Throttling](#throttling)
 
 [top](#excel-javascript-apis)
+
+### Quick Tips to Get Started
+#### Quick Tips
+1.	Getting a RequestContext is the first step to interact with Excel.
+2.	All JavaScript objects are local proxy objects.  Any method invocation or setting of properties queues commands in JavaScript, but does not submit them until executeAsync() is called. 
+3.	Load is a special type of command for retrieval of properties. Properties can only be accesed after invoking executeAsync(). 
+4.	For performance reasons, avoid loading objects without specifying individual properties that will be used.
+
+#### RequestContext()
+A request context is the way to get access to Excel and workbook-related objects.  Once you have the request context, you can use it to make requests to the Excel application and get access to the workbook in Excel and then all workbook-related objects such as tables, worksheets, etc. 
+
+```js	
+var ctx = new Excel.RequestContext();
+```
+#### executeAsync()
+Add-in and the Excel application run in two different processes and the RequestContext() object is the one that makes the actual requests to the Excel application.  All JavaScript objects are local proxy objects.  Any method invocation or setting of properties queues commands in JavaScript, but does not submit them until executeAsync() is called. 
+
+#####Example
+The following example shows how to write values from an array to a range. First RequestContext() is created to get access to workbook. Then a worksheet is added. Range A1:B2 on the sheet is retrieved afterwards. Finally we assign the values stored in the array to this range. All these commands are queued and will run when ctx.executeAsync() is called.  executeAsync() returns a promise which can be used to chain it with other operations.
+
+```js
+	var ctx = new Excel.RequestContext();
+	var sheet = ctx.workbook.worksheets.add();
+	var values = [
+	             ["Type", "Estimate"],
+	             ["Transportation", 1670]
+				 ];
+	var range = sheet.getRange("A1:B2");
+	range.values = values;
+
+	//statements queued above will not be executed until the executeAsync() is called. 
+	ctx.executeAsync()
+        .then(function () {   			
+			console.log("Done");
+         })
+        .catch(function(error) {
+            console. error(JSON.stringify(error));
+        });
+
+```
+
+#### Load()
+When trying to retrieve an object, say, a worksheet, a local proxy object is created in the JavaScript layer. The object can be used to queue up setting of properties and invoking methods. But for reading back properties, load() and executeAsync() need to be invoked first.  
+
+#####Syntax
+```js
+ctx.load(object, "property1, property2, relationship1/property3,…");
+```
+or
+```js
+object.load("property1, property2, property3, relationship/property1,…");
+```
+
+#####Example
+The following example shows how to read how to copy the values from Range A1:A2 to B1:B2.
+
+```js
+var ctx = new Excel.RequestContext();
+var range = ctx.workbook.worksheets.getActiveWorksheet().getRange("A1:A2");
+range.load ("values");  //or ctx.load(range, “values”);
+ctx.executeAsync()
+    .then(function () {
+    var myvalues=range.values;
+    ctx.workbook.worksheets. getActiveWorksheet().getRange("B1:B2").values= myvalues;
+    ctx.executeAsync()
+  		.then(function () {
+		    console.log("Done");
+		})
+        .catch(function(error) {
+            console. error(JSON.stringify(error));
+        })
+});
+
+```
 
 ### Properties and Relations Selection 
 
