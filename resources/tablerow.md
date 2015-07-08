@@ -41,6 +41,7 @@ void
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
 var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
+row.delete();
 ctx.executeAsync();
 ```
 
@@ -67,6 +68,7 @@ None
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
 var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(0);
+var rowRange = row.getRange();
 ctx.load(rowRange);
 ctx.executeAsync().then(function () {
 	Console.log(rowRange.address);

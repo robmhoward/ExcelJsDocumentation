@@ -43,6 +43,7 @@ Returns the Range object that is associated with the name. `null` if the name is
 ```js
 var ctx = new Excel.ExcelClientContext();
 var names = ctx.workbook.names;
+var range = names.getItem('MyRange').getRange();
 ctx.load(range);
 ctx.executeAsync().then(function () {
 		Console.log(range.address);

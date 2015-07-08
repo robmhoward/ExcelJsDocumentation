@@ -49,7 +49,10 @@ void
 var ctx = new Excel.ExcelClientContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
-ctx.executeAsync();
+chart.delete();
+ctx.executeAsync().then(function () {
+		Console.log"Chart Deleted");
+});
 ```
 
 [Back](#methods)

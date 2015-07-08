@@ -42,6 +42,7 @@ Below example uses binding object to get the associated range.
 ```js
 var ctx = new Excel.ExcelClientContext();
 var binding = ctx.workbook.bindings.getItemAt(0);
+var range = binding.getRange();
 ctx.load(range);
 ctx.executeAsync().then(function() {
 	Console.log(range.cellCount);
@@ -70,6 +71,7 @@ None
 var ctx = new Excel.ExcelClientContext();
 
 var binding = ctx.workbook.bindings.getItemAt(0);
+var table = binding.getTable();
 ctx.load(table);
 ctx.executeAsync().then(function () {
 		Console.log(table.name);
@@ -98,6 +100,7 @@ string
 ```js
 var ctx = new Excel.ExcelClientContext();
 var binding = ctx.workbook.bindings.getItemAt(0);
+var text = binding.getText();
 ctx.load(text);
 ctx.executeAsync().then(function() {
 	Console.log(text);

@@ -46,6 +46,7 @@ void
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
 var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(2);
+column.delete();
 ctx.executeAsync();
 ```
 
@@ -72,6 +73,7 @@ None
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
 var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+var dataBodyRange = column.getDataBodyRange();
 ctx.load(dataBodyRange);
 ctx.executeAsync().then(function () {
 	Console.log(dataBodyRange.address);
@@ -101,6 +103,7 @@ None
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
 var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+var headerRowRange = columns.getHeaderRowRange();
 ctx.load(headerRowRange);
 ctx.executeAsync().then(function () {
 	Console.log(headerRowRange.address);
@@ -129,6 +132,7 @@ None
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
 var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+var columnRange = columns.getRange();
 ctx.load(range);
 ctx.executeAsync().then(function () {
 	Console.log(range.columnRange);
@@ -158,6 +162,7 @@ None
 var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
 var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+var totalRowRange = columns.getTotalRowRange();
 ctx.load(totalRowRange);
 ctx.executeAsync().then(function () {
 	Console.log(totalRowRange.address);

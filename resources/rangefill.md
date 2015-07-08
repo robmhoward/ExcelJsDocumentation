@@ -44,6 +44,7 @@ var ctx = new Excel.ExcelClientContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 var rangeFill = ramge.format.fill;
+rangeFill.clear();
 ctx.executeAsync();
 ```
 

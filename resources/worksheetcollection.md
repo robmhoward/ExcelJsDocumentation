@@ -69,7 +69,9 @@ None
 #### Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+hellow!!!
+var ctx = new Excel.ExcelClientContext(); 
+var activeWorksheet = ctx.workbook.worksheets.getActiveWorksheet();
 ctx.load(activeWorksheet);
 ctx.executeAsync().then(function () {
 		Console.log(activeWorksheet.name);
@@ -99,8 +101,9 @@ worksheetCollectionObject.getItem(index);
 
 ```js
 var ctx = new Excel.ExcelClientContext();
-var wSheetName = 'Sheet1';
+var wSheetName = 'Sheet1'; 
 var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
+ctx.load(worksheet);
 ctx.executeAsync().then(function () {
 		Console.log(worksheet.index);
 });

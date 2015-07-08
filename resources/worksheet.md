@@ -47,6 +47,7 @@ void
 var ctx = new Excel.ExcelClientContext();
 var wSheetName = 'Sheet1';
 var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
+worksheet.activate();
 ctx.executeAsync();
 ```
 
@@ -73,6 +74,7 @@ void
 var wSheetName = 'Sheet1';
 var ctx = new Excel.ExcelClientContext();
 var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
+worksheet.delete();
 ctx.executeAsync();
 ```
 
@@ -179,6 +181,7 @@ None
 var ctx = new Excel.ExcelClientContext();
 var wSheetName = 'Sheet1';
 var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
+var usedRange = worksheet.getUsedRange();
 ctx.load(usedRange);
 ctx.executeAsync().then(function () {
 		Console.log(usedRange.address);
