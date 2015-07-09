@@ -48,8 +48,10 @@ Following sections provide important programming details related to Excel APIs.
 
 This section introduces three key concepts to help get started with the Excel API. Namely, RequestContext, executeAsync and load statements.  
 
-#### RequestContext()
+#### RequestContext
 The RequestContext object facilitates requests to the Excel application. Since the Office add-in and the Excel application run in two different processes, request context is required to get access to Excel and related objects such as worksheets, tables, etc. from the add-in. 
+
+A request context object is created as shown bellow: 
 
 ```js
 var ctx = new Excel.RequestContext();
@@ -87,22 +89,31 @@ Load method is used to fill in the Excel proxy objects created in the add-in Jav
 
 ##### Syntax
 ```js
-ctx.load(object, "property1, property2, relationship1/property3");
+ctx.load(param, {loadOption});
 ```
+Where, 
+
+* param is the object to be loaded.  
+* loadOption specifies selection, expansion, top/skip options. See loadOption object for details.
 or
 
 ```js
-object.load("property1, property2, property3, relationship/property1");
+object.load(param);
+//or
+object.load({loadOption});
 ```
+Where, 
+
+* param is the list of parameter/relationship names to be loaded specified as comma delimited strings or array of names. See .load() methods under each object for details.
+* loadOption specifies selection, expansion, top/skip options. See loadOption object for details.
 
 ##### Example
-The following example shows how to read how to copy the values from Range A1:A2 to B1:B2.
+The following example shows how to read how to copy the values from Range A1:A2 to B1:B2 by using load() method on the range object.
 
 ```js
 var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getActiveWorksheet().getRange("A1:A2");
-range.load ("address, values"); 
-//or ctx.load(range, “address, values”);
+range.load ("address, values, range/format"); 
 
 ctx.executeAsync()
 	.then(function () {
@@ -112,6 +123,8 @@ ctx.executeAsync()
   		.then(function () {
 			console.log(range.address);
 			console.log(range.values);
+			console.log(range.format.wrapText);
+				
 		})
 		.catch(function(error) {
 			console. error(JSON.stringify(error));
@@ -119,49 +132,30 @@ ctx.executeAsync()
 });
 ```
 
-##### Example
-The following example loads the name property of worksheet and names of tables that are part of the worksheet and their associated column names. It prints the worksheet name, table name and column names after executeAsync all. 
-
-```js
-
-var ctx = new Excel.RequestContext();
-	var worksheets = ctx.workbook.worksheets;
-	worksheets.load([name, items, tables\name, tables\column\name]);
-	ctx.executeAsync()
-		.then(function () {
-			for (var i = 0; i < worksheets.items.length; i++) {
-				for (var j = 0; j < worksheets.items[i].tables.length ; j++) {
-					for (var k = 0; k < worksheets.items[i].tables.items[j].columns.count; k++) {
-						console.log(worksheets.items[i].name + worksheets.items[i].tables.items[j].name + worksheets.items[i].talbes.items[j].columns.items[k].name);
-					}
-				}
-			}
-		})
-		.then(function () {
-			console.log("Done");
-		})
-		.catch(function (error) {
-		console.error(JSON.stringify(error));
-		});
-```
-
-Following example uses expand to load the format relationship of the range.
+The following example shows how to read how to copy the values from Range A1:A2 to B1:B2 by using load() method on the context object.
 
 ```js
 var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getActiveWorksheet().getRange("A1:A2");
-range.load(expand: "format") 
+ctx.load(range, {"select": "address, values", "expand" : "format"});
+
 ctx.executeAsync()
 	.then(function () {
+	var myvalues=range.values;
+	ctx.workbook.worksheets. getActiveWorksheet().getRange("B1:B2").values= myvalues;
+	ctx.executeAsync()
+  		.then(function () {
+			console.log(range.address);
+			console.log(range.values);
 			console.log(range.format.wrapText);
-	.catch(function(error) {
+		})
+		.catch(function(error) {
 			console. error(JSON.stringify(error));
 		})
 });
-
 ```
 
-#### Key Takeaways
+#### Summary
 1.	Getting a RequestContext is the first step to interact with Excel.
 2.	All JavaScript objects are local proxy objects.  Any method invocation or setting of properties queues commands in JavaScript, but does not submit them until executeAsync() is called. 
 3.	Load is a special type of command for retrieval of properties. Properties can only be accesed after invoking executeAsync(). 

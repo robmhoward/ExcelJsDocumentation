@@ -6,7 +6,7 @@ Represents a collection of chart series.
 | Property       | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |count|int|Returns the number of series in the collection. Read-only.||
-|items|[ChartSeriesCollection](chartseriescollection.md)|A collection of chartSeries objects. Read-only.||
+|items|[ChartSeries[]](chartseries.md)|A collection of chartSeries objects. Read-only.||
 
 ## Relationships
 None
@@ -17,6 +17,7 @@ None
 | Method           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[getItemAt(index: number)](#getitematindex-number)|[ChartSeries](chartseries.md)|Retrieves a series based on its position in the collection||
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
 
 ## API Specification
 
@@ -48,6 +49,29 @@ ctx.executeAsync().then(function () {
 });
 ```
 
+
+[Back](#methods)
+
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.setData(param: object);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
+```
 
 [Back](#methods)
 

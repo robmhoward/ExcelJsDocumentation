@@ -10,13 +10,13 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 |cellCount|int|Number of cells in the range. Read-only.||
 |columnCount|int|Represents the total number of columns in the range. Read-only.||
 |columnIndex|int|Represents the column number of the first cell in the range. Zero-indexed. Read-only.||
-|formulas|object[][]|Represents the formula in A1-style notation.||
-|formulasLocal|object[][]|Represents the formula in A1-style notation, in the user's language and number-formatting locale.  For example, the English "=SUM(A1, 1.5)" formula would become "=SUMME(A1; 1,5)" in German.||
-|numberFormat|object[][]|Represents Excel's number format code for the given cell.||
+|formulas|object|Represents the formula in A1-style notation.||
+|formulasLocal|object|Represents the formula in A1-style notation, in the user's language and number-formatting locale.  For example, the English "=SUM(A1, 1.5)" formula would become "=SUMME(A1; 1,5)" in German.||
+|numberFormat|object|Represents Excel's number format code for the given cell.||
 |rowCount|int|Returns the total number of rows in the range. Read-only.||
 |rowIndex|int|Returns the row number of the first cell in the range. Zero-indexed. Read-only.||
-|text|object[][]|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.||
-|values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.||
+|text|object|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.||
+|values|object|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.||
 
 ## Relationships
 | Relationship | Type    |Description|Notes |
@@ -40,6 +40,7 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 |[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Gets a row contained in the range.||
 |[getUsedRange()](#getusedrange)|[Range](range.md)|Returns the used range of the given range object.||
 |[insert(shift: string)](#insertshift-string)|void|Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space.||
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
 |[select()](#select)|void|Selects the specified range in the Excel UI.||
 
 ## API Specification
@@ -423,6 +424,29 @@ range.insert();
 ctx.executeAsync();
 ```
 
+
+[Back](#methods)
+
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.setData(param: object);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
+```
 
 [Back](#methods)
 

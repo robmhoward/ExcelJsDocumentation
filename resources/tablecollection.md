@@ -6,7 +6,7 @@ Represents a collection of all the tables that are part of the workbook.
 | Property       | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |count|int|Returns the number of tables in the workbook. Read-only.||
-|items|[TableCollection](tablecollection.md)|A collection of table objects. Read-only.||
+|items|[Table[]](table.md)|A collection of table objects. Read-only.||
 
 ## Relationships
 None
@@ -19,6 +19,7 @@ None
 |[add(address: string, hasHeaders: bool)](#addaddress-string-hasheaders-bool)|[Table](table.md)|Create a new table. The range source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.||
 |[getItem(id: object)](#getitemid-object)|[Table](table.md)|Gets a table by Name or ID.||
 |[getItemAt(index: number)](#getitematindex-number)|[Table](table.md)|Gets a table based on its position in the collection.||
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
 
 ## API Specification
 
@@ -109,6 +110,29 @@ ctx.executeAsync().then(function () {
 });
 ```
 
+
+[Back](#methods)
+
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.setData(param: object);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
+```
 
 [Back](#methods)
 

@@ -6,7 +6,7 @@ Represents a collection of all the rows that are part of the table.
 | Property       | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |count|int|Returns the number of rows in the table. Read-only.||
-|items|[TableRowCollection](tablerowcollection.md)|A collection of tableRow objects. Read-only.||
+|items|[TableRow[]](tablerow.md)|A collection of tableRow objects. Read-only.||
 
 ## Relationships
 None
@@ -18,6 +18,7 @@ None
 |:---------------|:--------|:----------|:-----|
 |[add(index: number, values: object[][])](#addindex-number-values-object)|[TableRow](tablerow.md)|Adds a new row to the table.||
 |[getItemAt(index: number)](#getitematindex-number)|[TableRow](tablerow.md)|Gets a row based on its position in the collection.||
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
 
 ## API Specification
 
@@ -78,6 +79,29 @@ ctx.load(tablerow);
 ctx.executeAsync().then(function () {
 		Console.log(tablerow.name);
 });
+```
+
+[Back](#methods)
+
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.setData(param: object);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
 ```
 
 [Back](#methods)

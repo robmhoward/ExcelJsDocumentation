@@ -6,7 +6,7 @@ Represents a collection of all the columns that are part of the table.
 | Property       | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |count|int|Returns the number of columns in the table. Read-only.||
-|items|[TableColumnCollection](tablecolumncollection.md)|A collection of tableColumn objects. Read-only.||
+|items|[TableColumn[]](tablecolumn.md)|A collection of tableColumn objects. Read-only.||
 
 ## Relationships
 None
@@ -19,6 +19,7 @@ None
 |[add(index: number, values: object[][])](#addindex-number-values-object)|[TableColumn](tablecolumn.md)|Adds a new column to the table.||
 |[getItem(id: object)](#getitemid-object)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID.||
 |[getItemAt(index: number)](#getitematindex-number)|[TableColumn](tablecolumn.md)|Gets a column based on its position in the collection.||
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
 
 ## API Specification
 
@@ -109,6 +110,29 @@ ctx.load(tablecolumn)
 ctx.executeAsync().then(function () {
 		Console.log(tablecolumn.name);
 });
+```
+
+[Back](#methods)
+
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.setData(param: object);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
 ```
 
 [Back](#methods)

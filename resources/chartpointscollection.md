@@ -6,7 +6,7 @@ A collection of all the chart points within a series inside a chart.
 | Property       | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |count|int|Returns the number of chart points in the collection. Read-only.||
-|items|[ChartPointsCollection](chartpointscollection.md)|A collection of chartPoints objects. Read-only.||
+|items|[ChartPoints[]](chartpoints.md)|A collection of chartPoints objects. Read-only.||
 
 ## Relationships
 None
@@ -17,6 +17,7 @@ None
 | Method           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[getItemAt(index: number)](#getitematindex-number)|[ChartPoint](chartpoint.md)|Retrieve a point based on its position within the series.||
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
 
 ## API Specification
 
@@ -47,6 +48,29 @@ ctx.executeAsync().then(function () {
 	Console.log("Point Border Color Changed");
 });
 ```
+[Back](#methods)
+
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.setData(param: object);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
+```
+
 [Back](#methods)
 
 #### Getter Examples
