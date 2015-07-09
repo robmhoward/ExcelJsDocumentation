@@ -44,7 +44,7 @@ void
 
 [Back](#methods)
 
-#### Getter and Setter Examples
+### Getter and Setter Examples
 Get the `text` of Chart Axis Title from the value axis of Chart1.
 
 ```js

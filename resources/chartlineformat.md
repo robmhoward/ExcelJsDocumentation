@@ -73,7 +73,7 @@ void
 
 [Back](#methods)
 
-#### Setter Examples
+### Setter Examples
 
 Set chart major gridlines on value axis to be red.
 ```js

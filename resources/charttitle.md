@@ -45,7 +45,7 @@ void
 
 [Back](#methods)
 
-#### Getter and Setter Examples
+### Getter and Setter Examples
 
 Get the `text` of Chart Title from Chart1.
 

@@ -50,7 +50,7 @@ void
 
 [Back](#methods)
 
-#### Getter Examples
+### Getter Examples
 Make Series Name shown in Datalabels and set the `position` of datalabels to be "top";
 ```js
 var ctx = new Excel.RequestContext();

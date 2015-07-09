@@ -67,7 +67,7 @@ void
 
 [Back](#methods)
 
-#### Getter Examples
+### Getter Examples
 ```js
 var ctx = new Excel.RequestContext();
 var application = ctx.workbook.application;

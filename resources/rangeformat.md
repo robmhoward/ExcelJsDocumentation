@@ -47,7 +47,7 @@ void
 
 [Back](#methods)
 
-#### Getter and Setter Examples
+### Getter and Setter Examples
 
 Below example selects all of the Range's format properties. 
 
