@@ -16,6 +16,7 @@ None
 | Method           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[clear()](#clear)|void|Resets the range background.||
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
 
 ## API Specification
 
@@ -40,13 +41,37 @@ This example resets the range background.
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "F:G";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 var rangeFill = ramge.format.fill;
-ctx.executeAsync().then();
+rangeFill.clear();
+ctx.executeAsync();
 ```
 
+
+[Back](#methods)
+
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.load(param);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
+```
 
 [Back](#methods)
 
@@ -54,7 +79,7 @@ ctx.executeAsync().then();
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "F:G";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 var rangeFill = ramge.format.fill;
@@ -70,6 +95,6 @@ var sheetName = "Sheet1";
 var rangeAddress = "F:G";
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 range.format.fill.color = '0000FF';
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 [Back](#properties)

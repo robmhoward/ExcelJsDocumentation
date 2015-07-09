@@ -23,6 +23,7 @@ None
 |[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|Gets the range object associated with the header row of the column.||
 |[getRange()](#getrange)|[Range](range.md)|Gets the range object associated with the entire column.||
 |[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Gets the range object associated with the totals row of the column.||
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
 
 ## API Specification
 
@@ -44,9 +45,10 @@ void
 
 ```js
 var tableName = 'Table1';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(2);
-ctx.executeAsync().then();
+column.delete();
+ctx.executeAsync();
 ```
 
 
@@ -70,8 +72,9 @@ None
 
 ```js
 var tableName = 'Table1';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+var dataBodyRange = column.getDataBodyRange();
 ctx.load(dataBodyRange);
 ctx.executeAsync().then(function () {
 	Console.log(dataBodyRange.address);
@@ -99,8 +102,9 @@ None
 
 ```js
 var tableName = 'Table1';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+var headerRowRange = columns.getHeaderRowRange();
 ctx.load(headerRowRange);
 ctx.executeAsync().then(function () {
 	Console.log(headerRowRange.address);
@@ -127,8 +131,9 @@ None
 
 ```js
 var tableName = 'Table1';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+var columnRange = columns.getRange();
 ctx.load(range);
 ctx.executeAsync().then(function () {
 	Console.log(range.columnRange);
@@ -156,8 +161,9 @@ None
 
 ```js
 var tableName = 'Table1';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+var totalRowRange = columns.getTotalRowRange();
 ctx.load(totalRowRange);
 ctx.executeAsync().then(function () {
 	Console.log(totalRowRange.address);
@@ -167,11 +173,34 @@ ctx.executeAsync().then(function () {
 
 [Back](#methods)
 
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.load(param);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
+```
+
+[Back](#methods)
+
 #### Getter and Setter Examples
 
 ```js
 var tableName = 'Table1';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItem(0);
 ctx.load(column);
 ctx.executeAsync().then(function () {
@@ -180,7 +209,7 @@ ctx.executeAsync().then(function () {
 ```
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var tables = ctx.workbook.tables;
 var newValues = [["New"], ["Values"], ["For"], ["New"], ["Column"]];
 var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(2);

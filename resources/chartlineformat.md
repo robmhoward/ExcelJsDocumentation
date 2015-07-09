@@ -16,6 +16,7 @@ None
 | Method           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[clear()](#clear)|void|Clear the line format of a chart element.||
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
 
 ## API Specification
 
@@ -38,12 +39,36 @@ void
 Clear the line format of the major gridlines on value axis of the Chart named "Chart1"
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueaxis.majorGridlines;	
 
+gridlines.format.line.clear();
 ctx.executeAsync().then(function () {
 		Console.log"Chart Major Gridlines Format Cleared");
 });
+```
+
+[Back](#methods)
+
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.load(param);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
 ```
 
 [Back](#methods)
@@ -52,7 +77,7 @@ ctx.executeAsync().then(function () {
 
 Set chart major gridlines on value axis to be red.
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.axes.valueaxis.majorGridlines;
 
 

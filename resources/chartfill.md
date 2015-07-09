@@ -14,6 +14,7 @@ None
 | Method           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[clear()](#clear)|void|Clear the fill color of a chart element.||
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
 |[setSolidColor(color: string)](#setsolidcolorcolor-string)|void|Sets the fill formatting of a chart element to a uniform color.||
 
 ## API Specification
@@ -37,12 +38,36 @@ void
 Clear the line format of the major Gridlines on value axis of the Chart named "Chart1"
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueaxis.majorGridlines;	
 
+gridlines.format.line.clear();
 ctx.executeAsync().then(function () {
 		Console.log"Chart Major Gridlines Format Cleared");
 });
+```
+
+[Back](#methods)
+
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.load(param);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
 ```
 
 [Back](#methods)
@@ -67,7 +92,7 @@ void
 
 Set BackGround Color of Chart1 to be red.
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 

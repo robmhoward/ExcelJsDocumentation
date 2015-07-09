@@ -5,7 +5,7 @@ A collection of all the nameditem objects that are part of the workbook.
 ## [Properties](#getter-examples)
 | Property       | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|items|[NamedItemCollection](nameditemcollection.md)|A collection of namedItem objects. Read-only.||
+|items|[NamedItem[]](nameditem.md)|A collection of namedItem objects. Read-only.||
 
 ## Relationships
 None
@@ -16,6 +16,7 @@ None
 | Method           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[getItem(name: string)](#getitemname-string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name||
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
 
 ## API Specification
 
@@ -38,7 +39,7 @@ namedItemCollectionObject.getItem(name);
 #### Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var nameditem = ctx.workbook.names.getItem(wSheetName);
 ctx.executeAsync().then(function () {
 		Console.log(nameditem.type);
@@ -47,10 +48,33 @@ ctx.executeAsync().then(function () {
 
 [Back](#methods)
 
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.load(param);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
+```
+
+[Back](#methods)
+
 #### Getter Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var nameditems = ctx.workbook.names;
 ctx.load(nameditems);
 ctx.executeAsync().then(function () {
@@ -65,7 +89,7 @@ ctx.executeAsync().then(function () {
 Get the number of nameditems.
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var nameditems = ctx.workbook.names;
 ctx.load(tables);
 ctx.executeAsync().then(function () {

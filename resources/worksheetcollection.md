@@ -5,7 +5,7 @@ Represents a collection of worksheet objects that are part of the workbook.
 ## [Properties](#getter-examples)
 | Property       | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|items|[WorksheetCollection](worksheetcollection.md)|A collection of worksheet objects. Read-only.||
+|items|[Worksheet[]](worksheet.md)|A collection of worksheet objects. Read-only.||
 
 ## Relationships
 None
@@ -18,6 +18,7 @@ None
 |[add(name: string)](#addname-string)|[Worksheet](worksheet.md)|Adds a new worksheet to the workbook. The worksheet will be added at the end of existing worksheets. If you wish to activate the newly added worksheet, call ".activate() on it.||
 |[getActiveWorksheet()](#getactiveworksheet)|[Worksheet](worksheet.md)|Gets the currently active worksheet in the workbook.||
 |[getItem(index: string)](#getitemindex-string)|[Worksheet](worksheet.md)|Gets a worksheet object using its Name or ID.||
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
 
 ## API Specification
 
@@ -41,7 +42,7 @@ worksheetCollectionObject.add(name);
 
 ```js
 var wSheetName = 'Sample Name';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.add(wSheetName);
 ctx.load(worksheet);
 ctx.executeAsync().then(function () {
@@ -69,7 +70,9 @@ None
 #### Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+hellow!!!
+var ctx = new Excel.RequestContext(); 
+var activeWorksheet = ctx.workbook.worksheets.getActiveWorksheet();
 ctx.load(activeWorksheet);
 ctx.executeAsync().then(function () {
 		Console.log(activeWorksheet.name);
@@ -98,9 +101,10 @@ worksheetCollectionObject.getItem(index);
 #### Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
-var wSheetName = 'Sheet1';
+var ctx = new Excel.RequestContext();
+var wSheetName = 'Sheet1'; 
 var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
+ctx.load(worksheet);
 ctx.executeAsync().then(function () {
 		Console.log(worksheet.index);
 });
@@ -109,11 +113,34 @@ ctx.executeAsync().then(function () {
 
 [Back](#methods)
 
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.load(param);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
+```
+
+[Back](#methods)
+
 #### Getter Examples
 
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var worksheets = ctx.workbook.worksheets;
 ctx.load(worksheets);
 ctx.executeAsync().then(function () {

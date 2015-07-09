@@ -6,7 +6,7 @@ Represents the collection of all the binding objects that are part of the workbo
 | Property       | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |count|int|Returns the number of bindings in the collection. Read-only.||
-|items|[BindingCollection](bindingcollection.md)|A collection of binding objects. Read-only.||
+|items|[Binding[]](binding.md)|A collection of binding objects. Read-only.||
 
 ## Relationships
 None
@@ -18,6 +18,7 @@ None
 |:---------------|:--------|:----------|:-----|
 |[getItem(id: string)](#getitemid-string)|[Binding](binding.md)|Gets a binding object by ID.||
 |[getItemAt(index: number)](#getitematindex-number)|[Binding](binding.md)|Gets a binding object based on its position in the items array.||
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
 
 ## API Specification
 
@@ -40,7 +41,7 @@ bindingCollectionObject.getItem(id);
 #### Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var binding = ctx.workbook.bindings.getItem("sampleBindingId");
 ctx.executeAsync().then(function () {
 		Console.log(binding.type);
@@ -69,7 +70,7 @@ bindingCollectionObject.getItemAt(index);
 
 #### Examples
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var lastPosition = ctx.workbook.bindings.count - 1;
 var binding = ctx.workbook.bindings.getItemAt(lastPosition);
 ctx.executeAsync().then(function () {
@@ -80,10 +81,33 @@ ctx.executeAsync().then(function () {
 
 [Back](#methods)
 
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.load(param);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
+```
+
+[Back](#methods)
+
 #### Getter Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var bindings = ctx.workbook.bindings;
 ctx.load(bindings);
 ctx.executeAsync().then(function () {
@@ -97,7 +121,7 @@ ctx.executeAsync().then(function () {
 Get the number of bindings
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var bindings = ctx.workbook.bindings;
 ctx.load(bindings);
 ctx.executeAsync().then(function () {

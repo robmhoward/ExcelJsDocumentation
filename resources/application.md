@@ -16,6 +16,7 @@ None
 | Method           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[calculate(calculationType: string)](#calculatecalculationtype-string)|void|Recalculate all currently opened workbooks in Excel.||
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
 
 ## API Specification
 
@@ -37,15 +38,38 @@ void
 
 #### Examples
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 ctx.workbook.application.calculate('Full');
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
+[Back](#methods)
+
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.load(param);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
+```
+
 [Back](#methods)
 
 #### Getter Examples
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var application = ctx.workbook.application;
 ctx.load(application);
 ctx.executeAsync().then(function() {

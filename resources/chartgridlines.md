@@ -13,16 +13,41 @@ Represents major or minor gridlines on a chart axis.
 |format|[ChartGridlinesFormat](chartgridlinesformat.md)|Represents the formatting of chart gridlines. Read-only.||
 
 ## Methods
-None
 
+| Method           | Return Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
 
 ## API Specification
+
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.load(param);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
+```
+
+[Back](#methods)
 
 #### Getter and Setter Examples
 
 Get the `visible` of Major Gridlines on value axis of Chart1
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 var majGridlines = chart.axes.valueaxis.majorGridlines;
@@ -35,7 +60,7 @@ ctx.executeAsync().then(function () {
 Set to show major gridlines on valueAxis of Chart1
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 chart.axes.valueaxis.majorgridlines.visible = true;

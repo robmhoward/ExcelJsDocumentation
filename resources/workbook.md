@@ -19,6 +19,7 @@ None
 | Method           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[getSelectedRange()](#getselectedrange)|[Range](range.md)|Gets the currently selected range from the workbook.||
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
 
 ## API Specification
 
@@ -39,10 +40,34 @@ None
 #### Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
+var selectedRange = ctx.workbook.getSelectedRange();
 ctx.executeAsync().then(function () {
 		Console.log(selectedRange.address);
 });
 ```
+[Back](#methods)
+
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.load(param);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
+```
+
 [Back](#methods)
 

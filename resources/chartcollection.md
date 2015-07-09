@@ -6,7 +6,7 @@ A collection of all the chart objects on a worksheet.
 | Property       | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |count|int|Returns the number of charts in the worksheet. Read-only.||
-|items|[ChartCollection](chartcollection.md)|A collection of chart objects. Read-only.||
+|items|[Chart[]](chart.md)|A collection of chart objects. Read-only.||
 
 ## Relationships
 None
@@ -20,6 +20,7 @@ None
 |[getItem(id: string)](#getitemid-string)|[Chart](chart.md)|Gets a chart using its ID.||
 |[getItem(name: string)](#getitemname-string)|[Chart](chart.md)|Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.||
 |[getItemAt(index: number)](#getitematindex-number)|[Chart](chart.md)|Gets a chart based on its position in the collection.||
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
 
 ## API Specification
 
@@ -48,7 +49,7 @@ Add a chart of `chartType` "ColumnClustered" on worksheet "Charts" with `sourceD
 ```js
 var sheetName = "Sheet1";
 var sourceData = sheetName + "!" + "A1:B4";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem(sheetName).charts.add("ColumnClustered", sourceData, "auto");
 ctx.executeAsync().then(function () {
 		Console.log("New Chart Added");
@@ -77,7 +78,7 @@ chartCollectionObject.getItem(id);
 #### Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var chartId = 'SamplChartId';
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem(chartId);
 ctx.executeAsync().then(function () {
@@ -108,7 +109,7 @@ chartCollectionObject.getItem(name);
 #### Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var chartname = 'Chart1';
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem(chartname);
 ctx.executeAsync().then(function () {
@@ -138,7 +139,7 @@ chartCollectionObject.getItemAt(index);
 #### Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var lastPosition = ctx.workbook.worksheets.getItem("Sheet1").charts.count - 1;
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItemAt(lastPosition);
 ctx.executeAsync().then(function () {
@@ -149,10 +150,33 @@ ctx.executeAsync().then(function () {
 
 [Back](#methods)
 
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.load(param);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
+```
+
+[Back](#methods)
+
 #### Getter Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var charts = ctx.workbook.worksheets.getItem("Sheet1").charts;
 ctx.load(charts);
 ctx.executeAsync().then(function () {
@@ -167,7 +191,7 @@ ctx.executeAsync().then(function () {
 Get the number of charts
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var charts = ctx.workbook.worksheets.getItem("Sheet1").charts;
 ctx.load(charts);
 ctx.executeAsync().then(function () {

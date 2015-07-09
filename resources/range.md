@@ -40,6 +40,7 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 |[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Gets a row contained in the range.||
 |[getUsedRange()](#getusedrange)|[Range](range.md)|Returns the used range of the given range object.||
 |[insert(shift: string)](#insertshift-string)|void|Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space.||
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
 |[select()](#select)|void|Selects the specified range in the Excel UI.||
 
 ## API Specification
@@ -67,10 +68,10 @@ Below example clears format and contents of the range.
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "D:F";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 range.clear();
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 
@@ -97,10 +98,10 @@ void
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "D:F";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 range.delete();
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 
@@ -127,7 +128,7 @@ rangeObject.getBoundingRect(anotherRange);
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "D4:G6";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 var range = range.getBoundingRect("G4:H8");
 ctx.load(range);
@@ -161,7 +162,7 @@ rangeObject.getCell(row, column);
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "A1:F8";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 var cell = range.cell(0,0);
@@ -195,7 +196,7 @@ rangeObject.getColumn(column);
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "A1:F8";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getColumn(1);
 ctx.load(range);
 ctx.executeAsync().then(function() {
@@ -226,8 +227,9 @@ Note: the grid properties of the Range (values, numberFormat, formula) contains 
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "D:F";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+var rangeEC = range.getEntireColumn();
 ctx.load(rangeEC);
 ctx.executeAsync().then(function() {
 	Console.log(rangeEC.address);
@@ -254,8 +256,9 @@ None
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "D:F";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+var rangeER = range.getEntireRow();
 ctx.load(rangeER);
 ctx.executeAsync().then(function() {
 	Console.log(rangeER.address);
@@ -287,7 +290,7 @@ rangeObject.getIntersection(anotherRange);
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "A1:F8";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getIntersection("D4:G6");
 ctx.load(range);
 ctx.executeAsync().then(function() {
@@ -320,7 +323,7 @@ rangeObject.getOffsetRange(rowOffset, columnOffset);
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "D4:F6";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getOffsetRange(-1,4);
 ctx.load(range);
 ctx.executeAsync().then(function() {
@@ -352,7 +355,7 @@ rangeObject.getRow(row);
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "A1:F8";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getRow(1);
 ctx.load(range);
 ctx.executeAsync().then(function() {
@@ -382,8 +385,9 @@ None
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "D:F";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+var rangeUR = range.getUsedRange();
 ctx.load(rangeUR);
 ctx.executeAsync().then(function() {
 	Console.log(rangeUR.address);
@@ -414,12 +418,35 @@ void
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "F5:F10";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 range.insert();
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
+
+[Back](#methods)
+
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.load(param);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
+```
 
 [Back](#methods)
 
@@ -442,9 +469,10 @@ void
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "F5:F10";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-ctx.executeAsync().then();
+range.select();
+ctx.executeAsync();
 ```
 
 
@@ -457,7 +485,7 @@ Below example uses range address to get the range object.
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "A1:F8";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 ctx.load(range);
@@ -470,7 +498,7 @@ Below example uses a named-range to get the range object.
 
 ```js
 var rangeName = 'MyRange';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var range = ctx.workbook.names.getItem(rangeName).range;
 ctx.load(range);
 ctx.executeAsync().then(function() {
@@ -499,7 +527,7 @@ ctx.executeAsync().then(function() {
 Get the worksheet containing the range. 
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var names = ctx.workbook.names;
 var namedItem = names.getItem('MyRange');
 range = namedItem.range;

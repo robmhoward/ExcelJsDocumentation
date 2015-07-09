@@ -26,6 +26,7 @@ Represents an Excel table.
 |[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|Gets the range object associated with header row of the table.||
 |[getRange()](#getrange)|[Range](range.md)|Gets the range object associated with the entire table.||
 |[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Gets the range object associated with totals row of the table.||
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
 
 ## API Specification
 
@@ -46,9 +47,10 @@ void
 #### Examples
 ```js
 var tableName = 'Table1';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var table = ctx.workbook.tables.getItem(tableName);
-ctx.executeAsync().then();
+table.delete();
+ctx.executeAsync();
 ```
 
 
@@ -71,8 +73,9 @@ None
 #### Examples
 ```js
 var tableName = 'Table1';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var table = ctx.workbook.tables.getItem(tableName);
+var tableDataRange = table.getDataBodyRange();
 ctx.executeAsync().then(function () {
 		Console.log(tableDataRange.address);
 });
@@ -97,8 +100,9 @@ None
 #### Examples
 ```js
 var tableName = 'Table1';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var table = ctx.workbook.tables.getItem(tableName);
+var tableHeaderRange = table.getHeaderRowRange();
 ctx.executeAsync().then(function () {
 		Console.log(tableHeaderRange.address);
 });
@@ -124,8 +128,9 @@ None
 #### Examples
 ```js
 var tableName = 'Table1';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var table = ctx.workbook.tables.getItem(tableName);
+var tableRange = table.getRange();
 ctx.executeAsync().then(function () {
 		Console.log(tableRange.address);
 });
@@ -151,8 +156,9 @@ None
 #### Examples
 ```js
 var tableName = 'Table1';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var table = ctx.workbook.tables.getItem(tableName);
+var tableTotalsRange = table.getTotalRowRange();
 ctx.executeAsync().then(function () {
 		Console.log(tableTotalsRange.address);
 });
@@ -161,12 +167,35 @@ ctx.executeAsync().then(function () {
 
 [Back](#methods)
 
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.load(param);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
+```
+
+[Back](#methods)
+
 #### Getter and Setter Examples
 
 Get a table by name. 
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var tableName = 'Table1';
 var table = ctx.workbook.tables.getItem(tableName);
 ctx.executeAsync().then(function () {
@@ -177,7 +206,7 @@ ctx.executeAsync().then(function () {
 Get a table by index.
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var index = 0;
 var table = ctx.workbook.tables.getItemAt(0);
 ctx.executeAsync().then(function () {
@@ -189,7 +218,7 @@ Set table style.
 
 ```js
 var tableName = 'Table1';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var table = ctx.workbook.tables.getItem(tableName);
 table.name = 'Table1-Renamed';
 table.showTotals = false;

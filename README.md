@@ -11,52 +11,19 @@
 	* [TableColumn Collection](resources/tablecolumncollection.md): A collection of all the columns in a Table. 
 	* [TableRow Collection](resources/tablerowcollection.md): A collection of all the rows in a Table. 
 * [Chart](resources/chart.md): Represents a chart object in a workbook, which is a visual representation of underlying data.   
-	* [Chart Collection](resources/chartcollection.md): A collection of charts in a workbook or a worksheet.    
+	* [Chart Collection](resources/chartcollection.md): A collection of charts in a workbook or a worksheet.	
 * [NamedItem](resources/nameditem.md): Represents a defined name for a range of cells or a value. Names can be primitive named objects (as seen in the type below), range object, etc.
 	* [NamedItem Collection](resources/nameditemcollection.md): a collection of named items of a workbook.
 * [Binding](resources/binding.md): An abstract class that represents a binding to a section of the workbook.
 	* [Binding Collection](resources/bindingcollection.md):A collection of all the Binding objects that are part of the workbook. 
 * [Reference Collection](resources/referencecollection.md): Reference collection allows add-ins to add and remove temporary references on range.
+* [Request Context](resources/requestcontext.md): The RequestContext object facilitates requests to the Excel application.
 
 Also read the following programming notes: 
 
-* [Error Messages](#error-messages): Provide important programming details related to Excel APIs.
 * [Programming Notes](#programming-notes): Provide important programming details related to Excel APIs.
+* [Error Messages](#error-messages): Provide important programming details related to Excel APIs.
 
-## Error Messages
-
-Errors are returned using an error object that consists of a code and a message. The following table provides a list of possible error conditions that can occur. 
-
-|error.code | error.message |
-|----------:|--------------:|
-|InvalidArgument |The argument is invalid or missing or has an incorrect format.|
-|InvalidRequest  |Cannot process the request.|
-|InvalidReference|This reference is not valid for the current operation.|
-|InvalidBinding  |This object binding is no longer valid due to previous updates.|
-|InvalidSelection|The current selection is invalid for this operation.|
-|Unauthenticated |Required authentication information is either missing or invalid.|
-|AccessDenied    |You cannot perform the requested operation.|
-|ItemNotFound    |The requested resource doesn't exist.|
-|InvalidMethod   | The method in the request is not allowed on the resource. |
-|EditConflict    |Request could not be processed because of conflict.|
-|ActivityLimitReached|Activity limit has been reached.|
-|GeneralException|There was an internal error while processing the request.|
-|NotImplemented  |The requested feature isn't implemented.|
-|ServiceNotAvailable|The service is unavailable.|
-
-#### Examples
-
-```js
-ctx.executeAsync().then(
-function () {
-	Console.log("...");
-    },
-    function (error) {
-	   some.log("ErrorCode =" + error.code); //"InvalidArgument"
-	   some.log("ErrorMessage =" + error.message); //"The argument is invalid or missing or has an incorrect format."
-	});
-
-```
 [top](#excel-javascript-apis)
 
 ## Programming Notes
@@ -165,8 +132,12 @@ ctx.executeAsync()
 	* Provide an array of property name strings
 
 ```js	
-context.load (<object-var>, select: []);
-context.load (<object-var>, select: "comma separated list of properties");
+context.load (<var1>,<relation1/var2>);
+object.load  (<var1>,<relation1/var2>);
+
+// Pass the parameter as an array.
+context.load (["var1", "relation1/var2"]);
+object.load (["var1", "relation1/var2"]);
 ```
 
 #### Examples
@@ -179,7 +150,7 @@ var myRange = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 
 //load statement below loads the address, values, numberFormat properties of the Range and then expands on the format, format/background, entireRow relations
  
-ctx.load (myRange, select: ["address", "values", "numberFormat", format, format/background, entireRow ]);
+myRange.load (["address", "values", "numberFormat", "format", "format/background", "entireRow"]);
 
 ctx.executeAsync().then(function () {
 		console.log (myRange.address); //ok
@@ -193,26 +164,19 @@ ctx.executeAsync().then(function () {
 
 //load statement below loads all the properties of the Range and then expands on the format, format/background, entireRow relations. If the "*" is left out of the load, none of the Range’s direct properties will be included in the load statement.
  
-ctx.load (myRange, select: ["*", "format", "format/background", "entireRow" ]);
+ctx.load (myRange, select: ["address", "format", "format/background", "entireRow" ]);
 
 ctx.executeAsync().then(function () {
 		console.log (myRange.address); //ok
-		console.log (myRange.cellCount); //ok
 		console.log (myRange.format.wrapText); //ok
 		console.log (myRange.format.background.color); //ok
 		console.log (myRange.format.font.color); //not-ok
 		console.log (myRange.entireRow.address); //ok
 		console.log (myRange.entireColumn.address); //not-ok
-
 ```
 
 [Back](#programming-notes)
-### Document Binding
 
-[Back](#programming-notes)
-### Reference Binding
-
-[Back](#programming-notes)
 ### Null-Input
 
 #### null input in 2-D Array
@@ -251,10 +215,6 @@ Example: A Range can consist of one of more cells. In cases where the individual
   "size" : null,
   "color" : null,
 ```
-
-
-
-
 
 ### Blank Input and Output
 
@@ -386,12 +346,49 @@ API requests while the throttle is in effect will result in below error conditio
 ctx.executeAsync().then(
 function () {
 	Console.log("...");
-    },
-    function (error) {
+	},
+	function (error) {
 	   some.log("ErrorCode =" + error.code); //"ActivityLimitReached"
 	   some.log("ErrorMessage =" + error.message); //"Activity limit has been reached."
 	});
 ```
 [Back](#programming-notes)
 
+## Error Messages
+
+Errors are returned using an error object that consists of a code and a message. The following table provides a list of possible error conditions that can occur. 
+
+|error.code | error.message |
+|----------:|--------------:|
+|InvalidArgument |The argument is invalid or missing or has an incorrect format.|
+|InvalidRequest  |Cannot process the request.|
+|InvalidReference|This reference is not valid for the current operation.|
+|InvalidBinding  |This object binding is no longer valid due to previous updates.|
+|InvalidSelection|The current selection is invalid for this operation.|
+|Unauthenticated |Required authentication information is either missing or invalid.|
+|AccessDenied	|You cannot perform the requested operation.|
+|ItemNotFound	|The requested resource doesn't exist.|
+|InvalidMethod   | The method in the request is not allowed on the resource. |
+|EditConflict	|Request could not be processed because of conflict.|
+|ActivityLimitReached|Activity limit has been reached.|
+|GeneralException|There was an internal error while processing the request.|
+|NotImplemented  |The requested feature isn't implemented.|
+|ServiceNotAvailable|The service is unavailable.|
+
+
+
+#### Examples
+
+```js
+ctx.executeAsync().then(
+function () {
+	Console.log("...");
+	},
+	function (error) {
+	   some.log("ErrorCode =" + error.code); //"InvalidArgument"
+	   some.log("ErrorMessage =" + error.message); //"The argument is invalid or missing or has an incorrect format."
+	});
+```
+
 [top](#excel-javascript-apis)
+
