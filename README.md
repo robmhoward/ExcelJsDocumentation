@@ -88,14 +88,6 @@ The following example shows how to write values from an array to a range. First 
 Load method is used to fill in the Excel proxy objects created in the add-in JavaScript layer. When trying to retrieve an object, say, a worksheet, a local proxy object is created first in the JavaScript layer. Such an object can be used to queue up setting of its properties and invoking methods. However, for reading object properties or relations, the load() method and executeAsync() needs to be invoked first. Load method takes in the parameters and relations that needs to be loaded when the executeAsync is called. 
 
 ##### Syntax
-```js
-ctx.load(param, {loadOption});
-```
-Where, 
-
-* param is the object to be loaded.  
-* loadOption specifies selection, expansion, top/skip options. See loadOption object for details.
-or
 
 ```js
 object.load(param);
@@ -105,6 +97,16 @@ object.load({loadOption});
 Where, 
 
 * param is the list of parameter/relationship names to be loaded specified as comma delimited strings or array of names. See .load() methods under each object for details.
+* loadOption specifies selection, expansion, top/skip options. See loadOption object for details.
+
+Alternatively, you can invoke load on the request context object. 
+
+```js
+ctx.load(param, {loadOption});
+```
+Where, 
+
+* param is the object to be loaded.  
 * loadOption specifies selection, expansion, top/skip options. See loadOption object for details.
 
 ##### Example

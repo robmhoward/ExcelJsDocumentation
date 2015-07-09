@@ -155,7 +155,7 @@ Fills the proxy object created in JavaScript layer with property and object valu
 
 #### Syntax
 ```js
-object.setData(param: object);
+object.load(param);
 ```
 
 #### Parameters

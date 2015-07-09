@@ -9,23 +9,23 @@ None
 
 | Method         | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|[load(param: object, option: object)](#loadparam-object-option-object)  |void     |Fills the proxy object created in JavaScript layer with property and options specified in the parameter.||
+|[load(object: object, option: object)](#loadobject-object-option-object)  |void     |Fills the proxy object created in JavaScript layer with property and options specified in the parameter.||
 |[executeAsync()](#executeasync)  |Promise Object |Submits the request queue to Excel and returns a promise object, which can be used for chaining further actions.||
 
 ## API Specification
 
-### load(param: object, option: object)
+### load(object: object, option: object)
 Fills the proxy object created in JavaScript layer with property and options specified in the parameter.
 
 #### Syntax
 ```js
-requestContextObject.load(<parameter>);
+requestContextObject.load(object, loadOption);
 ```
 
 #### Parameters
 | Parameter       | Type    |Description|
 |:----------------|:--------|:----------|
-|param|Object|Optional. Specify the name of the object to be loaded.|
+|object|object|Optional. Specify the name of the object to be loaded.|
 |option|[loadOption](loadoption.md)|Optional. Specify the load options such as select, expand, skip and top. Se Load Option object for details.|
 
 #### Returns
@@ -33,12 +33,12 @@ void
 
 ##### Examples
 
-The following example shows how to read how to copy the values from Range A1:A2 to B1:B2.
+The following example shows how to read and copy the values from Range A1:A2 to B1:B2.
 
 ```js
 var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getActiveWorksheet().getRange("A1:A2");
-ctx.load(range, {"select": "address, values", "expand" : "format"});
+ctx.load(range, {"select": "address, values", "expand" : "range/format"});
 
 ctx.executeAsync()
 	.then(function () {
