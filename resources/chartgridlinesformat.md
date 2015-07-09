@@ -1,4 +1,4 @@
-re# ChartGridlinesFormat
+# ChartGridlinesFormat
 
 Encapsulates the format properties for chart gridlines.
 
