@@ -73,7 +73,7 @@ void
 
 [Back](#methods)
 
-#### Getter Examples
+### Getter Examples
 
 Get the names of points in the points collection
 ```js

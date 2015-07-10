@@ -75,7 +75,7 @@ void
 
 [Back](#methods)
 
-#### Getter Examples
+### Getter Examples
 Getting the names of series in the series collection.
 
 ```js

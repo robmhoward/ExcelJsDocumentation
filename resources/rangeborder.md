@@ -45,7 +45,7 @@ void
 
 [Back](#methods)
 
-#### Getter and Setter Examples
+### Getter and Setter Examples
 
 ```js
 var sheetName = "Sheet1";

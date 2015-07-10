@@ -113,7 +113,7 @@ ctx.executeAsync();
 
 [Back](#methods)
 
-#### Getter and Setter Examples
+### Getter and Setter Examples
 
 Get a chart named "Chart1"
 

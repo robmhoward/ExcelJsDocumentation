@@ -47,7 +47,7 @@ void
 
 [Back](#methods)
 
-#### Setter Examples
+### Setter Examples
 
 Use chart title as an example.
 

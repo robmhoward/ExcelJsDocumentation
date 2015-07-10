@@ -44,7 +44,7 @@ void
 
 [Back](#methods)
 
-#### Setter Examples
+### Setter Examples
 
 Rename the 1st series of Chart1 to "New Series Name"
 

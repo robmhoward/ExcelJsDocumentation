@@ -49,7 +49,7 @@ void
 
 [Back](#methods)
 
-#### Getter and Setter Examples
+### Getter and Setter Examples
 Get the `maximum` of Chart Axis from Chart1
 ```js
 var ctx = new Excel.RequestContext();

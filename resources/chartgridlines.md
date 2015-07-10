@@ -43,7 +43,7 @@ void
 
 [Back](#methods)
 
-#### Getter and Setter Examples
+### Getter and Setter Examples
 
 Get the `visible` of Major Gridlines on value axis of Chart1
 ```js

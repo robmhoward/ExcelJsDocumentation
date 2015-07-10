@@ -215,7 +215,7 @@ void
 
 [Back](#methods)
 
-#### Getter and Setter Examples
+### Getter and Setter Examples
 
 Get worksheet properties based on sheet name.
 ```js
