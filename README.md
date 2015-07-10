@@ -73,7 +73,6 @@ The following example shows how to write values from an array to a range. First 
 				 ];
 	var range = sheet.getRange("A1:B2");
 	range.values = values;
-
 	//statements queued above will not be executed until the executeAsync() is called. 
 	ctx.executeAsync()
 		.then(function () {   			
@@ -99,16 +98,6 @@ Where,
 * param is the list of parameter/relationship names to be loaded specified as comma delimited strings or array of names. See .load() methods under each object for details.
 * loadOption specifies selection, expansion, top/skip options. See loadOption object for details.
 
-Alternatively, you can invoke load on the request context object. 
-
-```js
-ctx.load(param, {loadOption});
-```
-Where, 
-
-* param is the object to be loaded.  
-* loadOption specifies selection, expansion, top/skip options. See loadOption object for details.
-
 ##### Example
 The following example shows how to read how to copy the values from Range A1:A2 to B1:B2 by using load() method on the range object.
 
@@ -125,8 +114,7 @@ ctx.executeAsync()
   		.then(function () {
 			console.log(range.address);
 			console.log(range.values);
-			console.log(range.format.wrapText);
-				
+			console.log(range.format.wrapText);				
 		})
 		.catch(function(error) {
 			console. error(JSON.stringify(error));
@@ -139,7 +127,7 @@ The following example shows how to read how to copy the values from Range A1:A2 
 ```js
 var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getActiveWorksheet().getRange("A1:A2");
-ctx.load(range, {"select": "address, values", "expand" : "format"});
+range.load({select": "address, values", "expand" : "range/format"});
 
 ctx.executeAsync()
 	.then(function () {
@@ -210,9 +198,9 @@ ctx.executeAsync().then(function () {
 		console.log (myRange.entireColumn.address); //not-ok
 // . . . 
 
-//load statement below loads all the properties of the Range and then expands on the format, format/background, entireRow relations. If the "*" is left out of the load, none of the Range’s direct properties will be included in the load statement.
+//load statement below loads all the properties of the Range and then expands on the format, format/background, entireRow relations.  
  
-ctx.load (myRange, select: ["address", "format", "format/background", "entireRow" ]);
+myRange.load(["address", "format", "format/background", "entireRow" ]);
 
 ctx.executeAsync().then(function () {
 		console.log (myRange.address); //ok
@@ -306,7 +294,7 @@ var ctx = new Excel.ExcelClientContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 range.values = 'Due Date';
-ctx.load(range);
+range.load(text);
 ctx.executeAsync().then(function() {
 	Console.log(range.text);
 });
@@ -342,7 +330,7 @@ var ctx = new Excel.ExcelClientContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 range.values = 'Due Date';
-ctx.load(range);
+range.load(text);
 ctx.executeAsync().then(function() {
 	Console.log(range.text);
 });
@@ -359,7 +347,7 @@ var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 range.numberFormat = 'm/d/yyyy';
 range.values = '3/11/2015';
-ctx.load(range);
+range.load(text);
 ctx.executeAsync().then(function() {
 	Console.log(range.text);
 });
@@ -374,7 +362,7 @@ var ctx = new Excel.ExcelClientContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 range.formula = '=DAYS(B15,42060)';
-ctx.load(range);
+range.load(text);
 ctx.executeAsync().then(function() {
 	Console.log(range.text);
 });
