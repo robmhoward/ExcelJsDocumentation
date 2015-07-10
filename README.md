@@ -404,14 +404,17 @@ Errors are returned using an error object that consists of a code and a message.
 |Unauthenticated |Required authentication information is either missing or invalid.|
 |AccessDenied	|You cannot perform the requested operation.|
 |ItemNotFound	|The requested resource doesn't exist.|
-|InvalidMethod   | The method in the request is not allowed on the resource. |
-|EditConflict	|Request could not be processed because of conflict.|
 |ActivityLimitReached|Activity limit has been reached.|
 |GeneralException|There was an internal error while processing the request.|
 |NotImplemented  |The requested feature isn't implemented.|
 |ServiceNotAvailable|The service is unavailable.|
-
-
+|Conflict	|Request could not be processed because of conflict.|
+|ItemAlreadyExists|The resource being created already exists.|
+|UnsupportedOperation|The operation being attempted is not supported.|
+|RequestAborted|The request was aborted during run time.|
+|ApiNotAvailable|The requested API is not available.|
+|InsertDeleteConflict|The insert or delete operation attempted resulted in conflict.|
+|InvalidOperation|The operation attempted is invalid on the object.|
 
 #### Examples
 
