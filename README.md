@@ -71,7 +71,6 @@ The following example shows how to write values from an array to a range. First 
 				 ];
 	var range = sheet.getRange("A1:B2");
 	range.values = values;
-
 	//statements queued above will not be executed until the executeAsync() is called. 
 	ctx.executeAsync()
         .then(function () {   			
@@ -82,7 +81,6 @@ The following example shows how to write values from an array to a range. First 
         });
 
 ```
-
 #### Load()
 When trying to retrieve an object, say, a worksheet, a local proxy object is created in the JavaScript layer. The object can be used to queue up setting of properties and invoking methods. But for reading back properties, load() and executeAsync() need to be invoked first.  
 
@@ -162,9 +160,9 @@ ctx.executeAsync().then(function () {
 		console.log (myRange.entireColumn.address); //not-ok
 // . . . 
 
-//load statement below loads all the properties of the Range and then expands on the format, format/background, entireRow relations. If the "*" is left out of the load, none of the Range’s direct properties will be included in the load statement.
+//load statement below loads all the properties of the Range and then expands on the format, format/background, entireRow relations.  
  
-ctx.load (myRange, select: ["address", "format", "format/background", "entireRow" ]);
+myRange.load(["address", "format", "format/background", "entireRow" ]);
 
 ctx.executeAsync().then(function () {
 		console.log (myRange.address); //ok
@@ -258,7 +256,7 @@ var ctx = new Excel.ExcelClientContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 range.values = 'Due Date';
-ctx.load(range);
+range.load(text);
 ctx.executeAsync().then(function() {
 	Console.log(range.text);
 });
@@ -294,7 +292,7 @@ var ctx = new Excel.ExcelClientContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 range.values = 'Due Date';
-ctx.load(range);
+range.load(text);
 ctx.executeAsync().then(function() {
 	Console.log(range.text);
 });
@@ -311,7 +309,7 @@ var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 range.numberFormat = 'm/d/yyyy';
 range.values = '3/11/2015';
-ctx.load(range);
+range.load(text);
 ctx.executeAsync().then(function() {
 	Console.log(range.text);
 });
@@ -326,7 +324,7 @@ var ctx = new Excel.ExcelClientContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 range.formula = '=DAYS(B15,42060)';
-ctx.load(range);
+range.load(text);
 ctx.executeAsync().then(function() {
 	Console.log(range.text);
 });
@@ -368,14 +366,17 @@ Errors are returned using an error object that consists of a code and a message.
 |Unauthenticated |Required authentication information is either missing or invalid.|
 |AccessDenied	|You cannot perform the requested operation.|
 |ItemNotFound	|The requested resource doesn't exist.|
-|InvalidMethod   | The method in the request is not allowed on the resource. |
-|EditConflict	|Request could not be processed because of conflict.|
 |ActivityLimitReached|Activity limit has been reached.|
 |GeneralException|There was an internal error while processing the request.|
 |NotImplemented  |The requested feature isn't implemented.|
 |ServiceNotAvailable|The service is unavailable.|
-
-
+|Conflict	|Request could not be processed because of conflict.|
+|ItemAlreadyExists|The resource being created already exists.|
+|UnsupportedOperation|The operation being attempted is not supported.|
+|RequestAborted|The request was aborted during run time.|
+|ApiNotAvailable|The requested API is not available.|
+|InsertDeleteConflict|The insert or delete operation attempted resulted in conflict.|
+|InvalidOperation|The operation attempted is invalid on the object.|
 
 #### Examples
 
