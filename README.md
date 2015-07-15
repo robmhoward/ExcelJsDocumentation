@@ -89,14 +89,14 @@ Load method is used to fill in the Excel proxy objects created in the add-in Jav
 ##### Syntax
 
 ```js
-object.load(param);
+object.load(properties);
 //or
 object.load({loadOption});
 ```
 Where, 
 
-* param is the list of parameter/relationship names to be loaded specified as comma delimited strings or array of names. See .load() methods under each object for details.
-* loadOption specifies selection, expansion, top/skip options. See loadOption object for details.
+* properties is the list of properties and/or relationship names to be loaded specified as comma delimited strings or array of names. See .load() methods under each object for details.
+* loadOption specifies selection, expansion, top/skip options. See [loadOption](resources/loadoption.md) object for details.
 
 ##### Example
 The following example shows how to read how to copy the values from Range A1:A2 to B1:B2 by using load() method on the range object.
@@ -105,6 +105,7 @@ The following example shows how to read how to copy the values from Range A1:A2 
 var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getActiveWorksheet().getRange("A1:A2");
 range.load ("address, values, range/format"); 
+// same as range.load (["address", "values", "range/format"]); 
 
 ctx.executeAsync()
 	.then(function () {
@@ -127,8 +128,7 @@ The following example shows how to read how to copy the values from Range A1:A2 
 ```js
 var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getActiveWorksheet().getRange("A1:A2");
-range.load({select": "address, values", "expand" : "range/format"});
-
+range.load ({"select": "address, values", "expand" : "range/format"});
 ctx.executeAsync()
 	.then(function () {
 	var myvalues=range.values;
@@ -168,11 +168,9 @@ ctx.executeAsync()
 	* Provide an array of property name strings
 
 ```js	
-context.load (<var1>,<relation1/var2>);
 object.load  (<var1>,<relation1/var2>);
 
 // Pass the parameter as an array.
-context.load (["var1", "relation1/var2"]);
 object.load (["var1", "relation1/var2"]);
 ```
 
@@ -337,7 +335,8 @@ ctx.executeAsync().then(function() {
 
 ```
 
-Following request updates selected range with date of 3/11/2015".  
+Following request updates selected range with date of 3/11/2015".
+
 
 ```js
 var sheetName = 'Sheet1';
