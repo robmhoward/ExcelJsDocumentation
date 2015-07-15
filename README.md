@@ -96,7 +96,7 @@ object.load({loadOption});
 Where, 
 
 * properties is the list of properties and/or relationship names to be loaded specified as comma delimited strings or array of names. See .load() methods under each object for details.
-* loadOption specifies selection, expansion, top/skip options. See [loadOption](resources/loadoption.md) object for details.
+* loadOption specifies selection, expansion, top, and skip options. See [loadOption](resources/loadoption.md) object for details.
 
 ##### Example
 The following example shows how to read how to copy the values from Range A1:A2 to B1:B2 by using load() method on the range object.
