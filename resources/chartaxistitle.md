@@ -3,21 +3,21 @@
 Represents the title of a chart axis.
 
 ## [Properties](#getter-and-setter-examples)
-| Property       | Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|text|string|Represents the axis title.||
-|visible|bool|A boolean that specifies the visibility of an axis title.||
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|text|string|Represents the axis title.|
+|visible|bool|A boolean that specifies the visibility of an axis title.|
 
 ## Relationships
-| Relationship | Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|format|[ChartAxisTitleFormat](chartaxistitleformat.md)|Represents the formatting of chart axis title. Read-only.||
+| Relationship | Type	|Description|
+|:---------------|:--------|:----------|
+|format|[ChartAxisTitleFormat](chartaxistitleformat.md)|Represents the formatting of chart axis title. Read-only.|
 
 ## Methods
 
-| Method           | Return Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## API Specification
 
@@ -30,7 +30,7 @@ object.load(param);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 

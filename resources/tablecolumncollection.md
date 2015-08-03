@@ -3,10 +3,10 @@
 Represents a collection of all the columns that are part of the table.
 
 ## [Properties](#getter-examples)
-| Property       | Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|count|int|Returns the number of columns in the table. Read-only.||
-|items|[TableColumn[]](tablecolumn.md)|A collection of tableColumn objects. Read-only.||
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|count|int|Returns the number of columns in the table. Read-only.|
+|items|[TableColumn[]](tablecolumn.md)|A collection of tableColumn objects. Read-only.|
 
 ## Relationships
 None
@@ -14,12 +14,12 @@ None
 
 ## Methods
 
-| Method           | Return Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|[add(index: number, values: object[][])](#addindex-number-values-object)|[TableColumn](tablecolumn.md)|Adds a new column to the table.||
-|[getItem(id: object)](#getitemid-object)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID.||
-|[getItemAt(index: number)](#getitematindex-number)|[TableColumn](tablecolumn.md)|Gets a column based on its position in the collection.||
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[add(index: number, values: object[][])](#addindex-number-values-object)|[TableColumn](tablecolumn.md)|Adds a new column to the table.|
+|[getItem(id: object)](#getitemid-object)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID.|
+|[getItemAt(index: number)](#getitematindex-number)|[TableColumn](tablecolumn.md)|Gets a column based on its position in the collection.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## API Specification
 
@@ -32,7 +32,7 @@ tableColumnCollectionObject.add(index, values);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |index|number|Specifies the relative position of the new column. The previous column at this position is shifted to the right. The index value should be equal to or less than the last column's index value, so it cannot be used to append a column at the end of the table. Zero-indexed.|
 |values|object[][]|Optional. A 2-dimensional array of unformatted values of the table column.|
@@ -65,7 +65,7 @@ tableColumnCollectionObject.getItem(id);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |id|object| Column Name or ID.|
 
@@ -95,7 +95,7 @@ tableColumnCollectionObject.getItemAt(index);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |index|number|Index value of the object to be retrieved. Zero-indexed.|
 
@@ -123,7 +123,7 @@ object.load(param);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 

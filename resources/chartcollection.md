@@ -3,10 +3,10 @@
 A collection of all the chart objects on a worksheet.
 
 ## [Properties](#getter-examples)
-| Property       | Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|count|int|Returns the number of charts in the worksheet. Read-only.||
-|items|[Chart[]](chart.md)|A collection of chart objects. Read-only.||
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|count|int|Returns the number of charts in the worksheet. Read-only.|
+|items|[Chart[]](chart.md)|A collection of chart objects. Read-only.|
 
 ## Relationships
 None
@@ -14,13 +14,12 @@ None
 
 ## Methods
 
-| Method           | Return Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|[add(type: string, sourceData: string, seriesBy: string)](#addtype-string-sourcedata-string-seriesby-string)|[Chart](chart.md)|Creates a new chart.||
-|[getItem(id: string)](#getitemid-string)|[Chart](chart.md)|Gets a chart using its ID.||
-|[getItem(name: string)](#getitemname-string)|[Chart](chart.md)|Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.||
-|[getItemAt(index: number)](#getitematindex-number)|[Chart](chart.md)|Gets a chart based on its position in the collection.||
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[add(type: string, sourceData: string, seriesBy: string)](#addtype-string-sourcedata-string-seriesby-string)|[Chart](chart.md)|Creates a new chart.|
+|[getItem(name: string)](#getitemname-string)|[Chart](chart.md)|Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.|
+|[getItemAt(index: number)](#getitematindex-number)|[Chart](chart.md)|Gets a chart based on its position in the collection.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## API Specification
 
@@ -33,11 +32,11 @@ chartCollectionObject.add(type, sourceData, seriesBy);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |type|string|Represents the type of a chart.  Possible values are: ColumnClustered, ColumnStacked, ColumnStacked100, BarClustered, BarStacked, BarStacked100, LineStacked, LineStacked100, LineMarkers, LineMarkersStacked, LineMarkersStacked100, PieOfPie, etc.|
 |sourceData|string|The address or name of the range that contains the source data. If an address or a worksheet-scoped name is used, it must include the worksheet name (e.g. "Sheet1!A5:B9"). |
-|seriesBy|string|Optional. Specifies the way columns or rows are used as data series on the chart. Can be one of the following: Auto (default), Rows, Columns.  Possible values are: Auto, Columns, Rows|
+|seriesBy|string|Optional. Specifies the way columns or rows are used as data series on the chart.  Possible values are: Auto, Columns, Rows|
 
 #### Returns
 [Chart](chart.md)
@@ -59,37 +58,6 @@ ctx.executeAsync().then(function () {
 
 [Back](#methods)
 
-### getItem(id: string)
-Gets a chart using its ID.
-
-#### Syntax
-```js
-chartCollectionObject.getItem(id);
-```
-
-#### Parameters
-| Parameter       | Type    |Description|
-|:---------------|:--------|:----------|
-|id|string|Id of the chart to be retrieved.|
-
-#### Returns
-[Chart](chart.md)
-
-#### Examples
-
-```js
-var ctx = new Excel.RequestContext();
-var chartId = 'SamplChartId';
-var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem(chartId);
-ctx.executeAsync().then(function () {
-		Console.log(chart.height);
-});
-```
-
-
-
-[Back](#methods)
-
 ### getItem(name: string)
 Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.
 
@@ -99,7 +67,7 @@ chartCollectionObject.getItem(name);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |name|string|Name of the chart to be retrieved.|
 
@@ -129,7 +97,7 @@ chartCollectionObject.getItemAt(index);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |index|number|Index value of the object to be retrieved. Zero-indexed.|
 
@@ -159,7 +127,7 @@ object.load(param);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 

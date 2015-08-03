@@ -3,30 +3,30 @@
 Represents an Excel table.
 
 ## [Properties](#getter-and-setter-examples)
-| Property       | Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|id|int|Returns a value that uniquely identifies the table in a given workbook. The value of the identifier remains the same even when the table is renamed. Read-only.||
-|name|string|Name of the table.||
-|showHeaders|bool|Indicates whether the header row is visible or not. This value can be set to show or remove the header row.||
-|showTotals|bool|Indicates whether the total row is visible or not. This value can be set to show or remove the total row.||
-|style|string|Constant value that represents the Table style. Possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.||
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|id|int|Returns a value that uniquely identifies the table in a given workbook. The value of the identifier remains the same even when the table is renamed. Read-only.|
+|name|string|Name of the table.|
+|showHeaders|bool|Indicates whether the header row is visible or not. This value can be set to show or remove the header row.|
+|showTotals|bool|Indicates whether the total row is visible or not. This value can be set to show or remove the total row.|
+|style|string|Constant value that represents the Table style. Possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.|
 
 ## Relationships
-| Relationship | Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|columns|[TableColumnCollection](tablecolumncollection.md)|Represents a collection of all the columns in the table. Read-only.||
-|rows|[TableRowCollection](tablerowcollection.md)|Represents a collection of all the rows in the table. Read-only.||
+| Relationship | Type	|Description|
+|:---------------|:--------|:----------|
+|columns|[TableColumnCollection](tablecolumncollection.md)|Represents a collection of all the columns in the table. Read-only.|
+|rows|[TableRowCollection](tablerowcollection.md)|Represents a collection of all the rows in the table. Read-only.|
 
 ## Methods
 
-| Method           | Return Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|[delete()](#delete)|void|Deletes the table.||
-|[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|Gets the range object associated with the data body of the table.||
-|[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|Gets the range object associated with header row of the table.||
-|[getRange()](#getrange)|[Range](range.md)|Gets the range object associated with the entire table.||
-|[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Gets the range object associated with totals row of the table.||
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[delete()](#delete)|void|Deletes the table.|
+|[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|Gets the range object associated with the data body of the table.|
+|[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|Gets the range object associated with header row of the table.|
+|[getRange()](#getrange)|[Range](range.md)|Gets the range object associated with the entire table.|
+|[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Gets the range object associated with totals row of the table.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## API Specification
 
@@ -176,7 +176,7 @@ object.load(param);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 

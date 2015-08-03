@@ -3,22 +3,22 @@
 Represents a chart title object of a chart.
 
 ## [Properties](#getter-and-setter-examples)
-| Property       | Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|overlay|bool|Boolean value representing if the chart title will overlay the chart or not.||
-|text|string|Represents the title text of a chart.||
-|visible|bool|A boolean value the represents the visibility of a chart title object.||
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|overlay|bool|Boolean value representing if the chart title will overlay the chart or not.|
+|text|string|Represents the title text of a chart.|
+|visible|bool|A boolean value the represents the visibility of a chart title object.|
 
 ## Relationships
-| Relationship | Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|format|[ChartTitleFormat](charttitleformat.md)|Represents the formatting of a chart title, which includes fill and font formatting. Read-only.||
+| Relationship | Type	|Description|
+|:---------------|:--------|:----------|
+|format|[ChartTitleFormat](charttitleformat.md)|Represents the formatting of a chart title, which includes fill and font formatting. Read-only.|
 
 ## Methods
 
-| Method           | Return Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## API Specification
 
@@ -31,7 +31,7 @@ object.load(param);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
