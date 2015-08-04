@@ -1,4 +1,4 @@
-# ChartPoint
+# ChartPoint 
 
 Represents a point of a series in a chart.
 
