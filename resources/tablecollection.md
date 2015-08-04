@@ -3,10 +3,10 @@
 Represents a collection of all the tables that are part of the workbook.
 
 ## [Properties](#getter-examples)
-| Property       | Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|count|int|Returns the number of tables in the workbook. Read-only.||
-|items|[Table[]](table.md)|A collection of table objects. Read-only.||
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|count|int|Returns the number of tables in the workbook. Read-only.|
+|items|[Table[]](table.md)|A collection of table objects. Read-only.|
 
 ## Relationships
 None
@@ -14,12 +14,12 @@ None
 
 ## Methods
 
-| Method           | Return Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|[add(address: string, hasHeaders: bool)](#addaddress-string-hasheaders-bool)|[Table](table.md)|Create a new table. The range source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.||
-|[getItem(id: object)](#getitemid-object)|[Table](table.md)|Gets a table by Name or ID.||
-|[getItemAt(index: number)](#getitematindex-number)|[Table](table.md)|Gets a table based on its position in the collection.||
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[add(address: string, hasHeaders: bool)](#addaddress-string-hasheaders-bool)|[Table](table.md)|Create a new table. The range source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.|
+|[getItem(id: object)](#getitemid-object)|[Table](table.md)|Gets a table by Name or ID.|
+|[getItemAt(index: number)](#getitematindex-number)|[Table](table.md)|Gets a table based on its position in the collection.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## API Specification
 
@@ -32,7 +32,7 @@ tableCollectionObject.add(address, hasHeaders);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |address|string|Address or name of the range object representing the data source. If the address does not contain a sheet name, the currently-active sheet is used.|
 |hasHeaders|bool|Boolean value that indicates whether the data being imported has column labels. If the source does not contain headers (i.e,. when this property set to false), Excel will automatically generate header shifting the data down by one row.|
@@ -63,7 +63,7 @@ tableCollectionObject.getItem(id);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |id|object|Name or ID of the table to be retrieved.|
 
@@ -93,7 +93,7 @@ tableCollectionObject.getItemAt(index);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |index|number|Index value of the object to be retrieved. Zero-indexed.|
 
@@ -122,7 +122,7 @@ object.load(param);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 

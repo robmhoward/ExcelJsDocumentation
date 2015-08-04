@@ -3,12 +3,12 @@
 Represents a defined name for a range of cells or value. Names can be primitive named objects (as seen in the type below), range object, reference to a range. This object can be used to obtain range object associated with names.
 
 ## [Properties](#getter-examples)
-| Property       | Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|name|string|The name of the object. Read-only.||
-|type|string|Indicates what type of reference is associated with the name. Read-only. Possible values are: String, Integer, Double, Boolean, Range.||
-|value|object|Represents the formula that the name is defined to refer to. E.g. =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.||
-|visible|bool|Specifies whether the object is visible or not.||
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|name|string|The name of the object. Read-only.|
+|type|string|Indicates what type of reference is associated with the name. Read-only. Possible values are: String, Integer, Double, Boolean, Range.|
+|value|object|Represents the formula that the name is defined to refer to. E.g. =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.|
+|visible|bool|Specifies whether the object is visible or not.|
 
 ## Relationships
 None
@@ -16,10 +16,10 @@ None
 
 ## Methods
 
-| Method           | Return Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|[getRange()](#getrange)|[Range](range.md)|Returns the range object that is associated with the name. Throws an exception if the named item's type is not a range.||
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[getRange()](#getrange)|[Range](range.md)|Returns the range object that is associated with the name. Throws an exception if the named item's type is not a range.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## API Specification
 
@@ -63,7 +63,7 @@ object.load(param);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 

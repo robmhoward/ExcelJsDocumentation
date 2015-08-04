@@ -3,9 +3,9 @@
 A collection of all the nameditem objects that are part of the workbook.
 
 ## [Properties](#getter-examples)
-| Property       | Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|items|[NamedItem[]](nameditem.md)|A collection of namedItem objects. Read-only.||
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|items|[NamedItem[]](nameditem.md)|A collection of namedItem objects. Read-only.|
 
 ## Relationships
 None
@@ -13,10 +13,10 @@ None
 
 ## Methods
 
-| Method           | Return Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|[getItem(name: string)](#getitemname-string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name||
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[getItem(name: string)](#getitemname-string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## API Specification
 
@@ -29,7 +29,7 @@ namedItemCollectionObject.getItem(name);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |name|string|nameditem name.|
 
@@ -57,7 +57,7 @@ object.load(param);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 

@@ -11,10 +11,10 @@ None
 
 ## Methods
 
-| Method           | Return Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|[clear()](#clear)|void|Clear the fill color of a chart element.||
-|[setSolidColor(color: string)](#setsolidcolorcolor-string)|void|Sets the fill formatting of a chart element to a uniform color.||
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[clear()](#clear)|void|Clear the fill color of a chart element.|
+|[setSolidColor(color: string)](#setsolidcolorcolor-string)|void|Sets the fill formatting of a chart element to a uniform color.|
 
 ## API Specification
 
@@ -57,7 +57,7 @@ chartFillObject.setSolidColor(color);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |color|string|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|
 
@@ -71,6 +71,12 @@ Set BackGround Color of Chart1 to be red.
 var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
+chart.format.fill.setSolidColor("#FF0000");
+
+ctx.executeAsync().then(function () {
+		Console.log("Chart1 Background Color Changed.");
+});
+```
 
 [Back](#methods)
 

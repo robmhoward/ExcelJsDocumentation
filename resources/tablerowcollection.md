@@ -3,10 +3,10 @@
 Represents a collection of all the rows that are part of the table.
 
 ## [Properties](#getter-examples)
-| Property       | Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|count|int|Returns the number of rows in the table. Read-only.||
-|items|[TableRow[]](tablerow.md)|A collection of tableRow objects. Read-only.||
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|count|int|Returns the number of rows in the table. Read-only.|
+|items|[TableRow[]](tablerow.md)|A collection of tableRow objects. Read-only.|
 
 ## Relationships
 None
@@ -14,11 +14,11 @@ None
 
 ## Methods
 
-| Method           | Return Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|[add(index: number, values: object[][])](#addindex-number-values-object)|[TableRow](tablerow.md)|Adds a new row to the table.||
-|[getItemAt(index: number)](#getitematindex-number)|[TableRow](tablerow.md)|Gets a row based on its position in the collection.||
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[add(index: number, values: object[][])](#addindex-number-values-object)|[TableRow](tablerow.md)|Adds a new row to the table.|
+|[getItemAt(index: number)](#getitematindex-number)|[TableRow](tablerow.md)|Gets a row based on its position in the collection.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## API Specification
 
@@ -31,7 +31,7 @@ tableRowCollectionObject.add(index, values);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |index|number|Optional. Specifies the relative position of the new row. If null, the addition happens at the end. Any rows below the inserted row are shifted downwards. Zero-indexed.|
 |values|object[][]|Optional. A 2-dimensional array of unformatted values of the table row.|
@@ -63,7 +63,7 @@ tableRowCollectionObject.getItemAt(index);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |index|number|Index value of the object to be retrieved. Zero-indexed.|
 
@@ -92,7 +92,7 @@ object.load(param);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 

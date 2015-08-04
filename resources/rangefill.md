@@ -3,9 +3,9 @@
 Represents the background of a range object.
 
 ## [Properties](#getter-and-setter-examples)
-| Property       | Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|color|string|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange")||
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|color|string|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange")|
 
 ## Relationships
 None
@@ -13,10 +13,10 @@ None
 
 ## Methods
 
-| Method           | Return Type    |Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|[clear()](#clear)|void|Resets the range background.||
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[clear()](#clear)|void|Resets the range background.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## API Specification
 
@@ -61,7 +61,7 @@ object.load(param);
 ```
 
 #### Parameters
-| Parameter       | Type    |Description|
+| Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 

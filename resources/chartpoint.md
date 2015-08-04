@@ -1,16 +1,16 @@
-# ChartAxes
+# ChartPoint
 
-Represents the chart axes.
+Represents a point of a series in a chart.
 
 ## Properties
-None
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|value|object|Returns the value of a chart point. Read-only.|
 
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|categoryAxis|[ChartAxis](chartaxis.md)|Represents the category axis in a chart. Read-only.|
-|seriesAxis|[ChartAxis](chartaxis.md)|Represents the series axis of a 3-dimensional chart. Read-only.|
-|valueAxis|[ChartAxis](chartaxis.md)|Represents the value axis in an axis. Read-only.|
+|format|[ChartPointFormat](chartpointformat.md)|Encapsulates the format properties chart point. Read-only.|
 
 ## Methods
 
