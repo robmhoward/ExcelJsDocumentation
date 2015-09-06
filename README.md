@@ -99,7 +99,7 @@ Where,
 * loadOption specifies selection, expansion, top, and skip options. See [loadOption](resources/loadoption.md) object for details.
 
 ##### Example
-The following example shows how to read how to copy the values from Range A1:A2 to B1:B2 by using load() method on the range object.
+The following example shows how to copy the values from Range A1:A2 to B1:B2 by using load() method on the range object.
 
 ```js
 var ctx = new Excel.RequestContext();
@@ -123,7 +123,7 @@ ctx.executeAsync()
 });
 ```
 
-The following example shows how to read how to copy the values from Range A1:A2 to B1:B2 by using load() method on the context object.
+The following example shows how to copy the values from Range A1:A2 to B1:B2 by using load() method on the context object.
 
 ```js
 var ctx = new Excel.RequestContext();
